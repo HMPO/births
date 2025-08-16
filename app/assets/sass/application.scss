@@ -4,3 +4,27 @@
 // 
 
 // Add extra styles here
+//$govuk-new-typography-scale: true;
+
+// Custom class for a pending registrations table
+.pending-table {
+  font-size: 16px; // Font size for govuk-body
+  line-height: 1.2; // Line height for govuk-body 
+ margin: 20px 0 60px 0;
+}
+
+.pending-table .govuk-tag {
+  font-size: 16px; // Override the default font size
+  //line-height: 1.2; 
+}
+
+.pending-table td {
+  padding-top: 15px;
+}
+
+.pending-table th:first-child,
+.pending-table td:first-child {
+  width: 5%; 
+  padding-top: 5px;
+}
+

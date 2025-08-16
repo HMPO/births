@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+        Pregnancy and delivery
+      </h1> 
+     
+      <h2 class="govuk-heading-s">Estimated length of pregnancy</h2>
+
+      <form class="form" action="cause-of-death" method="post">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-form-group">
+<div class="govuk-grid-column-one-quarter  govuk-!-margin-bottom-6">  
+  
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  id: "weight",
+  name: "weight",
+  label: {
+    text: "Weeks" 
+  },
+  suffix: {
+    text: "weeks"
+  },
+  classes: "govuk-input--width-3",
+  spellcheck: false
+}) }}  
+</div>
+<div class="govuk-grid-column-one-half">
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Days (if provided)"
+  },
+  classes: "govuk-input--width-3",
+  id: "weight",
+  name: "weight",
+  suffix: {
+    text: "days"
+  },
+  spellcheck: false
+}) }}
+</div>
+</div>
+        </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds  govuk-!-margin-bottom-6">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "whereDoYouLive",
+  fieldset: {
+    legend: {
+      text: "When did the child die?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "Before labour"
+    },
+    {
+      value: "scotland",
+      text: "During labour"
+    },
+    {
+      value: "wales",
+      text: "Not known"
+    }
+  ]
+}) }}
+
+  </div>
+</div>   
+
+  <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">  
+  
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  id: "weight",
+  name: "weight",
+  label: {
+    text: "Weight of the child (if provided)",
+    classes: "govuk-fieldset__legend--s"
+  },
+  suffix: {
+    text: "g"
+  },
+  classes: "govuk-input--width-5",
+  spellcheck: false
+}) }}  
+</div>
+</div>
+
+
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
