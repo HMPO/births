@@ -1,126 +1,312 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-{% endblock %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Stillbirth registration</h1>
 
+    <h2 class="govuk-heading-m">Supporting information (optional)</h2>
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="prepare-for-appointment">
+            Prepare for appointment
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.prepareForAppointmentCompleted %}
+          Entered
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Empty</strong>
+          {% endif %}
 
-   
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Stillbirth registration</h1>
-        <h2 class="govuk-heading-m">Supporting information (optional)</h2>
-        <ul class="govuk-task-list">
-          <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="prepare-for-appointment.html" aria-describedby="support-1-status">
-                Prepare for appointment
-              </a>
-            </div>
-           <div class="govuk-task-list__status" id="support-1-status">
-              <strong class="govuk-tag govuk-tag--light-blue">
-                Empty
-              </strong>
-            </div>
-          </li>
-          <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="uploads.html" aria-describedby="support-2-status">
-                Temporary uploads
-              </a>
-            </div>
-            <div class="govuk-task-list__status" id="support-2-status">
-              <strong class="govuk-tag govuk-tag--light-blue">
-                Empty
-              </strong>
-            </div>
-          </li>
-                    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="comments.html" aria-describedby="support-3-status">
-                Comments
-              </a>
-            </div>
-            <div class="govuk-task-list__status" id="support-3-status">
-              <strong class="govuk-tag govuk-tag--light-blue">
-                Empty
-              </strong>
-            </div>
-          </li>
-        </ul>
-        <h2 class="govuk-heading-m govuk-!-margin-top-5">Information from medical certificate</h2>
-        <ul class="govuk-task-list">
-          <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="pregnancy-delivery.html" aria-describedby="med-info-1-status">
-                Preganancy and delivery
-              </a>
-            </div>
-            <div class="govuk-task-list__status" id="med-info-1-status">
-               <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
-            </div>
-          </li>
-          <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="cause-of-death.html" aria-describedby="med-info-2-status">
-                Cause of death
-              </a>
-            </div>
-            <div class="govuk-task-list__status" id="med-info-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
-            </div>
-          </li>
-        
-        </ul>
-        <h2 class="govuk-heading-m govuk-!-margin-top-5">Informant and whose details will be recorded</h2>
-        <ul class="govuk-task-list">
-         
-          <!-- <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="informant-1-status">
-                Informant and whose details will be recorded
-              </a>
-            </div>
-            <div class="govuk-task-list__status" id="prepare-application-2-status">
-              <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
-            </div>
-          </li> -->
-          <li class="govuk-task-list__item">
-    <div class="govuk-task-list__name-and-hint">
-      <div>
-        <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="informant-1-status">
-                Informant and whose details will be recorded
-              </a>
-      </div>
-      <div id="application-details-3-hint" class="govuk-task-list__hint">
-        The rest of the form will become available after you complete this section
-      </div>
-    </div>
-    <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="informant-1-status">
-      <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
-    </div>
-  </li>
-        </ul>
-      
-      </div>
-    </div>
+        </div>
+      </li>
 
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="uploads">
+            Uploads
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.uploadsCompleted %}
+          Entered
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Empty</strong>
+          {% endif %}
+        </div>
+      </li>
 
-      
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="comments">
+            Comments
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.commentsCompleted %}
+          Entered
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Empty</strong>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
 
-    </div>
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Information from medical certificate</h2>
+    <p class="govuk-hint">Medical certificate of stillbirth (form 34)</p>
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="pregnancy-delivery">
+            Pregnancy and delivery
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.pregCompleted %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="cause-of-death">
+            Cause of death
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.codCompleted %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Whose details will be recorded</h2>
+
+    {% if not (data.pregCompleted and data.codCompleted) %}
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+          <div class="govuk-task-list__hint ">
+            The rest of the form will become available after you complete this section.
+          </div>
+        </div>
+        <div class="govuk-task-list__status">
+          <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
+        </div>
+      </li>
+    </ul>
+
+    {% elif not data.whoseDetailsCompleted %}
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+
+          <a class="govuk-link govuk-task-list__link" href="informant-triage/01-who-is-informant">
+            Informant and whose details will be recorded
+          </a>
+
+          <div class="govuk-task-list__hint ">
+            The rest of the form will become available after you complete this section.
+          </div>
+
+        </div>
+        <div class="govuk-task-list__status">
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+
+        </div>
+      </li>
+    </ul>
+
+    <!-- ELSE if the informant details have been complete the rest of the task list appears-->
+
+    {% elif data.whoseDetailsCompleted %}
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+          <a class="govuk-link govuk-task-list__link" href="informant-triage/01-who-is-informant">
+            Informant and whose details will be recorded
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          Completed
+
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Child's details</h2>
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="child-details/name-date">
+            Name, sex and date of stillbirth
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.nameDateCompleted %}
+          Complete
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="child-details/place-of-death">
+            Place of stillbirth
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.placeCompleted %}
+          Complete
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Parent's details</h2>
+     <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="parents/mother-name">
+            Mother's name
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.motherNameCompleted %}
+          Complete
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="parents/mother-details">
+            Mother's details
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+           {% if data.motherDetailsCompleted %}
+          Complete
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+       <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="parents/father-name">
+            Father's name
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.fatherNameCompleted %}
+          Complete
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="parents/father-details">
+            Father's details
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+           {% if data.fatherDetailsCompleted %}
+          Complete
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Statistics</h2>
+     <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="stats/confidential">
+            Confidential statistics
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.statsConfidentialCompleted %}
+          Complete
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="stats/voluntary">
+            Voluntary statistics
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+           {% if data.statsVoluntaryCompleted %}
+          Complete
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+      </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Submit the registration</h2>
+     <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+          <div class="govuk-task-list__hint ">
+            Registrar's details
+          </div>
+        </div>
+        <div class="govuk-task-list__status">
+          <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
+        </div>
+      </li>
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+          <div class="govuk-task-list__hint ">
+            Check your answers
+          </div>
+        </div>
+        <div class="govuk-task-list__status">
+          <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
+        </div>
+      </li>
+    </ul>
+    {% endif %}
+
   </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p><a href="#" class="govuk-link">Change record details</a></p>
+    <p><a href="#" class="govuk-link"><span style="color: crimson;">Delete record </span></a></p>
+  </div>
+</div>
 {% endblock %}
