@@ -1,16 +1,5 @@
-//
-// For guidance on how to add JavaScript see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-//
+console.log("Script loaded conditional js");
 
-window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
-})
-
-
-
-
-// child-details/name-date.html - makes the YES/ No name hide reveal work
 document.addEventListener("DOMContentLoaded", function () {
   const radioButtons = document.querySelectorAll('input[name="name-or-not"]');
   const yesBlock = document.getElementById("yes-name-block");

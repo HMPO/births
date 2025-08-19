@@ -158,7 +158,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-task-list__status">
           {% if data.nameDateCompleted %}
-          Complete
+          Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% endif %}
@@ -167,13 +167,13 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="child-details/place-of-death">
+          <a class="govuk-link govuk-task-list__link" href="child-details/place-of-stillbirth">
             Place of stillbirth
           </a>
         </div>
         <div class="govuk-task-list__status">
           {% if data.placeCompleted %}
-          Complete
+          Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% endif %}
@@ -185,13 +185,13 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
      <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="parents/mother-name">
+          <a class="govuk-link govuk-task-list__link" href="parents-details/mothers-name">
             Mother's name
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.motherNameCompleted %}
-          Complete
+          {% if data.mothersNameCompleted %}
+          Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% endif %}
@@ -200,13 +200,13 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="parents/mother-details">
+          <a class="govuk-link govuk-task-list__link" href="parents-details/mothers-details">
             Mother's details
           </a>
         </div>
         <div class="govuk-task-list__status">
-           {% if data.motherDetailsCompleted %}
-          Complete
+           {% if data.mothersDetailsCompleted %}
+          Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% endif %}
@@ -214,13 +214,13 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
       </li>
        <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="parents/father-name">
+          <a class="govuk-link govuk-task-list__link" href="parents-details/fathers-name">
             Father's name
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.fatherNameCompleted %}
-          Complete
+          {% if data.fathersNameCompleted %}
+          Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% endif %}
@@ -229,13 +229,13 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="parents/father-details">
+          <a class="govuk-link govuk-task-list__link" href="parents-details/fathers-details">
             Father's details
           </a>
         </div>
         <div class="govuk-task-list__status">
-           {% if data.fatherDetailsCompleted %}
-          Complete
+           {% if data.fathersDetailsCompleted %}
+          Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% endif %}
@@ -253,7 +253,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-task-list__status">
           {% if data.statsConfidentialCompleted %}
-          Complete
+          Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% endif %}
@@ -268,7 +268,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-task-list__status">
            {% if data.statsVoluntaryCompleted %}
-          Complete
+          Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% endif %}
@@ -280,22 +280,50 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
      <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+          {% if not (data.statsConfidentialCompleted) %}
           <div class="govuk-task-list__hint ">
             Registrar's details
           </div>
+           {% else %}
+ <a class="govuk-link govuk-task-list__link" href="submit/register-page">
+            Registrar's details
+          </a>
+           {% endif %}
         </div>
-        <div class="govuk-task-list__status">
-          <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
-        </div>
+        
+<div class="govuk-task-list__status">
+      {% if not data.statsConfidentialCompleted %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
+      {% elif data.statsConfidentialCompleted and not data.registerPageCompleted %}
+        <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+      {% elif data.registerPageCompleted %}
+        Completed
+      {% endif %}
+    </div>
+
       </li>
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
           <div class="govuk-task-list__hint ">
+{% if not (data.registerPageCompleted) %}
+          <div class="govuk-task-list__hint ">
             Check your answers
+          </div>
+           {% else %}
+ <a class="govuk-link govuk-task-list__link" href="submit/check-answers-page">
+            Check your answers
+          </a>
+           {% endif %}
           </div>
         </div>
         <div class="govuk-task-list__status">
-          <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
+           {% if not data.registerPageCompleted %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
+      {% elif data.registerPageCompleted and not data.checkAnswersCompleted %}
+        <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+      {% elif data.registerPageCompleted %}
+        Completed
+      {% endif %}
         </div>
       </li>
     </ul>
@@ -306,7 +334,8 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <p><a href="#" class="govuk-link">Change record details</a></p>
-    <p><a href="#" class="govuk-link"><span style="color: crimson;">Delete record </span></a></p>
-  </div>
+    <p><a href="#" class="govuk-link" style="color: #d4351c;">Delete record</a></p>
+
+    </div>
 </div>
 {% endblock %}
