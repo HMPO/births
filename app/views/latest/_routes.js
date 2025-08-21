@@ -18,48 +18,96 @@ module.exports = function(router) {
   });
   // 1. Supporting info
   // 1.1: Prepare for appointment
-  router.get('/latest/prepare-for-appointment-form', (req, res) => {
-    res.render('latest/prepare-for-appointment', { data: req.session.data });
+  router.get('/latest/supporting-info/prepare-for-appointment-form', (req, res) => {
+    res.render('latest/supporting-info/prepare-for-appointment', { data: req.session.data });
   });
 
-  router.post('/latest/prepare-for-appointment-form', (req, res) => {
+  router.post('/latest/supporting-info/prepare-for-appointment-form', (req, res) => {
+    // Ensure session data exists
     req.session.data = req.session.data || {};
+    // Mark page as completed
     req.session.data.prepareForAppointmentCompleted = true;
-    res.redirect('03-tasklist.html');
+    //res.redirect('../03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('../03-tasklist.html');
+  }
   });
  
   // 1.2: Uploads
-  router.get('/latest/uploads-form', (req, res) => {
-    res.render('latest/uploads', { data: req.session.data });
+  router.get('/latest/supporting-info/uploads-form', (req, res) => {
+    res.render('latest/supporting-info/uploads', { data: req.session.data });
   });
 
-  router.post('/latest/uploads-form', (req, res) => {
+  router.post('/latest/supporting-info/uploads-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.uploadsCompleted = true;
-    res.redirect('03-tasklist.html');
+    //res.redirect('../03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('../03-tasklist.html');
+  }
   });
 
     // 1.2: Comments
-  router.get('/latest/comments-form', (req, res) => {
-    res.render('latest/comments', { data: req.session.data });
+  router.get('/latest/supporting-info/comments-form', (req, res) => {
+    res.render('latest/supporting-info/comments', { data: req.session.data });
   });
 
-  router.post('/latest/comments-form', (req, res) => {
+  router.post('/latest/supporting-info/comments-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.commentsCompleted = true;
-    res.redirect('03-tasklist.html');
+   // res.redirect('../03-tasklist.html');
+     if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('../03-tasklist.html');
+  }
   });
    // 2. Info from certificate
-    // 2 Cause of death
-  router.get('/latest/medical-info-check-form', (req, res) => {
-    res.render('latest/medical-info-check', { data: req.session.data });
+
+    // 2.2: Cause of death
+  router.get('/latest/cause-of-death/cause-of-death-form', (req, res) => {
+    res.render('latest/cause-of-death/cause-of-death', { data: req.session.data });
   });
 
-  router.post('/latest/medical-info-check-form', (req, res) => {
+  router.post('/latest/cause-of-death/cause-of-death-form', (req, res) => {
+    req.session.data = req.session.data || {};
+    req.session.data.commentsCompleted = true;
+   // res.redirect('../03-tasklist.html');
+     if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('medical-info-check.html');
+  }
+  });
+    // 2.3 Cause of death summary
+  router.get('/latest/cause-of-death/medical-info-check-form', (req, res) => {
+    res.render('latest/cause-of-death/medical-info-check', { data: req.session.data });
+  });
+
+  router.post('/latest/cause-of-death/medical-info-check-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.pregCompleted = true;
     req.session.data.codCompleted = true;
-    res.redirect('03-tasklist.html');
+    //res.redirect('../03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('../03-tasklist.html');
+  }
   });
 
    // 3 Whose details
@@ -78,7 +126,14 @@ module.exports = function(router) {
   router.post('/latest/whose-details-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.whoseDetailsCompleted = true;
+    //res.redirect('03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('03-tasklist.html');
+  }
   });
 
 // 4 child details
@@ -90,7 +145,14 @@ module.exports = function(router) {
   router.post('/latest/child-details/name-date-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.nameDateCompleted = true;
+    //res.redirect('../03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
   // 4.2 place of stillbirth
@@ -101,7 +163,14 @@ module.exports = function(router) {
   router.post('/latest/child-details/place-of-stillbirth-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.placeCompleted = true;
+    //res.redirect('../03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
 
@@ -114,7 +183,15 @@ module.exports = function(router) {
   router.post('/latest/parents-details/mothers-name-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.mothersNameCompleted = true;
+    //res.redirect('../03-tasklist.html');
+
+    if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
   // 5.2 mothers details
@@ -125,7 +202,14 @@ module.exports = function(router) {
   router.post('/latest/parents-details/mothers-details-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.mothersDetailsCompleted = true;
+    //res.redirect('../03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
   // 5.3 fathers name
@@ -136,7 +220,14 @@ module.exports = function(router) {
   router.post('/latest/parents-details/fathers-name-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.fathersNameCompleted = true;
+    //res.redirect('../03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
   // 5.4 fathers details
@@ -147,7 +238,14 @@ module.exports = function(router) {
   router.post('/latest/parents-details/fathers-details-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.fathersDetailsCompleted = true;
+   // res.redirect('../03-tasklist.html');
+     if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
     // 6 Statistics
@@ -159,7 +257,14 @@ router.get('/latest/stats/confidential-form', (req, res) => {
   router.post('/latest/stats/confidential-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.statsConfidentialCompleted = true;
+    //res.redirect('../03-tasklist.html');
+      if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
 // 6.2 Voluntary stats
@@ -170,7 +275,14 @@ router.get('/latest/stats/voluntary-form', (req, res) => {
   router.post('/latest/stats/voluntary-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.statsVoluntaryCompleted = true;
+   // res.redirect('../03-tasklist.html');
+     if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
 
@@ -184,10 +296,27 @@ router.get('/latest/stats/voluntary-form', (req, res) => {
   router.post('/latest/submit/register-page-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.registerPageCompleted = true;
+   // res.redirect('../03-tasklist.html');
+     if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('../03-tasklist.html');
+  }
   });
 
   // 7.2 Check answers
+// Route for the Check Your Answers page (GET request)
+router.get('/latest/submit/check-answers-page', (req, res) => {
+  // Mark the "Check your answers" page as visited
+  req.session.data.checkAnswersVisited = true;
+
+  // Render the "Check your answers" page
+  res.render('latest/submit/check-answers-page', { data: req.session.data });
+});
+
+
   // router.get('/latest/submit/check-answers-form', (req, res) => {
   //   res.render('latest/submit/check-answers-page', { data: req.session.data });
   // });
