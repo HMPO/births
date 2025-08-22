@@ -31,8 +31,8 @@
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
-  id: "weight",
-  name: "weight",
+  id: "weeksPregnant",
+  name: "weeksPregnant",
   label: {
     text: "Weeks" 
   },
@@ -40,7 +40,8 @@
     text: "weeks"
   },
   classes: "govuk-input--width-3",
-  spellcheck: false
+  spellcheck: false,
+  value: data['weeksPregnant'] or ''
 }) }}  
 </div>
 <div class="govuk-grid-column-one-half">
@@ -51,12 +52,13 @@
     text: "Days (if provided)"
   },
   classes: "govuk-input--width-3",
-  id: "weight",
-  name: "weight",
+  id: "daysPregnant",
+  name: "daysPregnant",
   suffix: {
     text: "days"
   },
-  spellcheck: false
+  spellcheck: false,
+  value: data['daysPregnant'] or ''
 }) }}
 </div>
 </div>
@@ -67,7 +69,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "whereDoYouLive",
+  name: "whenDidChildDie",
   fieldset: {
     legend: {
       text: "When did the child die?",
@@ -77,16 +79,19 @@
   },
   items: [
     {
-      value: "england",
-      text: "Before labour"
+      value: "beforeLabour",
+      text: "Before labour",
+      checked: data['whenDidChildDie'] == "beforeLabour"
     },
     {
-      value: "scotland",
-      text: "During labour"
+      value: "duringLabour",
+      text: "During labour",
+      checked: data['whenDidChildDie'] == "duringLabour"
     },
     {
-      value: "wales",
-      text: "Not known"
+      value: "notKnown",
+      text: "Not known",
+      checked: data['whenDidChildDie'] == "notKnown"
     }
   ]
 }) }}
@@ -100,8 +105,8 @@
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
-  id: "weight",
-  name: "weight",
+  id: "weightOfChild",
+  name: "weightOfChild",
   label: {
     text: "Weight of the child (if provided)",
     classes: "govuk-fieldset__legend--s"
@@ -110,7 +115,8 @@
     text: "g"
   },
   classes: "govuk-input--width-5",
-  spellcheck: false
+  spellcheck: false,
+  value: data['weightOfChild'] or ''
 }) }}  
 </div>
 </div>

@@ -28,10 +28,11 @@
             </dt>
             <dd class="govuk-summary-list__value">
               Medical certificate of stillbirth (form 34)
+              <p class="govuk-task-list__hint">You can't change the certificate type</p>
             </dd>
-            <dd class="govuk-summary-list__actions">
+            <!-- <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
+            </dd> -->
           </div>
           </dl>
 
@@ -42,10 +43,11 @@
               Estimated length of pregnancy
             </dt>
             <dd class="govuk-summary-list__value">
-              37 weeks, 2 days
+              {{ data['weeksPregnant'] or "20" }} weeks,  {{ data['daysPregnant'] or " no" }} days
+              <!-- 37 weeks, 2 days -->
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+              <a class="govuk-link" href="pregnancy-delivery.html">Change<span class="govuk-visually-hidden"> pregnancy length</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -53,10 +55,15 @@
               When did the child die?
             </dt>
             <dd class="govuk-summary-list__value">
-              Before labour
+              {% set whenDidChildDieText = {
+      "beforeLabour": "Before labour",
+      "duringLabour": "During labour",
+      "notKnown": "Not known"
+    } %}
+    {{ whenDidChildDieText[data['whenDidChildDie']] or "Before labour" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link" href="pregnancy-delivery.html">Change<span class="govuk-visually-hidden"> when child died</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -64,10 +71,11 @@
               Weight of child (if provided)
             </dt>
             <dd class="govuk-summary-list__value">
-              3050g
+              {{ data['weightOfChild'] or "3050" }} g
+              
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+              <a class="govuk-link" href="pregnancy-delivery.html">Change<span class="govuk-visually-hidden"> weight</span></a>
             </dd>
           </div>
         
@@ -80,10 +88,19 @@
               Number circled on the medical certificate
             </dt>
             <dd class="govuk-summary-list__value">
-              1 - The certified cause of death has been confirmed by post-mortem
+
+
+ {% set option_circledText = {
+      "post_mortem": "1 - The certified cause of death has been confirmed by post-mortem",
+      "available_later": " 2 - Information from the post-mortem may be available later",
+      "no_post_mortem": " 3 - Post-mortem is not being held",
+      "none_circled": "None circled"
+    } %}
+    {{ option_circledText[data['option_circled']] or "1 - The certified cause of death has been confirmed by post-mortem" }}
+
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> number circled</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -91,10 +108,10 @@
               a. Main disease or conditions in the child
             </dt>
             <dd class="govuk-summary-list__value">
-              Placental insufficiency 
+              {{ data['CauseOfDeath-a'] or "Placental insufficiency" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> a</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -102,10 +119,10 @@
               b. other disease or condition affecting the child
             </dt>
             <dd class="govuk-summary-list__value">
-              None
+               {{ data['causeOfdeath1b'] or "None" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> b</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -113,10 +130,10 @@
               c. Maternal disease or conditions affecting the child
             </dt>
             <dd class="govuk-summary-list__value">
-              Pre-eclampsia
+               {{ data['CauseOfDeath-c'] or "Pre-eclampsia" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> c</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -124,10 +141,10 @@
               d. other maternal disease or condition affecting the child
             </dt>
             <dd class="govuk-summary-list__value">
-              None
+               {{ data['causeOfdeathd'] or "None" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> d</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -135,10 +152,10 @@
               e. other relevant causes
             </dt>
             <dd class="govuk-summary-list__value">
-              None
+               {{ data['causeOfdeath2'] or "None" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> e</span></a>
             </dd>
           </div>
         </dl>
@@ -149,10 +166,10 @@
               Full name
             </dt>
             <dd class="govuk-summary-list__value">
-              Jo Fedowski
+               {{ data['AttendPractfn'] or "Mary Fedowski" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> practitioner</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -160,10 +177,10 @@
               Qualifications
             </dt>
             <dd class="govuk-summary-list__value">
-              Midwife
+              {{ data['AttendPractq'] or "Midwife" }} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> qualifications</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -171,10 +188,10 @@
               NMC or GMC number
             </dt>
             <dd class="govuk-summary-list__value">
-              8493742389
+               {{ data['AttendPractGMCNumber'] or "84937421" }} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> registered number</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -182,10 +199,10 @@
               Full name of the mother's consultant (if provided)
             </dt>
             <dd class="govuk-summary-list__value">
-              None given
+               {{ data['AttendPractmc'] or "None given" }}  
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> mother's consultant</span></a>
             </dd>
           </div>
         </dl>

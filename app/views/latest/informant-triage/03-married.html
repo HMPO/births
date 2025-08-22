@@ -31,7 +31,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "whereDoYouLive",
+  name: "marriedOrCivilPartnership",
   fieldset: {
     legend: {
       text: "Are the parents married or in a civil partnership with each other?",
@@ -45,15 +45,15 @@
 
   items: [
     {
-      value: "1",
+      value: "married",
       text: "Married"
     },
     {
-      value: "2",
+      value: "civilPartnership",
       text: "Civil partnership"
     },
     {
-      value: "3",
+      value: "marriedNeither",
       text: "No"
     }
   ]

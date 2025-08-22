@@ -31,7 +31,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "whereDoYouLive",
+  name: "whoIsInformant",
   fieldset: {
     legend: {
       text: "Who is the informant?",
@@ -45,28 +45,34 @@
 
   items: [
     {
-      value: "1",
-      text: "Mother"
+      value: "mother",
+      text: "Mother",
+      checked: data['whoIsInformant'] == "Mother"
     },
     {
-      value: "2",
-      text: "Father"
+      value: "father",
+      text: "Father",
+        checked: data['whoIsInformant'] == "Father"
     },
     {
-      value: "3",
-      text: "Second female parent"
+      value: "secondParent",
+      text: "Second parent",
+      checked: data['whoIsInformant'] == "Second parent"
     },
     {
-      value: "4",
-      text: "Mother and father"
+      value: "motherAndFather",
+      text: "Mother and father",
+      checked: data['whoIsInformant'] == "Mother and father"
     },
      {
-      value: "5",
-      text: "Mother and second female parent"
+      value: "motherAndParent",
+      text: "Mother and second parent",
+      checked: data['whoIsInformant'] == "Second parent"
     },
      {
-      value: "6",
-      text: "Other"
+      value: "otherInformant",
+      text: "Other",
+      checked: data['whoIsInformant'] == "Other"
     }
   ]
 }) }}

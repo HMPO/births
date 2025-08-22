@@ -20,8 +20,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-  <div class="govuk-width-container">
-    <main class="govuk-main-wrapper " id="main-content" role="main">
+
   
   
       <div class="govuk-grid-row">
@@ -53,19 +52,19 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="option_circled-2" name="option_circled" type="radio" value="available_later" {{ checked("option_circled", "available_later") }}>
                     <label class="govuk-label govuk-radios__label" for="option_circled-2">
-                      2- Information from the post-mortem may be available later
+                      2 - Information from the post-mortem may be available later
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="option_circled-3" name="option_circled" type="radio" value="no_post_mortem" {{ checked("option_circled", "no_post_mortem") }}>
                     <label class="govuk-label govuk-radios__label" for="option_circled-3">
-                      3- Post-mortem is not being held
+                      3 - Post-mortem is not being held
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="option_circled-4" name="option_circled" type="radio" value="coroner_investigation" {{ checked("option_circled", "coroner_investigation") }}>
+                    <input class="govuk-radios__input" id="option_circled-4" name="option_circled" type="radio" value="none_circled" {{ checked("option_circled", "none_circled") }}>
                     <label class="govuk-label govuk-radios__label" for="option_circled-4">
-                     None
+                     None circled
                     </label>
                   </div>
                 </div>
@@ -278,7 +277,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               <label class="govuk-label" id="AttendPractmc" for="AttendPract">
                 Full name of mother's consultant (if provided)
               </label> 
-              <input class="govuk-input" id="AttendPractmc" name="AttendPract" type="text" aria-required="false" value="{{data['AttendPract'] or ['']}}">
+              <input class="govuk-input" id="AttendPractmc" name="AttendPractmc" type="text" aria-required="false" value="{{data['AttendPractmc'] or ['']}}">
             </div>
           </fieldset>
     </div> 
@@ -292,8 +291,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
         </form>
       </div>
     
-    </main>
-  </div>
+  
 
 
 {% endblock %}

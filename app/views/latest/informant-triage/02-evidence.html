@@ -31,7 +31,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "whereDoYouLive",
+  name: "whatEvidence",
   fieldset: {
     legend: {
       text: "What evidence or permission allows the informant to register the birth?",
@@ -45,15 +45,15 @@
 
   items: [
     {
-      value: "1",
+      value: "evidenceReg",
       text: "Evidence of informant identity seen"
     },
     {
-      value: "2",
+      value: "evidenceRegGen",
       text: "Registrar General discretion applied"
     },
     {
-      value: "3",
+      value: "evidenceNone",
       text: "None"
     }
   ]

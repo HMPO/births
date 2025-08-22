@@ -127,7 +127,7 @@ module.exports = function(router) {
     req.session.data = req.session.data || {};
     req.session.data.whoseDetailsCompleted = true;
     //res.redirect('03-tasklist.html');
-      if (req.session.data.checkAnswersVisited) {
+    if (req.session.data.checkAnswersVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('/latest/submit/check-answers-page');
   } else {
