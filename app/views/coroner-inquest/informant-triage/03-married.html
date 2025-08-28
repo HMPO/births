@@ -24,33 +24,37 @@
         </p>
       -->
 
-      <form class="form" action="02a-medical-info" method="post">
+      <form class="form" action="04-who-else" method="post">
 
         
 
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "whereDoYouLive",
+  name: "marriedOrCivilPartnership",
   fieldset: {
     legend: {
-      text: "Was more than one child born in this pregnancy?",
+      text: "Are the parents married or in a civil partnership with each other?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {
-    text: "This includes both live births and stillbirths"
+    text: " "
   },
 
   items: [
     {
-      value: "no",
-      text: "No"
+      value: "married",
+      text: "Married"
     },
     {
-      value: "yes",
-      text: "Yes"
+      value: "civilPartnership",
+      text: "Civil partnership"
+    },
+    {
+      value: "marriedNeither",
+      text: "No"
     }
   ]
 }) }}

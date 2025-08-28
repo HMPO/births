@@ -1,0 +1,354 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers before sending your application
+      </h1>
+       <h2 class="govuk-heading-m">
+        Child's details
+      </h2>
+
+     <dl class="govuk-summary-list">
+    <!-- First Name -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Name</dt>
+      <dd class="govuk-summary-list__value">
+         {{ data['deceasedFirstName'] or 'Baby' }} {{ data['deceasedMiddleName'] or '' }} {{ data['deceasedLastName'] or 'Duffy' }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../child-details/name-date.html">Change<span class="govuk-visually-hidden">name</span></a>
+      </dd>
+    </div>
+
+    <!-- Last Name -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Sex</dt>
+      <dd class="govuk-summary-list__value">
+      {{ data['sex'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../child-details/name-date.html">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+
+   <!-- Last Name -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Date of stillbirth</dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['dateOfDeath-day'] and data['dateOfDeath-month'] and data['dateOfDeath-year'] %}
+      {{ data['dateOfDeath-day'] }}/{{ data['dateOfDeath-month'] }}/{{ data['dateOfDeath-year'] }}
+    {% else %}
+      21 August 2025
+    {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../child-details/name-date.html">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+     <!-- Last Name -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Place of stillbirth</dt>
+      <dd class="govuk-summary-list__value">
+      {{ data['MCCDAddressLine1'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../child-details/place-of-stillbirth.html">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+  </dl>
+
+    <!-- <h2 class="govuk-heading-m">
+        Mother's details
+      </h2>
+
+     <dl class="govuk-summary-list">
+
+ <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">Name</dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['mothersFirstName'] or 'Anna' }} {{ data['mothersMiddleName'] or 'Marie' }} {{ data['mothersLastName'] or 'Duffy' }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> mother's full name</span></a>
+  </dd>
+</div>
+
+  
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Maiden Name</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['mothersMaidenName'] or "Smith" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+ 
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Last name at marriage (if different from maiden name)</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['mothersLastMarriageName'] or "Not different" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+ 
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Place of birth</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['mothersPlaceOfBirth'] or "Nottingham" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/mothers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Country of birth</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['mothersCountryOfBirth'] or "England" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/mothers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Occupation</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['mothersOccupation'] or "Florist" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/mothers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+ 
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Address</dt>
+      <dd class="govuk-summary-list__value">
+        23 West Street<br>
+        Wakefield <br>
+        WA21 3AA
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/mothers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+
+
+
+  </dl>
+
+    <h2 class="govuk-heading-m">
+        Father's details
+      </h2>
+
+     <dl class="govuk-summary-list">
+   
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Name</dt>
+      <dd class="govuk-summary-list__value">
+         {{ data['fathersFirstName'] or 'Peter' }} {{ data['fathersMiddleName'] or '' }} {{ data['fathersLastName'] or 'Duffy' }}
+   
+ 
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/fathers-name">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Place of birth</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['fathersPlaceOfBirth'] or "Southampton" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/fathers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Country of birth</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['fathersCountryOfBirth'] or "England" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/fathers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+   
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Occupation</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['fathersOccupation'] or "Cobbler" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../parents-details/fathers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+    
+
+  </dl> -->
+
+   
+    <h2 class="govuk-heading-m">
+        Medical cause of death details
+      </h2>
+
+     <dl class="govuk-summary-list">
+    <!-- A -->
+     <h3 class="govuk-heading-s">Cause of death</h3>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">a. Main disease or conditions in the child</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['CauseOfDeath-a'] or "Placental insufficiency" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+    <!-- B -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">b. other disease or condition affecting the child</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['causeOfdeath1b'] or "None" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+
+   <!-- C -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">c. Maternal disease or condition affecting the child</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['CauseOfDeath-c'] or "Pre-eclampsia" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+     <!-- D -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">d.other maternal disease or condition affecting the child</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['causeOfdeathd'] or "None" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+     <!-- E -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">e.other relevant causes</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['causeOfdeath2'] or "None" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+     <h3 class="govuk-heading-s">Certifying midwife or doctor</h3>
+ <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Full name</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['AttendPractfn'] or "Mary Fedowski" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+  </dl>
+
+  <div class="govuk-grid-row govuk-grid-column-full">
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Print",
+  classes: "govuk-button--secondary"
+}) }}
+  </div>
+
+  <div class="govuk-grid-row govuk-grid-column-full">
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: " ",
+      isPageHeading: false,
+      classes: "govuk-body"
+    }
+  },
+
+  items: [
+    {
+      value: "farm",
+      text: "Informant has confirmed that the particulars given by them are true to the best of their knowledge and belief."
+    }
+  ]
+}) }}
+  </div>
+
+    <div class="govuk-grid-row govuk-grid-column-full">
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: " ",
+      isPageHeading: false,
+      classes: "govuk-body"
+    }
+  },
+
+  items: [
+    {
+      value: "farm",
+      text: "Registrar is satisfied that all specified requirements have been met."
+    }
+  ]
+}) }}
+  </div>
+
+      <form action="confirmation-page" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Complete registration"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

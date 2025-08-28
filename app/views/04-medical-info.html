@@ -24,14 +24,14 @@
         </p>
       -->
 
-      <form class="form" action="03-tasklist" method="post">
+      <form class="form" action="medical-info-form" method="post">
 
         
 
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "whereDoYouLive",
+  name: "medicalInfoSource",
   fieldset: {
     legend: {
       text: "Where is the medical information about the stillbirth taken from?",
