@@ -71,16 +71,10 @@
         <a class="govuk-link" href="../child-details/place-of-stillbirth.html">Change<span class="govuk-visually-hidden"> last name</span></a>
       </dd>
     </div>
-  </dl>
-
-    <!-- <h2 class="govuk-heading-m">
-        Mother's details
-      </h2>
-
-     <dl class="govuk-summary-list">
+    
 
  <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">Name</dt>
+  <dt class="govuk-summary-list__key">Mother's name</dt>
   <dd class="govuk-summary-list__value">
     {{ data['mothersFirstName'] or 'Anna' }} {{ data['mothersMiddleName'] or 'Marie' }} {{ data['mothersLastName'] or 'Duffy' }}
   </dd>
@@ -90,50 +84,11 @@
 </div>
 
   
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Maiden Name</dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['mothersMaidenName'] or "Smith" }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> first name</span></a>
-      </dd>
-    </div>
 
- 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Last name at marriage (if different from maiden name)</dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['mothersLastMarriageName'] or "Not different" }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> last name</span></a>
-      </dd>
-    </div>
- 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Place of birth</dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['mothersPlaceOfBirth'] or "Nottingham" }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../parents-details/mothers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
-      </dd>
-    </div>
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Country of birth</dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['mothersCountryOfBirth'] or "England" }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../parents-details/mothers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
-      </dd>
-    </div>
 
     
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Occupation</dt>
+      <dt class="govuk-summary-list__key">Mother's occupation</dt>
       <dd class="govuk-summary-list__value">
         {{ data['mothersOccupation'] or "Florist" }}
       </dd>
@@ -142,32 +97,10 @@
       </dd>
     </div>
 
- 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Address</dt>
-      <dd class="govuk-summary-list__value">
-        23 West Street<br>
-        Wakefield <br>
-        WA21 3AA
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../parents-details/mothers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
-      </dd>
-    </div>
 
-
-
-
-  </dl>
-
-    <h2 class="govuk-heading-m">
-        Father's details
-      </h2>
-
-     <dl class="govuk-summary-list">
    
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Name</dt>
+      <dt class="govuk-summary-list__key">Father's name</dt>
       <dd class="govuk-summary-list__value">
          {{ data['fathersFirstName'] or 'Peter' }} {{ data['fathersMiddleName'] or '' }} {{ data['fathersLastName'] or 'Duffy' }}
    
@@ -179,28 +112,10 @@
     </div>
 
     
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Place of birth</dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['fathersPlaceOfBirth'] or "Southampton" }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../parents-details/fathers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
-      </dd>
-    </div>
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Country of birth</dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['fathersCountryOfBirth'] or "England" }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="../parents-details/fathers-details">Change<span class="govuk-visually-hidden"> last name</span></a>
-      </dd>
-    </div>
+   
    
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Occupation</dt>
+      <dt class="govuk-summary-list__key">Father's occupation</dt>
       <dd class="govuk-summary-list__value">
         {{ data['fathersOccupation'] or "Cobbler" }}
       </dd>
@@ -210,7 +125,7 @@
     </div>
     
 
-  </dl> -->
+  </dl>
 
    
     <h2 class="govuk-heading-m">
@@ -313,7 +228,7 @@
   items: [
     {
       value: "farm",
-      text: "Informant has confirmed that the particulars given by them are true to the best of their knowledge and belief."
+      text: "Confirm register entry"
     }
   ]
 }) }}
