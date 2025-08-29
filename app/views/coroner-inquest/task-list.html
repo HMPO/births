@@ -68,7 +68,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
          Coroner’s inquest (99revA)
         </div>
         <div class="govuk-task-list__status">
-          Set
+          Completed
         </div>
       </li>
 
@@ -131,6 +131,21 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-task-list__status">
           {% if data.placeCompleted %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+
+       <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="child-details/parents-details">
+            Parents' details
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.parentsDetailsCompleted %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -238,7 +253,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
      <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
-          {% if not (data.placeCompleted) %}
+          {% if not (data.parentsDetailsCompleted) %}
           <div class="govuk-task-list__hint ">
             Registrar's details
           </div>
@@ -250,9 +265,9 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         
 <div class="govuk-task-list__status">
-      {% if not data.placeCompleted %}
+      {% if not data.parentsDetailsCompleted %}
         <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
-      {% elif data.placeCompleted and not data.registerPageCompleted %}
+      {% elif data.parentsDetailsCompleted and not data.registerPageCompleted %}
         <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
       {% elif data.registerPageCompleted %}
         Completed

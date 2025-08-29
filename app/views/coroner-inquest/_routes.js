@@ -193,34 +193,14 @@ module.exports = function(router) {
   });
 
 
-  // 5 Parent's details
-// 5.1 mothers name
-  router.get('/coroner-inquest/parents-details/mothers-name-form', (req, res) => {
-    res.render('coroner-inquest/parents-details/mothers-name', { data: req.session.data });
+    // 4.3 parents details
+  router.get('/coroner-inquest/child-details/parents-details-form', (req, res) => {
+    res.render('coroner-inquest/child-details/parents-details', { data: req.session.data });
   });
 
-  router.post('/coroner-inquest/parents-details/mothers-name-form', (req, res) => {
+  router.post('/coroner-inquest/child-details/parents-details-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.mothersNameCompleted = true;
-    //res.redirect('../task-list.html');
-
-    if (req.session.data.checkAnswersVisited) {
-    // If "Check your answers" has been visited, redirect back to it
-    res.redirect('/coroner-inquest/submit/check-answers-page');
-  } else {
-    // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('../task-list.html');
-  }
-  });
-
-  // 5.2 mothers details
-  router.get('/coroner-inquest/parents-details/mothers-details-form', (req, res) => {
-    res.render('coroner-inquest/parents-details/mothers-details', { data: req.session.data });
-  });
-
-  router.post('/coroner-inquest/parents-details/mothers-details-form', (req, res) => {
-    req.session.data = req.session.data || {};
-    req.session.data.mothersDetailsCompleted = true;
+    req.session.data.parentsDetailsCompleted = true;
     //res.redirect('../task-list.html');
       if (req.session.data.checkAnswersVisited) {
     // If "Check your answers" has been visited, redirect back to it
@@ -231,78 +211,7 @@ module.exports = function(router) {
   }
   });
 
-  // 5.3 fathers name
-  router.get('/coroner-inquest/parents-details/fathers-name-form', (req, res) => {
-    res.render('coroner-inquest/parents-details/fathers-name', { data: req.session.data });
-  });
 
-  router.post('/coroner-inquest/parents-details/fathers-name-form', (req, res) => {
-    req.session.data = req.session.data || {};
-    req.session.data.fathersNameCompleted = true;
-    //res.redirect('../task-list.html');
-      if (req.session.data.checkAnswersVisited) {
-    // If "Check your answers" has been visited, redirect back to it
-    res.redirect('/coroner-inquest/submit/check-answers-page');
-  } else {
-    // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('../task-list.html');
-  }
-  });
-
-  // 5.4 fathers details
-  router.get('/coroner-inquest/parents-details/fathers-details-form', (req, res) => {
-    res.render('coroner-inquest/parents-details/fathers-details', { data: req.session.data });
-  });
-
-  router.post('/coroner-inquest/parents-details/fathers-details-form', (req, res) => {
-    req.session.data = req.session.data || {};
-    req.session.data.fathersDetailsCompleted = true;
-   // res.redirect('../task-list.html');
-     if (req.session.data.checkAnswersVisited) {
-    // If "Check your answers" has been visited, redirect back to it
-    res.redirect('/coroner-inquest/submit/check-answers-page');
-  } else {
-    // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('../task-list.html');
-  }
-  });
-
-    // 6 Statistics
-// 6.1 Confidential stats
-router.get('/coroner-inquest/stats/confidential-form', (req, res) => {
-    res.render('coroner-inquest/stats/confidential', { data: req.session.data });
-  });
-
-  router.post('/coroner-inquest/stats/confidential-form', (req, res) => {
-    req.session.data = req.session.data || {};
-    req.session.data.statsConfidentialCompleted = true;
-    //res.redirect('../task-list.html');
-      if (req.session.data.checkAnswersVisited) {
-    // If "Check your answers" has been visited, redirect back to it
-    res.redirect('/coroner-inquest/submit/check-answers-page');
-  } else {
-    // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('../task-list.html');
-  }
-  });
-
-// 6.2 Voluntary stats
-router.get('/coroner-inquest/stats/voluntary-form', (req, res) => {
-    res.render('coroner-inquest/stats/voluntary', { data: req.session.data });
-  });
-
-  router.post('/coroner-inquest/stats/voluntary-form', (req, res) => {
-    req.session.data = req.session.data || {};
-    req.session.data.statsVoluntaryCompleted = true;
-   // res.redirect('../task-list.html');
-     if (req.session.data.checkAnswersVisited) {
-    // If "Check your answers" has been visited, redirect back to it
-    res.redirect('/coroner-inquest/submit/check-answers-page');
-  } else {
-    // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('../task-list.html');
-  }
-  });
 
 
 

@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
-        Check your answers before sending your application
+        Check your answers before submitting
       </h1>
        <h2 class="govuk-heading-m">
         Child's details
@@ -319,32 +319,12 @@
 }) }}
   </div>
 
-    <div class="govuk-grid-row govuk-grid-column-full">
-    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-{{ govukCheckboxes({
-  name: "waste",
-  fieldset: {
-    legend: {
-      text: " ",
-      isPageHeading: false,
-      classes: "govuk-body"
-    }
-  },
 
-  items: [
-    {
-      value: "farm",
-      text: "Registrar is satisfied that all specified requirements have been met."
-    }
-  ]
-}) }}
-  </div>
-
-      <form action="confirmation-page" method="post" novalidate>
+      <form action="sign-page" method="post" novalidate>
 
         {{ govukButton({
-          text: "Complete registration"
+          text: "Continue"
         }) }}
 
       </form>
