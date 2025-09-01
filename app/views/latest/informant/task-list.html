@@ -61,12 +61,13 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
     </ul>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Information from medical certificate</h2>
-    <p class="govuk-hint">Medical certificate of stillbirth (form 34)</p>
+   
 
 
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item">
     <div class="govuk-task-list__name-and-hint">
+      Medical certificate of stillbirth (form 34)
       {% if userMedicalInfoSource == "2" and userPostMortemDetail == "2-with-inf" %}
         Coroner's post mortem (CN2), with informant
      
@@ -76,10 +77,10 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
       {% elif userMedicalInfoSource == "4-informant" %}
         No medical professional involved (form 35)
       {% else %}
-        Unknown source
+       
 
-<p>Source: {{ userMedicalInfoSource }}</p>
-<p>Detail: {{ userPostMortemDetail }}</p>
+<!-- <p>Source: {{ userMedicalInfoSource }}</p>
+<p>Detail: {{ userPostMortemDetail }}</p> -->
 
       {% endif %}
     </div>
@@ -87,20 +88,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
       Completed
     </div>
   </li>
-</ul>
 
-
-
-
-
-
-
-
-
-
-
-
-    <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
           <a class="govuk-link govuk-task-list__link" href="cause-of-death/pregnancy-delivery">
