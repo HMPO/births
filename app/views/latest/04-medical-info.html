@@ -24,10 +24,12 @@
         </p>
       -->
 
-      <form class="form" action="medical-info-form" method="post">
+      <form class="form" action="/latest/medical-info-form" method="post">
 
         
 
+
+        
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
@@ -39,34 +41,40 @@
       classes: "govuk-fieldset__legend--l"
     }
   },
-  hint: {
-    text: " "
-  },
-
   items: [
     {
-      value: "1",
+      value: "1-informant",
       text: "Medical certificate of stillbirth (form 34)"
     },
     {
       value: "2",
-      text: "Coroner's post-mortem"
+      text: "Coroner's post-mortem",
+      conditional: {
+        html: govukRadios({
+          name: "postMortemDetail",
+          items: [
+            {
+              value: "2-with-inf",
+              text: "With informant"
+            },
+            {
+              value: "2-no-inf",
+              text: "Without informant"
+            }
+          ]
+        })
+      }
     },
     {
-      value: "3",
+      value: "3-no-inf",
       text: "Coroner's inquest"
     },
     {
-      value: "4",
+      value: "4-informant",
       text: "There was no medical professional involved (form 35)"
     }
   ]
 }) }}
-
-
-
-
-
 
 
         {{ govukButton({
