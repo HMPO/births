@@ -20,7 +20,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.prepareForAppointmentCompleted %}
+          {% if data.prepareForAppointmentNICompleted %}
           Entered
           {% else %}
            
@@ -36,7 +36,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.uploadsCompleted %}
+          {% if data.uploadsNICompleted %}
           Entered
           {% else %}
            
@@ -51,7 +51,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.commentsCompleted %}
+          {% if data.commentsNICompleted %}
           Entered
           {% else %}
           
@@ -79,7 +79,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.causeDeathCompleted %}
+          {% if data.causeDeathNICompleted %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -93,7 +93,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.corDetailsCompleted %}
+          {% if data.corDetailsNICompleted %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -115,7 +115,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.nameDateCompleted %}
+          {% if data.nameDateNICompleted %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -130,7 +130,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.placeCompleted %}
+          {% if data.placeNICompleted %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -145,7 +145,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.parentsDetailsCompleted %}
+          {% if data.parentsDetailsNICompleted %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -253,7 +253,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
      <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
-          {% if not (data.parentsDetailsCompleted) %}
+          {% if not (data.parentsDetailsNICompleted) %}
           <div class="govuk-task-list__hint ">
             Registrar's details
           </div>
@@ -265,11 +265,11 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         
 <div class="govuk-task-list__status">
-      {% if not data.parentsDetailsCompleted %}
+      {% if not data.parentsDetailsNICompleted %}
         <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
-      {% elif data.parentsDetailsCompleted and not data.registerPageCompleted %}
+      {% elif data.parentsDetailsNICompleted and not data.registerPageNICompleted %}
         <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
-      {% elif data.registerPageCompleted %}
+      {% elif data.registerPageNICompleted %}
         Completed
       {% endif %}
     </div>
@@ -278,7 +278,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
           <div class="govuk-task-list__hint ">
-{% if not (data.registerPageCompleted) %}
+{% if not (data.registerPageNICompleted) %}
           <div class="govuk-task-list__hint ">
             Check your answers
           </div>
@@ -290,11 +290,11 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </div>
         </div>
         <div class="govuk-task-list__status">
-           {% if not data.registerPageCompleted %}
+           {% if not data.registerPageNICompleted %}
         <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
-      {% elif data.registerPageCompleted and not data.checkAnswersCompleted %}
+      {% elif data.registerPageNICompleted and not data.checkAnswersNICompleted %}
         <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
-      {% elif data.registerPageCompleted %}
+      {% elif data.registerPageNICompleted %}
         Completed
       {% endif %}
         </div>

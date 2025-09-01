@@ -26,9 +26,9 @@ module.exports = function(router) {
     // Ensure session data exists
     req.session.data = req.session.data || {};
     // Mark page as completed
-    req.session.data.prepareForAppointmentCompleted = true;
+    req.session.data.prepareForAppointmentNICompleted = true;
     //res.redirect('../task-list.html');
-      if (req.session.data.checkAnswersVisited) {
+      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -44,9 +44,9 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/uploads-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.uploadsCompleted = true;
+    req.session.data.uploadsNICompleted = true;
     //res.redirect('../task-list.html');
-      if (req.session.data.checkAnswersVisited) {
+      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -62,9 +62,9 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/comments-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.commentsCompleted = true;
+    req.session.data.commentsNICompleted = true;
    // res.redirect('../task-list.html');
-     if (req.session.data.checkAnswersVisited) {
+     if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -76,19 +76,19 @@ module.exports = function(router) {
 
     // 2.1: Cause of death
   router.get('/latest/no-informant/cause-of-death-form', (req, res) => {
-    res.render('cause-of-death/cause-of-death', { data: req.session.data });
+    res.render('cause-of-death/cause-of-death.html', { data: req.session.data });
   });
 
   router.post('/latest/no-informant/cause-of-death-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.causeDeathCompleted = true;
+    req.session.data.causeDeathNICompleted = true;
    // res.redirect('../task-list.html');
-     if (req.session.data.checkAnswersVisited) {
+     if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('coroner-details.html');
+    res.redirect('task-list.html');
   }
   });
 
@@ -99,9 +99,9 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/coroner-details-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.corDetailsCompleted = true;
+    req.session.data.corDetailsNICompleted = true;
    // res.redirect('../task-list.html');
-     if (req.session.data.checkAnswersVisited) {
+     if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -117,10 +117,10 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/medical-info-check-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.pregCompleted = true;
-    req.session.data.codCompleted = true;
+    req.session.data.corNICompleted = true;
+    req.session.data.codNICompleted = true;
     //res.redirect('../task-list.html');
-      if (req.session.data.checkAnswersVisited) {
+      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -135,7 +135,7 @@ module.exports = function(router) {
   // Cannot start yet (locked until 1 & 2 complete)
   router.get('/latest/no-informant/whose-details-form', (req, res) => {
     req.session.data = req.session.data || {};
-    if (req.session.data.pregCompleted && req.session.data.codCompleted) {
+    if (req.session.data.corNICompleted && req.session.data.codNICompleted) {
       res.render('coroner-inquest/informant-and-details', { data: req.session.data });
     } else {
       res.redirect('task-list.html');
@@ -144,9 +144,9 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/whose-details-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.whoseDetailsCompleted = true;
+    req.session.data.whoseDetailsNICompleted = true;
     //res.redirect('task-list.html');
-    if (req.session.data.checkAnswersVisited) {
+    if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -163,9 +163,9 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/name-date-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.nameDateCompleted = true;
+    req.session.data.nameDateNICompleted = true;
     //res.redirect('../task-list.html');
-      if (req.session.data.checkAnswersVisited) {
+      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -181,9 +181,9 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/place-of-stillbirth-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.placeCompleted = true;
+    req.session.data.placeNICompleted = true;
     //res.redirect('../task-list.html');
-      if (req.session.data.checkAnswersVisited) {
+      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -200,9 +200,9 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/parents-details-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.parentsDetailsCompleted = true;
+    req.session.data.parentsDetailsNICompleted = true;
     //res.redirect('../task-list.html');
-      if (req.session.data.checkAnswersVisited) {
+      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -223,9 +223,9 @@ module.exports = function(router) {
 
   router.post('/latest/no-informant/register-page-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.registerPageCompleted = true;
+    req.session.data.registerPageNICompleted = true;
    // res.redirect('../task-list.html');
-     if (req.session.data.checkAnswersVisited) {
+     if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
@@ -238,7 +238,7 @@ module.exports = function(router) {
 // Route for the Check Your Answers page (GET request)
 router.get('/latest/no-informant/check-answers-page', (req, res) => {
   // Mark the "Check your answers" page as visited
-  req.session.data.checkAnswersVisited = true;
+  req.session.data.checkAnswersNIVisited = true;
 
   // Render the "Check your answers" page
   res.render('submit/check-answers-page', { data: req.session.data });
