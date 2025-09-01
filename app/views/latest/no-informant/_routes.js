@@ -27,10 +27,12 @@ module.exports = function(router) {
     req.session.data = req.session.data || {};
     // Mark page as completed
     req.session.data.prepareForAppointmentNICompleted = true;
+
+    console.log('prep :', req.session.data);
     //res.redirect('../task-list.html');
       if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -48,7 +50,7 @@ module.exports = function(router) {
     //res.redirect('../task-list.html');
       if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -66,7 +68,7 @@ module.exports = function(router) {
    // res.redirect('../task-list.html');
      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -85,7 +87,7 @@ module.exports = function(router) {
    // res.redirect('../task-list.html');
      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -103,7 +105,7 @@ module.exports = function(router) {
    // res.redirect('../task-list.html');
      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('cause-of-death/medical-info-check.html');
@@ -122,7 +124,7 @@ module.exports = function(router) {
     //res.redirect('../task-list.html');
       if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -148,7 +150,7 @@ module.exports = function(router) {
     //res.redirect('task-list.html');
     if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -167,7 +169,7 @@ module.exports = function(router) {
     //res.redirect('../task-list.html');
       if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -185,7 +187,7 @@ module.exports = function(router) {
     //res.redirect('../task-list.html');
       if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -204,7 +206,7 @@ module.exports = function(router) {
     //res.redirect('../task-list.html');
       if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -224,10 +226,15 @@ module.exports = function(router) {
   router.post('/latest/no-informant/register-page-form', (req, res) => {
     req.session.data = req.session.data || {};
     req.session.data.registerPageNICompleted = true;
+
+
+// 🔍 Add this line to inspect session data
+  
+
    // res.redirect('../task-list.html');
      if (req.session.data.checkAnswersNIVisited) {
     // If "Check your answers" has been visited, redirect back to it
-    res.redirect('submit/check-answers-page');
+    res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
     res.redirect('task-list.html');
@@ -236,12 +243,16 @@ module.exports = function(router) {
 
   // 7.2 Check answers
 // Route for the Check Your Answers page (GET request)
-router.get('/latest/no-informant/check-answers-page', (req, res) => {
+router.get('/latest/no-informant/submit/check-answers-page', (req, res) => {
   // Mark the "Check your answers" page as visited
+  req.session.data = req.session.data || {};
   req.session.data.checkAnswersNIVisited = true;
 
+// 🔍 Add this line to inspect session data
+  console.log('check answers:', req.session.data);
+
   // Render the "Check your answers" page
-  res.render('submit/check-answers-page', { data: req.session.data });
+  res.render('/latest/no-informant/submit/check-answers-page', { data: req.session.data });
 });
 
 

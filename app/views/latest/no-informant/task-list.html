@@ -283,7 +283,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
             Check your answers
           </div>
            {% else %}
- <a class="govuk-link govuk-task-list__link" href="submit/check-answers-page">
+ <a class="govuk-link govuk-task-list__link" href="/latest/no-informant/submit/check-answers-page">
             Check your answers
           </a>
            {% endif %}
@@ -292,9 +292,9 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-task-list__status">
            {% if not data.registerPageNICompleted %}
         <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
-      {% elif data.registerPageNICompleted and not data.checkAnswersNICompleted %}
+      {% elif data.registerPageNICompleted and not data.checkAnswersNIVisited %}
         <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
-      {% elif data.registerPageNICompleted %}
+      {% elif data.checkAnswersNIVisited %}
         Completed
       {% endif %}
         </div>
