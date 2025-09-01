@@ -1,5 +1,5 @@
 module.exports = function(router) {
-  console.log('Task routes loaded!');
+  
 
 // Name and date
 

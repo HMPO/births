@@ -1,5 +1,5 @@
 module.exports = function(router) {
-  console.log('Task routes loaded!');
+  
 
 // Name and date
 
@@ -11,11 +11,11 @@ module.exports = function(router) {
 
 
 
-  // TASK LIST
-  router.get('/latest/informant/task-list-form', (req, res) => {
-    req.session.data = req.session.data || {};
-    res.render('task-list', { data: req.session.data });
-  });
+  // // TASK LIST
+  // router.get('/latest/informant/task-list-form', (req, res) => {
+  //   req.session.data = req.session.data || {};
+  //   res.render('task-list', { data: req.session.data });
+  // });
 
 
 
