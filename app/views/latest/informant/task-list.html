@@ -85,6 +85,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
   </li>
 
+   {% if data.userMedicalInfoSource == "1-informant" %}
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
           <a class="govuk-link govuk-task-list__link" href="cause-of-death/pregnancy-delivery">
@@ -99,6 +100,11 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           {% endif %}
         </div>
       </li>
+      {% elif data.userPostMortemDetail == "2-with-inf" %}
+
+      {% endif %}
+
+    
 
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
@@ -114,6 +120,28 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           {% endif %}
         </div>
       </li>
+
+        {% if data.userMedicalInfoSource == "1-informant" %}
+
+   {% elif data.userPostMortemDetail == "2-with-inf" %}
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="cause-of-death/coroner-details">
+            Coroner details
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.corDetailsCompleted %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+   
+
+      {% endif %}
+
     </ul>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Whose details will be recorded</h2>

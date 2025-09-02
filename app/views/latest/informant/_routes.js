@@ -77,6 +77,8 @@ module.exports = function(router) {
   });
    // 2. Info from certificate
 
+
+
     // 2.2: Cause of death
   router.get('/latest/informant/cause-of-death-form', (req, res) => {
     res.render('cause-of-death/cause-of-death', { data: req.session.data });
@@ -94,6 +96,28 @@ module.exports = function(router) {
     res.redirect('cause-of-death/medical-info-check.html');
   }
   });
+
+ // 2.2 : Coroner details
+  router.get('/latest/informant/coroner-details-form', (req, res) => {
+    res.render('cause-of-death/coroner-details', { data: req.session.data });
+  });
+
+  router.post('/latest/informant/coroner-details-form', (req, res) => {
+    req.session.data = req.session.data || {};
+    req.session.data.corDetailsCompleted = true;
+   // res.redirect('../task-list.html');
+     if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('/latest/informant/submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('cause-of-death/medical-info-check.html');
+  }
+  });
+
+
+
+
     // 2.3 Cause of death summary
   router.get('/latest/informant/medical-info-check-form', (req, res) => {
     res.render('cause-of-death/medical-info-check', { data: req.session.data });
