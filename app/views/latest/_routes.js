@@ -43,7 +43,7 @@ router.post('/latest/task-list-form', function (req, res) {
 });
 
 // Route for the informant task list
-router.get('/latest/informant/task-list-form', function (req, res) {
+router.get('/latest/informant/task-list-inf-form', function (req, res) {
   res.render('informant/task-list', {
     userMedicalInfoSource: req.session.data['userMedicalInfoSource'],
     userPostMortemDetail: req.session.data['userPostMortemDetail']
@@ -51,7 +51,7 @@ router.get('/latest/informant/task-list-form', function (req, res) {
 });
 
 // Route for the no-informant task list
-router.get('/latest/no-informant/task-list-form', function (req, res) {
+router.get('/latest/no-informant/task-list-noi-form', function (req, res) {
   res.render('no-informant/task-list', {
     userMedicalInfoSource: req.session.data['userMedicalInfoSource'],
     userPostMortemDetail: req.session.data['userPostMortemDetail']

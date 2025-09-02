@@ -65,8 +65,17 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
     <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-            {{ userMedicalInfoSource | default("No selection made") }}
-         <!-- Coroner’s inquest (99revA) -->
+  
+
+ {% if data.userPostMortemDetail == "2-no-inf" %}
+  Coroner's post-mortem without informant (CN2)
+{% elif data.userMedicalInfoSource == "3-no-inf" %}
+  Coroner's inquest (99revA)
+{% else %}
+  Coroner's inquest (99revA)
+{% endif %}
+
+        
         </div>
         <div class="govuk-task-list__status">
           Completed

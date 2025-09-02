@@ -68,42 +68,17 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
   <li class="govuk-task-list__item">
     <div class="govuk-task-list__name-and-hint">
 
- <p class="govuk-body">
-   
-    <strong class="govuk-!-font-weight-bold">
-       {{userMedicalInfoSource}}
-    </strong>
-  </p>
 
-  {% if userMedicalInfoSource == "2" and userPostMortemDetail == "2-with-inf" %}
-      Coroner's post-mortem (CN2), with informant
-    {% elif userMedicalInfoSource == "1-informant" %}
-      Medical certificate of stillbirth (form 34)
-    {% elif userMedicalInfoSource == "4-informant" %}
-      No medical professional involved (form 35)
-    {% elif userMedicalInfoSource == "2" and userPostMortemDetail == "2-no-inf" %}
-      Coroner's post-mortem (CN2), without informant
-    {% elif userMedicalInfoSource == "3-no-inf" %}
-      Coroner's inquest
-    {% else %}
-      No selection made
-    {% endif %}
-
-
-      <!-- {{ userMedicalInfoSource | default("No selection made") }}
+ {% if data.userMedicalInfoSource == "1-informant" %}
+  Medical certificate of stillbirth (form 34)
+{% elif data.userMedicalInfoSource == "4-informant" %}
+  There was no medical professional involved (form 35)
+  {% elif data.userPostMortemDetail == "2-with-inf" %}
+    Coroner's post-mortem with informant (CN2)
+{% else %}
+   Medical certificate of stillbirth (form-34)
+{% endif %}
       
-      {% if userMedicalInfoSource == "2" and userPostMortemDetail == "2-with-inf" %}
-        Coroner's post mortem (CN2), with informant
-     
-      {% elif userMedicalInfoSource == "1-informant" %}
-        Medical certificate of stillbirth (form 34)
-    
-      {% elif userMedicalInfoSource == "4-informant" %}
-        No medical professional involved (form 35)
-     {% else %}
-        Medical certificate of stillbirth 
-
-      {% endif %} -->
     </div>
     <div class="govuk-task-list__status">
       Completed

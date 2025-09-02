@@ -12,12 +12,10 @@ module.exports = function(router) {
 
 
   // // TASK LIST
-  // router.get('/latest/informant/task-list-form', (req, res) => {
-  //   req.session.data = req.session.data || {};
-  //   res.render('task-list', { data: req.session.data });
-  // });
-
-
+ router.get('/latest/informant/task-list-inf-form', (req, res) => {
+  req.session.data = req.session.data || {};
+   res.render('task-list', { data: req.session.data });
+ });
 
 
 
