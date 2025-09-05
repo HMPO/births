@@ -27,6 +27,7 @@ href: "javascript:window.history.back()"
     <h1 class="govuk-heading-l">
       Cause of death
     </h1>
+    
 
     <form class="form" action="/latest/no-informant/cause-of-death-form" method="post">
 
@@ -34,7 +35,9 @@ href: "javascript:window.history.back()"
 
       <div class="govuk-form-group" data-testid="inquest-date"><label class="govuk-label govuk-!-font-weight-bold"
           for="inquestDate">Inquest dates</label><input id="inquestDate" name="inquestDate"
-          class="govuk-input govuk-input--width-20" autocomplete="off" value=""></div>
+          class="govuk-input govuk-input--width-20" autocomplete="off" value="">
+        </div>
+       
 
       <h2 class="govuk-heading-m">About the death</h2>
       <div class="govuk-form-group" id="circledid">
@@ -254,29 +257,29 @@ href: "javascript:window.history.back()"
 
 
 
-      <!-- <div class="govuk-form-group" id="cert-pract">
+      <div class="govuk-form-group" id="cert-pract-path">
         <fieldset class="govuk-fieldset" id="" aria-required="false">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Pathologist details
           </legend>
           <div class="govuk-form-group">
-            <label class="govuk-label" id="AttendPractfn" for="AttendPractfn">
+            <label class="govuk-label" id="Pathologistfn" for="Pathologistfn">
               Full name
             </label>
-            <input class="govuk-input" id="AttendPractfn" name="AttendPractfn" type="text" aria-required="false"
-              value="{{data['AttendPract'] or ['']}}">
+            <input class="govuk-input" id="Pathologistfn" name="Pathologistfn" type="text" aria-required="false"
+              value="{{data['Pathologistfn'] or ['']}}">
           </div>
           <div class="govuk-form-group">
-            <label class="govuk-label" id="AttendPractq" for="AttendPractq">
+            <label class="govuk-label" id="Pathologistq" for="Pathologistq">
               Qualifications
             </label>
-            <input class="govuk-input" id="AttendPractq" name="AttendPractq" type="text" aria-required="false"
-              value="{{data['AttendPractq'] or ['']}}">
+            <input class="govuk-input" id="Pathologistq" name="Pathologistq" type="text" aria-required="false"
+              value="{{data['Pathologistq'] or ['']}}">
           </div>
 
 
         </fieldset>
-      </div> -->
+      </div>
 
 
       <div class="govuk-button-group">

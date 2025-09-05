@@ -274,6 +274,87 @@
         <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> last name</span></a>
       </dd>
     </div>
+
+
+
+
+
+
+  </dl>
+
+<!-- start of coroner part -->
+
+
+ {% if data.userMedicalInfoSource == "2-cn2-with-inf" %}
+
+<dl class="govuk-summary-list">
+     <h3 class="govuk-heading-s">Coroner details</h3>
+
+     <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Date signed by coroner</dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['dateSignedByCoroner_input-day'] and data['dateSignedByCoroner_input-month'] and data['dateSignedByCoroner_input-year'] %}
+      {{ data['dateSignedByCoroner_input-day'] }}/{{ data['dateSignedByCoroner_input-month'] }}/{{ data['dateSignedByCoroner_input-year'] }}
+    {% else %}
+      21 August 2025
+    {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../child-details/name-date.html">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+      
+ <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Full name</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['coronerName_input'] or "Naila Khan" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/coroner-details">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+     <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">District</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['coronerDistrict_input'] or "Hardcastle" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/coroner-details">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+     <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Area</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['coronerArea_input'] or "Wakefield" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/coroner-details">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+     <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Designation
+            </dt>
+            <dd class="govuk-summary-list__value">
+ {{ data['coronerDesignation'] or "Senior Coroner" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="cause-of-death.html">Change<span class="govuk-visually-hidden"> number circled</span></a>
+            </dd>
+          </div>
+  </dl>
+
+
+
+
+ {% elif data.userMedicalInfoSource == "1-informant" %}
+
+
+    <!-- start of medical info part -->
+     <dl class="govuk-summary-list">
      <h3 class="govuk-heading-s">Certifying midwife or doctor</h3>
  <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Full name</dt>
@@ -286,6 +367,8 @@
     </div>
 
   </dl>
+{% endif %}
+
 
   <div class="govuk-grid-row govuk-grid-column-full">
 

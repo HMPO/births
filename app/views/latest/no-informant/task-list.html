@@ -16,7 +16,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
           <a class="govuk-link govuk-task-list__link" href="supporting-info/prepare-for-appointment">
-            Prepare for appointment
+            Prepare for registration
           </a>
         </div>
         <div class="govuk-task-list__status">
@@ -28,8 +28,22 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
         </div>
       </li>
+       <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="supporting-info/comments">
+            Registrar's comments
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.commentsNICompleted %}
+          Entered
+          {% else %}
+          
+          {% endif %}
+        </div>
+      </li>
 
-      <li class="govuk-task-list__item">
+      <!-- <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
           <a class="govuk-link govuk-task-list__link" href="supporting-info/uploads">
             Uploads
@@ -57,13 +71,13 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           
           {% endif %}
         </div>
-      </li>
+      </li> -->
     </ul>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Source of medical information</h2>
     
     <ul class="govuk-task-list">
-      <li class="govuk-task-list__item">
+      <!-- <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
   
 
@@ -80,7 +94,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-task-list__status">
           Completed
         </div>
-      </li>
+      </li> -->
 
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">

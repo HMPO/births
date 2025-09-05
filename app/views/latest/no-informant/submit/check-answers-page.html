@@ -132,6 +132,20 @@
         Medical cause of death details
       </h2>
 
+        <dl class="govuk-summary-list">
+    <!-- A -->
+     <h3 class="govuk-heading-s">Inquest</h3>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Inquest held</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['inquestDate'] or "20 August 2025" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+    </dl>
+
      <dl class="govuk-summary-list">
     <!-- A -->
      <h3 class="govuk-heading-s">Cause of death</h3>
@@ -189,7 +203,87 @@
         <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> last name</span></a>
       </dd>
     </div>
-     <h3 class="govuk-heading-s">Certifying midwife or doctor</h3>
+
+
+ <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Conclusion</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['conclusionDescription'] or "Natural causes" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/cause-of-death">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+
+</dl>
+
+
+<dl class="govuk-summary-list">
+     <h3 class="govuk-heading-s">Coroner details</h3>
+
+     <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Date signed by coroner</dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['dateSignedByCoroner_input-day'] and data['dateSignedByCoroner_input-month'] and data['dateSignedByCoroner_input-year'] %}
+      {{ data['dateSignedByCoroner_input-day'] }}/{{ data['dateSignedByCoroner_input-month'] }}/{{ data['dateSignedByCoroner_input-year'] }}
+    {% else %}
+      21 August 2025
+    {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/coroner-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+      </dd>
+    </div>
+      
+ <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Full name</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['coronerName_input'] or "Naila Khan" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/coroner-details">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+     <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">District</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['coronerDistrict_input'] or "Hardcastle" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/coroner-details">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+     <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Area</dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['coronerArea_input'] or "Wakefield" }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="../cause-of-death/coroner-details">Change<span class="govuk-visually-hidden"> first name</span></a>
+      </dd>
+    </div>
+
+     <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Designation
+            </dt>
+            <dd class="govuk-summary-list__value">
+ {{ data['coronerDesignation'] or "Senior Coroner" }}
+
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../cause-of-death/coroner-details">Change<span class="govuk-visually-hidden"> number circled</span></a>
+            </dd>
+          </div>
+
+  </dl>
+
+    <!-- <dl class="govuk-summary-list">
+     <h3 class="govuk-heading-s">Pathologist</h3>
  <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Full name</dt>
       <dd class="govuk-summary-list__value">
@@ -200,7 +294,7 @@
       </dd>
     </div>
 
-  </dl>
+  </dl> -->
 
   <div class="govuk-grid-row govuk-grid-column-full">
 

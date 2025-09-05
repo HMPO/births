@@ -32,9 +32,9 @@ router.post('/latest/task-list-form', function (req, res) {
   req.session.data['userPostMortemDetail'] = nestedOption;
 
   // Redirect based on the selected option
-  if (selectedOption === '1-informant' || selectedOption === '2' && nestedOption === '2-with-inf' || selectedOption === '4-informant') {
+  if (selectedOption === '1-informant' || selectedOption === '2-cn2-with-inf' || selectedOption === '4-informant') {
     res.redirect('informant/task-list');
-  } else if (selectedOption === '2' && nestedOption === '2-no-inf' || selectedOption === '3-no-inf') {
+  } else if (selectedOption === '3-inquest-no-inf') {
     res.redirect('no-informant/task-list');
   } else {
     // Handle unexpected values (optional)

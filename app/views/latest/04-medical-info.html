@@ -36,26 +36,11 @@
         text: "Medical certificate of stillbirth (form 34)"
       },
       {
-        value: "2",
-        text: "Coroner's post-mortem",
-        conditional: {
-          html: govukRadios({
-            name: "userPostMortemDetail",
-            items: [
-              {
-                value: "2-with-inf",
-                text: "With informant"
-              },
-              {
-                value: "2-no-inf",
-                text: "Without informant"
-              }
-            ]
-          })
-        }
+        value: "2-cn2-with-inf",
+        text: "Coroner's post-mortem with informant"
       },
       {
-        value: "3-no-inf",
+        value: "3-inquest-no-inf",
         text: "Coroner's inquest"
       },
       {

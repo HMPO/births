@@ -65,7 +65,25 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 <ul class="govuk-task-list">
+  <!-- <li class="govuk-task-list__item">
+    <div class="govuk-task-list__name-and-hint">
 
+
+ {% if data.userMedicalInfoSource == "1-informant" %}
+  Medical certificate of stillbirth (form 34)
+{% elif data.userMedicalInfoSource == "4-informant" %}
+  There was no medical professional involved (form 35)
+  {% elif data.userPostMortemDetail == "2-with-inf" %}
+    Coroner's post-mortem with informant (CN2)
+{% else %}
+   Medical certificate of stillbirth (form-34)
+{% endif %}
+      
+    </div>
+    <div class="govuk-task-list__status">
+      Completed
+    </div>
+  </li> -->
 
    {% if data.userMedicalInfoSource == "1-informant" %}
       <li class="govuk-task-list__item">
@@ -82,7 +100,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           {% endif %}
         </div>
       </li>
-      {% elif data.userMedicalInfoSource == "2-cn2-with-inf" %}
+      {% elif data.userPostMortemDetail == "2-with-inf" %}
 
       {% endif %}
 
@@ -105,7 +123,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
         {% if data.userMedicalInfoSource == "1-informant" %}
 
-   {% elif data.userMedicalInfoSource == "2-cn2-with-inf" %}
+   {% elif data.userPostMortemDetail == "2-with-inf" %}
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
           <a class="govuk-link govuk-task-list__link" href="cause-of-death/coroner-details">
@@ -128,9 +146,21 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Whose details will be recorded</h2>
 
-   
+    {% if not (data.pregCompleted and data.codCompleted) %}
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+          <div class="govuk-task-list__hint ">
+            The rest of the form will become available after you complete this section.
+          </div>
+        </div>
+        <div class="govuk-task-list__status">
+          <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
+        </div>
+      </li>
+    </ul>
 
-    {% if not data.whoseDetailsCompleted %}
+    {% elif not data.whoseDetailsCompleted %}
     <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">

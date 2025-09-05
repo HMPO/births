@@ -32,9 +32,20 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
           <form class="form" action="/latest/informant/cause-of-death-form" method="post">
 
-            <h2 class="govuk-heading-m">About the death</h2>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-6">
+               {% if data.userMedicalInfoSource == "1-informant" %}
+  Medical certificate of stillbirth (form 34)
+{% elif data.userMedicalInfoSource == "4-informant" %}
+  There was no medical professional involved (form 35)
+  {% elif data.userMedicalInfoSource == "2-cn2-with-inf" %}
+    Coroner's post-mortem with informant (CN2)
+{% else %}
+   Medical certificate of stillbirth (form-34)
+{% endif %}
+            </h2>
 
 
+             {% if data.userMedicalInfoSource == "1-informant" %}
             <div class="govuk-form-group" id="circledid">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -70,7 +81,36 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
               </fieldset>
             </div>
-         
+      
+  {% elif data.userMedicalInfoSource == "2-cn2-with-inf" %}
+      <div class="govuk-form-group" id="circledid">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Was a post-mortem held?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="option_circled" name="option_circled" type="radio"
+                value="post_mortem" {{ checked("option_circled", "post_mortem" ) }}>
+              <label class="govuk-label govuk-radios__label" for="option_circled">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="option_circled-2" name="option_circled" type="radio"
+                value="available_later" {{ checked("option_circled", "available_later" ) }}>
+              <label class="govuk-label govuk-radios__label" for="option_circled-2">
+                No
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+{% endif %}
           
 
             <div class="govuk-form-group" id="codid">
@@ -239,15 +279,25 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     document.getElementById('addOther').addEventListener('click', toggleOther);
                   </script>
                   {% endraw %}
-            
+
+               <!-- {% if data.userMedicalInfoSource == "2-cn2-with-inf" %}
+               
+          <div class="govuk-form-group"><label class="govuk-label drw-cause-of-death-label"
+              for="conclusionDescription_input">Conclusion</label><textarea rows="5" id="conclusionDescription_input"
+              name="conclusionDescription" class="govuk-textarea "></textarea></div>
+          <p class="govuk-body">
+            <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">Add a
+              narrative conclusion</a>
+          </p>
+            {% else %}
+    
+{% endif %} -->
                   
             </fieldset>
             </div>
 
             
-
-      
-
+  {% if data.userMedicalInfoSource == "1-informant" %}
         <div class="govuk-form-group" id="cert-pract">
           <fieldset class="govuk-fieldset" id="" aria-required="false">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -281,6 +331,35 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
           </fieldset>
     </div> 
+
+  {% elif data.userMedicalInfoSource == "2-cn2-with-inf" %}
+      <div class="govuk-form-group" id="cert-pract">
+        <fieldset class="govuk-fieldset" id="" aria-required="false">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Pathologist details
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" id="AttendPractfn" for="AttendPractfn">
+              Full name
+            </label>
+            <input class="govuk-input" id="AttendPractfn" name="AttendPractfn" type="text" aria-required="false"
+              value="{{data['AttendPract'] or ['']}}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" id="AttendPractq" for="AttendPractq">
+              Qualifications
+            </label>
+            <input class="govuk-input" id="AttendPractq" name="AttendPractq" type="text" aria-required="false"
+              value="{{data['AttendPractq'] or ['']}}">
+          </div>
+
+
+        </fieldset>
+      </div>
+
+{% endif %}
+
+
 
 
         <div class="govuk-button-group">
