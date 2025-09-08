@@ -27,7 +27,9 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Name</dt>
       <dd class="govuk-summary-list__value">
-         {{ data['deceasedFirstName'] or 'Baby' }} {{ data['deceasedMiddleName'] or '' }} {{ data['deceasedLastName'] or 'Duffy' }}
+        
+           {{ data['deceasedFirstName'] or 'Baby' }} {{ data['deceasedMiddleName'] or '' }} {{ (data['deceasedLastName'] or 'DUFFY') | upper }}
+          
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="../child-details/name-date.html">Change<span class="govuk-visually-hidden">name</span></a>
@@ -76,7 +78,7 @@
  <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">Mother's name</dt>
   <dd class="govuk-summary-list__value">
-    {{ data['mothersFirstName'] or 'Anna' }} {{ data['mothersMiddleName'] or 'Marie' }} {{ data['mothersLastName'] or 'Duffy' }}
+    {{ data['mothersFirstName'] or 'Anna' }} {{ data['mothersMiddleName'] or 'Marie' }} {{ (data['mothersLastName'] or 'DUFFY') | upper }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="../child-details/parents-details.html">Change<span class="govuk-visually-hidden"> mother's full name</span></a>
@@ -102,7 +104,8 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Father's name</dt>
       <dd class="govuk-summary-list__value">
-         {{ data['fathersFirstName'] or 'Peter' }} {{ data['fathersMiddleName'] or '' }} {{ data['fathersLastName'] or 'Duffy' }}
+         {{ data['fathersFirstName'] or 'Peter' }} {{ data['fathersMiddleName'] or '' }} {{ (data['fathersLastName'] or 'DUFFY') | upper }}
+ 
    
  
       </dd>

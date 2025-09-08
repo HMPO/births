@@ -27,7 +27,8 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Name</dt>
       <dd class="govuk-summary-list__value">
-         {{ data['deceasedFirstName'] or 'Baby' }} {{ data['deceasedMiddleName'] or '' }} {{ data['deceasedLastName'] or 'Duffy' }}
+         {{ data['deceasedFirstName'] or 'Baby' }} {{ data['deceasedMiddleName'] or '' }} {{ (data['deceasedLastName'] or 'DUFFY') | upper }}
+          
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="../child-details/name-date.html">Change<span class="govuk-visually-hidden">name</span></a>
@@ -82,7 +83,8 @@
  <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">Name</dt>
   <dd class="govuk-summary-list__value">
-    {{ data['mothersFirstName'] or 'Anna' }} {{ data['mothersMiddleName'] or 'Marie' }} {{ data['mothersLastName'] or 'Duffy' }}
+    {{ data['mothersFirstName'] or 'Anna' }} {{ data['mothersMiddleName'] or 'Marie' }} {{ (data['mothersLastName'] or 'DUFFY') | upper }}
+   
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> mother's full name</span></a>
@@ -93,7 +95,7 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Maiden Name</dt>
       <dd class="govuk-summary-list__value">
-        {{ data['mothersMaidenName'] or "Smith" }}
+       {{ (data['mothersMaidenName'] or "Smith") | upper }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> first name</span></a>
@@ -104,7 +106,8 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Last name at marriage (if different from maiden name)</dt>
       <dd class="govuk-summary-list__value">
-        {{ data['mothersLastMarriageName'] or "Not different" }}
+       
+        {{ (data['mothersLastMarriageName'] or "") | upper }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> last name</span></a>
@@ -169,8 +172,8 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Name</dt>
       <dd class="govuk-summary-list__value">
-         {{ data['fathersFirstName'] or 'Peter' }} {{ data['fathersMiddleName'] or '' }} {{ data['fathersLastName'] or 'Duffy' }}
-   
+         
+   {{ data['fathersFirstName'] or 'Peter' }} {{ data['fathersMiddleName'] or '' }} {{ (data['fathersLastName'] or 'DUFFY') | upper }}
  
       </dd>
       <dd class="govuk-summary-list__actions">
