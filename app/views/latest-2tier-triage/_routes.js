@@ -29,11 +29,11 @@ router.post('/latest/task-list-form', function (req, res) {
   console.log('Nested option:', nestedOption);
 
   req.session.data['userMedicalInfoSource'] = selectedOption;
-  
+  req.session.data['userPostMortemDetail'] = nestedOption;
 
   // Redirect based on the selected option
   if (selectedOption === '1-informant' || selectedOption === '2-cn2-with-inf' || selectedOption === '4-informant') {
-    res.redirect('informant/informant-triage/01-who-is-informant');
+    res.redirect('informant/task-list');
   } else if (selectedOption === '3-inquest-no-inf') {
     res.redirect('no-informant/task-list');
   } else {

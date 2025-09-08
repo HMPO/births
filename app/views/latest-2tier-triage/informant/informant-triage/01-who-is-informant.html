@@ -72,30 +72,7 @@
      {
       value: "otherInformant",
       text: "Other",
-      checked: data['whoIsInformant'] == "Other",
-         conditional: {
-          html: govukRadios({
-            name: "userSbOtherDetail",
-            items: [
-              {
-                value: "sb-occupier",
-                text: "Occupier of where the stillbirth took place"
-              },
-               {
-                value: "sb-present",
-                text: "Person present at the stillbirth"
-              },
-               {
-                value: "sb-incharge",
-                text: "Person in charge of the stillbirth child"
-              },
-              {
-                value: "sb-found",
-                text: "Person who found the stillborn child"
-              }
-            ]
-          })
-        }
+      checked: data['whoIsInformant'] == "Other"
     }
   ]
 }) }}
