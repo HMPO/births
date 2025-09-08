@@ -12,9 +12,9 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Stillbirth registration</h1>
 
-     <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Informant type</h2>
+     <!--<h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Informant type</h2>
 
-      <ul class="govuk-task-list">
+       <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
           <a class="govuk-link govuk-task-list__link" href="informant-triage/06-check">
@@ -26,56 +26,9 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
         </div>
       </li>
-    </ul>
+    </ul> -->
 
-    <!-- <h2 class="govuk-heading-m">Supporting information (optional)</h2>
-    <ul class="govuk-task-list">
-      <li class="govuk-task-list__item">
-        <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="supporting-info/prepare-for-appointment">
-            Prepare for registration
-          </a>
-        </div>
-        <div class="govuk-task-list__status">
-          {% if data.prepareForAppointmentCompleted %}
-          Entered
-          {% else %}
-           
-          {% endif %}
 
-        </div>
-      </li> -->
-
-      <!-- <li class="govuk-task-list__item">
-        <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="supporting-info/uploads">
-            Uploads
-          </a>
-        </div>
-        <div class="govuk-task-list__status">
-          {% if data.uploadsCompleted %}
-          Entered
-          {% else %}
-           
-          {% endif %}
-        </div>
-      </li>
-
-      <li class="govuk-task-list__item">
-        <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="supporting-info/comments">
-            Comments
-          </a>
-        </div>
-        <div class="govuk-task-list__status">
-          {% if data.commentsCompleted %}
-          Entered
-          {% else %}
-          
-          {% endif %}
-        </div>
-      </li> 
-    </ul>-->
 
     <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Source of medical information</h2>
    
@@ -297,6 +250,23 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
       </li>
       </ul>
+
+      <h2 class="govuk-heading-m">Registrar's comments </h2>
+       <ul class="govuk-task-list">
+         <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="supporting-info/comments">
+            Comments</a> (optional)
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.commentsCompleted %}
+          Entered
+          {% else %}
+          
+          {% endif %}
+        </div>
+      </li>
+       </ul>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Submit the registration</h2>
      <ul class="govuk-task-list">

@@ -75,8 +75,27 @@ module.exports = function(router) {
     res.redirect('task-list.html');
   }
   });
+
+
    // 2. Info from certificate
 
+  // 2.1: Pregnancy and delivery
+  router.get('/latest/informant/pregnancy-del-form', (req, res) => {
+    res.render('cause-of-death/pregnancy-delivery', { data: req.session.data });
+  });
+
+  router.post('/latest/informant/pregnancy-del-form', (req, res) => {
+    req.session.data = req.session.data || {};
+    req.session.data.pregCompleted = true;
+   // res.redirect('../task-list.html');
+     if (req.session.data.checkAnswersVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('submit/check-answers-page');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('cause-of-death/cause-of-death.html');
+  }
+  });
 
 
     // 2.2: Cause of death
@@ -86,14 +105,14 @@ module.exports = function(router) {
 
   router.post('/latest/informant/cause-of-death-form', (req, res) => {
     req.session.data = req.session.data || {};
-    req.session.data.commentsCompleted = true;
+    req.session.data.codCompleted = true;
    // res.redirect('../task-list.html');
      if (req.session.data.checkAnswersVisited) {
     // If "Check your answers" has been visited, redirect back to it
     res.redirect('submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('cause-of-death/medical-info-check.html');
+    res.redirect('task-list.html');
   }
   });
 
@@ -111,7 +130,7 @@ module.exports = function(router) {
     res.redirect('/latest/informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('cause-of-death/medical-info-check.html');
+    res.redirect('task-list.html');
   }
   });
 

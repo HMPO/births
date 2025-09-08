@@ -108,7 +108,7 @@ module.exports = function(router) {
     res.redirect('/latest/no-informant/submit/check-answers-page');
   } else {
     // Otherwise, redirect to the next page in the journey (Father's Name page)
-    res.redirect('cause-of-death/medical-info-check.html');
+    res.redirect('task-list.html');
   }
   });
 
