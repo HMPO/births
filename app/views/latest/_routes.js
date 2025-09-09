@@ -23,10 +23,10 @@ router.post('/latest/task-list-form', function (req, res) {
 
   // Save the selected radio button values to the session
   const selectedOption = req.body.userMedicalInfoSource;
-  const nestedOption = req.body.userPostMortemDetail; // May be undefined if not selected
+  
 
    console.log('Selected option:', selectedOption);
-  console.log('Nested option:', nestedOption);
+
 
   req.session.data['userMedicalInfoSource'] = selectedOption;
   
@@ -46,7 +46,7 @@ router.post('/latest/task-list-form', function (req, res) {
 router.get('/latest/informant/task-list-inf-form', function (req, res) {
   res.render('informant/task-list', {
     userMedicalInfoSource: req.session.data['userMedicalInfoSource'],
-    userPostMortemDetail: req.session.data['userPostMortemDetail']
+    
   });
 });
 
@@ -54,7 +54,7 @@ router.get('/latest/informant/task-list-inf-form', function (req, res) {
 router.get('/latest/no-informant/task-list-noi-form', function (req, res) {
   res.render('no-informant/task-list', {
     userMedicalInfoSource: req.session.data['userMedicalInfoSource'],
-    userPostMortemDetail: req.session.data['userPostMortemDetail']
+   
   });
 });
 
