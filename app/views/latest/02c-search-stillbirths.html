@@ -25,7 +25,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">
-         Search for a birth notification 
+         Search for a birth notification
         </h1>
 
         <form class="form" action="03-child-correct" method="post">
@@ -65,7 +65,7 @@ href: "javascript:window.history.back()"
 
        
 
-     
+          <!-- Conditional block: Yes -->
           <div id="yes-name-block" >
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="deceased-first-name">Mother's last name</label>
@@ -97,22 +97,13 @@ href: "javascript:window.history.back()"
   items: [
     {
       value: "hmrc",
-      text: "Stillbirths only"
-     
+      text: "Stillbirths only",
+      checked: true
     }
   ]
 }) }}
 
 
-    <div id="yes-name-block" >
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="deceased-first-name">NHS number</label>
-              <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedNHSno"
-                type="text" value="{{data['deceasedNHSno']}}">
-            </div>
-
-       
-          </div>
 
 {% from "govuk/components/select/macro.njk" import govukSelect %}
 
@@ -128,7 +119,10 @@ href: "javascript:window.history.back()"
       text: "Wakefield",
       selected: true
     },
-   
+    {
+      value: "updated",
+      text: "Pontifract"
+    },
     {
       value: "views",
       text: "All districts"

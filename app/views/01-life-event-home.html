@@ -25,33 +25,15 @@
       <h1 class="govuk-heading-l">
         Life event home
       </h1>
-      {% from "govuk/components/select/macro.njk" import govukSelect %}
 
-{{ govukSelect({
-  id: "district",
-  name: "district",
-  label: {
-    text: "Select district"
-  },
-  items: [
-    {
-      value: "Wakefield",
-      text: "Wakefield",
-      selected: true
-    },
-    {
-      value: "Pontifract",
-      text: "Pontifract",
-      selected: false
-    }
-  ]
-}) }}
 
 <div class="govuk-!-padding-bottom-6">
 <h2 class="govuk-heading-m">Births</h2>
       
         <ul class="govuk-list">
-          <li><a class="govuk-link" href="latest/02-search.html">Register a birth</a>
+           <li><a class="govuk-link" href="latest/02-search.html">Register a birth</a>
+          </li>
+          <li><a class="govuk-link" href="latest/02b-notifications">Register a stillbirth</a>
           </li>
           <li><a class="govuk-link" href="#">Re-register a birth</a>
           </li>
