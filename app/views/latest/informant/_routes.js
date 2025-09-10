@@ -79,6 +79,25 @@ module.exports = function(router) {
 
    // 2. Info from certificate
 
+
+   // 2.0 f35 reason
+  router.get('/latest/informant/f35-reason-form', (req, res) => {
+    res.render('cause-of-death/f35-reason', { data: req.session.data });
+  });
+
+  router.post('/latest/informant/f35-reason-form', (req, res) => {
+    req.session.data = req.session.data || {};
+    req.session.data.f35ReasonCompleted = true;
+    res.redirect('task-list.html');
+  //    if (req.session.data.checkAnswersVisited) {
+  //   // If "Check your answers" has been visited, redirect back to it
+  //   res.redirect('submit/check-answers-page');
+  // } else {
+  //   // Otherwise, redirect to the next page in the journey (Father's Name page)
+  //   res.redirect('task-list.html');
+  // }
+  });
+
   // 2.1: Pregnancy and delivery
   router.get('/latest/informant/pregnancy-del-form', (req, res) => {
     res.render('cause-of-death/pregnancy-delivery', { data: req.session.data });

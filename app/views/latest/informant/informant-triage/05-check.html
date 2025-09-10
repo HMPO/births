@@ -18,8 +18,38 @@ href: "javascript:window.history.back()"
     <h1 class="govuk-heading-l">
       Check record details
     </h1>
+     <h2 class="govuk-heading-m">
+     Source of medical information
+    </h2>
+     <dl class="govuk-summary-list">
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Source of medical information
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% set userMedicalInfoSourceText = {
+          "1-informant": "Medical certificate of stillbirth (form 34)",
+          "2-cn2-with-inf": "Coroner's post-mortem with informant (form CN2)",
+          "3-inquest-no-inf": "Coroner's inquest (form 99A)",
+          "4-informant": "Certificate from a registered midwife or medical practitioner is not available (form 35)"
+         
+          } %}
+          {{ userMedicalInfoSourceText[data['userMedicalInfoSource']] or "Medical certificate of stillbirth (form 34)" }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="../../04-medical-info.html">Change<span class="govuk-visually-hidden"> date of
+              birth</span></a>
+        </dd>
+      </div>
+     
 
+    </dl>
+ <h2 class="govuk-heading-m">
+     Who is the informant
+    </h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Informant
@@ -40,23 +70,7 @@ href: "javascript:window.history.back()"
               birth</span></a>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Evidence or permission
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% set whatEvidenceText = {
-          "evidenceReg": "Evidence of informant identity seen",
-          "evidenceRegGen": "Registrar General discretion applied",
-          "evidenceNone": "None"
-          } %}
-          {{ whatEvidenceText[data['whatEvidence']] or "Evidence of informant identity seen" }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="02-evidence">Change<span class="govuk-visually-hidden"> customer
-              reference</span></a>
-        </dd>
-      </div>
+     
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Parents married or in a civil partnership

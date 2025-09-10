@@ -39,7 +39,7 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Sex</dt>
       <dd class="govuk-summary-list__value">
-      {{ data['sex'] }}
+      {{ data['sex'] or 'Male' }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="../child-details/name-date.html">Change<span class="govuk-visually-hidden"> last name</span></a>
@@ -66,7 +66,7 @@
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Place of stillbirth</dt>
       <dd class="govuk-summary-list__value">
-      {{ data['MCCDAddressLine1'] }}
+      {{ data['MCCDAddressLine1'] or 'Central Hospital, Wakefield' }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="../child-details/place-of-stillbirth.html">Change<span class="govuk-visually-hidden"> last name</span></a>
@@ -102,7 +102,7 @@
       </dd>
     </div>
 
-    <!-- Last Name -->
+    <!-- Last Name 
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Last name at marriage (if different from maiden name)</dt>
       <dd class="govuk-summary-list__value">
@@ -112,7 +112,7 @@
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="../parents-details/mothers-name">Change<span class="govuk-visually-hidden"> last name</span></a>
       </dd>
-    </div>
+    </div>-->
    <!-- Birth place -->
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">Place of birth</dt>
