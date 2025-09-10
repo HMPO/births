@@ -215,6 +215,9 @@
 
   </dl>
 
+   {% if data.userMedicalInfoSource == "4-informant" %}
+
+   {% else %}
    
     <h2 class="govuk-heading-m">
         Medical cause of death details
@@ -370,6 +373,7 @@
     </div>
 
   </dl>
+{% endif %}
 {% endif %}
 
 
