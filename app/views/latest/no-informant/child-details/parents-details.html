@@ -46,15 +46,20 @@ href: "javascript:window.history.back()"
 
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
            id="conditional-motherDetailsProvided-1">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="motherName_input">Full name</label>
-          <input id="motherName_input" name="motherName"
-                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="">
+            <div class="govuk-form-group">
+          <label class="govuk-label" for="mothersFirstName">First name or names</label>
+          <input id="mothersFirstName" name="mothersFirstName"
+                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="{{data['mothersFirstName']}}">
         </div>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="motherOccupation_input">Occupation (if available)</label>
-          <input id="motherOccupation_input" name="motherOccupation"
-                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="">
+          <label class="govuk-label" for="mothersLastName">Last name</label>
+          <input id="mothersLastName" name="mothersLastName"
+                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="{{data['mothersLastName']}}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="mothersOccupation">Occupation (if available)</label>
+          <input id="mothersOccupation" name="mothersOccupation"
+                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="{{data['mothersOccupation']}}">
         </div>
       </div>
 
@@ -101,14 +106,19 @@ href: "javascript:window.history.back()"
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
            id="conditional-secondParentDetailsProvided-1">
         <div class="govuk-form-group">
-          <label class="govuk-label" for="secondParentName_input">Full name</label>
-          <input id="secondParentName_input" name="secondParentName"
-                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="">
+          <label class="govuk-label" for="fathersFirstName">First name(s)</label>
+          <input id="fathersFirstName" name="fathersFirstName"
+                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="{{data['fathersFirstName']}}">
+        </div>
+         <div class="govuk-form-group">
+          <label class="govuk-label" for="fathersLastName">Last name</label>
+          <input id="fathersLastName" name="fathersLastName"
+                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="{{data['fathersLastName']}}">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="secondParentOccupation_input">Occupation (if available)</label>
           <input id="secondParentOccupation_input" name="secondParentOccupation"
-                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="">
+                 class="govuk-input govuk-!-width-one-half" autocomplete="off" value="{{data['mothersOccupation']}}">
         </div>
       </div>
 
