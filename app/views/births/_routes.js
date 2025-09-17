@@ -25,7 +25,7 @@ router.post('/latest/task-list-form', function (req, res) {
   const selectedOption = req.body.userMedicalInfoSource;
   
 
-   //console.log('Selected option:', selectedOption);
+   console.log('Selected option:', selectedOption);
 
 
   req.session.data['userMedicalInfoSource'] = selectedOption;
