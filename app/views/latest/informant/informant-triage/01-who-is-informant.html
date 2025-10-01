@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-  text: "Back to record",
+  text: "Back",
   href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
@@ -16,15 +16,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!-- <h1 class="govuk-heading-l">
-        Was more than one child born in this pregnancy?
-      </h1> 
-      <p>
-          This includes both live births and stillbirths.
-        </p>
-      -->
+<span class="govuk-caption-l">Add record details</span>
+<h1 class="govuk-heading-l">Who is the informant?</h1>
 
-      <form class="form" action="03-married" method="post">
+
+      <form class="form" action="/latest/informant/01-who-is-form" method="post">
 
         
 
@@ -32,16 +28,7 @@
 
 {{ govukRadios({
   name: "whoIsInformant",
-  fieldset: {
-    legend: {
-      text: "Who is the informant?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: " "
-  },
+ 
 
   items: [
     {

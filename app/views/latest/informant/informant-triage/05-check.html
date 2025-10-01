@@ -15,6 +15,7 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
+     <span class="govuk-caption-l">Add record details</span>
     <h1 class="govuk-heading-l">
       Check record details
     </h1>
@@ -45,6 +46,7 @@ href: "javascript:window.history.back()"
      
 
     </dl>
+
  <h2 class="govuk-heading-m">
      Who is the informant
     </h2>
@@ -60,10 +62,27 @@ href: "javascript:window.history.back()"
           "father": "Father",
           "secondParent": "Second parent",
           "motherAndFather": "Mother and father",
-          "motherAndParent": "Second parent",
+          "motherAndParent": "Mother and second parent",
           "otherInformant": "Other"
           } %}
-          {{ whoIsInformantText[data['whoIsInformant']] or "Mother" }}
+
+          {% set userSbOtherDetailText = {
+          "sb-occupier": "Occupier of where the stillbirth took place",
+          "sb-present": "Person present at the stillbirth",
+          "sb-incharge": "Person in charge of the stillbirth child",
+          "sb-found": "Person who found the stillborn child"
+          } %}
+
+
+ {% if data['whoIsInformant'] == 'otherInformant' and data['userSbOtherDetail'] %}
+        {{ userSbOtherDetailText[data['userSbOtherDetail']] or "Person present at the stillbirth" }}
+      {% else %}
+        {{ whoIsInformantText[data['whoIsInformant']] or "Mother" }}
+      {% endif %}
+
+
+          <!-- {{ whoIsInformantText[data['whoIsInformant']] or "Mother" }}
+           {{ userSbOtherDetailText[data['userSbOtherDetail']] or "Person present at the stillbirth" }} -->
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="01-who-is-informant">Change<span class="govuk-visually-hidden"> date of

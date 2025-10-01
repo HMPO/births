@@ -7,8 +7,49 @@ module.exports = function(router) {
 // router.get('/latest/child-details/name-date', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'child-details', 'name-date.html'));
 // });
+  // Triage Check answers
+// Route for the Check Your Answers page (GET request)
+router.get('/latest/informant/informant-triage/05-check', (req, res) => {
+  // Mark the "Check your answers" page as visited
+  req.session.data.checkAnswersTriageVisited = true;
 
+  // Render the "Check your answers" page
+  res.render('/latest/informant/informant-triage/05-check', { data: req.session.data });
+});
 
+ // Triage - who is informant - check answers behaviour
+  router.get('/latest/informant/01-who-is-form', (req, res) => {
+    res.render('informant-triage/01-who-is-informant', { data: req.session.data });
+  });
+  router.post('/latest/informant/01-who-is-form', (req, res) => {
+    req.session.data = req.session.data || {};
+    req.session.data.whoIsInCompleted = true;
+   // res.redirect('../task-list.html');
+     if (req.session.data.checkAnswersTriageVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('informant-triage/05-check');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('informant-triage/03-married.html');
+  }
+  });
+
+  // Triage - parents married or in a civil partnership - check answers behaviour
+  router.get('/latest/informant/03-married-form', (req, res) => {
+    res.render('informant-triage/03-married', { data: req.session.data });
+  });
+  router.post('/latest/informant/03-married-form', (req, res) => {
+    req.session.data = req.session.data || {};
+    req.session.data.whoIsInCompleted = true;
+   // res.redirect('../task-list.html');
+     if (req.session.data.checkAnswersTriageVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('informant-triage/05-check');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('informant-triage/04-who-else.html');
+  }
+  });
 
 
   // // TASK LIST
