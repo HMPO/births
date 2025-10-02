@@ -7,7 +7,49 @@ module.exports = function(router) {
 // router.get('/latest/child-details/name-date', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'child-details', 'name-date.html'));
 // });
+  // Triage Check answers
+// Route for the Check Your Answers page (GET request)
+router.get('/births/v1/informant-triage/05-check', (req, res) => {
+  // Mark the "Check your answers" page as visited
+  req.session.data.checkAnswersBirthTriageVisited = true;
 
+  // Render the "Check your answers" page
+  res.render('/births/v1/informant-triage/05-check', { data: req.session.data });
+});
+
+ // Triage - who is informant - check answers behaviour
+  router.get('/births/v1/02-evidence-form', (req, res) => {
+    res.render('informant-triage/02-evidence', { data: req.session.data });
+  });
+  router.post('/births/v1/02-evidence-form', (req, res) => {
+    req.session.data = req.session.data || {};
+    req.session.data.whoIsInCompleted = true;
+   // res.redirect('../task-list.html');
+     if (req.session.data.checkAnswersBirthTriageVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('informant-triage/05-check');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('informant-triage/03-married.html');
+  }
+  });
+
+  // Triage - parents married or in a civil partnership - check answers behaviour
+  router.get('/births/v1/03-married-form', (req, res) => {
+    res.render('informant-triage/03-married', { data: req.session.data });
+  });
+  router.post('/births/v1/03-married-form', (req, res) => {
+    req.session.data = req.session.data || {};
+    req.session.data.whoIsInCompleted = true;
+   // res.redirect('../task-list.html');
+     if (req.session.data.checkAnswersBirthTriageVisited) {
+    // If "Check your answers" has been visited, redirect back to it
+    res.redirect('informant-triage/05-check');
+  } else {
+    // Otherwise, redirect to the next page in the journey (Father's Name page)
+    res.redirect('informant-triage/04-who-else.html');
+  }
+  });
 
 
 
