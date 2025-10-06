@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="02-evidence" method="post">
+
+
+      <span class="govuk-caption-l">Add record details</span>
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+      name: "whoIsInformant",
+      fieldset: {
+      legend: {
+      text: "Who is the informant?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: " "
+      },
+
+      items: [
+      {
+      value: "mother",
+      text: "Mother",
+      checked: data['whoIsInformant'] == "Mother"
+      },
+      {
+      value: "father",
+      text: "Father",
+      checked: data['whoIsInformant'] == "Father"
+      },
+      {
+      value: "secondParent",
+      text: "Second parent",
+      checked: data['whoIsInformant'] == "Second parent"
+      },
+      {
+      value: "motherAndFather",
+      text: "Mother and father",
+      checked: data['whoIsInformant'] == "Mother and father"
+      },
+      {
+      value: "motherAndParent",
+      text: "Mother and second parent",
+      checked: data['whoIsInformant'] == "Second parent"
+      },
+      {
+      value: "otherInformant",
+      text: "Other",
+      checked: data['whoIsInformant'] == "Other"
+
+      }
+      ]
+      }) }}
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

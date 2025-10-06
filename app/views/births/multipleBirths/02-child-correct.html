@@ -1,0 +1,187 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">
+      Are these the children you want to register?
+    </h1>
+    <div class="header-with-button">
+      <h2 class="govuk-heading-m">Child 1</h2>
+      <p class="govuk-body"><a class="govuk-link">Remove</a></p>
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123 456 7890
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date and time of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 January 2025 at 10:08am
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Female
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother's first name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sarah
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother's last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Adams
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          St Thomas&rsquo; Hospital
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+    </dl>
+    <div class="header-with-button">
+      <h2 class="govuk-heading-m">Child 2</h2>
+      <p class="govuk-body"><a class="govuk-link">Remove</a></p>
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123 456 7891
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date and time of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 January 2025 at 11:08am
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Female
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother's first name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sarah
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother's last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Adams
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          St Thomas&rsquo; Hospital
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+    </dl>
+
+    {{ govukRadios({
+    name: "whichChild",
+    fieldset: {
+    legend: {
+    text: "Which one do you you want to register first?",
+    classes: "govuk-fieldset__legend--s"
+    }
+    },
+    items: [
+    {
+    value: "child1",
+    text: "Child 1"
+    },
+    {
+    value: "child2",
+    text: "Child 2"
+    }
+    ]
+    }) }}
+
+    {{ govukButton({
+    text: "Yes, continue",
+    href: "triage/01-who-is-informant"
+    }) }}
+
+    <div class="govuk-form-group">
+      <p class="govuk-body"><a href="02-search.html" class="govuk-link">No, return to search</a></p>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
