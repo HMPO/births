@@ -10,13 +10,9 @@
     href: "javascript:window.history.back()"
   }) }}
 
-
 {% endblock %}
 
-
 {% block content %}
-
-
 
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -39,18 +35,14 @@
        <p class="govuk-body"><a href="02b-search-no-nhs-no.html" class="govuk-link">I do not have the NHS number</a></p>
       </div>    
 
-     
-
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
         text: "Continue",
-        href: "03-child-correct"
+        href: "02-child-correct"
       }) }}
 
-      
     </div>
-
   </div>
 
 {% endblock %}

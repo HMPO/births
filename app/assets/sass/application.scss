@@ -10,7 +10,7 @@
 .pending-table {
   font-size: 16px; // Font size for govuk-body
   line-height: 1.2; // Line height for govuk-body 
- margin: 20px 0 60px 0;
+  margin: 20px 0 60px 0;
 }
 
 .pending-table .govuk-tag {
@@ -24,7 +24,18 @@
 
 .pending-table th:first-child,
 .pending-table td:first-child {
-  width: 5%; 
+  width: 5%;
   padding-top: 5px;
 }
 
+.header-with-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  .govuk-link {
+    color: #1d70b8;
+  }
+}

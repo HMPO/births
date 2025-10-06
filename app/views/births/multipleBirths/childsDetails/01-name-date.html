@@ -6,13 +6,10 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block beforeContent %}
 
-
-
 {{ govukBackLink({
 text: "Back to record",
 href: "javascript:window.history.back()"
 }) }}
-
 
 {% endblock %}
 
@@ -106,7 +103,7 @@ href: "javascript:window.history.back()"
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="name-order-2" name="name-order" type="radio"
-                      value="name-order-only-last" {{ checked("name-order", "name-order-only-last" ) }}
+                      value="name-order-only-last" {{ checked('name-order', 'name-order-only-last' ) }}
                       data-aria-controls="">
                     <label class="govuk-label govuk-radios__label" for="name-order-2">
                       Only print last name
