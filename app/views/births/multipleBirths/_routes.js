@@ -1,0 +1,420 @@
+module.exports = function (router) {
+
+    // Handle place of birth form submission
+    router.post('/births/multipleBirths/childsDetails/check-details', function (req, res) {
+        // Ensure session data exists
+        req.session.data = req.session.data || {};
+
+        // Mark place of birth as completed if form has been filled
+        if (req.body.livingPlace) {
+            req.session.data.placeCompleted = true;
+        }
+
+        // Store the form data
+        req.session.data.livingPlace = req.body.livingPlace;
+        if (req.body['communal-name']) {
+            req.session.data.communalName = req.body['communal-name'];
+        }
+
+        // Redirect back to task list
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/childsDetails/name-date-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        const hasName = req.body.deceasedFirstName || req.body.deceasedLastName;
+        const hasSex = req.body.sex;
+
+        if (hasName && hasSex) {
+            req.session.data.nameDateCompleted = true;
+        }
+        req.session.data.deceasedFirstName = req.body.deceasedFirstName;
+        req.session.data.deceasedLastName = req.body.deceasedLastName;
+        req.session.data['name-order'] = req.body['name-order'];
+        req.session.data['custom-order'] = req.body['custom-order'];
+        req.session.data['dob-day'] = req.body['dob-day'];
+        req.session.data['dob-month'] = req.body['dob-month'];
+        req.session.data['dob-year'] = req.body['dob-year'];
+        req.session.data['dob-hour'] = req.body['dob-hour'];
+        req.session.data['dob-minute'] = req.body['dob-minute'];
+        req.session.data['dob-period'] = req.body['dob-period'];
+        req.session.data.sex = req.body.sex;
+
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/parentsDetails/mothers-name-check', function (req, res) {
+        req.session.data = req.session.data || {};
+        const hasFirstName = req.body.mothersFirstName?.trim();
+        const hasLastName = req.body.mothersLastName?.trim();
+
+        if (hasFirstName && hasLastName) {
+            req.session.data.mothersNameCompleted = true;
+        }
+        req.session.data.mothersFirstName = req.body.mothersFirstName;
+        req.session.data.mothersMiddleName = req.body.mothersMiddleName;
+        req.session.data.mothersLastName = req.body.mothersLastName;
+        req.session.data.mothersMaidenName = req.body.mothersMaidenName;
+        req.session.data.mothersLastMarriageName = req.body.mothersLastMarriageName;
+        req.session.data['name-order'] = req.body['name-order'];
+        req.session.data['custom-order'] = req.body['custom-order'];
+
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/parentsDetails/mothers-details-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        const hasOccupation = req.body.mothersOccupation?.trim();
+        const hasCountryOfBirth = req.body.mothersCountryOfBirth;
+
+        if (hasOccupation && hasCountryOfBirth) {
+            req.session.data.mothersDetailsCompleted = true;
+        }
+
+        req.session.data.mothersPlaceOfBirth = req.body.mothersPlaceOfBirth;
+        req.session.data.mothersCountryOfBirth = req.body.mothersCountryOfBirth;
+        req.session.data.SpanishNational = req.body.SpanishNational;
+        req.session.data.mothersOccupation = req.body.mothersOccupation;
+        req.session.data.MCCDAddressLine1 = req.body.MCCDAddressLine1;
+        req.session.data.fatherdeceased = req.body.fatherdeceased;
+
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/parentsDetails/fathers-name-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        const hasFirstName = req.body.fathersFirstName?.trim();
+        const hasLastName = req.body.fathersLastName?.trim();
+
+        if (hasFirstName && hasLastName) {
+            req.session.data.fathersNameCompleted = true;
+        }
+
+        req.session.data.fathersFirstName = req.body.fathersFirstName;
+        req.session.data.fathersMiddleName = req.body.fathersMiddleName;
+        req.session.data.fathersLastName = req.body.fathersLastName;
+        req.session.data['name-order'] = req.body['name-order'];
+        req.session.data['custom-order'] = req.body['custom-order'];
+
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/parentsDetails/fathers-details-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        const hasOccupation = req.body.fathersOccupation?.trim();
+        const hasCountryOfBirth = req.body.fathersCountryOfBirth;
+
+        if (hasOccupation && hasCountryOfBirth) {
+            req.session.data.fathersDetailsCompleted = true;
+        }
+        req.session.data.fathersPlaceOfBirth = req.body.fathersPlaceOfBirth;
+        req.session.data.fathersCountryOfBirth = req.body.fathersCountryOfBirth;
+        req.session.data.SpanishNational = req.body.SpanishNational;
+        req.session.data.fathersOccupation = req.body.fathersOccupation;
+        req.session.data.fathersMCCDAddressLine1 = req.body.fathersMCCDAddressLine1;
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/stats/confidential-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        req.session.data.statsConfidentialCompleted = true;
+
+        req.session.data['mother-dob-day'] = req.body['mother-dob-day'];
+        req.session.data['mother-dob-month'] = req.body['mother-dob-month'];
+        req.session.data['mother-dob-year'] = req.body['mother-dob-year'];
+        req.session.data['father-dob-day'] = req.body['father-dob-day'];
+        req.session.data['father-dob-month'] = req.body['father-dob-month'];
+        req.session.data['father-dob-year'] = req.body['father-dob-year'];
+        req.session.data.marriageDateKnown = req.body.marriageDateKnown;
+        req.session.data['marriageDate-day'] = req.body['marriageDate-day'];
+        req.session.data['marriageDate-month'] = req.body['marriageDate-month'];
+        req.session.data['marriageDate-year'] = req.body['marriageDate-year'];
+        req.session.data.previousMarriageMother = req.body.previousMarriageMother;
+        req.session.data.liveBirthsMother = req.body.liveBirthsMother;
+        req.session.data.numberOfChildrenBornAlive = req.body.numberOfChildrenBornAlive;
+        req.session.data.stillbirthsMother = req.body.stillbirthsMother;
+        req.session.data.numberOfStillbornChildren = req.body.numberOfStillbornChildren;
+
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/stats/voluntary-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body['employment-mother']) {
+            req.session.data['employment-mother'] = req.body['employment-mother'];
+        }
+
+        if (req.body['employment-father']) {
+            req.session.data['employment-father'] = req.body['employment-father'];
+        }
+
+        if (req.body.industry) {
+            req.session.data.industry = req.body.industry;
+        }
+
+        if (req.body['industry-father']) {
+            req.session.data['industry-father'] = req.body['industry-father'];
+        }
+
+        req.session.data.statsVoluntaryCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/submit/register-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body.registrarName) {
+            req.session.data.registrarName = req.body.registrarName;
+        }
+
+        if (req.body.designationSelector) {
+            req.session.data.designationSelector = req.body.designationSelector;
+        }
+
+        if (req.body.registrarName && req.body.designationSelector) {
+            req.session.data.registerPageCompleted = true;
+        }
+
+        res.redirect('/births/multipleBirths/tasks/');
+    });
+
+    router.post('/births/multipleBirths/submit/check-answers-complete', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        req.session.data.checkAnswersCompleted = true;
+
+        res.redirect('/births/multipleBirths/submit/confirmation');
+    });
+
+    router.post('/births/multipleBirths/child2Details/place-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body.whereDoYouLive) {
+            req.session.data['child2-whereDoYouLive'] = req.body.whereDoYouLive;
+        }
+
+        if (req.body.addressLine1) {
+            req.session.data['child2-addressLine1'] = req.body.addressLine1;
+        }
+        if (req.body.addressLine2) {
+            req.session.data['child2-addressLine2'] = req.body.addressLine2;
+        }
+        if (req.body.addressTown) {
+            req.session.data['child2-addressTown'] = req.body.addressTown;
+        }
+        if (req.body.addressCounty) {
+            req.session.data['child2-addressCounty'] = req.body.addressCounty;
+        }
+        if (req.body.addressPostcode) {
+            req.session.data['child2-addressPostcode'] = req.body.addressPostcode;
+        }
+
+        req.session.data.child2PlaceCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    router.post('/births/multipleBirths/child2Details/name-date-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body.deceasedFirstName) {
+            req.session.data['child2-deceasedFirstName'] = req.body.deceasedFirstName;
+        }
+        if (req.body.deceasedMiddleName) {
+            req.session.data['child2-deceasedMiddleName'] = req.body.deceasedMiddleName;
+        }
+        if (req.body.deceasedLastName) {
+            req.session.data['child2-deceasedLastName'] = req.body.deceasedLastName;
+        }
+        if (req.body['name-order']) {
+            req.session.data['child2-name-order'] = req.body['name-order'];
+        }
+        if (req.body['custom-order']) {
+            req.session.data['child2-custom-order'] = req.body['custom-order'];
+        }
+
+        if (req.body['dob-day']) {
+            req.session.data['child2-dob-day'] = req.body['dob-day'];
+        }
+        if (req.body['dob-month']) {
+            req.session.data['child2-dob-month'] = req.body['dob-month'];
+        }
+        if (req.body['dob-year']) {
+            req.session.data['child2-dob-year'] = req.body['dob-year'];
+        }
+        if (req.body['dob-hour']) {
+            req.session.data['child2-dob-hour'] = req.body['dob-hour'];
+        }
+        if (req.body['dob-minute']) {
+            req.session.data['child2-dob-minute'] = req.body['dob-minute'];
+        }
+        if (req.body['dob-period']) {
+            req.session.data['child2-dob-period'] = req.body['dob-period'];
+        }
+
+        if (req.body.sex) {
+            req.session.data['child2-sex'] = req.body.sex;
+        }
+
+        req.session.data.child2NameDateCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    router.post('/births/multipleBirths/parentsDetailsChild2/mothers-name-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Store any form data submitted
+        Object.keys(req.body).forEach(key => {
+            req.session.data[`child2-${key}`] = req.body[key];
+        });
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2MothersNameCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    // Child 2 - Mother's Details form submission  
+    router.post('/births/multipleBirths/parentsDetailsChild2/mothers-details-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Store any form data submitted
+        Object.keys(req.body).forEach(key => {
+            req.session.data[`child2-${key}`] = req.body[key];
+        });
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2MothersDetailsCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    // Child 2 - Father's Name form submission
+    router.post('/births/multipleBirths/parentsDetailsChild2/fathers-name-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Store any form data submitted
+        Object.keys(req.body).forEach(key => {
+            req.session.data[`child2-${key}`] = req.body[key];
+        });
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2FathersNameCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    // Child 2 - Father's Details form submission
+    router.post('/births/multipleBirths/parentsDetailsChild2/fathers-details-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Store any form data submitted
+        Object.keys(req.body).forEach(key => {
+            req.session.data[`child2-${key}`] = req.body[key];
+        });
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2FathersDetailsCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    // Child 2 - Confidential Statistics form submission
+    router.post('/births/multipleBirths/statsChild2/confidential-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Store any form data submitted
+        Object.keys(req.body).forEach(key => {
+            req.session.data[`child2-${key}`] = req.body[key];
+        });
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2StatsConfidentialCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    // Child 2 - Voluntary Statistics form submission
+    router.post('/births/multipleBirths/statsChild2/voluntary-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Store any form data submitted
+        Object.keys(req.body).forEach(key => {
+            req.session.data[`child2-${key}`] = req.body[key];
+        });
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2StatsVoluntaryCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    // Child 2 - Register Page form submission
+    router.post('/births/multipleBirths/submitChild2/register-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Store any form data submitted
+        Object.keys(req.body).forEach(key => {
+            req.session.data[`child2-${key}`] = req.body[key];
+        });
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2RegisterPageCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    // Child 2 - Check Answers form submission  
+    router.post('/births/multipleBirths/submitChild2/check-answers-complete', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2CheckAnswersCompleted = true;
+
+        res.redirect('/births/multipleBirths/submitChild2/confirmation-page-child2');
+    });
+
+    // Child 2 - Comments form submission (optional)
+    router.post('/births/multipleBirths/additionalInfoChild2/comments-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Store any form data submitted
+        Object.keys(req.body).forEach(key => {
+            req.session.data[`child2-${key}`] = req.body[key];
+        });
+
+        // Mark as completed - just visiting and submitting is enough
+        req.session.data.child2CommentsCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+
+    // Child 2 - Confirmation page - Clear ALL session data when user arrives
+    router.get('/births/multipleBirths/submitChild2/confirmation-page-child2', function (req, res) {
+        // Clear all session data for a fresh start - both child1 and child2 data
+        // Since child2 is the final step in the journey, everything should be reset
+        req.session.data = {};
+
+        // Render the confirmation page
+        res.render('births/multipleBirths/submitChild2/confirmation-page-child2');
+    });
+
+    // Child 2 - Test route to mark tasks as complete (for demo purposes)
+    router.get('/births/multipleBirths/child2/mark-complete', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        // Mark child2 tasks as complete for testing
+        req.session.data.child2PlaceCompleted = true;
+        req.session.data.child2NameDateCompleted = true;
+
+        res.redirect('/births/multipleBirths/tasks/child2index.html');
+    });
+};
