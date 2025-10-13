@@ -21,7 +21,7 @@ require('./views/v1/informant/_routes')(router);
 require('./views/v1/no-informant/_routes')(router);
 
 require('./views/births/v1/_routes')(router);
-require('./views/births/v1/_routes')(router);
+require('./views/births/multipleBirths/_routes')(router);
 
 module.exports = router;
 

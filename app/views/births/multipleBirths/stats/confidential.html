@@ -23,168 +23,179 @@ href: "javascript:window.history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-   <span class="govuk-caption-l">Statistics</span>
+    <span class="govuk-caption-l">Statistics</span>
     <h1 class="govuk-heading-l">
       Confidential statistics
     </h1>
 
-    <form class="form" action="/births/v1/confidential-form" method="post">
-      
+    <form class="form" action="confidential-check" method="post">
+
       <div id="authentication-code-hint" class="govuk-hint">
-        This information is required by law, and it’s supplied only to the UK Statistics Authority and researchers approved by the National Statistician. It will not be entered in the register.
+        This information is required by law, and it’s supplied only to the UK Statistics Authority and researchers
+        approved by the National Statistician. It will not be entered in the register.
       </div>
 
       <br>
-  
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="dateOfDeathType-hint">
-   
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Mother's date of birth</legend>
-        <div id="dateOfDeath-hint" class="govuk-hint">For example, 23 11 2024</div>
-        <div id="dateOfDeath_input" class="govuk-date-input">
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-day">Day</label>
-              <input id="dateOfDeath_input-day" name="dateOfDeath-day" inputmode="number" maxlength="2"
-                class="govuk-input govuk-input--width-2" aria-describedby="dateOfDeath-hint" autocomplete="off"
-                value="{{ data['dateOfDeath-day'] }}">
-            </div>
-          </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-month">Month</label>
-              <input id="dateOfDeath_input-month" name="dateOfDeath-month" inputmode="number" maxlength="2"
-                class="govuk-input govuk-input--width-2" aria-describedby="dateOfDeath-hint" autocomplete="off"
-                value="{{ data['dateOfDeath-month'] }}">
-            </div>
-          </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-year">Year</label>
-              <input id="dateOfDeath_input-year" name="dateOfDeath-year" inputmode="number" maxlength="4"
-                class="govuk-input govuk-input--width-4" aria-describedby="dateOfDeath-hint" autocomplete="off"
-                value="{{ data['dateOfDeath-year'] }}">
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-   
-
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Father's date of birth</legend>
-        <div id="dateOfDeath-hint" class="govuk-hint">For example, 23 11 2024</div>
-        <div id="dateOfDeath_input" class="govuk-date-input">
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-day">Day</label>
-              <input id="dateOfDeath_input-day" name="dateOfDeath-day" inputmode="number" maxlength="2"
-                class="govuk-input govuk-input--width-2" aria-describedby="dateOfDeath-hint" autocomplete="off"
-                value="{{ data['dateOfDeath-day'] }}">
-            </div>
-          </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-month">Month</label>
-              <input id="dateOfDeath_input-month" name="dateOfDeath-month" inputmode="number" maxlength="2"
-                class="govuk-input govuk-input--width-2" aria-describedby="dateOfDeath-hint" autocomplete="off"
-                value="{{ data['dateOfDeath-month'] }}">
-            </div>
-          </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-year">Year</label>
-              <input id="dateOfDeath_input-year" name="dateOfDeath-year" inputmode="number" maxlength="4"
-                class="govuk-input govuk-input--width-4" aria-describedby="dateOfDeath-hint" autocomplete="off"
-                value="{{ data['dateOfDeath-year'] }}">
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="dateOfDeathType-hint">
 
 
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="marriageDateKnown-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-      Do you know the date of the parent's marriage?
-    </legend>
-
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="marriageDateKnown-yes" name="marriageDateKnown"
-               value="MARRIAGE_DATE_KNOWN" data-aria-controls="conditional-marriageDateKnown-yes">
-        <label class="govuk-label govuk-radios__label" for="marriageDateKnown-yes">
-          Yes
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriageDateKnown-yes">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="marriage-date-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Date of marriage
-            </legend>
-            <div id="marriage-date-hint" class="govuk-hint">
-              For example, 23 11 2024
-            </div>
-            <div class="govuk-date-input" id="marriageDate">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="marriageDate-day">
-                    Day
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="marriageDate-day" name="marriageDate-day" type="text" inputmode="numeric">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Mother's date of birth</legend>
+              <div id="mother-dob-hint" class="govuk-hint">For example, 23 11 2024</div>
+              <div id="mother-dob-input" class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="mother-dob-day">Day</label>
+                    <input id="mother-dob-day" name="mother-dob-day" inputmode="number" maxlength="2"
+                      class="govuk-input govuk-input--width-2" aria-describedby="mother-dob-hint" autocomplete="off"
+                      value="{{ data['mother-dob-day'] or '' }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="mother-dob-month">Month</label>
+                    <input id="mother-dob-month" name="mother-dob-month" inputmode="number" maxlength="2"
+                      class="govuk-input govuk-input--width-2" aria-describedby="mother-dob-hint" autocomplete="off"
+                      value="{{ data['mother-dob-month'] or '' }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="mother-dob-year">Year</label>
+                    <input id="mother-dob-year" name="mother-dob-year" inputmode="number" maxlength="4"
+                      class="govuk-input govuk-input--width-4" aria-describedby="mother-dob-hint" autocomplete="off"
+                      value="{{ data['mother-dob-year'] or '' }}">
+                  </div>
                 </div>
               </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="marriageDate-month">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="marriageDate-month" name="marriageDate-month" type="text" inputmode="numeric">
+            </fieldset>
+          </div>
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Father's date of birth</legend>
+              <div id="father-dob-hint" class="govuk-hint">For example, 23 11 2024</div>
+              <div id="father-dob-input" class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="father-dob-day">Day</label>
+                    <input id="father-dob-day" name="father-dob-day" inputmode="number" maxlength="2"
+                      class="govuk-input govuk-input--width-2" aria-describedby="father-dob-hint" autocomplete="off"
+                      value="{{ data['father-dob-day'] or '' }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="father-dob-month">Month</label>
+                    <input id="father-dob-month" name="father-dob-month" inputmode="number" maxlength="2"
+                      class="govuk-input govuk-input--width-2" aria-describedby="father-dob-hint" autocomplete="off"
+                      value="{{ data['father-dob-month'] or '' }}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="father-dob-year">Year</label>
+                    <input id="father-dob-year" name="father-dob-year" inputmode="number" maxlength="4"
+                      class="govuk-input govuk-input--width-4" aria-describedby="father-dob-hint" autocomplete="off"
+                      value="{{ data['father-dob-year'] or '' }}">
+                  </div>
                 </div>
               </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="marriageDate-year">
-                    Year
+            </fieldset>
+          </div>
+
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="marriageDateKnown-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Do you know the date of the parent's marriage?
+              </legend>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="marriageDateKnown-yes" name="marriageDateKnown"
+                    value="MARRIAGE_DATE_KNOWN" {% if data.marriageDateKnown=='MARRIAGE_DATE_KNOWN' %}checked{% endif %}
+                    data-aria-controls="conditional-marriageDateKnown-yes">
+                  <label class="govuk-label govuk-radios__label" for="marriageDateKnown-yes">
+                    Yes
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="marriageDate-year" name="marriageDate-year" type="text" inputmode="numeric">
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="conditional-marriageDateKnown-yes">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="marriage-date-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Date of marriage
+                      </legend>
+                      <div id="marriage-date-hint" class="govuk-hint">
+                        For example, 23 11 2024
+                      </div>
+                      <div class="govuk-date-input" id="marriageDate">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="marriageDate-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                              id="marriageDate-day" name="marriageDate-day" type="text" inputmode="numeric"
+                              value="{{ data['marriageDate-day'] or '' }}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="marriageDate-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                              id="marriageDate-month" name="marriageDate-month" type="text" inputmode="numeric"
+                              value="{{ data['marriageDate-month'] or '' }}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="marriageDate-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                              id="marriageDate-year" name="marriageDate-year" type="text" inputmode="numeric"
+                              value="{{ data['marriageDate-year'] or '' }}">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="marriageDateKnown-no" name="marriageDateKnown"
+                    value="MARRIAGE_DATE_UNKNOWN" {% if data.marriageDateKnown=='MARRIAGE_DATE_UNKNOWN' %}checked{%
+                    endif %}>
+                  <label class="govuk-label govuk-radios__label" for="marriageDateKnown-no">
+                    No
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="marriageDateKnown-refused"
+                    name="marriageDateKnown" value="MARRIAGE_DATE_REFUSED" {% if
+                    data.marriageDateKnown=='MARRIAGE_DATE_REFUSED' %}checked{% endif %}>
+                  <label class="govuk-label govuk-radios__label" for="marriageDateKnown-refused">
+                    Refused to answer
+                  </label>
                 </div>
               </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
+            </fieldset>
+          </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="marriageDateKnown-no" name="marriageDateKnown"
-               value="MARRIAGE_DATE_UNKNOWN">
-        <label class="govuk-label govuk-radios__label" for="marriageDateKnown-no">
-          No
-        </label>
-      </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="marriageDateKnown-refused" name="marriageDateKnown"
-               value="MARRIAGE_DATE_REFUSED">
-        <label class="govuk-label govuk-radios__label" for="marriageDateKnown-refused">
-          Refused to answer
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
 
-     
-
-<!-- 
+          <!-- 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="marriageDateKnown-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -224,150 +235,154 @@ href: "javascript:window.history.back()"
 
 
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="previousMarriageMother-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-      Has the mother been married or in a civil partnership before?
-    </legend>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="previousMarriageMother-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Has the mother been married or in a civil partnership before?
+              </legend>
 
-    <div class="govuk-radios" data-module="govuk-radios">
-      <!-- Option 1: Yes -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="previousMarriageMother-yes" name="previousMarriageMother"
-               value="PREVIOUS_MARRIAGE_MOTHER_YES">
-        <label class="govuk-label govuk-radios__label" for="previousMarriageMother-yes">
-          Yes
-        </label>
-      </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <!-- Option 1: Yes -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="previousMarriageMother-yes"
+                    name="previousMarriageMother" value="PREVIOUS_MARRIAGE_MOTHER_YES">
+                  <label class="govuk-label govuk-radios__label" for="previousMarriageMother-yes">
+                    Yes
+                  </label>
+                </div>
 
-      <!-- Option 2: No -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="previousMarriageMother-no" name="previousMarriageMother"
-               value="PREVIOUS_MARRIAGE_MOTHER_NO">
-        <label class="govuk-label govuk-radios__label" for="previousMarriageMother-no">
-          No
-        </label>
-      </div>
+                <!-- Option 2: No -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="previousMarriageMother-no"
+                    name="previousMarriageMother" value="PREVIOUS_MARRIAGE_MOTHER_NO">
+                  <label class="govuk-label govuk-radios__label" for="previousMarriageMother-no">
+                    No
+                  </label>
+                </div>
 
-      <!-- Option 3: Refused to answer -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="previousMarriageMother-refused" name="previousMarriageMother"
-               value="PREVIOUS_MARRIAGE_MOTHER_REFUSED">
-        <label class="govuk-label govuk-radios__label" for="previousMarriageMother-refused">
-          Refused to answer
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
-
-
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="liveBirthsMother-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-      Has the mother had any children born alive before?
-    </legend>
-
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="liveBirthsMother-yes" name="liveBirthsMother"
-               value="LIVE_BIRTHS_MOTHER_YES" data-aria-controls="conditional-liveBirthsMother-yes">
-        <label class="govuk-label govuk-radios__label" for="liveBirthsMother-yes">
-          Yes
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-liveBirthsMother-yes">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="numberOfChildrenBornAlive">
-            Number of children born alive
-          </label>
-          <input class="govuk-input govuk-input--width-5" id="numberOfChildrenBornAlive" name="numberOfChildrenBornAlive" type="text">
-        </div>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="liveBirthsMother-no" name="liveBirthsMother"
-               value="LIVE_BIRTHS_MOTHER_NO">
-        <label class="govuk-label govuk-radios__label" for="liveBirthsMother-no">
-          No
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="liveBirthsMother-unknown" name="liveBirthsMother"
-               value="LIVE_BIRTHS_MOTHER_UNKNOWN">
-        <label class="govuk-label govuk-radios__label" for="liveBirthsMother-unknown">
-          Not known
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="liveBirthsMother-refused" name="liveBirthsMother"
-               value="LIVE_BIRTHS_MOTHER_REFUSED">
-        <label class="govuk-label govuk-radios__label" for="liveBirthsMother-refused">
-          Refused to answer
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+                <!-- Option 3: Refused to answer -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="previousMarriageMother-refused"
+                    name="previousMarriageMother" value="PREVIOUS_MARRIAGE_MOTHER_REFUSED">
+                  <label class="govuk-label govuk-radios__label" for="previousMarriageMother-refused">
+                    Refused to answer
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
 
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="stillbirthsMother-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-      Has the mother had any stillborn children before?
-    </legend>
 
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="stillbirthsMother-yes" name="stillbirthsMother"
-               value="STILLBIRTHS_MOTHER_YES" data-aria-controls="conditional-stillbirthsMother-yes">
-        <label class="govuk-label govuk-radios__label" for="stillbirthsMother-yes">
-          Yes
-        </label>
-      </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="liveBirthsMother-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Has the mother had any children born alive before?
+              </legend>
 
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-stillbirthsMother-yes">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="numberOfStillbornChildren">
-            Number of stillborn children
-          </label>
-          <input class="govuk-input govuk-input--width-5" id="numberOfStillbornChildren" name="numberOfStillbornChildren" type="text">
-        </div>
-      </div>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="liveBirthsMother-yes" name="liveBirthsMother"
+                    value="LIVE_BIRTHS_MOTHER_YES" data-aria-controls="conditional-liveBirthsMother-yes">
+                  <label class="govuk-label govuk-radios__label" for="liveBirthsMother-yes">
+                    Yes
+                  </label>
+                </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="stillbirthsMother-no" name="stillbirthsMother"
-               value="STILLBIRTHS_MOTHER_NO">
-        <label class="govuk-label govuk-radios__label" for="stillbirthsMother-no">
-          No
-        </label>
-      </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="conditional-liveBirthsMother-yes">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="numberOfChildrenBornAlive">
+                      Number of children born alive
+                    </label>
+                    <input class="govuk-input govuk-input--width-5" id="numberOfChildrenBornAlive"
+                      name="numberOfChildrenBornAlive" type="text">
+                  </div>
+                </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="stillbirthsMother-unknown" name="stillbirthsMother"
-               value="STILLBIRTHS_MOTHER_UNKNOWN">
-        <label class="govuk-label govuk-radios__label" for="stillbirthsMother-unknown">
-          Not known
-        </label>
-      </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="liveBirthsMother-no" name="liveBirthsMother"
+                    value="LIVE_BIRTHS_MOTHER_NO">
+                  <label class="govuk-label govuk-radios__label" for="liveBirthsMother-no">
+                    No
+                  </label>
+                </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" type="radio" id="stillbirthsMother-refused" name="stillbirthsMother"
-               value="STILLBIRTHS_MOTHER_REFUSED">
-        <label class="govuk-label govuk-radios__label" for="stillbirthsMother-refused">
-          Refused to answer
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="liveBirthsMother-unknown" name="liveBirthsMother"
+                    value="LIVE_BIRTHS_MOTHER_UNKNOWN">
+                  <label class="govuk-label govuk-radios__label" for="liveBirthsMother-unknown">
+                    Not known
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="liveBirthsMother-refused" name="liveBirthsMother"
+                    value="LIVE_BIRTHS_MOTHER_REFUSED">
+                  <label class="govuk-label govuk-radios__label" for="liveBirthsMother-refused">
+                    Refused to answer
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
 
 
-<!-- <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="stillbirthsMother-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Has the mother had any stillborn children before?
+              </legend>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="stillbirthsMother-yes" name="stillbirthsMother"
+                    value="STILLBIRTHS_MOTHER_YES" data-aria-controls="conditional-stillbirthsMother-yes">
+                  <label class="govuk-label govuk-radios__label" for="stillbirthsMother-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="conditional-stillbirthsMother-yes">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="numberOfStillbornChildren">
+                      Number of stillborn children
+                    </label>
+                    <input class="govuk-input govuk-input--width-5" id="numberOfStillbornChildren"
+                      name="numberOfStillbornChildren" type="text">
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="stillbirthsMother-no" name="stillbirthsMother"
+                    value="STILLBIRTHS_MOTHER_NO">
+                  <label class="govuk-label govuk-radios__label" for="stillbirthsMother-no">
+                    No
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="stillbirthsMother-unknown"
+                    name="stillbirthsMother" value="STILLBIRTHS_MOTHER_UNKNOWN">
+                  <label class="govuk-label govuk-radios__label" for="stillbirthsMother-unknown">
+                    Not known
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" id="stillbirthsMother-refused"
+                    name="stillbirthsMother" value="STILLBIRTHS_MOTHER_REFUSED">
+                  <label class="govuk-label govuk-radios__label" for="stillbirthsMother-refused">
+                    Refused to answer
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <!-- <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="stillbirthsMother-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
       Has the mother had any stillborn children before?
@@ -416,12 +431,11 @@ href: "javascript:window.history.back()"
 
 
 
-      <div class="govuk-button-group">
-        {{ govukButton({
-        text: "Save and return",
-        href: "javascript:window.history.back()"
-        }) }}
-      </div>
+          <div class="govuk-button-group">
+            {{ govukButton({
+            text: "Save and return"
+            }) }}
+          </div>
 
     </form>
 

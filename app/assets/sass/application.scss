@@ -39,3 +39,43 @@
     color: #1d70b8;
   }
 }
+
+.print-button-link {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #1d70b8;
+
+  &:hover {
+    color: #003078;
+  }
+
+  &:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    background-color: #ffdd00;
+    color: #0b0c0c;
+  }
+}
+
+// Print styles to hide link URLs and improve print layout
+@media print {
+
+  // Hide link URLs that browsers show by default in print
+  a[href]:after {
+    content: none !important;
+  }
+
+  // Hide the print button itself when printing
+  .print-button-link {
+    display: none;
+  }
+
+  // Hide "Change" action links in print version
+  .govuk-summary-list__actions {
+    display: none;
+  }
+}
