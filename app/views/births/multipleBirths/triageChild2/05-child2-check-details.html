@@ -36,10 +36,10 @@ href: "javascript:window.history.back()"
           "motherAndParent": "Mother and second parent",
           "otherInformant": "Other"
           } %}
-          {{ whoIsInformantText[data['whoIsInformant']] or "Mother" }}
+          {{ whoIsInformantText[data['whoIsInformant']] or "Father" }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="01-who-is-informant">Change<span class="govuk-visually-hidden"> date of
+          <a class="govuk-link" href="/births/multipleBirths/child2Details/01-child2-name-date.html">Change<span class="govuk-visually-hidden"> date of
               birth</span></a>
         </dd>
       </div>
@@ -56,16 +56,13 @@ href: "javascript:window.history.back()"
           } %}
           {{ marriedOrCivilPartnershipText[data['marriedOrCivilPartnership']] or "Married" }}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/births/multipleBirths/triage/03-marital-status">Change<span class="govuk-visually-hidden"> customer
-              reference</span></a>
-        </dd>
       </div>
+      
     </dl>
 
       {{ govukButton({
       text: "Continue",
-      href: "/births/multipleBirths/tasks/index.html"
+      href: "/births/multipleBirths/tasks/child2index.html"
       }) }}
 
   </div>

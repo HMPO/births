@@ -20,22 +20,18 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
   
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-  
-           <span class="govuk-caption-l">Parent's details</span>
+   <span class="govuk-caption-l">Parents' details</span>
           <h1 class="govuk-heading-l">
-            Father's details
+            Mother's details
           </h1>
   
-          <form class="form" action="/births/v1/fathers-details-form" method="post">
+          <form class="form" action="/births/v1/mothers-details-form" method="post">
 
  <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="fathersPlaceOfBirth-label" for="fathersPlaceOfBirth">
-                Place of birth (if available)
+              <label class="govuk-label govuk-label--s" id="mothersPlaceOfBirth-label" for="mothersPlaceOfBirth">
+                Place of birth
               </label>
-              <div id="fathersPlaceOfBirth-hint" class="govuk-hint">
-                Town and county if in UK, country if outside the UK.
-              </div>
-              <input class="govuk-input govuk-!-width-one-half" id="fathersPlaceOfBirth" name="fathersPlaceOfBirth" type="text" aria-describedby="fathersPlaceOfBirth-hint" aria-required="false" value="{{data['fathersPlaceOfBirth']}}">
+              <input class="govuk-input govuk-!-width-one-half" id="mothersPlaceOfBirth" name="mothersPlaceOfBirth" type="text" aria-describedby="mothersPlaceOfBirth-hint" aria-required="false" value="{{data['mothersPlaceOfBirth']}}">
             </div>
 
             <!-- <div class="govuk-form-group">
@@ -255,44 +251,44 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
            
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="fathersCountryOfBirth-fieldset" aria-required="false">
+              <fieldset class="govuk-fieldset" id="mothersCountryOfBirth-fieldset" aria-required="false">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 Country of birth
               </legend>
               <div class="govuk-radios govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="fathersCountryOfBirth-England" name="fathersCountryOfBirth" type="radio" value="england" {{ checked("fathersCountryOfBirth", "england") }}>
-                      <label class="govuk-label govuk-radios__label" id="fathersCountryOfBirth-England-label" for="fathersCountryOfBirth-England">
+                      <input class="govuk-radios__input" id="mothersCountryOfBirth-England" name="mothersCountryOfBirth" type="radio" value="england" {{ checked("mothersCountryOfBirth", "england") }}>
+                      <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-England-label" for="mothersCountryOfBirth-England">
                     England
                   </label>  
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="fathersCountryOfBirth-NorthernIreland" name="fathersCountryOfBirth" type="radio" value="northern-ireland" {{ checked("fathersCountryOfBirth", "northern-ireland") }}>
-                      <label class="govuk-label govuk-radios__label" id="fathersCountryOfBirth-NorthernIreland-label" for="fathersCountryOfBirth-NorthernIreland">
+                      <input class="govuk-radios__input" id="mothersCountryOfBirth-NorthernIreland" name="mothersCountryOfBirth" type="radio" value="northern-ireland" {{ checked("mothersCountryOfBirth", "northern-ireland") }}>
+                      <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-NorthernIreland-label" for="mothersCountryOfBirth-NorthernIreland">
                     Northern Ireland
                   </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="fathersCountryOfBirth-Scotland" name="fathersCountryOfBirth" type="radio" value="scotland" {{ checked("fathersCountryOfBirth", "scotland") }}>
-                      <label class="govuk-label govuk-radios__label" id="fathersCountryOfBirth-Scotland-label" for="fathersCountryOfBirth-Scotland">
+                      <input class="govuk-radios__input" id="mothersCountryOfBirth-Scotland" name="mothersCountryOfBirth" type="radio" value="scotland" {{ checked("mothersCountryOfBirth", "scotland") }}>
+                      <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-Scotland-label" for="mothersCountryOfBirth-Scotland">
                     Scotland
                   </label>          
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="fathersCountryOfBirth-Wales" name="fathersCountryOfBirth" type="radio" value="wales" {{ checked("fathersCountryOfBirth", "wales") }}>
-                      <label class="govuk-label govuk-radios__label" id="fathersCountryOfBirth-Wales-label" for="fathersCountryOfBirth-Wales">
+                      <input class="govuk-radios__input" id="mothersCountryOfBirth-Wales" name="mothersCountryOfBirth" type="radio" value="wales" {{ checked("mothersCountryOfBirth", "wales") }}>
+                      <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-Wales-label" for="mothersCountryOfBirth-Wales">
                     Wales
                   </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="fathersCountryOfBirth-OutsidetheUK" name="fathersCountryOfBirth" type="radio" value="outside-the-UK" {{ checked("fathersCountryOfBirth", "outside-the-UK") }}>
-                      <label class="govuk-label govuk-radios__label" id="fathersCountryOfBirth-OutsidetheUK-label" for="fathersCountryOfBirth-OutsidetheUK">
+                      <input class="govuk-radios__input" id="mothersCountryOfBirth-OutsidetheUK" name="mothersCountryOfBirth" type="radio" value="outside-the-UK" {{ checked("mothersCountryOfBirth", "outside-the-UK") }}>
+                      <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-OutsidetheUK-label" for="mothersCountryOfBirth-OutsidetheUK">
                         Outside the UK
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="fathersCountryOfBirth-Notknown" name="fathersCountryOfBirth" type="radio" value="not-known" {{ checked("fathersCountryOfBirth", "not-known") }}>
-                      <label class="govuk-label govuk-radios__label" id="fathersCountryOfBirth-Notknown-label" for="fathersCountryOfBirth-Notknown">
+                      <input class="govuk-radios__input" id="mothersCountryOfBirth-Notknown" name="mothersCountryOfBirth" type="radio" value="not-known" {{ checked("mothersCountryOfBirth", "not-known") }}>
+                      <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-Notknown-label" for="mothersCountryOfBirth-Notknown">
                       Not known
                       </label>
                     </div>
@@ -332,34 +328,59 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
   <label class="govuk-label govuk-fieldset__legend--s" for="fathersOccupation">
     Occupation
   </label>
-  <input class="govuk-input govuk-input--width-10" id="fathersOccupation" name="fathersOccupation" type="text" 
-    aria-describedby="fathersOccupation-hint" aria-required="false" value="{{ data['fathersOccupation'] }}">
+  <input class="govuk-input govuk-!-width-one-half" id="mothersOccupation" name="mothersOccupation" type="text" 
+    aria-describedby="mothersOccupation-hint" aria-required="false" value="{{ data['mothersOccupation'] }}">
 </div>
-
-            
-
-             <div class="govuk-form-group" id="fatherdeceased">
-              <fieldset class="govuk-fieldset" id="fatherdeceased-fieldset" aria-required="false">
+<br>
+              <div class="govuk-form-group" id="addresschildborn">
+              <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Is this the father deceased?
+                  Address when the child was born
                 </legend>
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="fatherdeceased-true" name="fatherdeceased" type="radio" value="true" {{ checked("fatherdeceased", "true") }}>
-                    <label class="govuk-label govuk-radios__label" id="fatherdeceased-true-label" for="fatherdeceased-true">
-                        Yes
-                    </label>    
-                  </div>
-                  <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="fatherdeceased-false" name="fatherdeceased" type="radio" value="false" {{ checked("fatherdeceased", "false") }}>
-                      <label class="govuk-label govuk-radios__label" id="fatherdeceased-false-label" for="fatherdeceased-false">
-                        No
-                      </label>
-                  </div>
-                  
-                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
+                    Search by postcode
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value=""">
+                <br>
+                  <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-top-4" data-module="govuk-button">
+                 
+                  Find address
+                </button>
+              </div>
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+                </p>
+
               </fieldset>
             </div>
+
+              <div class="govuk-form-group" id="fatherdeceased">
+                <fieldset class="govuk-fieldset" id="fatherdeceased-fieldset" aria-required="false">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Is the mother deceased?
+                  </legend>
+                  <div class="govuk-radios govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="fatherdeceased-true" name="fatherdeceased" type="radio" value="true" {{ checked("fatherdeceased", "true") }}>
+                      <label class="govuk-label govuk-radios__label" id="fatherdeceased-true-label" for="fatherdeceased-true">
+                          Yes
+                      </label>    
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="fatherdeceased-false" name="fatherdeceased" type="radio" value="false" {{ checked("fatherdeceased", "false") }}>
+                        <label class="govuk-label govuk-radios__label" id="fatherdeceased-false-label" for="fatherdeceased-false">
+                          No
+                        </label>
+                    </div>
+                    
+                  </div>
+                </fieldset>
+              </div>
+
+           
+
+          
 
             <!-- <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="OccupationStatus-fieldset" aria-required="false">
@@ -385,7 +406,8 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Save and continue"
+                text: "Save and return",
+                href: "javascript:window.history.back()"
               })
             }} 
             </div>

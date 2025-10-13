@@ -1,0 +1,306 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        Check your answers before submitting the birth registration
+      </h1>
+       <h2 class="govuk-heading-m">
+        Child 1 details
+      </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date and time of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            First October 2025, 10:48am
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Place of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Princess Anne Hospital, Southampton
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Oliver MORA
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Sex
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Male
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">
+        Mother's details
+      </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Haley Jennifer MORA
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Place of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nottingham
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Florist
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Maiden name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            SMITH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Florist
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name at marriage (if different from maiden name)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Florist
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            23 West Drive, Eastleigh
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">
+        Father's details
+      </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Pedro MORA formerly known as Pedro MORA SANCHEZ
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Place of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Madrid
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Customer Service Representative
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            23 West Drive, Eastleigh
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">
+        Informant's details
+      </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Qualification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Father
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">
+        Registrar's details
+      </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Example name
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Designation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Reistrar
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+  
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Print</a>
+      </p>
+
+
+  <div class="govuk-grid-row govuk-grid-column-full">
+     {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: " ",
+      isPageHeading: false,
+      classes: "govuk-body"
+    }
+  },
+
+  items: [
+    {
+      value: "farm",
+      text: "Confirm register entry"
+    }
+  ]
+}) }}
+  </div>
+
+   
+
+      <form action="sign-page" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
