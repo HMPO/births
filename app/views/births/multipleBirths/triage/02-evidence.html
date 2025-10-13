@@ -6,7 +6,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block beforeContent %}
 {{ govukBackLink({
-text: "Back to record",
+text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
@@ -25,7 +25,7 @@ href: "javascript:window.history.back()"
       name: "evidence",
       fieldset: {
       legend: {
-      text: "Has registrar seen evidence of informant identity",
+      text: "Has registrar seen evidence of informant identity?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
       }

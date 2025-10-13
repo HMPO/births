@@ -11,18 +11,26 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row govuk-!-margin-bottom-6">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Birth registration</h1>
-    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Child 1 details</h2>
-    <ul class="govuk-task-list">
-      
 
+
+
+
+   
+   
+
+
+  
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Child's details</h2>
+    <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/childsDetails/02-place-of-birth.html">
-            Place of birth
+          <a class="govuk-link govuk-task-list__link" href="child-details/name-date">
+            Name, sex and date of birth
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.placeCompleted %}
+          {% if data.nameDateCompleted %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -32,12 +40,12 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/childsDetails/01-name-date.html">
-            Name, date of birth and sex
+          <a class="govuk-link govuk-task-list__link" href="child-details/place-of-stillbirth">
+            Place of birth
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.nameDateCompleted %}
+          {% if data.placeCompleted %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -50,7 +58,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
      <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/parentsDetails/mothers-name">
+          <a class="govuk-link govuk-task-list__link" href="parentsDetails/mothers-name">
             Mother's names
           </a>
         </div>
@@ -79,7 +87,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
       </li>
        <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/parentsDetails/fathers-name">
+          <a class="govuk-link govuk-task-list__link" href="parents-details/fathers-name">
             Father's names
           </a>
         </div>
@@ -94,7 +102,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/parentsDetails/fathers-details">
+          <a class="govuk-link govuk-task-list__link" href="parents-details/fathers-details">
             Father's details
           </a>
         </div>
@@ -112,7 +120,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
      <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/stats/confidential.html">
+          <a class="govuk-link govuk-task-list__link" href="stats/confidential">
             Confidential statistics
           </a>
         </div>
@@ -127,7 +135,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/stats/voluntary">
+          <a class="govuk-link govuk-task-list__link" href="stats/voluntary">
             Voluntary statistics
           </a>
         </div>
@@ -141,15 +149,19 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
       </li>
       </ul>
 
-      <h2 class="govuk-heading-m">Additional information</h2>
+      <h2 class="govuk-heading-m">Registrar's comments </h2>
        <ul class="govuk-task-list">
          <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/additionalInfo/comments">
+          <a class="govuk-link govuk-task-list__link" href="supporting-info/comments">
             Comments</a> 
         </div>
         <div class="govuk-task-list__status">
+          {% if data.commentsCompleted %}
+          Entered
+          {% else %}
             <strong class="govuk-tag govuk-tag--yellow">Optional</strong>
+          {% endif %}
         </div>
       </li>
        </ul>
@@ -163,7 +175,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
             Registrar's details
           </div>
            {% else %}
- <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths/submit/register-page">
+ <a class="govuk-link govuk-task-list__link" href="submit/register-page">
             Registrar's details
           </a>
            {% endif %}
@@ -205,10 +217,13 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
       </li>
     </ul>
+  
+
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <p><a href="#" class="govuk-link">Change record details</a></p>
     <p><a href="#" class="govuk-link" style="color: #d4351c;">Delete record</a></p>
 
     </div>

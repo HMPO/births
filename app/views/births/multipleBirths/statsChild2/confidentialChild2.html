@@ -29,224 +29,83 @@ href: "javascript:window.history.back()"
     </h1>
 
     <form class="form" action="/births/v1/confidential-form" method="post">
+      
+      <div id="authentication-code-hint" class="govuk-hint">
+        This information is required by law, and it’s supplied only to the UK Statistics Authority and researchers approved by the National Statistician. It will not be entered in the register.
+      </div>
 
+      <br>
   
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="dateOfDeathType-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-      Is the mother's date of birth known?
-    </legend>
+   
 
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <!-- Option 1: Full date known -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dateOfDeathType-1" name="dateOfDeathType"
-               type="radio" value="FULL_DATE_OF_DEATH" data-aria-controls="conditional-dateOfDeathType-1" checked>
-        <label class="govuk-label govuk-radios__label" for="dateOfDeathType-1">
-          Yes, the mother's full date of birth is known
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-dateOfDeathType-1">
-        <!-- Full date input (day, month, year) -->
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Mother's date of birth</legend>
-          <div id="dateOfDeath-hint" class="govuk-hint">For example, 23 11 2024.</div>
-          <div class="govuk-date-input" id="dateOfDeath_input">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-day">Day</label>
-                <input class="govuk-input govuk-input--width-2" id="dateOfDeath_input-day" name="dateOfDeath-day"
-                       type="text" inputmode="numeric" maxlength="2" autocomplete="off">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-month">Month</label>
-                <input class="govuk-input govuk-input--width-2" id="dateOfDeath_input-month" name="dateOfDeath-month"
-                       type="text" inputmode="numeric" maxlength="2" autocomplete="off">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-year">Year</label>
-                <input class="govuk-input govuk-input--width-4" id="dateOfDeath_input-year" name="dateOfDeath-year"
-                       type="text" inputmode="numeric" maxlength="4" autocomplete="off">
-              </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Mother's date of birth</legend>
+        <div id="dateOfDeath-hint" class="govuk-hint">For example, 23 11 2024</div>
+        <div id="dateOfDeath_input" class="govuk-date-input">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-day">Day</label>
+              <input id="dateOfDeath_input-day" name="dateOfDeath-day" inputmode="number" maxlength="2"
+                class="govuk-input govuk-input--width-2" aria-describedby="dateOfDeath-hint" autocomplete="off"
+                value="1">
             </div>
           </div>
-        </fieldset>
-      </div>
-
-      <!-- Option 2: Partial date known -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dateOfDeathType-2" name="dateOfDeathType"
-               type="radio" value="PARTIAL_DATE_OF_DEATH" data-aria-controls="conditional-dateOfDeathType-2">
-        <label class="govuk-label govuk-radios__label" for="dateOfDeathType-2">
-          Yes, part of the mother's date of birth is known
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-dateOfDeathType-2">
-        <!-- Month and year only -->
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Mother's partial date of birth</legend>
-          <div id="partialDateOfDeath-hint" class="govuk-hint">For example, 11 2024 or 2024.</div>
-          <div class="govuk-date-input" id="partialDateOfDeath_input">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="partialDateOfDeath_input-month">Month</label>
-                <input class="govuk-input govuk-input--width-2" id="partialDateOfDeath_input-month" name="partialDateOfDeath-month"
-                       type="text" inputmode="numeric" maxlength="2" autocomplete="off">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="partialDateOfDeath_input-year">Year</label>
-                <input class="govuk-input govuk-input--width-4" id="partialDateOfDeath_input-year" name="partialDateOfDeath-year"
-                       type="text" inputmode="numeric" maxlength="4" autocomplete="off">
-              </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-month">Month</label>
+              <input id="dateOfDeath_input-month" name="dateOfDeath-month" inputmode="number" maxlength="2"
+                class="govuk-input govuk-input--width-2" aria-describedby="dateOfDeath-hint" autocomplete="off"
+                value="10">
             </div>
           </div>
-        </fieldset>
-      </div>
-
-      <!-- Option 3 -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dateOfDeathType-3" name="dateOfDeathType"
-               type="radio" value="DATE_BODY_FOUND">
-        <label class="govuk-label govuk-radios__label" for="dateOfDeathType-3">
-          No, the mother's date of birth is not known
-        </label>
-      </div>
-
-      <!-- Option 4 -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dateOfDeathType-4" name="dateOfDeathType"
-               type="radio" value="DATE_REFUSED">
-        <label class="govuk-label govuk-radios__label" for="dateOfDeathType-4">
-          Refused to answer
-        </label>
-      </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-year">Year</label>
+              <input id="dateOfDeath_input-year" name="dateOfDeath-year" inputmode="number" maxlength="4"
+                class="govuk-input govuk-input--width-4" aria-describedby="dateOfDeath-hint" autocomplete="off"
+                value="1988">
+            </div>
+          </div>
+        </div>
+      </fieldset>
     </div>
-  </fieldset>
-</div>
+   
 
-
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="dateOfBirthFatherType-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-      Is the father's date of birth known?
-    </legend>
-
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <!-- Option 1: Full date known -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dateOfBirthFatherType-1" name="dateOfBirthFatherType"
-               type="radio" value="FULL_DATE_OF_BIRTH_FATHER" data-aria-controls="conditional-dateOfBirthFatherType-1" checked>
-        <label class="govuk-label govuk-radios__label" for="dateOfBirthFatherType-1">
-          Yes, the father's full date of birth is known
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-dateOfBirthFatherType-1">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Father's date of birth</legend>
-          <div id="dateOfBirthFather-hint" class="govuk-hint">For example, 23 11 1980.</div>
-          <div class="govuk-date-input" id="dateOfBirthFather_input">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dateOfBirthFather_input-day">Day</label>
-                <input class="govuk-input govuk-input--width-2" id="dateOfBirthFather_input-day" name="dateOfBirthFather-day"
-                       type="text" inputmode="numeric" maxlength="2" autocomplete="off">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dateOfBirthFather_input-month">Month</label>
-                <input class="govuk-input govuk-input--width-2" id="dateOfBirthFather_input-month" name="dateOfBirthFather-month"
-                       type="text" inputmode="numeric" maxlength="2" autocomplete="off">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dateOfBirthFather_input-year">Year</label>
-                <input class="govuk-input govuk-input--width-4" id="dateOfBirthFather_input-year" name="dateOfBirthFather-year"
-                       type="text" inputmode="numeric" maxlength="4" autocomplete="off">
-              </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Father's date of birth</legend>
+        <div id="dateOfDeath-hint" class="govuk-hint">For example, 23 11 2024</div>
+        <div id="dateOfDeath_input" class="govuk-date-input">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-day">Day</label>
+              <input id="dateOfDeath_input-day" name="dateOfDeath-day" inputmode="number" maxlength="2"
+                class="govuk-input govuk-input--width-2" aria-describedby="dateOfDeath-hint" autocomplete="off"
+                value="20">
             </div>
           </div>
-        </fieldset>
-      </div>
-
-      <!-- Option 2: Partial date known -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dateOfBirthFatherType-2" name="dateOfBirthFatherType"
-               type="radio" value="PARTIAL_DATE_OF_BIRTH_FATHER" data-aria-controls="conditional-dateOfBirthFatherType-2">
-        <label class="govuk-label govuk-radios__label" for="dateOfBirthFatherType-2">
-          Yes, part of the father's date of birth is known
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-dateOfBirthFatherType-2">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Father's partial date of birth</legend>
-          <div id="partialDateOfBirthFather-hint" class="govuk-hint">For example, 11 1980 or just 1980.</div>
-          <div class="govuk-date-input" id="partialDateOfBirthFather_input">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="partialDateOfBirthFather_input-month">Month</label>
-                <input class="govuk-input govuk-input--width-2" id="partialDateOfBirthFather_input-month" name="partialDateOfBirthFather-month"
-                       type="text" inputmode="numeric" maxlength="2" autocomplete="off">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="partialDateOfBirthFather_input-year">Year</label>
-                <input class="govuk-input govuk-input--width-4" id="partialDateOfBirthFather_input-year" name="partialDateOfBirthFather-year"
-                       type="text" inputmode="numeric" maxlength="4" autocomplete="off">
-              </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-month">Month</label>
+              <input id="dateOfDeath_input-month" name="dateOfDeath-month" inputmode="number" maxlength="2"
+                class="govuk-input govuk-input--width-2" aria-describedby="dateOfDeath-hint" autocomplete="off"
+                value="8">
             </div>
           </div>
-        </fieldset>
-      </div>
-
-      <!-- Option 3 -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dateOfBirthFatherType-3" name="dateOfBirthFatherType"
-               type="radio" value="DATE_OF_BIRTH_FATHER_UNKNOWN">
-        <label class="govuk-label govuk-radios__label" for="dateOfBirthFatherType-3">
-          No, the father's date of birth is not known
-        </label>
-      </div>
-
-      <!-- Option 4 -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="dateOfBirthFatherType-4" name="dateOfBirthFatherType"
-               type="radio" value="DATE_OF_BIRTH_FATHER_REFUSED">
-        <label class="govuk-label govuk-radios__label" for="dateOfBirthFatherType-4">
-          Refused to answer
-        </label>
-      </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="dateOfDeath_input-year">Year</label>
+              <input id="dateOfDeath_input-year" name="dateOfDeath-year" inputmode="number" maxlength="4"
+                class="govuk-input govuk-input--width-4" aria-describedby="dateOfDeath-hint" autocomplete="off"
+                value="1980">
+            </div>
+          </div>
+        </div>
+      </fieldset>
     </div>
-  </fieldset>
-</div>
-
-
-
-
-
-
-
-
-
-      
-     
-
-     
-
-
 
 
 
@@ -259,7 +118,7 @@ href: "javascript:window.history.back()"
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" type="radio" id="marriageDateKnown-yes" name="marriageDateKnown"
-               value="MARRIAGE_DATE_KNOWN" data-aria-controls="conditional-marriageDateKnown-yes">
+               value="MARRIAGE_DATE_KNOWN" data-aria-controls="conditional-marriageDateKnown-yes" checked>
         <label class="govuk-label govuk-radios__label" for="marriageDateKnown-yes">
           Yes
         </label>
@@ -280,7 +139,7 @@ href: "javascript:window.history.back()"
                   <label class="govuk-label govuk-date-input__label" for="marriageDate-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="marriageDate-day" name="marriageDate-day" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="marriageDate-day" name="marriageDate-day" type="text" inputmode="numeric" value="15">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -288,7 +147,7 @@ href: "javascript:window.history.back()"
                   <label class="govuk-label govuk-date-input__label" for="marriageDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="marriageDate-month" name="marriageDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="marriageDate-month" name="marriageDate-month" type="text" inputmode="numeric" value="7">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -296,7 +155,7 @@ href: "javascript:window.history.back()"
                   <label class="govuk-label govuk-date-input__label" for="marriageDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="marriageDate-year" name="marriageDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="marriageDate-year" name="marriageDate-year" type="text" inputmode="numeric" value="2017">
                 </div>
               </div>
             </div>
@@ -368,7 +227,7 @@ href: "javascript:window.history.back()"
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="previousMarriageMother-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-      Has the mother been married or in a civil partnership before this one?
+      Has the mother been married or in a civil partnership before?
     </legend>
 
     <div class="govuk-radios" data-module="govuk-radios">
@@ -384,7 +243,7 @@ href: "javascript:window.history.back()"
       <!-- Option 2: No -->
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" type="radio" id="previousMarriageMother-no" name="previousMarriageMother"
-               value="PREVIOUS_MARRIAGE_MOTHER_NO">
+               value="PREVIOUS_MARRIAGE_MOTHER_NO" checked>
         <label class="govuk-label govuk-radios__label" for="previousMarriageMother-no">
           No
         </label>
@@ -430,7 +289,7 @@ href: "javascript:window.history.back()"
 
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" type="radio" id="liveBirthsMother-no" name="liveBirthsMother"
-               value="LIVE_BIRTHS_MOTHER_NO">
+               value="LIVE_BIRTHS_MOTHER_NO" checked>
         <label class="govuk-label govuk-radios__label" for="liveBirthsMother-no">
           No
         </label>
@@ -482,7 +341,7 @@ href: "javascript:window.history.back()"
 
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" type="radio" id="stillbirthsMother-no" name="stillbirthsMother"
-               value="STILLBIRTHS_MOTHER_NO">
+               value="STILLBIRTHS_MOTHER_NO" checked>
         <label class="govuk-label govuk-radios__label" for="stillbirthsMother-no">
           No
         </label>
@@ -559,7 +418,8 @@ href: "javascript:window.history.back()"
 
       <div class="govuk-button-group">
         {{ govukButton({
-        text: "Save and return"
+        text: "Save and return",
+        href: "javascript:window.history.back()"
         }) }}
       </div>
 
