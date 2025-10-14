@@ -236,7 +236,7 @@ href: "javascript:window.history.back()"
           Name
         </dt>
         <dd class="govuk-summary-list__value">
-          Example name
+          {{ data.registrarName or 'Example name' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span
@@ -248,7 +248,16 @@ href: "javascript:window.history.back()"
           Designation
         </dt>
         <dd class="govuk-summary-list__value">
-          Reistrar
+          {% if data.designationSelector == 'REGISTRAR' %}
+          Registrar
+          {% elif data.designationSelector == 'DEPUTY_REGISTRAR' %}
+          Deputy registrar
+          {% elif data.designationSelector == 'INTERIM_REGISTRAR' %}
+          Interim registrar
+          {% elif data.designationSelector == 'INTERIM_DEPUTY_REGISTRAR' %}
+          Interim deputy registrar
+          {% else %}
+          Registrar
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span
