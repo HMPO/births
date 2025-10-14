@@ -180,7 +180,7 @@ href: "javascript:window.history.back()"
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="sex-2" name="sex" type="radio" value="Male" {{
-                checked("sex", "Male" ) }}>
+                checked("sex", "Male" ) }}{% if not data.sex %}checked="checked"{% endif %}>
               <label class="govuk-label govuk-radios__label" for="sex-2">Male</label>
             </div>
             <div class="govuk-radios__item">
