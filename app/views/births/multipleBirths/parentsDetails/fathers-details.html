@@ -34,7 +34,7 @@ href: "javascript:window.history.back()"
         </label>
         <input class="govuk-input govuk-!-width-one-half" id="fathersPlaceOfBirth" name="fathersPlaceOfBirth"
           type="text" aria-describedby="fathersPlaceOfBirth-hint" aria-required="false"
-          value="{{ data.fathersPlaceOfBirth or 'Madrid' }}">
+          value="{{ data.fathersPlaceOfBirth }}">
       </div>
 
       <div class="govuk-form-group">
@@ -134,7 +134,7 @@ href: "javascript:window.history.back()"
         </label>
         <input class="govuk-input govuk-!-width-one-half" id="fathersOccupation" name="fathersOccupation" type="text"
           aria-describedby="fathersOccupation-hint" aria-required="false"
-          value="{{ data.fathersOccupation or 'Customer Service Representative' }}">
+          value="{{ data.fathersOccupation }}">
       </div>
 
       <div class="govuk-form-group" id="addresschildborn">
@@ -189,7 +189,7 @@ href: "javascript:window.history.back()"
                   Street address line 1
                 </label>
                 <input class="govuk-input govuk-!-width-two-thirds" id="fathers-address-county"
-                  name="fathersAddressCounty" type="text" value="{{ data.fathersAddressCounty or '23 West Drive' }}">
+                  name="fathersAddressCounty" type="text" value="{{ data.fathersAddressCounty }}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="fathers-address-line-3">
@@ -220,7 +220,7 @@ href: "javascript:window.history.back()"
                   Town or city
                 </label>
                 <input class="govuk-input govuk-!-width-two-thirds" id="fathers-address-city" name="fathersAddressCity"
-                  type="text" value="{{ data.fathersAddressCity or 'Eastleigh' }}">
+                  type="text" value="{{ data.fathersAddressCity }}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="fathers-address-county-2">
@@ -235,7 +235,7 @@ href: "javascript:window.history.back()"
                 </label>
                 <input class="govuk-input govuk-input--width-10" id="fathers-address-postcode"
                   name="fathersAddressPostcode" type="text" autocomplete="postal-code"
-                  value="{{ data.fathersAddressPostcode or 'SO50 6FN' }}">
+                  value="{{ data.fathersAddressPostcode }}">
               </div>
             </fieldset>
           </div>
