@@ -188,8 +188,8 @@ href: "javascript:window.history.back()"
                 <label class="govuk-label" for="fathers-address-county">
                   Street address line 1
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="fathers-address-county"
-                  name="fathersAddressCounty" type="text" value="{{ data.fathersAddressCounty }}">
+                <input class="govuk-input govuk-!-width-two-thirds" id="fathers-street-address-1"
+                  name="fathersStreetAddress1" type="text" value="{{ data.fathersStreetAddress1 or '23 West Drive'  }}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="fathers-address-line-3">
@@ -220,14 +220,14 @@ href: "javascript:window.history.back()"
                   Town or city
                 </label>
                 <input class="govuk-input govuk-!-width-two-thirds" id="fathers-address-city" name="fathersAddressCity"
-                  type="text" value="{{ data.fathersAddressCity }}">
+                  type="text" value="{{ data.fathersAddressCity or 'Eastleigh' }}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="fathers-address-county-2">
                   County
                 </label>
                 <input class="govuk-input govuk-!-width-two-thirds" id="fathers-address-county-2"
-                  name="fathersAddressCounty2" type="text" value="{{ data.fathersAddressCounty2 or '' }}">
+                  name="fathersAddressCounty2" type="text" value="{{ data.fathersAddressCounty2 or 'Hampshire' }}">
               </div>
               <div class="govuk-form-group">
                 <label class="govuk-label" for="fathers-address-postcode">
@@ -235,7 +235,7 @@ href: "javascript:window.history.back()"
                 </label>
                 <input class="govuk-input govuk-input--width-10" id="fathers-address-postcode"
                   name="fathersAddressPostcode" type="text" autocomplete="postal-code"
-                  value="{{ data.fathersAddressPostcode }}">
+                  value="{{ data.fathersAddressPostcode or 'SO50 6FN' }}">
               </div>
             </fieldset>
           </div>
