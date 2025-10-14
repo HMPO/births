@@ -60,7 +60,6 @@ href: "javascript:window.history.back()"
           </div>
         </div>
 
-        <!-- Conditional reveal for 'Communal establishment' -->
         <div id="address-field" class="govuk-form-group" hidden>
           <br>
           <h3 class="govuk-label govuk-label--s">What is the birthplace address?</h3>
@@ -78,12 +77,16 @@ href: "javascript:window.history.back()"
           <p class="govuk-body">
             <a href="#" class="govuk-link">Search by postcode</a>
           </p>
+
+          <p class="govuk-body">
+            <a href="#" class="govuk-link">Enter address manually</a>
+          </p>
         </div>
 
         <fieldset class="govuk-fieldset" id="address-fields" style="display: none;">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h3 class="govuk-fieldset__heading">
-              Address when the child was born
+              Address 
             </h3>
           </legend>
           <div class="govuk-form-group">
@@ -157,9 +160,6 @@ href: "javascript:window.history.back()"
               type="text" autocomplete="postal-code" value="{{ data.fathersAddressPostcode or 'SO50 6FN' }}">
           </div>
         </fieldset>
-        <p class="govuk-body">
-          <a href="#" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
-        </p>
         {{ govukButton({
         text: "Save and return"
         }) }}
