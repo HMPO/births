@@ -1,22 +1,17 @@
 module.exports = function (router) {
 
-    // Handle place of birth form submission
     router.post('/births/multipleBirths/childsDetails/check-details', function (req, res) {
-        // Ensure session data exists
         req.session.data = req.session.data || {};
 
-        // Mark place of birth as completed if form has been filled
         if (req.body.livingPlace) {
             req.session.data.placeCompleted = true;
         }
 
-        // Store the form data
         req.session.data.livingPlace = req.body.livingPlace;
         if (req.body['communal-name']) {
             req.session.data.communalName = req.body['communal-name'];
         }
 
-        // Redirect back to task list
         res.redirect('/births/multipleBirths/tasks/');
     });
 
@@ -271,147 +266,120 @@ module.exports = function (router) {
     router.post('/births/multipleBirths/parentsDetailsChild2/mothers-name-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Store any form data submitted
         Object.keys(req.body).forEach(key => {
             req.session.data[`child2-${key}`] = req.body[key];
         });
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2MothersNameCompleted = true;
 
         res.redirect('/births/multipleBirths/tasks/child2index.html');
     });
 
-    // Child 2 - Mother's Details form submission  
     router.post('/births/multipleBirths/parentsDetailsChild2/mothers-details-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Store any form data submitted
         Object.keys(req.body).forEach(key => {
             req.session.data[`child2-${key}`] = req.body[key];
         });
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2MothersDetailsCompleted = true;
 
         res.redirect('/births/multipleBirths/tasks/child2index.html');
     });
 
-    // Child 2 - Father's Name form submission
     router.post('/births/multipleBirths/parentsDetailsChild2/fathers-name-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Store any form data submitted
+
         Object.keys(req.body).forEach(key => {
             req.session.data[`child2-${key}`] = req.body[key];
         });
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2FathersNameCompleted = true;
 
         res.redirect('/births/multipleBirths/tasks/child2index.html');
     });
 
-    // Child 2 - Father's Details form submission
     router.post('/births/multipleBirths/parentsDetailsChild2/fathers-details-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Store any form data submitted
         Object.keys(req.body).forEach(key => {
             req.session.data[`child2-${key}`] = req.body[key];
         });
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2FathersDetailsCompleted = true;
 
         res.redirect('/births/multipleBirths/tasks/child2index.html');
     });
 
-    // Child 2 - Confidential Statistics form submission
     router.post('/births/multipleBirths/statsChild2/confidential-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Store any form data submitted
+
         Object.keys(req.body).forEach(key => {
             req.session.data[`child2-${key}`] = req.body[key];
         });
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2StatsConfidentialCompleted = true;
 
         res.redirect('/births/multipleBirths/tasks/child2index.html');
     });
 
-    // Child 2 - Voluntary Statistics form submission
     router.post('/births/multipleBirths/statsChild2/voluntary-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Store any form data submitted
         Object.keys(req.body).forEach(key => {
             req.session.data[`child2-${key}`] = req.body[key];
         });
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2StatsVoluntaryCompleted = true;
 
         res.redirect('/births/multipleBirths/tasks/child2index.html');
     });
 
-    // Child 2 - Register Page form submission
     router.post('/births/multipleBirths/submitChild2/register-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Store any form data submitted
         Object.keys(req.body).forEach(key => {
             req.session.data[`child2-${key}`] = req.body[key];
         });
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2RegisterPageCompleted = true;
 
         res.redirect('/births/multipleBirths/tasks/child2index.html');
     });
 
-    // Child 2 - Check Answers form submission  
     router.post('/births/multipleBirths/submitChild2/check-answers-complete', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2CheckAnswersCompleted = true;
 
         res.redirect('/births/multipleBirths/submitChild2/confirmation-page-child2');
     });
 
-    // Child 2 - Comments form submission (optional)
     router.post('/births/multipleBirths/additionalInfoChild2/comments-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Store any form data submitted
         Object.keys(req.body).forEach(key => {
             req.session.data[`child2-${key}`] = req.body[key];
         });
 
-        // Mark as completed - just visiting and submitting is enough
         req.session.data.child2CommentsCompleted = true;
 
         res.redirect('/births/multipleBirths/tasks/child2index.html');
     });
 
-    // Child 2 - Confirmation page - Clear ALL session data when user arrives
     router.get('/births/multipleBirths/submitChild2/confirmation-page-child2', function (req, res) {
-        // Clear all session data for a fresh start - both child1 and child2 data
-        // Since child2 is the final step in the journey, everything should be reset
+
         req.session.data = {};
 
-        // Render the confirmation page
         res.render('births/multipleBirths/submitChild2/confirmation-page-child2');
     });
 
-    // Child 2 - Test route to mark tasks as complete (for demo purposes)
+
     router.get('/births/multipleBirths/child2/mark-complete', function (req, res) {
         req.session.data = req.session.data || {};
 
-        // Mark child2 tasks as complete for testing
         req.session.data.child2PlaceCompleted = true;
         req.session.data.child2NameDateCompleted = true;
 
