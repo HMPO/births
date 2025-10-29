@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <span class="govuk-caption-l">Add record details</span>
+    <h1 class="govuk-heading-l">
+      Check record details
+    </h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Informant
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Father
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/births/multipleBirths/child2Details/01-child2-name-date.html">Change<span
+              class="govuk-visually-hidden"> date of
+              birth</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Parents married or in a civil partnership
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% set marriedOrCivilPartnershipText = {
+          "married": "Married",
+          "civilPartnership": "Civil partnership",
+          "marriedNeither": "Neither"
+          } %}
+          {{ marriedOrCivilPartnershipText[data['marriedOrCivilPartnership']] or "Married" }}
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+
+    </dl>
+
+    {{ govukButton({
+    text: "Continue",
+    href: "/births/multipleBirths/tasks/child2index.html"
+    }) }}
+
+  </div>
+</div>
+
+
+{% endblock %}

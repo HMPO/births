@@ -1,0 +1,158 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageScripts %}
+<script src="/public/javascripts/application.js"></script>
+{% endblock %}
+
+{% block pageTitle %}
+Child's place of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="place-check" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Child 2 details</span>
+      <h1 class="govuk-heading-xl">
+        Place of birth
+      </h1>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england"
+              checked>
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Communal establishment
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio"
+                value="scotland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                Home
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales"
+        >
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                In transit
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio"
+                value="northern-ireland" {% if data['child2-whereDoYouLive']=='northern-ireland' %}checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                Elsewhere
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h3 class="govuk-fieldset__heading">
+            What is the birthplace address?
+          </h3>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Flat number or name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="addressLine1" type="text"
+            autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Building number
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
+            autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Building name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+            autocomplete="address-level2" value="Princess Anne Hospital">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Street address line 1
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text"
+            value="Coxford Road">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Street address line 2
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="addressLine1" type="text"
+            autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Street address line 3
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
+            autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Street address line 4
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+            autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text"
+            value="Southampton">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            County
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text"
+            autocomplete="postal-code" value="SO16 5YA">
+        </div>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+        </p>
+        <br>
+      </fieldset>
+      {{ govukButton({
+      text: "Save and return"
+      }) }}
+    </div>
+
+
+  </div>
+
+</form>
+
+{% endblock %}
