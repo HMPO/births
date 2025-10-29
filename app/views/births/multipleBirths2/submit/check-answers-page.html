@@ -251,11 +251,11 @@ href: "javascript:window.history.back()"
           {% if data.designationSelector == 'REGISTRAR' %}
           Registrar
           {% elif data.designationSelector == 'DEPUTY_REGISTRAR' %}
-          Deputy registrar
+          Deputy Registrar
           {% elif data.designationSelector == 'INTERIM_REGISTRAR' %}
-          Interim registrar
+          Interim Registrar
           {% elif data.designationSelector == 'INTERIM_DEPUTY_REGISTRAR' %}
-          Interim deputy registrar
+          Interim Deputy Registrar
           {% else %}
           Registrar
           {% endif %}
@@ -266,8 +266,10 @@ href: "javascript:window.history.back()"
         </dd>
       </div>
     </dl>
-    <p class="govuk-body">
-      <button type="button" class="print-button-link" onclick="window.print()">Print</button>
+  <p class="govuk-body">
+      <a href="/public/documents/d476d40d-dea3-48d6-8e8f-e985a53564c1.pdf" target="_blank" class="govuk-link">
+        Print
+      </a>
     </p>
     <div class="govuk-grid-row govuk-grid-column-full">
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
