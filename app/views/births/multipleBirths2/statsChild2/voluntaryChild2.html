@@ -29,11 +29,9 @@ href: "javascript:window.history.back()"
     </h1>
 
     <form class="form" action="voluntary-check" method="post">
-
+      
       <div id="authentication-code-hint" class="govuk-hint">
-        Providing this information is optional. It is used for population statistics and research, kept confidential,
-        and not recorded in the register. The UK Statistics Authority and researchers approved by the National
-        Statistician use it for research.
+        The informant does not have to give this information, but it helps with population research and statistics. Only the UK Statistics Authority and approved researchers can use it. It will not be entered in the register.
       </div>
 
       <br>
@@ -43,6 +41,9 @@ href: "javascript:window.history.back()"
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Mother's employment status
           </legend>
+          <div id="authentication-code-hint" class="govuk-hint">
+            Occupation: Cleaner 
+          </div>
           <div class="govuk-radios" data-module="govuk-radios">
 
             <!-- Employee, not supervising -->
@@ -60,7 +61,7 @@ href: "javascript:window.history.back()"
               <div class="govuk-form-group">
                 <label class="govuk-label" for="industry">Industry</label>
                 <input class="govuk-input govuk-!-width-one-half" id="industry" name="industry" type="text"
-                  value="Retail">
+                  value="Domestic">
               </div>
             </div>
 
@@ -122,6 +123,9 @@ href: "javascript:window.history.back()"
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Father's employment status
           </legend>
+          <div id="authentication-code-hint" class="govuk-hint">
+            Occupation: Cleaner 
+          </div>
           <div class="govuk-radios" data-module="govuk-radios">
 
             <!-- Employee, not supervising -->
@@ -139,7 +143,7 @@ href: "javascript:window.history.back()"
               <div class="govuk-form-group">
                 <label class="govuk-label" for="industry-father">Industry</label>
                 <input class="govuk-input govuk-!-width-one-half" id="industry-father" name="industry-father"
-                  type="text" value="Computing">
+                  type="text" value="Domestic">
               </div>
             </div>
 
@@ -199,7 +203,8 @@ href: "javascript:window.history.back()"
 
       <div class="govuk-button-group">
         {{ govukButton({
-        text: "Save and return"
+        text: "Save and return",
+        href: "/births/multipleBirths2/tasks/child2index.html"
         }) }}
       </div>
 

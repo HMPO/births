@@ -37,13 +37,13 @@ href: "javascript:window.history.back()"
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="deceased-first-name">First name </label>
           <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="mothersFirstName" type="text"
-            value="Haley">
+            value="Elizabeth">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="deceased-middle-name">Middle names</label>
           <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="mothersMiddleName"
-            type="text" value="Jennifer">
+            type="text" value="">
           <!-- <p class="govuk-body">
                 <a href="#" class="govuk-link">Add more middle names</a>
               </p> -->
@@ -52,12 +52,39 @@ href: "javascript:window.history.back()"
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="deceased-last-name">Last name</label>
           <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="mothersLastName" type="text"
-            value="MORA">
+            value="MARTINEZ LARA">
+        </div>
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                Capitalise last name?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked value="england">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                  No - print as typed
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
           <p class="govuk-body  govuk-!-margin-top-4">
             <a href="#" class="govuk-link">Add prefix or suffix</a>
           </p>
-        </div>
+        </div><br>
+
 
         <!-- <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
@@ -74,19 +101,14 @@ href: "javascript:window.history.back()"
               </fieldset>
             </div> -->
 
-        <div class="govuk-button-group">
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Add other names
-          </button>
-        </div>
-
+       
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="prefix">
             Maiden name
           </label>
           <input class="govuk-input govuk-!-width-one-half" id="mothersMaidenName" name="mothersMaidenName" type="text"
-            value="SMITH">
+            value="">
         </div>
 
         <div class="govuk-form-group">
@@ -153,10 +175,21 @@ href: "javascript:window.history.back()"
                 </div>
               </div>
 
-            </div>
+
+             
+
+            </div>            
           </fieldset>
+
+         
+  
         </div>
 
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add other names
+          </button>
+        </div>
 
 
 

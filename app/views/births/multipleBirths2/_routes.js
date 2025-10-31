@@ -20,9 +20,11 @@ module.exports = function (router) {
 
         const hasName = req.body.deceasedFirstName || req.body.deceasedLastName;
         const hasSex = req.body.sex;
-
+        
+        req.session.data.nameDateCompleted = true;
+        
         if (hasName && hasSex) {
-            req.session.data.nameDateCompleted = true;
+            
         }
         req.session.data.deceasedFirstName = req.body.deceasedFirstName;
         req.session.data.deceasedLastName = req.body.deceasedLastName;
@@ -94,7 +96,7 @@ module.exports = function (router) {
         req.session.data['name-order'] = req.body['name-order'];
         req.session.data['custom-order'] = req.body['custom-order'];
 
-        res.redirect('/births/multipleBirths/tasks/');
+        res.redirect('/births/multipleBirths2/tasks/');
     });
 
     router.post('/births/multipleBirths2/parentsDetails/fathers-details-check', function (req, res) {
@@ -138,7 +140,7 @@ module.exports = function (router) {
         res.redirect('/births/multipleBirths2/tasks/');
     });
 
-    router.post('/births/multipleBirths/stats/voluntary-check', function (req, res) {
+    router.post('/births/multipleBirths2/stats/voluntary-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body['employment-mother']) {
@@ -325,7 +327,7 @@ module.exports = function (router) {
         res.redirect('/births/multipleBirths2/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths/statsChild2/voluntary-check', function (req, res) {
+    router.post('/births/multipleBirths2/statsChild2/voluntary-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         Object.keys(req.body).forEach(key => {
@@ -346,10 +348,10 @@ module.exports = function (router) {
 
         req.session.data.child2RegisterPageCompleted = true;
 
-        res.redirect('/births/multipleBirths/tasks/child2index.html');
+        res.redirect('/births/multipleBirths2/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths/submitChild2/check-answers-complete', function (req, res) {
+    router.post('/births/multipleBirths2/submitChild2/check-answers-complete', function (req, res) {
         req.session.data = req.session.data || {};
 
         req.session.data.child2CheckAnswersCompleted = true;

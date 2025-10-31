@@ -132,12 +132,37 @@ href: "javascript:window.history.back()"
         <label class="govuk-label govuk-fieldset__legend--s" for="fathersOccupation">
           Occupation
         </label>
-        <input class="govuk-input govuk-!-width-one-half" id="fathersOccupation" name="fathersOccupation" type="text"
+        <input class="govuk-input govuk-!-width-two-thirds" id="fathersOccupation" name="fathersOccupation" type="text"
           aria-describedby="fathersOccupation-hint" aria-required="false"
           value="{{ data.fathersOccupation }}">
       </div>
 
-      <div class="govuk-form-group" id="addresschildborn">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Address
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                23 West drive, Eastleigh, S050 6FN
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                Other
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        </div>
+
+      <!-- 
+        <div class="govuk-form-group" id="addresschildborn">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Address
@@ -245,6 +270,7 @@ href: "javascript:window.history.back()"
 
         </fieldset>
       </div>
+    -->
 
       <div class="govuk-button-group">
         {{ govukButton({

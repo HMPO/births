@@ -32,7 +32,7 @@ href: "javascript:window.history.back()"
           Place of birth
         </label>
         <input class="govuk-input govuk-!-width-one-half" id="mothersPlaceOfBirth" name="mothersPlaceOfBirth"
-          type="text" aria-describedby="mothersPlaceOfBirth-hint" aria-required="false" value="Nottingham">
+          type="text" aria-describedby="mothersPlaceOfBirth-hint" aria-required="false" value="Mexico">
       </div>
 
       <div class="govuk-form-group">
@@ -43,7 +43,7 @@ href: "javascript:window.history.back()"
           <div class="govuk-radios govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="mothersCountryOfBirth-England" name="mothersCountryOfBirth"
-                type="radio" value="england" checked checked("mothersCountryOfBirth", "england" ) }}>
+                type="radio" value="england" {{ checked("mothersCountryOfBirth", "england" ) }}>
               <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-England-label"
                 for="mothersCountryOfBirth-England">
                 England
@@ -75,7 +75,7 @@ href: "javascript:window.history.back()"
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="mothersCountryOfBirth-OutsidetheUK" name="mothersCountryOfBirth"
-                type="radio" value="outside-the-UK" {{ checked("mothersCountryOfBirth", "outside-the-UK" ) }}>
+                type="radio" value="outside-the-UK" checked checked("mothersCountryOfBirth", "outside-the-UK" ) }}>
               <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-OutsidetheUK-label"
                 for="mothersCountryOfBirth-OutsidetheUK">
                 Outside the UK
@@ -130,8 +130,8 @@ href: "javascript:window.history.back()"
         <label class="govuk-label govuk-fieldset__legend--s" for="fathersOccupation">
           Occupation
         </label>
-        <input class="govuk-input govuk-!-width-one-half" id="mothersOccupation" name="mothersOccupation" type="text"
-          aria-describedby="mothersOccupation-hint" aria-required="false" value="Florist">
+        <input class="govuk-input govuk-!-width-two-thirds" id="mothersOccupation" name="mothersOccupation" type="text"
+          aria-describedby="mothersOccupation-hint" aria-required="false" value="Cleaner">
       </div>
       <br>
 
@@ -216,30 +216,7 @@ href: "javascript:window.history.back()"
         <br>
       </fieldset>
 
-      <div class="govuk-form-group" id="fatherdeceased">
-        <fieldset class="govuk-fieldset" id="fatherdeceased-fieldset" aria-required="false">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Is the mother deceased?
-          </legend>
-          <div class="govuk-radios govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="fatherdeceased-true" name="fatherdeceased" type="radio"
-                value="true" {{ checked("fatherdeceased", "true" ) }}>
-              <label class="govuk-label govuk-radios__label" id="fatherdeceased-true-label" for="fatherdeceased-true">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="fatherdeceased-false" name="fatherdeceased" type="radio"
-                value="false" checked {{ checked("fatherdeceased", "false" ) }}>
-              <label class="govuk-label govuk-radios__label" id="fatherdeceased-false-label" for="fatherdeceased-false">
-                No
-              </label>
-            </div>
-
-          </div>
-        </fieldset>
-      </div>
+      
 
 
 

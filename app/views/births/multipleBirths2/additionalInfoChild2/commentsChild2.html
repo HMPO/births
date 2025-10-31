@@ -22,10 +22,14 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Additional information</span>
-    <h1 class="govuk-heading-l">Comments</h1>
+    <h1 class="govuk-heading-l">Registrar's comments</h1>
     <form autocomplete="off" novalidate="">
       <div class="govuk-form-group govuk-!-margin-bottom-1" data-testid="comments"><label class="govuk-fieldset__legend govuk-fieldset__legend--s"
-          for="comments">Enter comments</label><textarea rows="5" id="comments" name="comments"
+          for="comments">Add comments</label>
+          <div id="authentication-code-hint" class="govuk-hint">
+            Comments will not be entered in the register
+          </div>
+          <textarea rows="5" id="comments" name="comments"
           class="govuk-textarea govuk-!-margin-bottom-1"></textarea></div>
       <section aria-live="polite"
         class="govuk-body govuk-character-count__message govuk-!-margin-bottom-4 govuk-character-count__status"><span

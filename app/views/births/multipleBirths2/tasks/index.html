@@ -31,11 +31,11 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
           <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths2/childsDetails/01-name-date.html">
-            Name, date of birth and sex
+            Sex, date of birth and name
           </a>
         </div>
         <div class="govuk-task-list__status">
-          {% if data.nameDateCompleted %}
+          {% if data.deceasedFirstName %}
           Completed
           {% else %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
@@ -144,7 +144,7 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
          <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
           <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths2/additionalInfo/comments">
-            Comments</a> 
+            Registrar's comments</a> 
         </div>
         <div class="govuk-task-list__status">
             <strong class="govuk-tag govuk-tag--yellow">Optional</strong>

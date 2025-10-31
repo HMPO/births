@@ -94,6 +94,7 @@ href: "javascript:window.history.back()"
         </fieldset>
       </div>
 
+      
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" id="SpanishNational-fieldset" aria-required="false">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -131,10 +132,94 @@ href: "javascript:window.history.back()"
         <label class="govuk-label govuk-fieldset__legend--s" for="fathersOccupation">
           Occupation
         </label>
-        <input class="govuk-input govuk-!-width-one-half" id="mothersOccupation" name="mothersOccupation" type="text"
+        <input class="govuk-input govuk-!-width-two-thirds" id="mothersOccupation" name="mothersOccupation" type="text"
           aria-describedby="mothersOccupation-hint" aria-required="false" value="{{ data.mothersOccupation }}">
       </div>
       <br>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h3 class="govuk-fieldset__heading">
+            Address when the child was born
+          </h3>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Flat number or name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="addressLine1" type="text"
+            autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Building number
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
+            autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Building name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+            autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Street address line 1
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text"
+            value="23 West Drive">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Street address line 2
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="addressLine1" type="text"
+            autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Street address line 3
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
+            autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Street address line 4
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+            autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text"
+            value="Eastleigh">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            County
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text"
+            autocomplete="postal-code" value="SO50 6FN">
+        </div>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+        </p>
+        <br>
+      </fieldset>
+
+
+      <!--
       <div class="govuk-form-group" id="addresschildborn">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -232,35 +317,13 @@ href: "javascript:window.history.back()"
           <p class="govuk-body">
             <a href="#" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
           </p>
+        
 
         </fieldset>
       </div>
+      -->
 
-      <div class="govuk-form-group" id="fatherdeceased">
-        <fieldset class="govuk-fieldset" id="fatherdeceased-fieldset" aria-required="false">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Is the mother deceased?
-          </legend>
-          <div class="govuk-radios govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="fatherdeceased-true" name="fatherdeceased" type="radio"
-                value="true" {{ checked("fatherdeceased", "true" ) }}>
-              <label class="govuk-label govuk-radios__label" id="fatherdeceased-true-label" for="fatherdeceased-true">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="fatherdeceased-false" name="fatherdeceased" type="radio"
-                value="false" {{ checked("fatherdeceased", "false" ) }}>
-              <label class="govuk-label govuk-radios__label" id="fatherdeceased-false-label" for="fatherdeceased-false">
-                No
-              </label>
-            </div>
-
-          </div>
-        </fieldset>
-      </div>
-
+     
 
 
 

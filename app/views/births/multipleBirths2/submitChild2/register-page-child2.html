@@ -46,7 +46,7 @@ href: "javascript:window.history.back()"
           <div class="govuk-radios" data-module="govuk-radios">
             <!-- Option 1: Registrar -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="designation-registrar" name="designationSelector" type="radio"
+              <input class="govuk-radios__input" id="designation-registrar" name="designationSelector" type="radio" checked 
                 value="REGISTRAR">
               <label class="govuk-label govuk-radios__label" for="designation-registrar">
                 Registrar
@@ -91,7 +91,8 @@ href: "javascript:window.history.back()"
 
       <div class="govuk-button-group">
         {{ govukButton({
-        text: "Save and return"
+        text: "Save and return",
+        href: "/births/multipleBirths2/tasks/child2index.html"
         }) }}
       </div>
 
