@@ -264,6 +264,27 @@ href: "javascript:window.history.back()"
     </p>
   -->
     
+  <div class="govuk-grid-row govuk-grid-column-full">
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: " ",
+      isPageHeading: false,
+      classes: "govuk-body"
+    }
+  },
+
+  items: [
+    {
+      value: "farm",
+      text: "Informant has confirmed that the particulars given by them are true to the best of their knowledge and belief."
+    }
+  ]
+}) }}
+  </div>
 
 
     <form action="sign-page" method="post" novalidate>

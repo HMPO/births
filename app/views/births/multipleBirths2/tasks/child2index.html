@@ -136,32 +136,21 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
     <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
-          {% if not (data.child2StatsConfidentialCompleted) %}
-          <div class="govuk-task-list__hint ">
-            Registrar's details
-          </div>
-          {% else %}
           <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths2/submitChild2/register-page-child2">
             Registrar's details
           </a>
-          {% endif %}
+
         </div>
 
         <div class="govuk-task-list__status">
-          {% if not data.child2StatsConfidentialCompleted %}
-          <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
-          {% elif data.child2StatsConfidentialCompleted and not data.child2RegisterPageCompleted %}
-          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
-          {% elif data.child2RegisterPageCompleted %}
           Completed
-          {% endif %}
         </div>
 
       </li>
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
           <div class="govuk-task-list__hint ">
-            {% if not (data.child2RegisterPageCompleted) %}
+            {% if not (data.child2NameDateCompleted) %}
             <div class="govuk-task-list__hint ">
               Check your answers
             </div>
@@ -174,9 +163,9 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
           </div>
         </div>
         <div class="govuk-task-list__status">
-          {% if not data.child2RegisterPageCompleted %}
+          {% if not data.child2NameDateCompleted %}
           <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
-          {% elif data.child2RegisterPageCompleted and not data.child2CheckAnswersCompleted %}
+          {% elif data.child2NameDateCompleted and not data.child2CheckAnswersCompleted %}
           <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
           {% elif data.child2RegisterPageCompleted %}
           Completed
