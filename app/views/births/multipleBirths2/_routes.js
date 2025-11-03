@@ -20,11 +20,11 @@ module.exports = function (router) {
 
         const hasName = req.body.deceasedFirstName || req.body.deceasedLastName;
         const hasSex = req.body.sex;
-        
+
         req.session.data.nameDateCompleted = true;
-        
+
         if (hasName && hasSex) {
-            
+
         }
         req.session.data.deceasedFirstName = req.body.deceasedFirstName;
         req.session.data.deceasedLastName = req.body.deceasedLastName;
@@ -221,43 +221,46 @@ module.exports = function (router) {
     router.post('/births/multipleBirths2/child2Details/name-date-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        if (req.body.deceasedFirstName) {
-            req.session.data['child2-deceasedFirstName'] = req.body.deceasedFirstName;
+        if (req.body['child2-deceasedFirstName']) {
+            req.session.data['child2-deceasedFirstName'] = req.body['child2-deceasedFirstName'];
         }
-        if (req.body.deceasedMiddleName) {
-            req.session.data['child2-deceasedMiddleName'] = req.body.deceasedMiddleName;
+        if (req.body['child2-deceasedMiddleName']) {
+            req.session.data['child2-deceasedMiddleName'] = req.body['child2-deceasedMiddleName'];
         }
-        if (req.body.deceasedLastName) {
-            req.session.data['child2-deceasedLastName'] = req.body.deceasedLastName;
+        if (req.body['child2-deceasedLastName']) {
+            req.session.data['child2-deceasedLastName'] = req.body['child2-deceasedLastName'];
         }
-        if (req.body['name-order']) {
-            req.session.data['child2-name-order'] = req.body['name-order'];
+        if (req.body['child2-name-order']) {
+            req.session.data['child2-name-order'] = req.body['child2-name-order'];
         }
-        if (req.body['custom-order']) {
-            req.session.data['child2-custom-order'] = req.body['custom-order'];
-        }
-
-        if (req.body['dob-day']) {
-            req.session.data['child2-dob-day'] = req.body['dob-day'];
-        }
-        if (req.body['dob-month']) {
-            req.session.data['child2-dob-month'] = req.body['dob-month'];
-        }
-        if (req.body['dob-year']) {
-            req.session.data['child2-dob-year'] = req.body['dob-year'];
-        }
-        if (req.body['dob-hour']) {
-            req.session.data['child2-dob-hour'] = req.body['dob-hour'];
-        }
-        if (req.body['dob-minute']) {
-            req.session.data['child2-dob-minute'] = req.body['dob-minute'];
-        }
-        if (req.body['dob-period']) {
-            req.session.data['child2-dob-period'] = req.body['dob-period'];
+        if (req.body['child2-custom-order']) {
+            req.session.data['child2-custom-order'] = req.body['child2-custom-order'];
         }
 
-        if (req.body.sex) {
-            req.session.data['child2-sex'] = req.body.sex;
+        if (req.body['child2-dob-day']) {
+            req.session.data['child2-dob-day'] = req.body['child2-dob-day'];
+        }
+        if (req.body['child2-dob-month']) {
+            req.session.data['child2-dob-month'] = req.body['child2-dob-month'];
+        }
+        if (req.body['child2-dob-year']) {
+            req.session.data['child2-dob-year'] = req.body['child2-dob-year'];
+        }
+        if (req.body['child2-dob-hour']) {
+            req.session.data['child2-dob-hour'] = req.body['child2-dob-hour'];
+        }
+        if (req.body['child2-dob-minute']) {
+            req.session.data['child2-dob-minute'] = req.body['child2-dob-minute'];
+        }
+        if (req.body['child2-dob-second']) {
+            req.session.data['child2-dob-second'] = req.body['child2-dob-second'];
+        }
+        if (req.body['child2-dob-period']) {
+            req.session.data['child2-dob-period'] = req.body['child2-dob-period'];
+        }
+
+        if (req.body['child2-sex']) {
+            req.session.data['child2-sex'] = req.body['child2-sex'];
         }
 
         req.session.data.child2NameDateCompleted = true;
