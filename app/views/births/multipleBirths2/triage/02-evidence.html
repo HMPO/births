@@ -44,20 +44,46 @@ href: "javascript:window.history.back()"
           
 
           <br>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                No
-              </label>
-            </div>
-          </div>
+          
+<div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+    <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+      Yes
+    </label>
+  </div>
+
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland" data-aria-controls="conditional-gro-question">
+    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+      No
+    </label>
+  </div>
+
+  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-gro-question">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="gro-question-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        Has GRO given permission to register the birth?
+      </legend>
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="groPermissionYes" name="groPermission" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="groPermissionYes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="groPermissionNo" name="groPermission" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="groPermissionNo">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
         </fieldset>
       </div>
 
