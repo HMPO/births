@@ -1,0 +1,346 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageScripts %}
+<script src="/public/javascripts/application.js"></script>
+{% endblock %}
+
+{% block pageTitle %}
+Child's place of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['declaration-change'] == 'true' %}
+<form class="form" action="../declaration/declaration" method="post">
+  {% else %}
+  <form class="form" action="check-details" method="post">
+    {% endif %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-xl">Child 1 details</span>
+        <h1 class="govuk-heading-xl">
+          Place of birth
+        </h1>
+
+        <div class="govuk-form-group">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communal" name="livingPlace" type="radio" value="communal" {% if
+                data.livingPlace=='communal' %}checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="communal">Communal establishment</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="home" name="livingPlace" type="radio" value="home" {% if
+                data.livingPlace=='home' %}checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="home">Home</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="transit" name="livingPlace" type="radio" value="transit" {% if
+                data.livingPlace=='transit' %}checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="transit">In transit</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="elsewhere" name="livingPlace" type="radio" value="elsewhere" {% if
+                data.livingPlace=='elsewhere' %}checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="elsewhere">Elsewhere</label>
+            </div>
+          </div>
+        </div>
+
+        <div id="address-field" class="govuk-form-group" hidden>
+          <br>
+          <h3 class="govuk-label govuk-label--s">What is the birthplace address?</h3>
+          <br>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="communal-name">Search by communal establishment name</label>
+            <div style="position: relative;">
+              <input class="govuk-input govuk-!-width-two-thirds" id="communal-name" name="communal-name" type="text"
+                value="{{ data.communalName }}" autocomplete="off">
+              <ul id="typeahead-results" class="typeahead-dropdown" style="display: none;"></ul>
+            </div>
+          </div>
+          <br>
+          <p class="govuk-body">
+            <a href="#" class="govuk-link">Search by postcode</a>
+          </p>
+
+          <p class="govuk-body">
+            <a href="#" class="govuk-link">Enter address manually</a>
+          </p>
+        </div>
+
+        <fieldset class="govuk-fieldset" id="address-fields" style="display: none;">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h3 class="govuk-fieldset__heading">
+              Address 
+            </h3>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="fathers-address-line-1">
+              Flat number or name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-line-1" name="childsAddressLine1"
+              type="text" autocomplete="address-line1" value="{{ data.childsAddressLine1 or '' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="childs-address-line-2">
+              Building number
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-line-2" name="childsAddressLine2"
+              type="text" autocomplete="address-line2" value="{{ data.childsAddressLine2 or '' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="childs-address-building-name">
+              Building name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-building-name" name="childsAddressBuildingName"
+              type="text" autocomplete="address-level2" value="{{ data.childsAddressBuildingName or 'Princess Anne Hospital' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="childs-address-county">
+              Street address line 1
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-county" name="childsAddressCounty"
+              type="text" value="{{ data.childsAddressCounty or '23 West Drive' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="fathers-address-line-3">
+              Street address line 2
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-line-3" name="childsAddressLine3"
+              type="text" autocomplete="address-line1" value="{{ data.childsAddressLine3 or '' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="fathers-address-line-4">
+              Street address line 3
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-line-4" name="childsAddressLine4"
+              type="text" autocomplete="address-line2" value="{{ data.childsAddressLine4 or '' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="childs-address-line-5">
+              Street address line 4
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-line-5" name="childsAddressLine5"
+              type="text" autocomplete="address-level2" value="{{ data.childsAddressLine5 or '' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="childs-address-city">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-city" name="childsAddressCity"
+              type="text" value="{{ data.childsAddressCity or 'Eastleigh' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="childs-address-county-2">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-county-2"
+              name="childsAddressCounty2" type="text" value="{{ data.childsAddressCounty2 or '' }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="childs-address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="childs-address-postcode" name="childsAddressPostcode"
+              type="text" autocomplete="postal-code" value="{{ data.childsAddressPostcode or 'SO50 6FN' }}">
+          </div>
+        </fieldset>
+        {{ govukButton({
+        text: "Save and return"
+        }) }}
+
+
+      </div>
+
+      </fieldset>
+
+      <style>
+        .typeahead-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          border: 2px solid #0b0c0c;
+          border-top: none;
+          max-height: 200px;
+          overflow-y: auto;
+          z-index: 1000;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          width: 66.66%;
+          /* Match govuk-!-width-two-thirds */
+        }
+
+        .typeahead-dropdown li {
+          padding: 10px 15px;
+          cursor: pointer;
+          border-bottom: 1px solid #b1b4b6;
+          font-family: "GDS Transport", arial, sans-serif;
+          font-size: 19px;
+          font-size: 1.1875rem;
+          line-height: 1.31579;
+          font-weight: 400;
+          color: #0b0c0c;
+        }
+
+        .typeahead-dropdown li:hover,
+        .typeahead-dropdown li.highlighted {
+          background-color: #1d70b8;
+          color: white;
+        }
+
+        .typeahead-dropdown li:last-child {
+          border-bottom: none;
+        }
+      </style>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const radios = document.querySelectorAll('input[name="livingPlace"]');
+          const addressField = document.getElementById('address-field');
+          const addressFields = document.getElementById('address-fields');
+          const communalNameInput = document.getElementById('communal-name');
+          const typeaheadResults = document.getElementById('typeahead-results');
+
+          // Dummy data for communal establishments
+          const establishments = [
+            { name: 'Royal Hampshire County Hospital', address: 'Romsey Road, Winchester, Hampshire, SO22 5DG' },
+            { name: 'Southampton General Hospital', address: 'Tremona Road, Southampton, Hampshire, SO16 6YD' },
+            { name: 'Princess Anne Hospital', address: 'Coxford Road, Southampton, Hampshire, SO16 5YA' },
+            { name: 'Basingstoke and North Hampshire Hospital', address: 'Aldermaston Road, Basingstoke, Hampshire, RG24 9NA' },
+            { name: 'Queen Alexandra Hospital', address: 'Southwick Hill Road, Portsmouth, Hampshire, PO6 3LY' },
+            { name: 'Frimley Park Hospital', address: 'Portsmouth Road, Frimley, Surrey, GU16 7UJ' },
+            { name: 'St Mary\'s Hospital Isle of Wight', address: 'Parkhurst Road, Newport, Isle of Wight, PO30 5TG' },
+            { name: 'Andover War Memorial Hospital', address: 'Charlton Road, Andover, Hampshire, SP10 3LB' },
+            { name: 'Lymington New Forest Hospital', address: 'Wellworthy Way, Lymington, Hampshire, SO41 8QD' },
+            { name: 'Victoria Road Medical Centre', address: 'Victoria Road, Winchester, Hampshire, SO23 7RG' },
+            { name: 'Broadway Medical Centre', address: 'Broadway, Winchester, Hampshire, SO22 5DH' },
+            { name: 'Roadside Birth Centre', address: 'High Street, Portsmouth, Hampshire, PO1 2AB' }
+          ];
+
+          let selectedEstablishment = null;
+
+          // Check if communal is already selected on page load
+          const communalRadio = document.getElementById('communal');
+          if (communalRadio && communalRadio.checked) {
+            addressField.hidden = false;
+          }
+
+          radios.forEach(radio => {
+            radio.addEventListener('change', function () {
+              addressField.hidden = this.value !== 'communal';
+              if (this.value !== 'communal') {
+                // Hide address fields and reset typeahead when switching away from communal
+                addressFields.style.display = 'none';
+                typeaheadResults.style.display = 'none';
+                communalNameInput.value = '';
+                selectedEstablishment = null;
+              }
+            });
+          });
+
+          // Typeahead functionality
+          communalNameInput.addEventListener('input', function () {
+            const query = this.value.toLowerCase().trim();
+
+            if (query.length < 3) {
+              typeaheadResults.style.display = 'none';
+              return;
+            }
+
+            const filteredEstablishments = establishments.filter(establishment =>
+              establishment.name.toLowerCase().includes(query) ||
+              establishment.address.toLowerCase().includes(query)
+            );
+
+            if (filteredEstablishments.length > 0) {
+              typeaheadResults.innerHTML = filteredEstablishments
+                .map(establishment => `<li data-name="${establishment.name}" data-address="${establishment.address}">${establishment.name}</li>`)
+                .join('');
+              typeaheadResults.style.display = 'block';
+            } else {
+              typeaheadResults.style.display = 'none';
+            }
+          });
+
+          typeaheadResults.addEventListener('click', function (e) {
+            if (e.target.tagName === 'LI') {
+              const establishmentName = e.target.getAttribute('data-name');
+              const establishmentAddress = e.target.getAttribute('data-address');
+
+              communalNameInput.value = establishmentName;
+              selectedEstablishment = { name: establishmentName, address: establishmentAddress };
+              typeaheadResults.style.display = 'none';
+
+              addressFields.style.display = 'block';
+              const addressParts = establishmentAddress.split(', ');
+              if (addressParts.length >= 4) {
+                document.getElementById('fathers-address-county').value = addressParts[0];
+                document.getElementById('fathers-address-city').value = addressParts[1];
+                document.getElementById('fathers-address-county-2').value = addressParts[2];
+                document.getElementById('fathers-address-postcode').value = addressParts[3];
+              }
+            }
+          });
+
+          let highlightedIndex = -1;
+          communalNameInput.addEventListener('keydown', function (e) {
+            const items = typeaheadResults.querySelectorAll('li');
+
+            if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              highlightedIndex = Math.min(highlightedIndex + 1, items.length - 1);
+              updateHighlight(items);
+            } else if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              highlightedIndex = Math.max(highlightedIndex - 1, -1);
+              updateHighlight(items);
+            } else if (e.key === 'Enter' && highlightedIndex >= 0) {
+              e.preventDefault();
+              items[highlightedIndex].click();
+            } else if (e.key === 'Escape') {
+              typeaheadResults.style.display = 'none';
+              highlightedIndex = -1;
+            }
+          });
+
+          function updateHighlight(items) {
+            items.forEach((item, index) => {
+              item.classList.toggle('highlighted', index === highlightedIndex);
+            });
+          }
+          document.addEventListener('click', function (e) {
+            if (!communalNameInput.contains(e.target) && !typeaheadResults.contains(e.target)) {
+              typeaheadResults.style.display = 'none';
+            }
+          });
+        });
+      </script>
+
+      <br>
+
+
+
+    </div>
+    </div>
+
+  </form>
+
+  {% endblock %}
