@@ -390,4 +390,26 @@ module.exports = function (router) {
 
         res.redirect('/births/multipleBirths2/tasks/child2index.html');
     });
+
+    router.post('/births/multipleBirths2/additionalInfo/comments-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body.comments) {
+            req.session.data.comments = req.body.comments;
+        }
+
+        const referer = req.get('Referer') || '/births/multipleBirths2/tasks/';
+        res.redirect(referer.replace('/additionalInfo/comments', '/tasks/'));
+    });
+ 
+    router.post('/births/multipleBirths2/additionalInfoChild2/comments-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body.comments) {
+            req.session.data.comments = req.body.comments;
+        }
+
+        const referer = req.get('Referer') || '/births/multipleBirths2/tasks/child2index.html';
+        res.redirect(referer.replace('/additionalInfoChild2/commentsChild2', '/tasks/child2index.html'));
+    });
 };
