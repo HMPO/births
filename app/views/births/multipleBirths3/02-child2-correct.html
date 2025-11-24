@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">
+      Is this the child you want to register?
+    </h1>
+    
+    <div class="header-with-button">
+      <h2 class="govuk-heading-m">Child 2</h2>
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123 456 7891
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date and time of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 October 2025 at 12:02 hours
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Female
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother's first name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Elizabeth
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother's last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          MARTINEZ LARA
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Princess Anne Hospital, Southampton
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+    </dl>
+
+    
+
+    {{ govukButton({
+    text: "Yes, continue",
+    href: "/births/multipleBirths2/triageChild2/05-child2-check-details.html"
+    }) }}
+
+    <div class="govuk-form-group">
+      <p class="govuk-body"><a href="" class="govuk-link">No, return to homepage</a></p>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

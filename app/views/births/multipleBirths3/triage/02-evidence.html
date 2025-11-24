@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="03-marital-status" method="post">
+
+      <span class="govuk-caption-l">Add record details</span>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Has registrar seen evidence of informant's identity?
+            </h1>
+          </legend>
+          <br>
+          
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help with ID requirements
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              The informant must prove their identity before they can register a birth. For details of acceptable ID documents, see the 
+              <a href="" class="govuk-link">Births Handbook </a>.
+            </div>
+          </details>
+          
+
+          <br>
+          
+<div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+    <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+      Yes
+    </label>
+  </div>
+
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland" data-aria-controls="conditional-gro-question">
+    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+      No
+    </label>
+  </div>
+
+  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-gro-question">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="gro-question-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        Has GRO given permission to register the birth?
+      </legend>
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="groPermissionYes" name="groPermission" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="groPermissionYes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="groPermissionNo" name="groPermission" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="groPermissionNo">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+        </fieldset>
+      </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/births/multipleBirths2/triage/03-marital-status.html"
+      }) }}
+
+
+      
+
+     <!--
+      {{ govukRadios({
+      name: "evidence",
+      fieldset: {
+      legend: {
+      text: "Has registrar seen evidence of informant's identity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes"
+      },
+      {
+      value: "no",
+      text: "No"
+      }
+      ]
+      }) }}
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+    -->
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

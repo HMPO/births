@@ -1,0 +1,261 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Personal details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Parents' details</span>
+    <h1 class="govuk-heading-l">
+      Mother's details
+    </h1>
+
+    <form class="form" action="mothers-details-check" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" id="mothersPlaceOfBirth-label" for="mothersPlaceOfBirth">
+          Place of birth
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="mothersPlaceOfBirth" name="mothersPlaceOfBirth"
+          type="text" aria-describedby="mothersPlaceOfBirth-hint" aria-required="false" value="Mexico">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="mothersCountryOfBirth-fieldset" aria-required="false">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Country of birth
+          </legend>
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mothersCountryOfBirth-England" name="mothersCountryOfBirth"
+                type="radio" value="england" {{ checked("mothersCountryOfBirth", "england" ) }}>
+              <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-England-label"
+                for="mothersCountryOfBirth-England">
+                England
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mothersCountryOfBirth-NorthernIreland" name="mothersCountryOfBirth"
+                type="radio" value="northern-ireland" {{ checked("mothersCountryOfBirth", "northern-ireland" ) }}>
+              <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-NorthernIreland-label"
+                for="mothersCountryOfBirth-NorthernIreland">
+                Northern Ireland
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mothersCountryOfBirth-Scotland" name="mothersCountryOfBirth"
+                type="radio" value="scotland" {{ checked("mothersCountryOfBirth", "scotland" ) }}>
+              <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-Scotland-label"
+                for="mothersCountryOfBirth-Scotland">
+                Scotland
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mothersCountryOfBirth-Wales" name="mothersCountryOfBirth"
+                type="radio" value="wales" {{ checked("mothersCountryOfBirth", "wales" ) }}>
+              <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-Wales-label"
+                for="mothersCountryOfBirth-Wales">
+                Wales
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mothersCountryOfBirth-OutsidetheUK" name="mothersCountryOfBirth"
+                type="radio" value="outside-the-UK" checked checked("mothersCountryOfBirth", "outside-the-UK" ) }}>
+              <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-OutsidetheUK-label"
+                for="mothersCountryOfBirth-OutsidetheUK">
+                Outside the UK
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mothersCountryOfBirth-Notknown" name="mothersCountryOfBirth"
+                type="radio" value="not-known" {{ checked("mothersCountryOfBirth", "not-known" ) }}>
+              <label class="govuk-label govuk-radios__label" id="mothersCountryOfBirth-Notknown-label"
+                for="mothersCountryOfBirth-Notknown">
+                Not known
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="SpanishNational-fieldset" aria-required="false">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Spanish national
+          </legend>
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="SpanishNational-true" name="SpanishNational" type="radio"
+                value="true" {{ checked("SpanishNational", "true" ) }}>
+              <label class="govuk-label govuk-radios__label" id="SpanishNational-true-label" for="SpanishNational-true">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="SpanishNational-false" name="SpanishNational" type="radio"
+                value="false" checked {{ checked("SpanishNational", "false" ) }}>
+              <label class="govuk-label govuk-radios__label" id="SpanishNational-false-label"
+                for="SpanishNational-false">
+                No
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="SpanishNational-unknown" name="SpanishNational" type="radio"
+                value="unknown" {{ checked("SpanishNational", "unknown" ) }}>
+              <label class="govuk-label govuk-radios__label" id="SpanishNational-unknown-label"
+                for="SpanishNational-unknown">
+                Unknown
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group" id="occupation">
+        <label class="govuk-label govuk-fieldset__legend--s" for="fathersOccupation">
+          Occupation
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="mothersOccupation" name="mothersOccupation" type="text"
+          aria-describedby="mothersOccupation-hint" aria-required="false" value="Cleaner">
+      </div>
+      <br>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h3 class="govuk-fieldset__heading">
+            Address when the child was born
+          </h3>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Flat number or name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="addressLine1" type="text"
+            autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Building number
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
+            autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Building name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+            autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Street address line 1
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text"
+            value="23 West Drive">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Street address line 2
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="addressLine1" type="text"
+            autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Street address line 3
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
+            autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Street address line 4
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+            autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text"
+            value="Eastleigh">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            County
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text"
+            autocomplete="postal-code" value="SO50 6FN">
+        </div>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+        </p>
+        <br>
+      </fieldset>
+
+      
+
+
+
+
+
+      <!-- <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="OccupationStatus-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Occupation status
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="OccupationStatus-true" name="OccupationStatus" type="radio" value="true" {{ checked("OccupationStatus", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="OccupationStatus-true-label" for="OccupationStatus-true">
+                        Retired
+                    </label>    
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="OccupationStatus-false" name="OccupationStatus" type="radio" value="false" {{ checked("OccupationStatus", "false") }}>
+                      <label class="govuk-label govuk-radios__label" id="OccupationStatus-false-label" for="OccupationStatus-false">
+                        Not retired
+                      </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div> -->
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return"
+        })
+        }}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

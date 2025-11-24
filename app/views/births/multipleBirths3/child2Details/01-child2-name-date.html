@@ -1,0 +1,254 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .govuk-form-group .govuk-select.time-select {
+    width: 65px;
+    max-width: 65px;
+    min-width: 65px;
+  }
+</style>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Child 2 details</span>
+    <h1 class="govuk-heading-l">
+      Sex, date of birth and name
+    </h1>
+
+    <form class="form" action="name-date-check" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Sex</legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="child2-sex-1" name="child2-sex" type="radio" value="Female" {{
+                checked("child2-sex", "Female" ) }}>
+              <label class="govuk-label govuk-radios__label" for="child2-sex-1">Female</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="child2-sex-2" name="child2-sex" type="radio" value="Male" {{
+                checked("child2-sex", "Male" ) }}>
+              <label class="govuk-label govuk-radios__label" for="child2-sex-2">Male</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="child2-sex-3" name="child2-sex" type="radio" value="Indeterminate"
+                {{ checked("child2-sex", "Indeterminate" ) }}>
+              <label class="govuk-label govuk-radios__label" for="child2-sex-3">Indeterminate</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Date and time of birth
+          </legend>
+          <div id="dob-hint" class="govuk-hint">
+            For example, 23 11 2024
+          </div>
+
+          <!-- Date row -->
+          <div class="govuk-date-input govuk-!-margin-bottom-3" id="child2-dob-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child2-dob-day">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-day"
+                  name="child2-dob-day" type="text" inputmode="numeric" value="{{ data['child2-dob-day'] or '1' }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child2-dob-month">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-month"
+                  name="child2-dob-month" type="text" inputmode="numeric"
+                  value="{{ data['child2-dob-month'] or '10' }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child2-dob-year">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="child2-dob-year"
+                  name="child2-dob-year" type="text" inputmode="numeric"
+                  value="{{ data['child2-dob-year'] or '2025' }}">
+              </div>
+            </div>
+          </div>
+
+          <!-- Time row -->
+          <div class="govuk-date-input" id="child2-dob-time">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child2-dob-hour">Hours</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-hour"
+                  name="child2-dob-hour" type="text" inputmode="numeric" value="{{ data['child2-dob-hour'] or '12' }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child2-dob-minute">Minutes</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-minute"
+                  name="child2-dob-minute" type="text" inputmode="numeric"
+                  value="{{ data['child2-dob-minute'] or '02' }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child2-dob-second">Seconds</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-second"
+                  name="child2-dob-second" type="text" inputmode="numeric"
+                  value="{{ data['child2-dob-second'] or '02' }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child2-dob-period">am / pm</label>
+                <select class="govuk-select govuk-input--width-2 time-select" id="child2-dob-period" name="child2-dob-period">
+                  <option value="PM" {% if data['child2-dob-period']=='PM' or not data['child2-dob-period'] %}selected{%
+                    endif %}>pm</option>
+                  <option value="AM" {% if data['child2-dob-period']=='AM' %}selected{% endif %}>am</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <div id="yes-name-block">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="child2-deceased-first-name">First name</label>
+          <input class="govuk-input govuk-!-width-one-half" id="child2-deceased-first-name"
+            name="child2-deceasedFirstName" type="text" value="{{data['child2-deceasedFirstName']}}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="child2-deceased-middle-name">Middle names</label>
+          <input class="govuk-input govuk-!-width-one-half" id="child2-deceased-middle-name"
+            name="child2-deceasedMiddleName" type="text" value="{{data['child2-deceasedMiddleName']}}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="child2-deceased-last-name">Last name</label>
+          <input class="govuk-input govuk-!-width-one-half" id="child2-deceased-last-name"
+            name="child2-deceasedLastName" type="text" value="{{data['child2-deceasedLastName']}}">
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                Capitalise last name?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked
+                  value="england">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio"
+                  value="scotland">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                  No - print as typed
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <p class="govuk-body">
+            <a href="#" class="govuk-link">Add prefix or suffix</a>
+          </p>
+
+        </div><br>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="child2-name-order-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Print order of names
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="child2-name-order" name="child2-name-order" type="radio"
+                  checked="checked" value="name-order-first-name" {{
+                  checked("child2-name-order", "name-order-first-name" ) }} data-aria-controls="">
+                <label class="govuk-label govuk-radios__label" for="child2-name-order">
+                  Last name last
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="child2-name-order-1" name="child2-name-order" type="radio"
+                  value="name-order-last-name" {{ checked("child2-name-order", "name-order-last-name" ) }}
+                  data-aria-controls="">
+                <label class="govuk-label govuk-radios__label" for="child2-name-order-1">
+                  Last name first
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="child2-name-order-2" name="child2-name-order" type="radio"
+                  value="name-order-only-last" {{ checked('child2-name-order', 'name-order-only-last' ) }}
+                  data-aria-controls="">
+                <label class="govuk-label govuk-radios__label" for="child2-name-order-2">
+                  Last name only
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="child2-name-order-4" name="child2-name-order" type="radio"
+                  value="name-order-other" {{ checked("child2-name-order", "name-order-other" ) }}
+                  data-aria-controls="conditional-child2-name-order-other">
+                <label class="govuk-label govuk-radios__label" for="child2-name-order-4">
+                  Other
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                id="conditional-child2-name-order-other">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label" for="child2-custom-order">
+                    Order of names
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="child2-custom-order" name="child2-custom-order"
+                    type="text" aria-required="false" value="{{data['child2-custom-order']}}">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return"
+        }) }}
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- Load the JS from views/latest/ -->
+
+
+
+{% endblock %}
