@@ -18,8 +18,19 @@ href: "javascript:window.history.back()"
     <h1 class="govuk-heading-l">
       Are these the children you want to register?
     </h1>
-    <div class="header-with-button">
+    <div class="pro-header-with-button">
       <h2 class="govuk-heading-m">Child 1</h2>
+      {{ govukCheckboxes({
+      name: "do-not-register-child-1",
+      classes: "govuk-checkboxes--small",
+
+      items: [
+      {
+      value: "remove-child-1",
+      text: "Do not register"
+      }
+      ]
+      }) }}
     </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -48,14 +59,14 @@ href: "javascript:window.history.back()"
           Sex
         </dt>
         <dd class="govuk-summary-list__value">
-            Male
+          Male
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Mother's first name
+          Mother&rsquo;s first name
         </dt>
         <dd class="govuk-summary-list__value">
           Elizabeth
@@ -64,7 +75,7 @@ href: "javascript:window.history.back()"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Mother's last name
+          Mother&rsquo;s last name
         </dt>
         <dd class="govuk-summary-list__value">
           MARTINEZ LARA
@@ -83,8 +94,19 @@ href: "javascript:window.history.back()"
         </dd>
       </div>
     </dl>
-    <div class="header-with-button">
+    <div class="pro-header-with-button">
       <h2 class="govuk-heading-m">Child 2</h2>
+      {{ govukCheckboxes({
+      name: "do-not-register-child-2",
+      classes: "govuk-checkboxes--small",
+
+      items: [
+      {
+      value: "remove-child-2",
+      text: "Do not register"
+      }
+      ]
+      }) }}
     </div>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -120,7 +142,7 @@ href: "javascript:window.history.back()"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Mother's first name
+          Mother&rsquo;s first name
         </dt>
         <dd class="govuk-summary-list__value">
           Elizabeth
@@ -129,7 +151,7 @@ href: "javascript:window.history.back()"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Mother's last name
+          Mother&rsquo;s last name
         </dt>
         <dd class="govuk-summary-list__value">
           MARTINEZ LARA
@@ -145,13 +167,17 @@ href: "javascript:window.history.back()"
           Princess Anne Hospital, Southampton
         </dd>
         <dd class="govuk-summary-list__actions">
-
         </dd>
       </div>
     </dl>
 
     {{ govukRadios({
     name: "whichChild",
+    formGroup: {
+      attributes: {
+        id: "which-child"
+      }
+    },
     fieldset: {
     legend: {
     text: "Which child do you want to register first?",
@@ -182,5 +208,31 @@ href: "javascript:window.history.back()"
   </div>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const child1Checkbox = document.querySelector('input[name="do-not-register-child-1"]');
+  const child2Checkbox = document.querySelector('input[name="do-not-register-child-2"]');
+  const radioContainer = document.getElementById('which-child');
+  
+  function updateUI() {
+    const child1Checked = child1Checkbox.checked;
+    const child2Checked = child2Checkbox.checked;
+    
+    child1Checkbox.disabled = child2Checked;
+    child2Checkbox.disabled = child1Checked;
+    
+    if (child1Checked || child2Checked) {
+      radioContainer.style.display = 'none';
+    } else {
+      radioContainer.style.display = 'block';
+    }
+  }
+  
+  child1Checkbox.addEventListener('change', updateUI);
+  child2Checkbox.addEventListener('change', updateUI);
+  
+  updateUI();
+});
+</script>
 
 {% endblock %}
