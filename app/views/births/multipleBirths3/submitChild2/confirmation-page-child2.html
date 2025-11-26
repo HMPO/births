@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Registration complete",
+        html: "System number 500248149"
+      }) }}
+
+      <br>
+
+      <!-- <h2 class="govuk-heading-m">
+        What to do next
+      </h2> 
+-->
+
+<!-- 
+  <p class="govuk-body">
+  <a href="/public/documents/d476d40d-dea3-48d6-8e8f-e985a53564c1.pdf" target="_blank" class="govuk-link">
+    Print
+  </a>
+</p>
+-->
+
+
+      <p class="govuk-body">
+        You can now print the birth certificates.
+      </p>
+        <br>
+        <label class="govuk-label govuk-label--s" for="example-2">
+          Child 1
+        </label><br>
+       <p  class="govuk-body govuk-!-margin-bottom-9">
+        <a href="/public/documents/Oliver-birth-certificate.pdf" target="_blank" class="govuk-link">
+          View and print standard certificate (opens in a new tab)
+        </a>
+        <br>
+        <br>
+        <a href="#">
+          View and print short certificate (opens in a new tab)
+        </a>
+      </p> 
+      <label class="govuk-label govuk-label--s" for="example-2">
+        Child 2
+      </label>
+      <br>
+       <p  class="govuk-body govuk-!-margin-bottom-9">
+        <a href="/public/documents/Anna-birth-certificate.pdf" target="_blank" class="govuk-link">
+          View and print standard certificate (opens in a new tab)
+        </a>
+        <br>
+        <br>
+        <a href="#">
+          View and print short certificate (opens in a new tab)
+        </a>
+      </p> 
+
+      <p  class="govuk-body">
+        <a href="../00-service-selector.html">
+          Return to homepage
+        </a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
