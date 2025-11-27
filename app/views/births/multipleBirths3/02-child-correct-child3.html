@@ -164,6 +164,82 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
         </dd>
       </div>
     </dl>
+    <div class="pro-header-with-button">
+      <h2 class="govuk-heading-m">Child 3</h2>
+      {{ govukCheckboxes({
+      name: "do-not-register-child-3",
+      classes: "govuk-checkboxes--small",
+
+      items: [
+      {
+      value: "remove-child-3",
+      text: "Do not register"
+      }
+      ]
+      }) }}
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          987 654 3212
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date and time of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 November 2025 at 12:10 hours
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Female
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother&rsquo;s first name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Isabella
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother&rsquo;s last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          MARTINEZ LARA
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Princess Anne Hospital, Southampton
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+    </dl>
 
     <p class="govuk-body">
       <a href="/births/multipleBirths3/01-search-child3.html" class="govuk-link">Add a child</a>
@@ -191,6 +267,10 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
     {
     value: "child2",
     text: "Child 2"
+    },
+    {
+    value: "child3",
+    text: "Child 3"
     }
     ]
     }) }}

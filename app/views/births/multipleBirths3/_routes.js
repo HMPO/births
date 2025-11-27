@@ -1,6 +1,6 @@
 module.exports = function (router) {
 
-    router.post('/births/multipleBirths2/childsDetails/check-details', function (req, res) {
+    router.post('/births/multipleBirths3/childsDetails/check-details', function (req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body.livingPlace) {
@@ -12,10 +12,10 @@ module.exports = function (router) {
             req.session.data.communalName = req.body['communal-name'];
         }
 
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/childsDetails/name-date-check', function (req, res) {
+    router.post('/births/multipleBirths3/childsDetails/name-date-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         const hasName = req.body.deceasedFirstName || req.body.deceasedLastName;
@@ -38,10 +38,10 @@ module.exports = function (router) {
         req.session.data['dob-period'] = req.body['dob-period'];
         req.session.data.sex = req.body.sex;
 
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/parentsDetails/mothers-name-check', function (req, res) {
+    router.post('/births/multipleBirths3/parentsDetails/mothers-name-check', function (req, res) {
         req.session.data = req.session.data || {};
         const hasFirstName = req.body.mothersFirstName?.trim();
         const hasLastName = req.body.mothersLastName?.trim();
@@ -57,10 +57,10 @@ module.exports = function (router) {
         req.session.data['name-order'] = req.body['name-order'];
         req.session.data['custom-order'] = req.body['custom-order'];
 
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/parentsDetails/mothers-details-check', function (req, res) {
+    router.post('/births/multipleBirths3/parentsDetails/mothers-details-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         const hasOccupation = req.body.mothersOccupation?.trim();
@@ -77,10 +77,10 @@ module.exports = function (router) {
         req.session.data.MCCDAddressLine1 = req.body.MCCDAddressLine1;
         req.session.data.fatherdeceased = req.body.fatherdeceased;
 
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/parentsDetails/fathers-name-check', function (req, res) {
+    router.post('/births/multipleBirths3/parentsDetails/fathers-name-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         const hasFirstName = req.body.fathersFirstName?.trim();
@@ -96,10 +96,10 @@ module.exports = function (router) {
         req.session.data['name-order'] = req.body['name-order'];
         req.session.data['custom-order'] = req.body['custom-order'];
 
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/parentsDetails/fathers-details-check', function (req, res) {
+    router.post('/births/multipleBirths3/parentsDetails/fathers-details-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         const hasOccupation = req.body.fathersOccupation?.trim();
@@ -113,10 +113,10 @@ module.exports = function (router) {
         req.session.data.SpanishNational = req.body.SpanishNational;
         req.session.data.fathersOccupation = req.body.fathersOccupation;
         req.session.data.fathersMCCDAddressLine1 = req.body.fathersMCCDAddressLine1;
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/stats/confidential-check', function (req, res) {
+    router.post('/births/multipleBirths3/stats/confidential-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         req.session.data.statsConfidentialCompleted = true;
@@ -137,10 +137,10 @@ module.exports = function (router) {
         req.session.data.stillbirthsMother = req.body.stillbirthsMother;
         req.session.data.numberOfStillbornChildren = req.body.numberOfStillbornChildren;
 
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/stats/voluntary-check', function (req, res) {
+    router.post('/births/multipleBirths3/stats/voluntary-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body['employment-mother']) {
@@ -161,10 +161,10 @@ module.exports = function (router) {
 
         req.session.data.statsVoluntaryCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/submit/register-check', function (req, res) {
+    router.post('/births/multipleBirths3/submit/register-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body.registrarName) {
@@ -179,18 +179,18 @@ module.exports = function (router) {
             req.session.data.registerPageCompleted = true;
         }
 
-        res.redirect('/births/multipleBirths2/tasks/');
+        res.redirect('/births/multipleBirths3/tasks/');
     });
 
-    router.post('/births/multipleBirths2/submit/check-answers-complete', function (req, res) {
+    router.post('/births/multipleBirths3/submit/check-answers-complete', function (req, res) {
         req.session.data = req.session.data || {};
 
         req.session.data.checkAnswersCompleted = true;
 
-        res.redirect('/births/multipleBirths2/submit/confirmation');
+        res.redirect('/births/multipleBirths3/submit/confirmation');
     });
 
-    router.post('/births/multipleBirths2/child2Details/place-check', function (req, res) {
+    router.post('/births/multipleBirths3/child2Details/place-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body.whereDoYouLive) {
@@ -215,10 +215,10 @@ module.exports = function (router) {
 
         req.session.data.child2PlaceCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/child2Details/name-date-check', function (req, res) {
+    router.post('/births/multipleBirths3/child2Details/name-date-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body['child2-deceasedFirstName']) {
@@ -265,10 +265,10 @@ module.exports = function (router) {
 
         req.session.data.child2NameDateCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/parentsDetailsChild2/mothers-name-check', function (req, res) {
+    router.post('/births/multipleBirths3/parentsDetailsChild2/mothers-name-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         Object.keys(req.body).forEach(key => {
@@ -277,10 +277,10 @@ module.exports = function (router) {
 
         req.session.data.child2MothersNameCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/parentsDetailsChild2/mothers-details-check', function (req, res) {
+    router.post('/births/multipleBirths3/parentsDetailsChild2/mothers-details-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         Object.keys(req.body).forEach(key => {
@@ -289,10 +289,10 @@ module.exports = function (router) {
 
         req.session.data.child2MothersDetailsCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/parentsDetailsChild2/fathers-name-check', function (req, res) {
+    router.post('/births/multipleBirths3/parentsDetailsChild2/fathers-name-check', function (req, res) {
         req.session.data = req.session.data || {};
 
 
@@ -302,10 +302,10 @@ module.exports = function (router) {
 
         req.session.data.child2FathersNameCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/parentsDetailsChild2/fathers-details-check', function (req, res) {
+    router.post('/births/multipleBirths3/parentsDetailsChild2/fathers-details-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         Object.keys(req.body).forEach(key => {
@@ -314,10 +314,10 @@ module.exports = function (router) {
 
         req.session.data.child2FathersDetailsCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/statsChild2/confidential-check', function (req, res) {
+    router.post('/births/multipleBirths3/statsChild2/confidential-check', function (req, res) {
         req.session.data = req.session.data || {};
 
 
@@ -327,10 +327,10 @@ module.exports = function (router) {
 
         req.session.data.child2StatsConfidentialCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/statsChild2/voluntary-check', function (req, res) {
+    router.post('/births/multipleBirths3/statsChild2/voluntary-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         Object.keys(req.body).forEach(key => {
@@ -339,10 +339,10 @@ module.exports = function (router) {
 
         req.session.data.child2StatsVoluntaryCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/submitChild2/register-check', function (req, res) {
+    router.post('/births/multipleBirths3/submitChild2/register-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         Object.keys(req.body).forEach(key => {
@@ -351,18 +351,18 @@ module.exports = function (router) {
 
         req.session.data.child2RegisterPageCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/submitChild2/check-answers-complete', function (req, res) {
+    router.post('/births/multipleBirths3/submitChild2/check-answers-complete', function (req, res) {
         req.session.data = req.session.data || {};
 
         req.session.data.child2CheckAnswersCompleted = true;
 
-        res.redirect('/births/multipleBirths2/submitChild2/confirmation-page-child2');
+        res.redirect('/births/multipleBirths3/submitChild2/confirmation-page-child2');
     });
 
-    router.post('/births/multipleBirths2/additionalInfoChild2/comments-check', function (req, res) {
+    router.post('/births/multipleBirths3/additionalInfoChild2/comments-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         Object.keys(req.body).forEach(key => {
@@ -371,45 +371,45 @@ module.exports = function (router) {
 
         req.session.data.child2CommentsCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.get('/births/multipleBirths2/submitChild2/confirmation-page-child2', function (req, res) {
+    router.get('/births/multipleBirths3/submitChild2/confirmation-page-child2', function (req, res) {
 
         req.session.data = {};
 
-        res.render('births/multipleBirths2/submitChild2/confirmation-page-child2');
+        res.render('births/multipleBirths3/submitChild2/confirmation-page-child2');
     });
 
 
-    router.get('/births/multipleBirths2/child2/mark-complete', function (req, res) {
+    router.get('/births/multipleBirths3/child2/mark-complete', function (req, res) {
         req.session.data = req.session.data || {};
 
         req.session.data.child2PlaceCompleted = true;
         req.session.data.child2NameDateCompleted = true;
 
-        res.redirect('/births/multipleBirths2/tasks/child2index.html');
+        res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
 
-    router.post('/births/multipleBirths2/additionalInfo/comments-check', function (req, res) {
+    router.post('/births/multipleBirths3/additionalInfo/comments-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body.comments) {
             req.session.data.comments = req.body.comments;
         }
 
-        const referer = req.get('Referer') || '/births/multipleBirths2/tasks/';
+        const referer = req.get('Referer') || '/births/multipleBirths3/tasks/';
         res.redirect(referer.replace('/additionalInfo/comments', '/tasks/'));
     });
  
-    router.post('/births/multipleBirths2/additionalInfoChild2/comments-check', function (req, res) {
+    router.post('/births/multipleBirths3/additionalInfoChild2/comments-check', function (req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body.comments) {
             req.session.data.comments = req.body.comments;
         }
 
-        const referer = req.get('Referer') || '/births/multipleBirths2/tasks/child2index.html';
+        const referer = req.get('Referer') || '/births/multipleBirths3/tasks/child2index.html';
         res.redirect(referer.replace('/additionalInfoChild2/commentsChild2', '/tasks/child2index.html'));
     });
 };

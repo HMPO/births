@@ -28,7 +28,7 @@ href: "javascript:window.history.back()"
           Date and time of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          First October 2025, 12:00 hours
+          Twelfth November 2025, 12:03 hours
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span
@@ -80,7 +80,7 @@ href: "javascript:window.history.back()"
           Name
         </dt>
         <dd class="govuk-summary-list__value">
-          Elizabeth MARTINEZ LARA
+          Isabella MARTINEZ LARA
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span
@@ -103,7 +103,7 @@ href: "javascript:window.history.back()"
           Occupation
         </dt>
         <dd class="govuk-summary-list__value">
-          Cleaner
+          Teacher
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
@@ -122,7 +122,7 @@ href: "javascript:window.history.back()"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Last name at marriage (if different from maiden name)
+          Last name (if different at marriage / civil partnership)
         </dt>
         <dd class="govuk-summary-list__value">
 
@@ -136,7 +136,7 @@ href: "javascript:window.history.back()"
           Address (if different from child’s place of birth)
         </dt>
         <dd class="govuk-summary-list__value">
-          23 West Drive, Eastleigh
+          29 Willow Crescent Eastleigh
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
@@ -177,7 +177,7 @@ href: "javascript:window.history.back()"
           Occupation
         </dt>
         <dd class="govuk-summary-list__value">
-          Cleaner
+          Architect
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
@@ -196,7 +196,7 @@ href: "javascript:window.history.back()"
           Qualification
         </dt>
         <dd class="govuk-summary-list__value">
-          Father
+          Father, Mother
         </dd>
         <dd class="govuk-summary-list__actions">
           
@@ -207,7 +207,18 @@ href: "javascript:window.history.back()"
           Father's address
         </dt>
         <dd class="govuk-summary-list__value">
-          23 West Drive, Eastleigh
+          18 Hawthorn Way Eastleigh
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother's address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          18 Hawthorn Way Eastleigh
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
@@ -265,6 +276,12 @@ href: "javascript:window.history.back()"
   -->
     
   <div class="govuk-grid-row govuk-grid-column-full">
+
+    <h2 class="govuk-heading-m">Informant's declaration</h2>
+    <div id="event-name-hint" class="govuk-hint">
+      For the informant to read out loud
+    </div>
+
     {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {{ govukCheckboxes({
@@ -280,7 +297,7 @@ href: "javascript:window.history.back()"
   items: [
     {
       value: "farm",
-      text: "Informant has confirmed that the particulars given by them are true to the best of their knowledge and belief."
+      text: "I confirm that the particulars given by me are true to the best of my knowledge and belief."
     }
   ]
 }) }}

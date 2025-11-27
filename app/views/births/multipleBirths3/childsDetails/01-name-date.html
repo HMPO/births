@@ -72,14 +72,14 @@ href: "javascript:window.history.back()"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="dob-day">Day</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day"
-                  type="text" inputmode="numeric" value="1">
+                  type="text" inputmode="numeric" value="12">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="dob-month">Month</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month"
-                  type="text" inputmode="numeric" value="10">
+                  type="text" inputmode="numeric" value="11">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -104,7 +104,7 @@ href: "javascript:window.history.back()"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="dob-minute">Minutes</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-minute"
-                  name="dob-minute" type="text" inputmode="numeric" value="00">
+                  name="dob-minute" type="text" inputmode="numeric" value="03">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -126,6 +126,10 @@ href: "javascript:window.history.back()"
           </div>
         </fieldset>
       </div>
+
+      
+
+      
 
       <!-- Conditional block: Yes -->
       <div id="yes-name-block">
@@ -235,7 +239,8 @@ href: "javascript:window.history.back()"
       </div>
       <div class="govuk-button-group">
         {{ govukButton({
-        text: "Save and return"
+        text: "Save and return",
+        href: "../tasks/index.html"
         }) }}
       </div>
     </form>
