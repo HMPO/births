@@ -27,7 +27,7 @@ href: "javascript:window.history.back()"
           Informant
         </dt>
         <dd class="govuk-summary-list__value">
-          Father
+          Mother and father
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/births/multipleBirths/child2Details/01-child2-name-date.html">Change<span
@@ -46,7 +46,7 @@ href: "javascript:window.history.back()"
           "civilPartnership": "Civil partnership",
           "marriedNeither": "Neither"
           } %}
-          {{ marriedOrCivilPartnershipText[data['marriedOrCivilPartnership']] or "Married" }}
+          {{ marriedOrCivilPartnershipText[data['marriedOrCivilPartnership']] or "No" }}
         </dd>
          <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change</a>
@@ -57,7 +57,7 @@ href: "javascript:window.history.back()"
 
     {{ govukButton({
     text: "Continue",
-    href: "/births/multipleBirths2/tasks/child2index.html"
+    href: "/births/multipleBirths3/tasks/child2index.html"
     }) }}
 
   </div>

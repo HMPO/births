@@ -71,7 +71,7 @@ href: "javascript:window.history.back()"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="child2-dob-day">Day</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-day"
-                  name="child2-dob-day" type="text" inputmode="numeric" value="{{ data['child2-dob-day'] or '1' }}">
+                  name="child2-dob-day" type="text" inputmode="numeric" value="{{ data['child2-dob-day'] or '12' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -79,7 +79,7 @@ href: "javascript:window.history.back()"
                 <label class="govuk-label govuk-date-input__label" for="child2-dob-month">Month</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-month"
                   name="child2-dob-month" type="text" inputmode="numeric"
-                  value="{{ data['child2-dob-month'] or '10' }}">
+                  value="{{ data['child2-dob-month'] or '11' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -106,7 +106,7 @@ href: "javascript:window.history.back()"
                 <label class="govuk-label govuk-date-input__label" for="child2-dob-minute">Minutes</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-minute"
                   name="child2-dob-minute" type="text" inputmode="numeric"
-                  value="{{ data['child2-dob-minute'] or '02' }}">
+                  value="{{ data['child2-dob-minute'] or '05' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -148,14 +148,14 @@ href: "javascript:window.history.back()"
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="child2-deceased-last-name">Last name</label>
           <input class="govuk-input govuk-!-width-one-half" id="child2-deceased-last-name"
-            name="child2-deceasedLastName" type="text" value="{{data['child2-deceasedLastName']}}">
+            name="child2-deceasedLastName" type="text" value="PEREZ MARTINEZ">
         </div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h1 class="govuk-fieldset__heading">
-                Capitalise last name?
+                Capitalise last name
               </h1>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
@@ -239,7 +239,8 @@ href: "javascript:window.history.back()"
       </div>
       <div class="govuk-button-group">
         {{ govukButton({
-        text: "Save and return"
+        text: "Save and return",
+        href: "../tasks/child2index.html"
         }) }}
       </div>
 

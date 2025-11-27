@@ -32,7 +32,7 @@ href: "javascript:window.history.back()"
           Place of birth
         </label>
         <input class="govuk-input govuk-!-width-one-half" id="mothersPlaceOfBirth" name="mothersPlaceOfBirth"
-          type="text" aria-describedby="mothersPlaceOfBirth-hint" aria-required="false" value="Mexico">
+          type="text" aria-describedby="mothersPlaceOfBirth-hint" aria-required="false" value="Puebla, Mexico">
       </div>
 
       <div class="govuk-form-group">
@@ -131,7 +131,7 @@ href: "javascript:window.history.back()"
           Occupation
         </label>
         <input class="govuk-input govuk-!-width-two-thirds" id="mothersOccupation" name="mothersOccupation" type="text"
-          aria-describedby="mothersOccupation-hint" aria-required="false" value="Cleaner">
+          aria-describedby="mothersOccupation-hint" aria-required="false" value="Teacher">
       </div>
       <br>
 
@@ -167,7 +167,7 @@ href: "javascript:window.history.back()"
             Street address line 1
           </label>
           <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text"
-            value="23 West Drive">
+            value="29 Willow Crescent">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-1">
@@ -208,7 +208,7 @@ href: "javascript:window.history.back()"
             Postcode
           </label>
           <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text"
-            autocomplete="postal-code" value="SO50 6FN">
+            autocomplete="postal-code" value="SO50 6DR">
         </div>
         <p class="govuk-body">
           <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
@@ -216,6 +216,29 @@ href: "javascript:window.history.back()"
         <br>
       </fieldset>
 
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Is this the current address?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
       
 
 
@@ -246,7 +269,8 @@ href: "javascript:window.history.back()"
 
       <div class="govuk-button-group">
         {{ govukButton({
-        text: "Save and return"
+        text: "Save and return",
+        href: "../tasks/child2index.html"
         })
         }}
       </div>
