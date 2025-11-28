@@ -484,7 +484,7 @@ href: "javascript:window.history.back()"
               Flat number or name
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="current-address-flat" name="currentAddressFlat"
-              type="text" autocomplete="address-line1" value="{{ data.currentAddressFlat }}">
+              type="text" autocomplete="address-line1">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label" for="current-address-building-number">
@@ -498,8 +498,7 @@ href: "javascript:window.history.back()"
               Building name
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="current-address-building-name"
-              name="currentAddressBuildingName" type="text" autocomplete="address-level2"
-              value="{{ data.currentAddressBuildingName }}">
+              name="currentAddressBuildingName" type="text" autocomplete="address-level2">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label" for="current-address-street1">
@@ -544,7 +543,7 @@ href: "javascript:window.history.back()"
               County
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="current-address-county" name="currentAddressCounty"
-              type="text" value="{{ data.currentAddressCounty }}">
+              type="text">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label" for="current-address-postcode">
@@ -593,41 +592,7 @@ href: "javascript:window.history.back()"
       });
     }
 
-    if (currentAddressFields) {
-      const hasCurrentAddressData =
-        document.getElementById('current-address-building-number').value ||
-        document.getElementById('current-address-street1').value ||
-        document.getElementById('current-address-town').value ||
-        document.getElementById('current-address-postcode').value ||
-        document.getElementById('current-address-flat').value ||
-        document.getElementById('current-address-building-name').value ||
-        document.getElementById('current-address-street2').value ||
-        document.getElementById('current-address-street3').value ||
-        document.getElementById('current-address-street4').value ||
-        document.getElementById('current-address-county').value;
 
-      if (hasCurrentAddressData) {
-        currentAddressFields.style.display = 'block';
-      }
-    }
-
-    if (currentAddressFields) {
-      const hasCurrentAddressData =
-        document.getElementById('current-address-building-number').value ||
-        document.getElementById('current-address-street1').value ||
-        document.getElementById('current-address-town').value ||
-        document.getElementById('current-address-postcode').value ||
-        document.getElementById('current-address-flat').value ||
-        document.getElementById('current-address-building-name').value ||
-        document.getElementById('current-address-street2').value ||
-        document.getElementById('current-address-street3').value ||
-        document.getElementById('current-address-street4').value ||
-        document.getElementById('current-address-county').value;
-
-      if (hasCurrentAddressData) {
-        currentAddressFields.style.display = 'block';
-      }
-    }
 
     if (addressSelect && currentAddressFields) {
       addressSelect.addEventListener('change', function () {
