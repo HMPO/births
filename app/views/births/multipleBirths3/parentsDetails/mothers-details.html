@@ -379,7 +379,7 @@ href: "javascript:window.history.back()"
           <label class="govuk-label" for="address-town">
             Street address line 4
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street4" name="addressStreet4"
+          <input class="govuk-input govuk-!-width-two-thirds" id="birth-address-street4" name="addressStreet4"
             type="text" autocomplete="address-level2">
         </div>
         <div class="govuk-form-group">
@@ -408,34 +408,165 @@ href: "javascript:window.history.back()"
         <br>
       </fieldset>
 
-      <div class="govuk-form-group">
+      {{ govukRadios({
+      name: "isCurrentAddress",
+      fieldset: {
+      legend: {
+      text: "Is this the current address?",
+      classes: "govuk-fieldset__legend--s"
+      }
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes",
+      checked: checked("isCurrentAddress", "yes")
+      },
+      {
+      value: "no",
+      text: "No",
+      checked: checked("isCurrentAddress", "no"),
+      conditional: {
+      html: '<div class="govuk-form-group">
+        <label class="govuk-label" for="postcode-search">Search by postcode</label>
+        <input class="govuk-input govuk-input--width-10" id="postcode-search" name="postcode-search" type="text"
+          placeholder="e.g. SO50 6DR">
+      </div>
+      <button type="button" id="find-address-btn"
+        class="govuk-button govuk-button--secondary govuk-!-margin-bottom-3">Find address</button>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Enter address manually</a>
+      </p>
+      <div class="govuk-form-group" id="address-select-group" style="display: none;">
+        <label class="govuk-label" for="address-select">Select an address</label>
+        <select class="govuk-select govuk-!-width-full" id="address-select" name="address-select">
+          <option value="">Please select an address</option>
+          <option value="1 Hawthorn Way, Eastleigh, SO59 6QN">1 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="2 Hawthorn Way, Eastleigh, SO59 6QN">2 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="3 Hawthorn Way, Eastleigh, SO59 6QN">3 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="4 Hawthorn Way, Eastleigh, SO59 6QN">4 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="5 Hawthorn Way, Eastleigh, SO59 6QN">5 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="6 Hawthorn Way, Eastleigh, SO59 6QN">6 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="7 Hawthorn Way, Eastleigh, SO59 6QN">7 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="8 Hawthorn Way, Eastleigh, SO59 6QN">8 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="9 Hawthorn Way, Eastleigh, SO59 6QN">9 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="10 Hawthorn Way, Eastleigh, SO59 6QN">10 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="11 Hawthorn Way, Eastleigh, SO59 6QN">11 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="12 Hawthorn Way, Eastleigh, SO59 6QN">12 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="13 Hawthorn Way, Eastleigh, SO59 6QN">13 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="14 Hawthorn Way, Eastleigh, SO59 6QN">14 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="15 Hawthorn Way, Eastleigh, SO59 6QN">15 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="16 Hawthorn Way, Eastleigh, SO59 6QN">16 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="17 Hawthorn Way, Eastleigh, SO59 6QN">17 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="18 Hawthorn Way, Eastleigh, SO59 6QN">18 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="19 Hawthorn Way, Eastleigh, SO59 6QN">19 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="20 Hawthorn Way, Eastleigh, SO59 6QN">20 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="21 Hawthorn Way, Eastleigh, SO59 6QN">21 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="22 Hawthorn Way, Eastleigh, SO59 6QN">22 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="23 Hawthorn Way, Eastleigh, SO59 6QN">23 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="24 Hawthorn Way, Eastleigh, SO59 6QN">24 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="25 Hawthorn Way, Eastleigh, SO59 6QN">25 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="26 Hawthorn Way, Eastleigh, SO59 6QN">26 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="27 Hawthorn Way, Eastleigh, SO59 6QN">27 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="28 Hawthorn Way, Eastleigh, SO59 6QN">28 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="29 Hawthorn Way, Eastleigh, SO59 6QN">29 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="30 Hawthorn Way, Eastleigh, SO59 6QN">30 Hawthorn Way, Eastleigh, SO59 6QN</option>
+        </select>
+      </div>
+
+      <div id="current-address-fields" style="display: none;">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Is this the current address?
-            </h1>
+            Current address
           </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                No
-              </label>
-            </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-flat">
+              Flat number or name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-flat" name="currentAddressFlat"
+              type="text" autocomplete="address-line1" value="{{ data.currentAddressFlat }}">
           </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-building-number">
+              Building number
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-building-number"
+              name="currentAddressBuildingNumber" type="text" autocomplete="address-line2" value="18">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-building-name">
+              Building name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-building-name"
+              name="currentAddressBuildingName" type="text" autocomplete="address-level2"
+              value="{{ data.currentAddressBuildingName }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street1">
+              Street address line 1
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street1"
+              name="currentAddressStreet1" type="text" value="Hawthorn Way">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street2">
+              Street address line 2
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street2"
+              name="currentAddressStreet2" type="text" autocomplete="address-line1"
+              value="{{ data.currentAddressStreet2 }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street3">
+              Street address line 3
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street3"
+              name="currentAddressStreet3" type="text" autocomplete="address-line2"
+              value="{{ data.currentAddressStreet3 }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street4">
+              Street address line 4
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street4"
+              name="currentAddressStreet4" type="text" autocomplete="address-level2"
+              value="{{ data.currentAddressStreet4 }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-town" name="currentAddressTown"
+              type="text" value="Eastleigh">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-county">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-county" name="currentAddressCounty"
+              type="text" value="{{ data.currentAddressCounty }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="current-address-postcode" name="currentAddressPostcode"
+              type="text" autocomplete="postal-code" value="SO59 6QN">
+          </div>
+          <p class="govuk-body govuk-!-margin-top-3">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+          </p>
         </fieldset>
-      </div>
+      </div>'
+      }
+      }
+      ]
+      }) }}
 
       <div class="govuk-button-group">
         {{ govukButton({
         text: "Save and return",
-        href: "../tasks/index.html"
+        type: "submit"
         })
         }}
       </div>
@@ -448,11 +579,63 @@ href: "javascript:window.history.back()"
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const findAddressBtn = document.getElementById('find-address-btn');
-    const addressFields = document.getElementById('address-fields');
+    const postcodeInput = document.getElementById('postcode-search');
+    const addressSelectGroup = document.getElementById('address-select-group');
+    const addressSelect = document.getElementById('address-select');
+    const currentAddressFields = document.getElementById('current-address-fields');
 
-    if (findAddressBtn && addressFields) {
+    if (findAddressBtn && postcodeInput && addressSelectGroup) {
       findAddressBtn.addEventListener('click', function () {
-        addressFields.style.display = 'block';
+        const postcodeValue = postcodeInput.value.trim();
+        if (postcodeValue) {
+          addressSelectGroup.style.display = 'block';
+        }
+      });
+    }
+
+    if (currentAddressFields) {
+      const hasCurrentAddressData =
+        document.getElementById('current-address-building-number').value ||
+        document.getElementById('current-address-street1').value ||
+        document.getElementById('current-address-town').value ||
+        document.getElementById('current-address-postcode').value ||
+        document.getElementById('current-address-flat').value ||
+        document.getElementById('current-address-building-name').value ||
+        document.getElementById('current-address-street2').value ||
+        document.getElementById('current-address-street3').value ||
+        document.getElementById('current-address-street4').value ||
+        document.getElementById('current-address-county').value;
+
+      if (hasCurrentAddressData) {
+        currentAddressFields.style.display = 'block';
+      }
+    }
+
+    if (currentAddressFields) {
+      const hasCurrentAddressData =
+        document.getElementById('current-address-building-number').value ||
+        document.getElementById('current-address-street1').value ||
+        document.getElementById('current-address-town').value ||
+        document.getElementById('current-address-postcode').value ||
+        document.getElementById('current-address-flat').value ||
+        document.getElementById('current-address-building-name').value ||
+        document.getElementById('current-address-street2').value ||
+        document.getElementById('current-address-street3').value ||
+        document.getElementById('current-address-street4').value ||
+        document.getElementById('current-address-county').value;
+
+      if (hasCurrentAddressData) {
+        currentAddressFields.style.display = 'block';
+      }
+    }
+
+    if (addressSelect && currentAddressFields) {
+      addressSelect.addEventListener('change', function () {
+        if (this.value) {
+          currentAddressFields.style.display = 'block';
+        } else {
+          currentAddressFields.style.display = 'none';
+        }
       });
     }
 

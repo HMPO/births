@@ -24,7 +24,6 @@ module.exports = function (router) {
         req.session.data.nameDateCompleted = true;
 
         if (hasName && hasSex) {
-
         }
         req.session.data.deceasedFirstName = req.body.deceasedFirstName;
         req.session.data.deceasedLastName = req.body.deceasedLastName;

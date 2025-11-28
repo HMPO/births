@@ -57,13 +57,15 @@ href: "javascript:window.history.back()"
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked value="england">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked
+                  value="england">
                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio"
+                  value="scotland">
                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
                   No - print as typed
                 </label>
@@ -73,9 +75,9 @@ href: "javascript:window.history.back()"
         </div>
 
         <div>
-         <p class="govuk-body  govuk-!-margin-top-4">
-          <a href="#" class="govuk-link">Add prefix or suffix</a>
-        </p>
+          <p class="govuk-body  govuk-!-margin-top-4">
+            <a href="#" class="govuk-link">Add prefix or suffix</a>
+          </p>
         </div><br>
 
         <div id="other-name-block" hidden>
@@ -128,18 +130,18 @@ href: "javascript:window.history.back()"
             <input class="govuk-input govuk-!-width-one-half" id="last-name" name="last-name" type="text">
           </div>
 
-         <div>
-          <p class="govuk-body">
-            <a href="#" class="govuk-link">Add prefix or suffix</a>
-          </p> <br><br>
-         </div> 
-    
+          <div>
+            <p class="govuk-body">
+              <a href="#" class="govuk-link">Add prefix or suffix</a>
+            </p> <br><br>
+          </div>
+
         </div>
 
 
 
 
-    
+
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
@@ -223,14 +225,16 @@ href: "javascript:window.history.back()"
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked value="england">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                <input class="govuk-radios__input" id="other-name-capitalise-last-name" name="other-name-capitalise-last-name" type="radio" checked
+                  value="england">
+                <label class="govuk-label govuk-radios__label" for="other-name-capitalise-last-name">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                <input class="govuk-radios__input" id="other-name-capitalise-last-name-2" name="other-name-capitalise-last-name" type="radio"
+                  value="scotland">
+                <label class="govuk-label govuk-radios__label" for="other-name-capitalise-last-name-2">
                   No - print as typed
                 </label>
               </div>
@@ -255,14 +259,16 @@ href: "javascript:window.history.back()"
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked value="england">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                <input class="govuk-radios__input" id="capitaliseLastName" name="capitaliseLastName" type="radio" checked
+                  value="england">
+                <label class="govuk-label govuk-radios__label" for="capitaliseLastName">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                <input class="govuk-radios__input" id="capitaliseLastName-2" name="capitaliseLastName" type="radio"
+                  value="scotland">
+                <label class="govuk-label govuk-radios__label" for="capitaliseLastName-2">
                   No - print as typed
                 </label>
               </div>
@@ -275,7 +281,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-button-group">
         {{ govukButton({
         text: "Save and return",
-        href: "../tasks/index.html"
+        type: "submit"
         }) }}
       </div>
 

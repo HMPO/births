@@ -17,13 +17,7 @@ href: "javascript:window.history.back()"
 {% endblock %}
 
 {% block content %}
-
-{% if data['declaration-change'] == 'true' %}
-<form class="form" action="../declaration/declaration" method="post">
-  {% else %}
-  <form class="form" action="check-details" method="post">
-    {% endif %}
-
+  <form class="form" action="../tasks/" method="post">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
@@ -86,7 +80,7 @@ href: "javascript:window.history.back()"
         <fieldset class="govuk-fieldset" id="address-fields" style="display: none;">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h3 class="govuk-fieldset__heading">
-              Address 
+              Address
             </h3>
           </legend>
           <div class="govuk-form-group">
@@ -107,8 +101,9 @@ href: "javascript:window.history.back()"
             <label class="govuk-label" for="childs-address-building-name">
               Building name
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-building-name" name="childsAddressBuildingName"
-              type="text" autocomplete="address-level2" value="{{ data.childsAddressBuildingName or 'Princess Anne Hospital' }}">
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-building-name"
+              name="childsAddressBuildingName" type="text" autocomplete="address-level2"
+              value="{{ data.childsAddressBuildingName or 'Princess Anne Hospital' }}">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label" for="childs-address-county">
@@ -149,8 +144,8 @@ href: "javascript:window.history.back()"
             <label class="govuk-label" for="childs-address-county-2">
               County
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-county-2"
-              name="childsAddressCounty2" type="text" value="{{ data.childsAddressCounty2 or '' }}">
+            <input class="govuk-input govuk-!-width-two-thirds" id="childs-address-county-2" name="childsAddressCounty2"
+              type="text" value="{{ data.childsAddressCounty2 or '' }}">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label" for="childs-address-postcode">
@@ -160,13 +155,12 @@ href: "javascript:window.history.back()"
               type="text" autocomplete="postal-code" value="{{ data.childsAddressPostcode or 'SO50 6FN' }}">
           </div>
         </fieldset>
-
-
-        <a class="govuk-button" href="../tasks/index.html">Save and return</a>
-
-  
-
-
+        <div class="govuk-button-group">
+          {{ govukButton({
+          text: "Save and return",
+          type: "submit"
+          }) }}
+        </div>
       </div>
 
       </fieldset>
@@ -323,7 +317,7 @@ href: "javascript:window.history.back()"
             }
           });
 
-          function updateHighlight(items) {
+          const updateHighlight = (items) => {
             items.forEach((item, index) => {
               item.classList.toggle('highlighted', index === highlightedIndex);
             });
@@ -335,14 +329,7 @@ href: "javascript:window.history.back()"
           });
         });
       </script>
-
-      <br>
-
-
-
     </div>
     </div>
-
   </form>
-
   {% endblock %}

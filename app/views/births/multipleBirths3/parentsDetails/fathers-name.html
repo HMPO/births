@@ -45,7 +45,7 @@ href: "javascript:window.history.back()"
           <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="fathersLastName" type="text"
             value="{{ data.fathersLastName }}">
 
-         
+
         </div>
 
         <div class="govuk-form-group">
@@ -57,13 +57,15 @@ href: "javascript:window.history.back()"
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked value="england">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked
+                  value="england">
                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio"
+                  value="scotland">
                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
                   No - print as typed
                 </label>
@@ -71,7 +73,7 @@ href: "javascript:window.history.back()"
             </div>
           </fieldset>
 
-        
+
         </div>
 
         <div>
@@ -205,7 +207,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-button-group">
         {{ govukButton({
         text: "Save and return",
-        href: "../tasks/index.html"
+        type: "submit"
         }) }}
       </div>
 
