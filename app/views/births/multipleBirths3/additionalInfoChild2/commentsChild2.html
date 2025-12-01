@@ -13,30 +13,31 @@ href: "javascript:window.history.back()"
 
 {% block content %}
 
-
-
 <form class="form" action="comments-check" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Additional information</span>
       <h1 class="govuk-heading-l">Registrar's comments</h1>
-      <div class="govuk-form-group govuk-!-margin-bottom-1" data-testid="comments">
-        <label class="govuk-fieldset__legend govuk-fieldset__legend--s" for="comments">Add comments</label>
-        <div id="authentication-code-hint" class="govuk-hint">
-          Comments will not be entered in the register
-        </div>
-        <textarea rows="5" id="comments" name="comments"
-          class="govuk-textarea govuk-!-margin-bottom-1">{{ data['comments'] or '' }}</textarea>
-      </div>
-      <section aria-live="polite"
-        class="govuk-body govuk-character-count__message govuk-!-margin-bottom-4 govuk-character-count__status">
-        <span class="govuk-hint">You have 500 characters remaining</span>
-      </section>
+      {{ govukCharacterCount({
+      name: "comments",
+      id: "comments",
+      maxlength: 500,
+      label: {
+      text: "Add comments",
+      classes: "govuk-fieldset__legend govuk-fieldset__legend--s"
+      },
+      hint: {
+      text: "Comments will not be entered in the register"
+      },
+      value: data['comments'] or '',
+      rows: 5
+      }) }}
 
       <div class="govuk-button-group">
         {{ govukButton({
-        text: "Save and return"
+        text: "Save and return",
+        type: "submit"
         })
         }}
       </div>

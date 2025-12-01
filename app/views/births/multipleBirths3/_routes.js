@@ -422,6 +422,14 @@ module.exports = function (router) {
 
         if (req.body.comments) {
             req.session.data.comments = req.body.comments;
+            // Set completed flag if there are comments
+            if (req.body.comments.trim()) {
+                req.session.data.commentsCompleted = true;
+            } else {
+                req.session.data.commentsCompleted = false;
+            }
+        } else {
+            req.session.data.commentsCompleted = false;
         }
 
         const referer = req.get('Referer') || '/births/multipleBirths3/tasks/';
@@ -433,9 +441,32 @@ module.exports = function (router) {
 
         if (req.body.comments) {
             req.session.data.comments = req.body.comments;
+            // Set completed flag if there are comments
+            if (req.body.comments.trim()) {
+                req.session.data.commentsCompleted = true;
+            } else {
+                req.session.data.commentsCompleted = false;
+            }
+        } else {
+            req.session.data.commentsCompleted = false;
         }
 
         const referer = req.get('Referer') || '/births/multipleBirths3/tasks/child2index.html';
         res.redirect(referer.replace('/additionalInfoChild2/commentsChild2', '/tasks/child2index.html'));
     });
+
+    router.post('/births/multipleBirths3/additionalInfo/comments-check', function (req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body.comments && req.body.comments.trim()) {
+            req.session.data.comments = req.body.comments;
+            req.session.data.commentsCompleted = true;
+        } else {
+            req.session.data.commentsCompleted = false;
+        }
+
+        const referer = req.get('Referer') || '/births/multipleBirths3/tasks/';
+        res.redirect(referer.replace('/additionalInfo/comments', '/tasks/'));
+    });
 };
+
