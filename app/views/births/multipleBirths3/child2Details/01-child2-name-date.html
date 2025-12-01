@@ -244,6 +244,36 @@ href: "javascript:window.history.back()"
   </div>
 </div>
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleLink = document.getElementById('toggle-seconds');
+    const secondsField = document.querySelector('.govuk-date-input__item:has(#dob-second)');
+    let secondsVisible = true;
+
+    if (secondsField) {
+      secondsField.style.display = 'none';
+      secondsVisible = false;
+      toggleLink.textContent = 'Add seconds';
+    }
+
+    toggleLink.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (secondsField) {
+        if (secondsVisible) {
+          secondsField.style.display = 'none';
+          toggleLink.textContent = 'Add seconds';
+        } else {
+          secondsField.style.display = '';
+          toggleLink.textContent = 'Remove seconds';
+        }
+        secondsVisible = !secondsVisible;
+      }
+    });
+  });
+</script>
+
 <!-- Load the JS from views/latest/ -->
 
 
