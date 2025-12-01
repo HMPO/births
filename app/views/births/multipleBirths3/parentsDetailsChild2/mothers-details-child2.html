@@ -16,8 +16,6 @@ href: "javascript:window.history.back()"
 
 {% block content %}
 
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Parents' details</span>
@@ -142,24 +140,24 @@ href: "javascript:window.history.back()"
           </h3>
         </legend>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-1">
+          <label class="govuk-label" for="flat-number-line-1">
             Flat number or name
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="addressLine1" type="text"
-            autocomplete="address-line1">
+          <input class="govuk-input govuk-!-width-two-thirds" id="flat-number-line-1" name="flat-number-line-1"
+            type="text" autocomplete="address-line1">
         </div>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-2">
+          <label class="govuk-label" for="building-number-2">
             Building number
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
-            autocomplete="address-line2">
+          <input class="govuk-input govuk-!-width-two-thirds" id="building-number-2" name="building-number-2"
+            type="text" autocomplete="address-line2">
         </div>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="address-town">
+          <label class="govuk-label" for="building-name-2">
             Building name
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+          <input class="govuk-input govuk-!-width-two-thirds" id="building-name-2" name="building-name-2" type="text"
             autocomplete="address-level2">
         </div>
         <div class="govuk-form-group">
@@ -225,52 +223,107 @@ href: "javascript:window.history.back()"
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              <input class="govuk-radios__input" id="isCurrentAddress" name="isCurrentAddress" type="radio"
+                value="england">
+              <label class="govuk-label govuk-radios__label" for="isCurrentAddress">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              <input class="govuk-radios__input" id="isCurrentAddress-2" name="isCurrentAddress" type="radio"
+                value="england" checked>
+              <label class="govuk-label govuk-radios__label" for="isCurrentAddress-2">
                 No
               </label>
             </div>
           </div>
         </fieldset>
       </div>
-      
 
-
-
-
-
-      <!-- <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="OccupationStatus-fieldset" aria-required="false">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Occupation status
-                </legend>
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="OccupationStatus-true" name="OccupationStatus" type="radio" value="true" {{ checked("OccupationStatus", "true") }}>
-                    <label class="govuk-label govuk-radios__label" id="OccupationStatus-true-label" for="OccupationStatus-true">
-                        Retired
-                    </label>    
-                  </div>
-                  <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="OccupationStatus-false" name="OccupationStatus" type="radio" value="false" {{ checked("OccupationStatus", "false") }}>
-                      <label class="govuk-label govuk-radios__label" id="OccupationStatus-false-label" for="OccupationStatus-false">
-                        Not retired
-                      </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div> -->
-
+      <div id="current-address-fields">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Current address
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-flat">
+              Flat number or name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-flat" name="currentAddressFlat"
+              type="text" autocomplete="address-line1">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-building-number">
+              Building number
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-building-number"
+              name="currentAddressBuildingNumber" type="text" autocomplete="address-line2" value="18">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-building-name">
+              Building name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-building-name"
+              name="currentAddressBuildingName" type="text" autocomplete="address-level2">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street1">
+              Street address line 1
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street1"
+              name="currentAddressStreet1" type="text" value="Hawthorn Way">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street2">
+              Street address line 2
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street2"
+              name="currentAddressStreet2" type="text" autocomplete="address-line1" value="">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street3">
+              Street address line 3
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street3"
+              name="currentAddressStreet3" type="text" autocomplete="address-line2" value="">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street4">
+              Street address line 4
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street4"
+              name="currentAddressStreet4" type="text" autocomplete="address-level2" value="">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-town" name="currentAddressTown"
+              type="text" value="Eastleigh">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-county">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-county" name="currentAddressCounty"
+              type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="current-address-postcode" name="currentAddressPostcode"
+              type="text" autocomplete="postal-code" value="SO59 6QN">
+          </div>
+          <p class="govuk-body govuk-!-margin-top-3">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+          </p>
+        </fieldset>
+      </div>
       <div class="govuk-button-group">
         {{ govukButton({
         text: "Save and return",
-        href: "../tasks/child2index.html"
+        type: "submit"
         })
         }}
       </div>

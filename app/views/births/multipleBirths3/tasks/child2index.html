@@ -98,7 +98,8 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
     <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths3/statsChild2/confidentialChild2.html">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/statsChild2/confidentialChild2.html">
             Confidential statistics
           </a>
         </div>
@@ -123,11 +124,16 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
     <ul class="govuk-task-list">
       <li class="govuk-task-list__item">
         <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths3/additionalInfoChild2/commentsChild2">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/additionalInfoChild2/commentsChild2">
             Registrar's comments</a>
         </div>
         <div class="govuk-task-list__status">
+          {% if data.commentsCompleted %}
+          Completed
+          {% else %}
           <strong class="govuk-tag govuk-tag--yellow">Optional</strong>
+          {% endif %}
         </div>
       </li>
     </ul>

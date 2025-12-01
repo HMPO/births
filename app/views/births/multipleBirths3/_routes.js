@@ -287,9 +287,10 @@ module.exports = function (router) {
 
         if (req.body['child2-sex']) {
             req.session.data['child2-sex'] = req.body['child2-sex'];
+            req.session.data.child2NameDateCompleted = true;
+        } else {
+            req.session.data.child2NameDateCompleted = false;
         }
-
-        req.session.data.child2NameDateCompleted = true;
 
         res.redirect('/births/multipleBirths3/tasks/child2index.html');
     });
@@ -441,7 +442,6 @@ module.exports = function (router) {
 
         if (req.body.comments) {
             req.session.data.comments = req.body.comments;
-            // Set completed flag if there are comments
             if (req.body.comments.trim()) {
                 req.session.data.commentsCompleted = true;
             } else {

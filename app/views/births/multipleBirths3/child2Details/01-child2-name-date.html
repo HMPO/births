@@ -120,7 +120,8 @@ href: "javascript:window.history.back()"
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="child2-dob-period">am / pm</label>
-                <select class="govuk-select govuk-input--width-2 time-select" id="child2-dob-period" name="child2-dob-period">
+                <select class="govuk-select govuk-input--width-2 time-select" id="child2-dob-period"
+                  name="child2-dob-period">
                   <option value="PM" {% if data['child2-dob-period']=='PM' or not data['child2-dob-period'] %}selected{%
                     endif %}>pm</option>
                   <option value="AM" {% if data['child2-dob-period']=='AM' %}selected{% endif %}>am</option>
@@ -240,7 +241,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-button-group">
         {{ govukButton({
         text: "Save and return",
-        href: "../tasks/child2index.html"
+        type: "submit"
         }) }}
       </div>
 
