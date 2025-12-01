@@ -65,70 +65,65 @@ href: "javascript:window.history.back()"
             For example, 23 11 2024
           </div>
 
-          <!-- Date row -->
-          <div class="govuk-date-input govuk-!-margin-bottom-3" id="child2-dob-date">
+          <div class="govuk-date-input govuk-!-margin-bottom-3" id="dob-date">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="child2-dob-day">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-day"
-                  name="child2-dob-day" type="text" inputmode="numeric" value="{{ data['child2-dob-day'] or '12' }}">
+                <label class="govuk-label govuk-date-input__label" for="dob-day">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day"
+                  type="text" inputmode="numeric" value="12">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="child2-dob-month">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-month"
-                  name="child2-dob-month" type="text" inputmode="numeric"
-                  value="{{ data['child2-dob-month'] or '11' }}">
+                <label class="govuk-label govuk-date-input__label" for="dob-month">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month"
+                  type="text" inputmode="numeric" value="11">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="child2-dob-year">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="child2-dob-year"
-                  name="child2-dob-year" type="text" inputmode="numeric"
-                  value="{{ data['child2-dob-year'] or '2025' }}">
+                <label class="govuk-label govuk-date-input__label" for="dob-year">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year"
+                  type="text" inputmode="numeric" value="2025">
               </div>
             </div>
           </div>
 
-          <!-- Time row -->
-          <div class="govuk-date-input" id="child2-dob-time">
+          <div class="govuk-date-input" id="dob-time">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="child2-dob-hour">Hours</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-hour"
-                  name="child2-dob-hour" type="text" inputmode="numeric" value="{{ data['child2-dob-hour'] or '12' }}">
+                <label class="govuk-label govuk-date-input__label" for="dob-hour">Hours</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-hour" name="dob-hour"
+                  type="text" inputmode="numeric" value="12">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="child2-dob-minute">Minutes</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-minute"
-                  name="child2-dob-minute" type="text" inputmode="numeric"
-                  value="{{ data['child2-dob-minute'] or '05' }}">
+                <label class="govuk-label govuk-date-input__label" for="dob-minute">Minutes</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-minute"
+                  name="dob-minute" type="text" inputmode="numeric" value="05">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="child2-dob-second">Seconds</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child2-dob-second"
-                  name="child2-dob-second" type="text" inputmode="numeric"
-                  value="{{ data['child2-dob-second'] or '02' }}">
+                <label class="govuk-label govuk-date-input__label" for="dob-second">Seconds</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-second"
+                  name="dob-second" type="text" inputmode="numeric" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="child2-dob-period">am / pm</label>
-                <select class="govuk-select govuk-input--width-2 time-select" id="child2-dob-period"
-                  name="child2-dob-period">
-                  <option value="PM" {% if data['child2-dob-period']=='PM' or not data['child2-dob-period'] %}selected{%
-                    endif %}>pm</option>
-                  <option value="AM" {% if data['child2-dob-period']=='AM' %}selected{% endif %}>am</option>
+                <label class="govuk-label govuk-date-input__label" for="dob-period">am / pm</label>
+                <select class="govuk-select govuk-input--width-2 time-select" id="dob-period" name="dob-period">
+                  <option value="PM">pm</option>
+                  <option value="AM">am</option>
                 </select>
               </div>
             </div>
           </div>
+          <p class="govuk-body govuk-!-margin-top-2">
+            <a href="#" class="govuk-link" id="toggle-seconds">Add seconds</a>
+          </p>
         </fieldset>
       </div>
 
