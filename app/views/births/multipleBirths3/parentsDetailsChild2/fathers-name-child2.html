@@ -1,0 +1,178 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Parents' details</span>
+    <h1 class="govuk-heading-l">
+      Father's names
+    </h1>
+
+    <form class="form" action="fathers-name-check" method="post">
+
+
+      <div id="yes-name-block">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="deceased-first-name">First name </label>
+          <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="fathersFirstName" type="text"
+            value="Luis">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="deceased-middle-name">Middle names</label>
+          <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="fathersMiddleName"
+            type="text" value="Felipe">
+          <!-- <p class="govuk-body">
+                <a href="#" class="govuk-link">Add more middle names</a>
+              </p> -->
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="deceased-last-name">Last name</label>
+          <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="fathersLastName" type="text"
+            value="PEREZ ROSARIO">
+
+      
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                Capitalise last name
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" checked value="england">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                  No - print as typed
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <p class="govuk-body  govuk-!-margin-top-4">
+            <a href="#" class="govuk-link">Add prefix or suffix</a>
+          </p>
+        </div><br>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Print order of names
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+              <!-- Default selected: Last name last -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="name-order" name="name-order" type="radio"
+                  value="name-order-first-name" checked data-aria-controls="">
+                <label class="govuk-label govuk-radios__label" for="name-order">
+                  Last name last
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="name-order-1" name="name-order" type="radio"
+                  value="name-order-last-name" data-aria-controls="">
+                <label class="govuk-label govuk-radios__label" for="name-order-1">
+                  Last name first
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="name-order-2" name="name-order" type="radio"
+                  value="name-order-only-last" data-aria-controls="">
+                <label class="govuk-label govuk-radios__label" for="name-order-2">
+                  Last name only
+                </label>
+              </div>
+
+              <!-- Conditional reveal: Other -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="name-order-4" name="name-order" type="radio"
+                  value="name-order-other" data-aria-controls="conditional-name-order-other">
+                <label class="govuk-label govuk-radios__label" for="name-order-4">
+                  Other
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                id="conditional-name-order-other">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="custom-order">
+                    Order of names
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="custom-order" name="custom-order" type="text"
+                    value="{{ data['custom-order'] }}">
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+       
+        
+
+        
+        
+
+        <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Add other names
+              </button>
+            </div>
+
+        </div>
+      </div>
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return",
+        href: "../tasks/child2index.html"
+        }) }}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- Load the JS from views/latest/ -->
+
+
+
+{% endblock %}

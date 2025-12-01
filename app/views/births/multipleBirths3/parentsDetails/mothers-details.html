@@ -1,0 +1,630 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% block pageTitle %}
+Personal details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Parents' details</span>
+    <h1 class="govuk-heading-l">
+      Mother's details
+    </h1>
+
+    <form class="form" action="mothers-details-check" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" id="mothersPlaceOfBirth-label" for="mothersPlaceOfBirth">
+          Place of birth
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="mothersPlaceOfBirth" name="mothersPlaceOfBirth"
+          type="text" aria-describedby="mothersPlaceOfBirth-hint" aria-required="false"
+          value="{{ data.mothersPlaceOfBirth }}">
+      </div>
+
+      {{ govukRadios({
+      name: "mothersCountryOfBirth",
+      fieldset: {
+      legend: {
+      text: "Country of birth",
+      classes: "govuk-fieldset__legend--s"
+      }
+      },
+      items: [
+      {
+      value: "england",
+      text: "England",
+      checked: checked("mothersCountryOfBirth", "england")
+      },
+      {
+      value: "northern-ireland",
+      text: "Northern Ireland",
+      checked: checked("mothersCountryOfBirth", "northern-ireland")
+      },
+      {
+      value: "scotland",
+      text: "Scotland",
+      checked: checked("mothersCountryOfBirth", "scotland")
+      },
+      {
+      value: "wales",
+      text: "Wales",
+      checked: checked("mothersCountryOfBirth", "wales")
+      },
+      {
+      value: "outside-the-UK",
+      text: "Outside the UK",
+      checked: checked("mothersCountryOfBirth", "outside-the-UK"),
+      conditional: {
+      html: govukSelect({
+      id: "mothersSpecificCountry",
+      name: "mothersSpecificCountry",
+      label: {
+      text: "Which country?"
+      },
+      items: [
+      { value: "", text: "Select a country" },
+      { value: "afghanistan", text: "Afghanistan" },
+      { value: "albania", text: "Albania" },
+      { value: "algeria", text: "Algeria" },
+      { value: "andorra", text: "Andorra" },
+      { value: "angola", text: "Angola" },
+      { value: "antigua-and-barbuda", text: "Antigua and Barbuda" },
+      { value: "argentina", text: "Argentina" },
+      { value: "armenia", text: "Armenia" },
+      { value: "australia", text: "Australia" },
+      { value: "austria", text: "Austria" },
+      { value: "azerbaijan", text: "Azerbaijan" },
+      { value: "bahamas", text: "Bahamas" },
+      { value: "bahrain", text: "Bahrain" },
+      { value: "bangladesh", text: "Bangladesh" },
+      { value: "barbados", text: "Barbados" },
+      { value: "belarus", text: "Belarus" },
+      { value: "belgium", text: "Belgium" },
+      { value: "belize", text: "Belize" },
+      { value: "benin", text: "Benin" },
+      { value: "bhutan", text: "Bhutan" },
+      { value: "bolivia", text: "Bolivia" },
+      { value: "bosnia-and-herzegovina", text: "Bosnia and Herzegovina" },
+      { value: "botswana", text: "Botswana" },
+      { value: "brazil", text: "Brazil" },
+      { value: "brunei", text: "Brunei" },
+      { value: "bulgaria", text: "Bulgaria" },
+      { value: "burkina-faso", text: "Burkina Faso" },
+      { value: "burundi", text: "Burundi" },
+      { value: "cabo-verde", text: "Cabo Verde" },
+      { value: "cambodia", text: "Cambodia" },
+      { value: "cameroon", text: "Cameroon" },
+      { value: "canada", text: "Canada" },
+      { value: "central-african-republic", text: "Central African Republic" },
+      { value: "chad", text: "Chad" },
+      { value: "chile", text: "Chile" },
+      { value: "china", text: "China" },
+      { value: "colombia", text: "Colombia" },
+      { value: "comoros", text: "Comoros" },
+      { value: "congo", text: "Congo" },
+      { value: "costa-rica", text: "Costa Rica" },
+      { value: "croatia", text: "Croatia" },
+      { value: "cuba", text: "Cuba" },
+      { value: "cyprus", text: "Cyprus" },
+      { value: "czech-republic", text: "Czech Republic" },
+      { value: "denmark", text: "Denmark" },
+      { value: "djibouti", text: "Djibouti" },
+      { value: "dominica", text: "Dominica" },
+      { value: "dominican-republic", text: "Dominican Republic" },
+      { value: "ecuador", text: "Ecuador" },
+      { value: "egypt", text: "Egypt" },
+      { value: "el-salvador", text: "El Salvador" },
+      { value: "equatorial-guinea", text: "Equatorial Guinea" },
+      { value: "eritrea", text: "Eritrea" },
+      { value: "estonia", text: "Estonia" },
+      { value: "eswatini", text: "Eswatini" },
+      { value: "ethiopia", text: "Ethiopia" },
+      { value: "fiji", text: "Fiji" },
+      { value: "finland", text: "Finland" },
+      { value: "france", text: "France" },
+      { value: "gabon", text: "Gabon" },
+      { value: "gambia", text: "Gambia" },
+      { value: "georgia", text: "Georgia" },
+      { value: "germany", text: "Germany" },
+      { value: "ghana", text: "Ghana" },
+      { value: "greece", text: "Greece" },
+      { value: "grenada", text: "Grenada" },
+      { value: "guatemala", text: "Guatemala" },
+      { value: "guinea", text: "Guinea" },
+      { value: "guinea-bissau", text: "Guinea-Bissau" },
+      { value: "guyana", text: "Guyana" },
+      { value: "haiti", text: "Haiti" },
+      { value: "honduras", text: "Honduras" },
+      { value: "hungary", text: "Hungary" },
+      { value: "iceland", text: "Iceland" },
+      { value: "india", text: "India" },
+      { value: "indonesia", text: "Indonesia" },
+      { value: "iran", text: "Iran" },
+      { value: "iraq", text: "Iraq" },
+      { value: "ireland", text: "Ireland" },
+      { value: "israel", text: "Israel" },
+      { value: "italy", text: "Italy" },
+      { value: "ivory-coast", text: "Ivory Coast" },
+      { value: "jamaica", text: "Jamaica" },
+      { value: "japan", text: "Japan" },
+      { value: "jordan", text: "Jordan" },
+      { value: "kazakhstan", text: "Kazakhstan" },
+      { value: "kenya", text: "Kenya" },
+      { value: "kiribati", text: "Kiribati" },
+      { value: "kuwait", text: "Kuwait" },
+      { value: "kyrgyzstan", text: "Kyrgyzstan" },
+      { value: "laos", text: "Laos" },
+      { value: "latvia", text: "Latvia" },
+      { value: "lebanon", text: "Lebanon" },
+      { value: "lesotho", text: "Lesotho" },
+      { value: "liberia", text: "Liberia" },
+      { value: "libya", text: "Libya" },
+      { value: "liechtenstein", text: "Liechtenstein" },
+      { value: "lithuania", text: "Lithuania" },
+      { value: "luxembourg", text: "Luxembourg" },
+      { value: "madagascar", text: "Madagascar" },
+      { value: "malawi", text: "Malawi" },
+      { value: "malaysia", text: "Malaysia" },
+      { value: "maldives", text: "Maldives" },
+      { value: "mali", text: "Mali" },
+      { value: "malta", text: "Malta" },
+      { value: "marshall-islands", text: "Marshall Islands" },
+      { value: "mauritania", text: "Mauritania" },
+      { value: "mauritius", text: "Mauritius" },
+      { value: "mexico", text: "Mexico" },
+      { value: "micronesia", text: "Micronesia" },
+      { value: "moldova", text: "Moldova" },
+      { value: "monaco", text: "Monaco" },
+      { value: "mongolia", text: "Mongolia" },
+      { value: "montenegro", text: "Montenegro" },
+      { value: "morocco", text: "Morocco" },
+      { value: "mozambique", text: "Mozambique" },
+      { value: "myanmar", text: "Myanmar" },
+      { value: "namibia", text: "Namibia" },
+      { value: "nauru", text: "Nauru" },
+      { value: "nepal", text: "Nepal" },
+      { value: "netherlands", text: "Netherlands" },
+      { value: "new-zealand", text: "New Zealand" },
+      { value: "nicaragua", text: "Nicaragua" },
+      { value: "niger", text: "Niger" },
+      { value: "nigeria", text: "Nigeria" },
+      { value: "north-korea", text: "North Korea" },
+      { value: "north-macedonia", text: "North Macedonia" },
+      { value: "norway", text: "Norway" },
+      { value: "oman", text: "Oman" },
+      { value: "pakistan", text: "Pakistan" },
+      { value: "palau", text: "Palau" },
+      { value: "panama", text: "Panama" },
+      { value: "papua-new-guinea", text: "Papua New Guinea" },
+      { value: "paraguay", text: "Paraguay" },
+      { value: "peru", text: "Peru" },
+      { value: "philippines", text: "Philippines" },
+      { value: "poland", text: "Poland" },
+      { value: "portugal", text: "Portugal" },
+      { value: "qatar", text: "Qatar" },
+      { value: "romania", text: "Romania" },
+      { value: "russia", text: "Russia" },
+      { value: "rwanda", text: "Rwanda" },
+      { value: "st-kitts-and-nevis", text: "St Kitts and Nevis" },
+      { value: "st-lucia", text: "St Lucia" },
+      { value: "st-vincent-and-the-grenadines", text: "St Vincent and the Grenadines" },
+      { value: "samoa", text: "Samoa" },
+      { value: "san-marino", text: "San Marino" },
+      { value: "sao-tome-and-principe", text: "Sao Tome and Principe" },
+      { value: "saudi-arabia", text: "Saudi Arabia" },
+      { value: "senegal", text: "Senegal" },
+      { value: "serbia", text: "Serbia" },
+      { value: "seychelles", text: "Seychelles" },
+      { value: "sierra-leone", text: "Sierra Leone" },
+      { value: "singapore", text: "Singapore" },
+      { value: "slovakia", text: "Slovakia" },
+      { value: "slovenia", text: "Slovenia" },
+      { value: "solomon-islands", text: "Solomon Islands" },
+      { value: "somalia", text: "Somalia" },
+      { value: "south-africa", text: "South Africa" },
+      { value: "south-korea", text: "South Korea" },
+      { value: "south-sudan", text: "South Sudan" },
+      { value: "spain", text: "Spain" },
+      { value: "sri-lanka", text: "Sri Lanka" },
+      { value: "sudan", text: "Sudan" },
+      { value: "suriname", text: "Suriname" },
+      { value: "sweden", text: "Sweden" },
+      { value: "switzerland", text: "Switzerland" },
+      { value: "syria", text: "Syria" },
+      { value: "tajikistan", text: "Tajikistan" },
+      { value: "tanzania", text: "Tanzania" },
+      { value: "thailand", text: "Thailand" },
+      { value: "timor-leste", text: "Timor-Leste" },
+      { value: "togo", text: "Togo" },
+      { value: "tonga", text: "Tonga" },
+      { value: "trinidad-and-tobago", text: "Trinidad and Tobago" },
+      { value: "tunisia", text: "Tunisia" },
+      { value: "turkey", text: "Turkey" },
+      { value: "turkmenistan", text: "Turkmenistan" },
+      { value: "tuvalu", text: "Tuvalu" },
+      { value: "uganda", text: "Uganda" },
+      { value: "ukraine", text: "Ukraine" },
+      { value: "united-arab-emirates", text: "United Arab Emirates" },
+      { value: "united-states", text: "United States" },
+      { value: "uruguay", text: "Uruguay" },
+      { value: "uzbekistan", text: "Uzbekistan" },
+      { value: "vanuatu", text: "Vanuatu" },
+      { value: "vatican-city", text: "Vatican City" },
+      { value: "venezuela", text: "Venezuela" },
+      { value: "vietnam", text: "Vietnam" },
+      { value: "yemen", text: "Yemen" },
+      { value: "zambia", text: "Zambia" },
+      { value: "zimbabwe", text: "Zimbabwe" },
+      { value: "other", text: "Other" }
+      ]
+      }) + '<div id="other-country-input" style="display: none; margin-top: 15px;">' + govukInput({
+        id: "mothersOtherCountry",
+        name: "mothersOtherCountry",
+        label: {
+        text: "Country or region"
+        },
+        classes: "govuk-!-width-two-thirds"
+        }) + '</div>'
+      }
+      },
+      {
+      value: "not-known",
+      text: "Not known",
+      checked: checked("mothersCountryOfBirth", "not-known")
+      }
+      ]
+      }) }}
+
+
+      {{ govukRadios({
+      name: "SpanishNational",
+      fieldset: {
+      legend: {
+      text: "Spanish national",
+      classes: "govuk-fieldset__legend--s"
+      }
+      },
+      items: [
+      {
+      value: "true",
+      text: "Yes",
+      checked: checked("SpanishNational", "true")
+      },
+      {
+      value: "false",
+      text: "No",
+      checked: checked("SpanishNational", "false")
+      },
+      {
+      value: "unknown",
+      text: "Unknown",
+      checked: checked("SpanishNational", "unknown")
+      }
+      ]
+      }) }}
+
+      <div class="govuk-form-group" id="occupation">
+        <label class="govuk-label govuk-fieldset__legend--s" for="mothersOccupation">
+          Occupation
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="mothersOccupation" name="mothersOccupation" type="text"
+          aria-describedby="mothersOccupation-hint" aria-required="false" value="{{ data.mothersOccupation }}">
+      </div>
+      <br>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h3 class="govuk-fieldset__heading">
+            Address when the child was born
+          </h3>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Flat number or name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="addressLine1" type="text"
+            autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Building number
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
+            autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Building name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-building" name="addressBuilding" type="text"
+            autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Street address line 1
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line1" name="address-line1" type="text"
+            value="29 Willow Crescent">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Street address line 2
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="addressLine2" type="text"
+            autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Street address line 3
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="addressLine3" type="text"
+            autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Street address line 4
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="birth-address-street4" name="addressStreet4"
+            type="text" autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+            value="Eastleigh">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            County
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text"
+            autocomplete="postal-code" value="SO50 6DR">
+        </div>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+        </p>
+        <br>
+      </fieldset>
+
+      {{ govukRadios({
+      name: "isCurrentAddress",
+      fieldset: {
+      legend: {
+      text: "Is this the current address?",
+      classes: "govuk-fieldset__legend--s"
+      }
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes",
+      checked: checked("isCurrentAddress", "yes")
+      },
+      {
+      value: "no",
+      text: "No",
+      checked: checked("isCurrentAddress", "no"),
+      conditional: {
+      html: '<div class="govuk-form-group">
+        <label class="govuk-label" for="postcode-search">Search by postcode</label>
+        <input class="govuk-input govuk-input--width-10" id="postcode-search" name="postcode-search" type="text"
+          placeholder="e.g. SO50 6DR">
+      </div>
+      <button type="button" id="find-address-btn"
+        class="govuk-button govuk-button--secondary govuk-!-margin-bottom-3">Find address</button>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Enter address manually</a>
+      </p>
+      <div class="govuk-form-group" id="address-select-group" style="display: none;">
+        <label class="govuk-label" for="address-select">Select an address</label>
+        <select class="govuk-select govuk-!-width-full" id="address-select" name="address-select">
+          <option value="">Please select an address</option>
+          <option value="1 Hawthorn Way, Eastleigh, SO59 6QN">1 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="2 Hawthorn Way, Eastleigh, SO59 6QN">2 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="3 Hawthorn Way, Eastleigh, SO59 6QN">3 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="4 Hawthorn Way, Eastleigh, SO59 6QN">4 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="5 Hawthorn Way, Eastleigh, SO59 6QN">5 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="6 Hawthorn Way, Eastleigh, SO59 6QN">6 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="7 Hawthorn Way, Eastleigh, SO59 6QN">7 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="8 Hawthorn Way, Eastleigh, SO59 6QN">8 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="9 Hawthorn Way, Eastleigh, SO59 6QN">9 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="10 Hawthorn Way, Eastleigh, SO59 6QN">10 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="11 Hawthorn Way, Eastleigh, SO59 6QN">11 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="12 Hawthorn Way, Eastleigh, SO59 6QN">12 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="13 Hawthorn Way, Eastleigh, SO59 6QN">13 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="14 Hawthorn Way, Eastleigh, SO59 6QN">14 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="15 Hawthorn Way, Eastleigh, SO59 6QN">15 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="16 Hawthorn Way, Eastleigh, SO59 6QN">16 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="17 Hawthorn Way, Eastleigh, SO59 6QN">17 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="18 Hawthorn Way, Eastleigh, SO59 6QN">18 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="19 Hawthorn Way, Eastleigh, SO59 6QN">19 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="20 Hawthorn Way, Eastleigh, SO59 6QN">20 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="21 Hawthorn Way, Eastleigh, SO59 6QN">21 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="22 Hawthorn Way, Eastleigh, SO59 6QN">22 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="23 Hawthorn Way, Eastleigh, SO59 6QN">23 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="24 Hawthorn Way, Eastleigh, SO59 6QN">24 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="25 Hawthorn Way, Eastleigh, SO59 6QN">25 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="26 Hawthorn Way, Eastleigh, SO59 6QN">26 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="27 Hawthorn Way, Eastleigh, SO59 6QN">27 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="28 Hawthorn Way, Eastleigh, SO59 6QN">28 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="29 Hawthorn Way, Eastleigh, SO59 6QN">29 Hawthorn Way, Eastleigh, SO59 6QN</option>
+          <option value="30 Hawthorn Way, Eastleigh, SO59 6QN">30 Hawthorn Way, Eastleigh, SO59 6QN</option>
+        </select>
+      </div>
+
+      <div id="current-address-fields" style="display: none;">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Current address
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-flat">
+              Flat number or name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-flat" name="currentAddressFlat"
+              type="text" autocomplete="address-line1">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-building-number">
+              Building number
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-building-number"
+              name="currentAddressBuildingNumber" type="text" autocomplete="address-line2" value="18">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-building-name">
+              Building name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-building-name"
+              name="currentAddressBuildingName" type="text" autocomplete="address-level2">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street1">
+              Street address line 1
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street1"
+              name="currentAddressStreet1" type="text" value="Hawthorn Way">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street2">
+              Street address line 2
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street2"
+              name="currentAddressStreet2" type="text" autocomplete="address-line1"
+              value="">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street3">
+              Street address line 3
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street3"
+              name="currentAddressStreet3" type="text" autocomplete="address-line2"
+              value="">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-street4">
+              Street address line 4
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-street4"
+              name="currentAddressStreet4" type="text" autocomplete="address-level2"
+              value="">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-town" name="currentAddressTown"
+              type="text" value="Eastleigh">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-county">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="current-address-county" name="currentAddressCounty"
+              type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="current-address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="current-address-postcode" name="currentAddressPostcode"
+              type="text" autocomplete="postal-code" value="SO59 6QN">
+          </div>
+          <p class="govuk-body govuk-!-margin-top-3">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+          </p>
+        </fieldset>
+      </div>'
+      }
+      }
+      ]
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return",
+        type: "submit"
+        })
+        }}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const findAddressBtn = document.getElementById('find-address-btn');
+    const postcodeInput = document.getElementById('postcode-search');
+    const addressSelectGroup = document.getElementById('address-select-group');
+    const addressSelect = document.getElementById('address-select');
+    const currentAddressFields = document.getElementById('current-address-fields');
+
+    if (findAddressBtn && postcodeInput && addressSelectGroup) {
+      findAddressBtn.addEventListener('click', function () {
+        const postcodeValue = postcodeInput.value.trim();
+        if (postcodeValue) {
+          addressSelectGroup.style.display = 'block';
+        }
+      });
+    }
+
+
+
+    if (addressSelect && currentAddressFields) {
+      addressSelect.addEventListener('change', function () {
+        if (this.value) {
+          currentAddressFields.style.display = 'block';
+        } else {
+          currentAddressFields.style.display = 'none';
+        }
+      });
+    }
+
+    const countrySelect = document.getElementById('mothersSpecificCountry');
+    const otherCountryInput = document.getElementById('other-country-input');
+
+    if (countrySelect && otherCountryInput) {
+      countrySelect.addEventListener('change', function () {
+        if (this.value === 'other') {
+          otherCountryInput.style.display = 'block';
+        } else {
+          otherCountryInput.style.display = 'none';
+          const textInput = document.getElementById('mothersOtherCountry');
+          if (textInput) {
+            textInput.value = '';
+          }
+        }
+      });
+
+      if (countrySelect.value === 'other') {
+        otherCountryInput.style.display = 'block';
+      }
+    }
+  });
+</script>
+
+{% endblock %}

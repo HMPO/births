@@ -1,0 +1,189 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Employment and industry information – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Statistics</span>
+    <h1 class="govuk-heading-l">
+      Voluntary statistics
+    </h1>
+
+    <form class="form" action="voluntary-check" method="post">
+
+      <div id="authentication-code-hint" class="govuk-hint">
+        The informant does not have to give this information, but it helps with population research and statistics. Only the UK Statistics Authority and approved researchers can use it. It will not be entered in the register.
+      </div>
+
+      <br>
+
+
+<!-- Mother's employment status -->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      Mother's employment status
+    </legend>
+
+    <div id="mother-hint" class="govuk-hint">
+      Occupation: Teacher
+    </div>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <!-- Employed -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-mother-employed" name="employment-mother" checked type="radio"
+          value="employed" data-aria-controls="conditional-mother-employed">
+        <label class="govuk-label govuk-radios__label" for="employment-mother-employed">
+          Employed
+        </label>
+      </div>
+
+      <!-- Conditional reveal -->
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mother-employed">
+        <div class="govuk-form-group">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mother-supervising" name="mother-supervisory-status" type="radio" value="supervising">
+              <label class="govuk-label govuk-radios__label" for="mother-supervising">Supervising</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mother-not-supervising" name="mother-supervisory-status" type="radio" checked value="not-supervising">
+              <label class="govuk-label govuk-radios__label" for="mother-not-supervising">Not supervising</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="mother-industry">What industry do they work in?</label>
+          <input class="govuk-input govuk-!-width-one-half" id="mother-industry" name="mother-industry" type="text">
+        </div>
+      </div>
+
+      <!-- Other options -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-mother-self-employed" name="employment-mother" type="radio" value="self-employed">
+        <label class="govuk-label govuk-radios__label" for="employment-mother-self-employed">Self-employed</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-mother-not-employed" name="employment-mother" type="radio" value="not-employed">
+        <label class="govuk-label govuk-radios__label" for="employment-mother-not-employed">No gainful employment</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-mother-not-known" name="employment-mother" type="radio" value="not-known">
+        <label class="govuk-label govuk-radios__label" for="employment-mother-not-known">Not known</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-mother-refused" name="employment-mother" type="radio" value="refused">
+        <label class="govuk-label govuk-radios__label" for="employment-mother-refused">Refused to answer</label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<!-- Father's employment status -->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      Father's employment status
+    </legend>
+
+    <div id="father-hint" class="govuk-hint">
+      Occupation: Architect
+    </div>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <!-- Employed -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-father-employed" name="employment-father" checked type="radio"
+          value="employed" data-aria-controls="conditional-father-employed">
+        <label class="govuk-label govuk-radios__label" for="employment-father-employed">
+          Employed
+        </label>
+      </div>
+
+      <!-- Conditional reveal -->
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-father-employed">
+        <div class="govuk-form-group">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="father-supervising" name="father-supervisory-status" type="radio" value="supervising">
+              <label class="govuk-label govuk-radios__label" for="father-supervising">Supervising</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="father-not-supervising" name="father-supervisory-status" type="radio" checked value="not-supervising">
+              <label class="govuk-label govuk-radios__label" for="father-not-supervising">Not supervising</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="father-industry">What industry do they work in?</label>
+          <input class="govuk-input govuk-!-width-one-half" id="father-industry" name="father-industry" type="text">
+        </div>
+      </div>
+
+      <!-- Other options -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-father-self-employed" name="employment-father" type="radio" value="self-employed">
+        <label class="govuk-label govuk-radios__label" for="employment-father-self-employed">Self-employed</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-father-not-employed" name="employment-father" type="radio" value="not-employed">
+        <label class="govuk-label govuk-radios__label" for="employment-father-not-employed">No gainful employment</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-father-not-known" name="employment-father" type="radio" value="not-known">
+        <label class="govuk-label govuk-radios__label" for="employment-father-not-known">Not known</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="employment-father-refused" name="employment-father" type="radio" value="refused">
+        <label class="govuk-label govuk-radios__label" for="employment-father-refused">Refused to answer</label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return",
+        href: "../tasks/child2index.html"
+        }) }}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -79,3 +79,12 @@
     display: none;
   }
 }
+
+.pro-header-with-button {
+  display: flex;
+  justify-content: space-between;
+
+  .govuk-label {
+    min-width: 125px;
+  }
+}

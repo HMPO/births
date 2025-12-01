@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Registration complete",
+        html: "Entry number 500248149"
+      }) }}
+
+      <br>
+
+      <!-- <h2 class="govuk-heading-m">
+        What to do next
+      </h2> 
+-->
+
+<!-- 
+  <p class="govuk-body">
+  <a href="/public/documents/d476d40d-dea3-48d6-8e8f-e985a53564c1.pdf" target="_blank" class="govuk-link">
+    Print
+  </a>
+</p>
+-->
+
+
+      <p class="govuk-body">
+        You can now print the birth certificates.
+      </p>
+        <br>
+
+        <h3 class="govuk-heading-s">
+          Oliver Perez Martinez
+        </h3>
+        <p  class="govuk-body govuk-!-margin-bottom-9">
+          <a href="/public/documents/OliverBirthCert.pdf" target="_blank" class="govuk-link">
+            View and print standard certificate (opens in a new tab)
+          </a>
+          <br>
+          <br>
+          <a href="#">
+            View and print short certificate (opens in a new tab)
+          </a>
+        </p> 
+        <h3 class="govuk-heading-s">
+          Anna Perez Martinez
+        </h3>
+        <p  class="govuk-body govuk-!-margin-bottom-9">
+          <a href="/public/documents/AnnaBirthCert.pdf" target="_blank" class="govuk-link">
+            View and print standard certificate (opens in a new tab)
+          </a>
+          <br>
+          <br>
+          <a href="#">
+            View and print short certificate (opens in a new tab)
+          </a>
+        </p> 
+
+        <h2 class="govuk-heading-m">
+          Do you want to register child 3?
+        </h2>
+        <p  class="govuk-body">
+          <a href="/births/multipleBirths3/02-child3-correct-final.html">
+            Continue to register child 3
+          </a>
+        </p>
+  
+        <br>
+        <br>
+
+        
+      <p  class="govuk-body">
+        <a href="../00-service-selector.html">
+          Return to homepage
+        </a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

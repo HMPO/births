@@ -1,0 +1,318 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">
+      Are these the children you want to register?
+    </h1>
+    <div class="pro-header-with-button">
+      <h2 class="govuk-heading-m">Child 1</h2>
+      {{ govukCheckboxes({
+      name: "do-not-register-child-1",
+      classes: "govuk-checkboxes--small",
+
+      items: [
+      {
+      value: "remove-child-1",
+      text: "Do not register"
+      }
+      ]
+      }) }}
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          987 654 3210
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date and time of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 November 2025 at 12:03 hours
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Male
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother&rsquo;s first name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Isabella
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother&rsquo;s last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          MARTINEZ LARA
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Princess Anne Hospital, Southampton
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+    </dl>
+    <div class="pro-header-with-button">
+      <h2 class="govuk-heading-m">Child 2</h2>
+      {{ govukCheckboxes({
+      name: "do-not-register-child-2",
+      classes: "govuk-checkboxes--small",
+
+      items: [
+      {
+      value: "remove-child-2",
+      text: "Do not register"
+      }
+      ]
+      }) }}
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          987 654 3211
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date and time of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 November 2025 at 12:05 hours
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Female
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother&rsquo;s first name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Elizabeth
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother&rsquo;s last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          MARTINEZ LARA
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Princess Anne Hospital, Southampton
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+    </dl>
+    <div class="pro-header-with-button">
+      <h2 class="govuk-heading-m">Child 3</h2>
+      {{ govukCheckboxes({
+      name: "do-not-register-child-3",
+      classes: "govuk-checkboxes--small",
+
+      items: [
+      {
+      value: "remove-child-3",
+      text: "Do not register"
+      }
+      ]
+      }) }}
+    </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          987 654 3212
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date and time of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 November 2025 at 12:10 hours
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Female
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother&rsquo;s first name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Isabella
+        </dd>
+        <dd class="govuk-summary-list__actions">
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother&rsquo;s last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          MARTINEZ LARA
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Princess Anne Hospital, Southampton
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+    </dl>
+
+    <p class="govuk-body">
+      <a href="" class="govuk-link">Add a child</a>
+    </p><br>
+
+    {{ govukRadios({
+    name: "whichChild",
+    formGroup: {
+      attributes: {
+        id: "which-child"
+      }
+    },
+    fieldset: {
+    legend: {
+    text: "Which child do you want to register first?",
+    classes: "govuk-fieldset__legend--s"
+    }
+    },
+    items: [
+    {
+    value: "child1",
+    text: "Child 1",
+    checked: true
+    },
+    {
+    value: "child2",
+    text: "Child 2"
+    },
+    {
+    value: "child3",
+    text: "Child 3"
+    }
+    ]
+    }) }}
+
+    {{ govukButton({
+    text: "Continue",
+    href: "triage/01-who-is-informant"
+    }) }}
+
+  
+
+    <div class="govuk-form-group">
+      <p class="govuk-body"><a href="02-search.html" class="govuk-link">Return to search</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const child1Checkbox = document.querySelector('input[name="do-not-register-child-1"]');
+  const child2Checkbox = document.querySelector('input[name="do-not-register-child-2"]');
+  const radioContainer = document.getElementById('which-child');
+  
+  function updateUI() {
+    const child1Checked = child1Checkbox.checked;
+    const child2Checked = child2Checkbox.checked;
+    
+    child1Checkbox.disabled = child2Checked;
+    child2Checkbox.disabled = child1Checked;
+    
+    if (child1Checked || child2Checked) {
+      radioContainer.style.display = 'none';
+    } else {
+      radioContainer.style.display = 'block';
+    }
+  }
+  
+  child1Checkbox.addEventListener('change', updateUI);
+  child2Checkbox.addEventListener('change', updateUI);
+  
+  updateUI();
+});
+</script>
+
+{% endblock %}

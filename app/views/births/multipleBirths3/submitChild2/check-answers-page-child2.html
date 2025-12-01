@@ -1,0 +1,311 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">
+      Check your answers before submitting the birth registration
+    </h1>
+    <h2 class="govuk-heading-m">
+      Child 2 details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date and time of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Twelfth November 2025, 12:05 hours
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/births/multipleBirths2/child2Details/01-child2-name-date.html">Change<span
+              class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Princess Anne Hospital, Southampton
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Anna PEREZ MARTINEZ
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Female
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Mother's details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Isabella MARTINEZ LARA
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/births/multipleBirths2/childsDetails/01-name-date.html">Change<span
+              class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Mexico
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Occupation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Teacher
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Maiden name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          MARTINEZ LARA
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name (if different at marriage / civil partnership)
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address (if different from child’s place of birth)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          29 Willow Crescent Eastleigh
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Father's details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Luis Felipe PEREZ ROSARIO
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/births/multipleBirths2/childsDetails/01-name-date.html">Change<span
+              class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Mexico
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Occupation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Architect
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Informant's details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Qualification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Father, Mother
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Father's address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          18 Hawthorn Way Eastleigh
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Mother's address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          18 Hawthorn Way Eastleigh
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+      Registrar's details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.registrarName or 'Example name' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/births/multipleBirths/childsDetails/01-name-date.html">Change<span
+              class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Designation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.designationSelector == 'REGISTRAR' %}
+          Registrar
+          {% elif data.designationSelector == 'DEPUTY_REGISTRAR' %}
+          Deputy Registrar
+          {% elif data.designationSelector == 'INTERIM_REGISTRAR' %}
+          Interim Registrar
+          {% elif data.designationSelector == 'INTERIM_DEPUTY_REGISTRAR' %}
+          Interim Deputy Registrar
+          {% else %}
+          Registrar
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/births/multipleBirths2/childsDetails/01-name-date.html">Change<span
+              class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl>
+   
+    <p  class="govuk-body govuk-!-margin-bottom-9">
+      <a href="/public/documents/AnnaRegisterPage.pdf" target="_blank" class="govuk-link">
+       Print draft register page (opens in a new tab)
+      </a>
+    </p>   
+  
+    <div class="govuk-grid-row govuk-grid-column-full">
+  
+      <h2 class="govuk-heading-m">Informant's declaration</h2>
+      <div id="event-name-hint" class="govuk-hint">
+        For the informant to read out loud
+      </div>
+  
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  
+  {{ govukCheckboxes({
+    name: "waste",
+    fieldset: {
+      legend: {
+        text: " ",
+        isPageHeading: false,
+        classes: "govuk-body"
+      }
+    },
+  
+    items: [
+      {
+        value: "farm",
+        text: "I confirm that the particulars given by me are true to the best of my knowledge and belief."
+      }
+    ]
+  }) }}
+    </div>
+
+
+    <form action="sign-page-child2" method="post" novalidate>
+
+      {{ govukButton({
+      text: "Confirm register entry"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
