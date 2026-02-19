@@ -1,0 +1,189 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Birth registration</h1>
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Child 2 details</h2>
+    <ul class="govuk-task-list">
+
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/child2Details/02-child2-place-of-birth.html">
+            Place of birth
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          Completed
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/child2Details/01-child2-name-date.html">
+            Sex, date of birth and name
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.child2NameDateCompleted %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Parents' details</h2>
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/parentsDetailsChild2/mothers-name-child2">
+            Mother's names
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          Completed
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/parentsDetailsChild2/mothers-details-child2">
+            Mother's details
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          Completed
+        </div>
+      </li>
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/parentsDetailsChild2/fathers-name-child2">
+            Father's names
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          Completed
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/parentsDetailsChild2/fathers-details-child2">
+            Father's details
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          Completed
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Statistics</h2>
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/statsChild2/confidentialChild2.html">
+            Confidential statistics
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          Completed
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths3/statsChild2/voluntaryChild2">
+            Voluntary statistics
+          </a>
+        </div>
+        <div class="govuk-task-list__status">
+          Completed
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Additional information</h2>
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+            href="/births/multipleBirths3/additionalInfoChild2/commentsChild2">
+            Registrar's comments</a>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if data.commentsCompleted %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--yellow">Optional</strong>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">Submit the registration</h2>
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+          <a class="govuk-link govuk-task-list__link" href="/births/multipleBirths3/submitChild2/register-page-child2">
+            Registrar's details
+          </a>
+
+        </div>
+
+        <div class="govuk-task-list__status">
+          Completed
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item">
+        <div class="govuk-task-list__name-and-hint govuk-!-width-two-thirds">
+          <div class="govuk-task-list__hint ">
+            {% if not (data.child2NameDateCompleted) %}
+            <div class="govuk-task-list__hint ">
+              Check your answers
+            </div>
+            {% else %}
+            <a class="govuk-link govuk-task-list__link"
+              href="/births/multipleBirths3/submitChild2/check-answers-page-child2">
+              Check your answers
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="govuk-task-list__status">
+          {% if not data.child2NameDateCompleted %}
+          <strong class="govuk-tag govuk-tag--grey">Cannot start yet</strong>
+          {% elif data.child2NameDateCompleted and not data.child2CheckAnswersCompleted %}
+          <strong class="govuk-tag govuk-tag--blue">Incomplete</strong>
+          {% elif data.child2RegisterPageCompleted %}
+          Completed
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p><a href="#" class="govuk-link" style="color: #d4351c;">Delete record</a></p>
+  </div>
+</div>
+{% endblock %}
