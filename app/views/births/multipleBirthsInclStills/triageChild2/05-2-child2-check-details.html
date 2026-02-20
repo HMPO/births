@@ -15,13 +15,14 @@ href: "javascript:window.history.back()"
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <span class="govuk-caption-l">Add record details</span>
+<span class="govuk-caption-l">Add record details</span>
     <h1 class="govuk-heading-l">
       Check record details
     </h1>
+     
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+        
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Source of medical information
@@ -39,46 +40,40 @@ href: "javascript:window.history.back()"
           Informant
         </dt>
         <dd class="govuk-summary-list__value">
-          Mother
+          {% set whoIsInformantText = {
+          "mother": "Mother",
+          "father": "Father",
+          "secondParent": "Second parent",
+          "motherAndFather": "Mother and father",
+          "motherAndParent": "Mother and second parent",
+          "otherInformant": "Other"
+          } %}
+          {{ whoIsInformantText[data['whoIsInformant']] or "Second female parent" }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/births/multipleBirthsInclStills/triageChild2/01-child2-who-is-informant.html">Change<span
-              class="govuk-visually-hidden"> date of
+          <a class="govuk-link" href="01-who-is-informant">Change<span class="govuk-visually-hidden"> date of
               birth</span></a>
         </dd>
       </div>
-
+     
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Parents married or in a civil partnership
         </dt>
         <dd class="govuk-summary-list__value">
           Married
-        </dd>
-         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Change</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Other details to be recorded
-        </dt>
-        <dd class="govuk-summary-list__value">
-         Second female parent
-        </dd>
+         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">Stillbirth</span></a>
+          <a class="govuk-link" href="/births/multipleBirths3/triage/03-marital-status">Change<span class="govuk-visually-hidden"> customer
+              reference</span></a>
         </dd>
       </div>
     </dl>
 
-
-    </dl>
-
-    {{ govukButton({
-    text: "Continue",
-    href: ""
-    }) }}
+      {{ govukButton({
+      text: "Continue",
+      href: "/births/multipleBirthsInclStills/tasks/child2index.html"
+      }) }}
 
   </div>
 </div>

@@ -1,10 +1,9 @@
 module.exports = function (router) {
-    console.log('Loading multipleBirthsInclStills routes file');
+   
 
     router.post('/births/multipleBirthsInclStills/tasks', function (req, res) {
         req.session.data = req.session.data || {};
         if (req.body.livingPlace) {
-            console.log('This is a PLACE OF BIRTH form submission');
             req.session.data.placeCompleted = true;
             req.session.data.livingPlace = req.body.livingPlace;
             if (req.body['communal-name']) {
@@ -13,7 +12,6 @@ module.exports = function (router) {
         }
 
         else if (req.body.childFirstName || req.body.childLastName || req.body.sex) {
-            console.log('This is a NAME-DATE form submission');
             const hasName = req.body.childFirstName || req.body.childLastName;
             const hasSex = req.body.sex;
 
@@ -112,13 +110,12 @@ module.exports = function (router) {
     router.post('/births/multipleBirthsInclStills/parentsDetails/fathers-details-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        const hasPlaceOfBirth = req.body.fathersPlaceOfBirth?.trim();
+        const hasCountryOfBirth = req.body.countryOfBirth;
 
-        if (hasPlaceOfBirth) {
+        if (hasCountryOfBirth) {
             req.session.data.fathersDetailsCompleted = true;
         }
-        req.session.data.fathersPlaceOfBirth = req.body.fathersPlaceOfBirth;
-        req.session.data.fathersCountryOfBirth = req.body.fathersCountryOfBirth;
+        req.session.data.countryOfBirth = req.body.countryOfBirth;
         req.session.data.SpanishNational = req.body.SpanishNational;
         req.session.data.fathersOccupation = req.body.fathersOccupation;
         req.session.data.fathersMCCDAddressLine1 = req.body.fathersMCCDAddressLine1;
@@ -128,13 +125,10 @@ module.exports = function (router) {
     router.post('/births/multipleBirthsInclStills/stats/confidential-check', function (req, res) {
         req.session.data = req.session.data || {};
 
-        const hasMotherDOB = req.body.motherDOBknown;
-        const hasFatherDOB = req.body.fatherDOBknown;
-        const hasMarriageDate = req.body.marriageDateKnown;
         const hasPreviousMarriage = req.body.previousMarriageMother;
         const hasLiveBirths = req.body.liveBirthsMother;
 
-        if (hasMotherDOB || hasFatherDOB || hasMarriageDate || hasPreviousMarriage || hasLiveBirths) {
+        if (hasPreviousMarriage || hasLiveBirths) {
             req.session.data.statsConfidentialCompleted = true;
         }
 
@@ -468,5 +462,40 @@ module.exports = function (router) {
         const referer = req.get('Referer') || '/births/multipleBirthsInclStills/tasks/';
         res.redirect(referer.replace('/additionalInfo/comments', '/tasks/'));
     });
+
+    router.post('/births/multipleBirthsInclStills/sourceOfMedicalInfo/pregnancy-and-delivery', function(req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body['pregnancy-weeks']){
+            req.session.data.pregnancyCompleted=true
+        }
+        else {req.session.data.pregnancyCompleted=false
+        }
+        req.session.data['pregnancy-weeks'] = req.body['pregnancy-weeks'];
+        req.session.data['childDeathTiming'] = req.body['childDeathTiming'];
+        req.session.data['weight'] = req.body['weight'];
+
+        res.redirect('/births/multipleBirthsInclStills/tasks/child2Index');
+    })
+
+    router.post('/births/multipleBirthsInclStills/sourceOfMedicalInfo/cause-of-death', function(req, res) {
+        req.session.data = req.session.data || {};
+
+        if (req.body['circledNumber']){
+            req.session.data.codCompleted=true
+        }
+        else {req.session.data.pregnancyCompleted=false
+        }
+        req.session.data['circledNumber'] = req.body['circledNumber'];
+        req.session.data['standardFormat'] = req.body['standardFormat'];
+        req.session.data['causeOfDeath'] = req.body['causeOfDeath'];
+        req.session.data['maternalCondition'] = req.body['maternalCondition'];
+        req.session.data['fullName'] = req.body['fullName'];
+        req.session.data['qualifications'] = req.body['qualifications'];
+        req.session.data['consultantName'] = req.body['consultantName'];
+
+        res.redirect('/births/multipleBirthsInclStills/tasks/child2Index');
+    })
+
 };
 

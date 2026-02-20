@@ -6,7 +6,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block beforeContent %}
 {{ govukBackLink({
-text: "Back to record",
+text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
@@ -19,14 +19,14 @@ href: "javascript:window.history.back()"
     <form class="form" action="02-evidence" method="post">
 
 
-      <span class="govuk-caption-l">Add record details</span>
+    
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
       name: "whoIsInformant",
       fieldset: {
       legend: {
-      text: "Who is the informant?",
+      text: "Where is the medical information about the stillbirth taken from?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
       }
@@ -38,41 +38,33 @@ href: "javascript:window.history.back()"
       items: [
       {
       value: "mother",
-      text: "Mother",
+      text: "Medical certificate of stillbirth (form 34)",
       checked: data['whoIsInformant'] == "Mother"
       },
       {
       value: "father",
-      text: "Father",
+      text: "Coroner’s post-mortem (form CN2)",
       checked: data['whoIsInformant'] == "Father"
       },
       {
-      value: "secondParent",
-      text: "Second female parent",
-      checked: data['whoIsInformant'] == "Second parent"
-      },
-      {
       value: "motherAndFather",
-      text: "Mother and father",
+      text: "Coroner’s inquest (form 99A)",
       checked: data['whoIsInformant'] == "Mother and father"
       },
-      {
-      value: "motherAndParent",
-      text: "Mother and second female parent",
-      checked: data['whoIsInformant'] == "Second parent"
-      },
+    
       {
       value: "otherInformant",
-      text: "Other",
+      text: "Self declaration - no certificate from a medical practitioner available (form 35)",
       checked: data['whoIsInformant'] == "Other"
 
       }
       ]
       }) }}
+      
       {{ govukButton({
-      text: "Continue",
-      href: "/births/multipleBirthsInclStills/triageChild2/03-chlid2-marital-status.html"
-      }) }}
+        text: "Continue",
+        href: "/births/multipleBirthsInclStills/triageChild2/05-child2-check-details.html"
+        }) }}
 
     </form>
 

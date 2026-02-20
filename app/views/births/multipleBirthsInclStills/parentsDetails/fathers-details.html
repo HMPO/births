@@ -24,6 +24,8 @@ href: "javascript:window.history.back()"
       Second female parent's details
     </h1>
 
+    <form class="form" action="fathers-details-check" method="post">
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="country-hint">
         
@@ -190,18 +192,17 @@ href: "javascript:window.history.back()"
       items: [
       {
       value: "true",
-      text: "Yes",
-      checked: checked("SpanishNational", "true")
+      text: "Yes"
       },
       {
       value: "false",
-      text: "No",
-      checked: checked("SpanishNational", "false")
+      text: "No"
+      
       },
       {
       value: "unknown",
-      text: "Unknown",
-      checked: checked("SpanishNational", "unknown")
+      text: "Unknown"
+  
       }
       ]
       }) }}
@@ -220,7 +221,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-button-group">
         {{ govukButton({
         text: "Save and return",
-        href: "/births/multipleBirthsInclStills/tasks/index.html"
+        type: "submit"
         })
         }}
       </div>

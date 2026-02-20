@@ -26,166 +26,154 @@ href: "javascript:window.history.back()"
     </h1>
     <form class="form" action="confidential-check" method="post">
       <div id="authentication-code-hint" class="govuk-hint">
-        The law requires us to collect this information. Only the UK Statistics Authority and approved researchers can
-        use it. It will not be entered in the register.
+        The law requires us to collect this information. Only the UK Statistics Authority and approved researchers can use it. It will not be entered in the register.
       </div>
       <br>
+     
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="dateOfDeathType-hint">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="motherDOBknown-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                Does the informant know the mother’s date of birth?
-              </legend>
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio" id="motherDOBknown-yes" name="motherDOBknown"
-                    value="MOTHER_DOB_KNOWN" {% if data.motherDOBknown=='MOTHER_DOB_KNOWN' %}checked{% endif %}
-                    data-aria-controls="conditional-motherDOBknown-yes">
-                  <label class="govuk-label govuk-radios__label" for="motherDOBknown-yes">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                  id="conditional-motherDOBknown-yes">
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset" role="group" aria-describedby="motherdob-date-hint">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        Mother's date of birth
-                      </legend>
-                      <div id="motherdob-date-hint" class="govuk-hint">
-                        Enter as much of the date as you know, for example 11 1998
-                      </div>
-                      <div class="govuk-date-input" id="motherdobDate">
-                        <div class="govuk-date-input__item">
-                          <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="motherdobDate-day">
-                              Day
-                            </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                              id="motherdobDate-day" name="motherdobDate-day" type="text" inputmode="numeric"
-                              value="{{ data['motherdobDate-day'] or '' }}">
-                          </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                          <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="motherdobDate-month">
-                              Month
-                            </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                              id="motherdobDate-month" name="motherdobDate-month" type="text" inputmode="numeric"
-                              value="{{ data['motherdobDate-month'] or '' }}">
-                          </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                          <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="motherdobDate-year">
-                              Year
-                            </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                              id="motherdobDate-year" name="motherdobDate-year" type="text" inputmode="numeric"
-                              value="{{ data['motherdobDate-year'] or '' }}">
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio" id="motherDOBknown-no" name="motherDOBknown"
-                    value="MOTHER_DOB_UNKNOWN" {% if data.motherDOBknown=='MOTHER_DOB_UNKNOWN' %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="motherDOBknown-no">
-                    No
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio" id="motherDOBknown-refused" name="motherDOBknown"
-                    value="MOTHER_DOB_REFUSED" {% if data.motherDOBknown=='MOTHER_DOB_REFUSED' %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="motherDOBknown-refused">
-                    Refused to answer
-                  </label>
-                </div>
-              </div>
-            </fieldset>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <label class="govuk-label govuk-fieldset__legend--s" for="mothersOccupation">
+            Mother's date of birth
+          </label>
+          <div id="passport-issued-hint" class="govuk-hint">
+            Enter as much of the date as you know, for example 11 1998
           </div>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="fatherDOBknown-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                Does the informant know the father's date of birth?
-              </legend>
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio" id="fatherDOBknown-yes" name="fatherDOBknown"
-                    value="FATHER_DOB_KNOWN" {% if data.fatherDOBknown=='FATHER_DOB_KNOWN' %}checked{% endif %}
-                    data-aria-controls="conditional-fatherDOBknown-yes">
-                  <label class="govuk-label govuk-radios__label" for="fatherDOBknown-yes">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                  id="conditional-fatherDOBknown-yes">
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset" role="group" aria-describedby="fatherdob-date-hint">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        Father's date of birth
-                      </legend>
-                      <div id="fatherdob-date-hint" class="govuk-hint">
-                        Enter as much of the date as you know, for example 11 1998
-                      </div>
-                      <div class="govuk-date-input" id="fatherdobDate">
-                        <div class="govuk-date-input__item">
-                          <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="fatherdobDate-day">
-                              Day
-                            </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                              id="fatherdobDate-day" name="fatherdobDate-day" type="text" inputmode="numeric"
-                              value="{{ data['fatherdobDate-day'] or '' }}">
-                          </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                          <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="fatherdobDate-month">
-                              Month
-                            </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                              id="fatherdobDate-month" name="fatherdobDate-month" type="text" inputmode="numeric"
-                              value="{{ data['fatherdobDate-month'] or '' }}">
-                          </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                          <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="fatherdobDate-year">
-                              Year
-                            </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                              id="fatherdobDate-year" name="fatherdobDate-year" type="text" inputmode="numeric"
-                              value="{{ data['fatherdobDate-year'] or '' }}">
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio" id="fatherDOBknown-no" name="fatherDOBknown"
-                    value="FATHER_DOB_UNKNOWN" {% if data.fatherDOBknown=='FATHER_DOB_UNKNOWN' %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="fatherDOBknown-no">
-                    No
-                  </label>
-                </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        
+      <div class="govuk-form-group">
+       <br>
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Not known
+            </label>
+          </div>
+      </div><br>
 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio" id="fatherDOBknown-refused" name="fatherDOBknown"
-                    value="MARRIAGE_DATE_REFUSED" {% if data.fatherDOBknown=='MARRIAGE_DATE_REFUSED' %}checked{% endif
-                    %}>
-                  <label class="govuk-label govuk-radios__label" for="fatherDOBknown-refused">
-                    Refused to answer
-                  </label>
-                </div>
-              </div>
-            </fieldset>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <label class="govuk-label govuk-fieldset__legend--s" for="mothersOccupation">
+            Second female parent's date of birth
+          </label>
+          <div id="passport-issued-hint" class="govuk-hint">
+            Enter as much of the date as you know, for example 11 1998
           </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        
+      <div class="govuk-form-group">
+       <br>
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Not known
+            </label>
+          </div>
+      </div><br>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <label class="govuk-label govuk-fieldset__legend--s" for="mothersOccupation">
+            Date of the child's parents' marriage
+          </label>
+          <div id="passport-issued-hint" class="govuk-hint">
+            Enter as much of the date as you know, for example 11 1998
+          </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        
+      <div class="govuk-form-group">
+       <br>
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Not known
+            </label>
+          </div>
+      </div><br>
+
+          
+
+                
 
           <!-- 
           <div class="govuk-form-group">

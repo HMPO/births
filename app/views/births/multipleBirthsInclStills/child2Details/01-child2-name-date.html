@@ -26,7 +26,7 @@ href: "javascript:window.history.back()"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">Child 2 details</span>
+    <span class="govuk-caption-l">Child 1 details</span>
     <h1 class="govuk-heading-l">
       Sex, date of birth and name
     </h1>
@@ -59,7 +59,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Date and time of birth
+            Date of birth
           </legend>
           <div id="dob-hint" class="govuk-hint">
             For example, 23 11 2024
@@ -70,7 +70,7 @@ href: "javascript:window.history.back()"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="dob-day">Day</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day"
-                  type="text" inputmode="numeric" value="12">
+                  type="text" inputmode="numeric" value="10">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -89,62 +89,29 @@ href: "javascript:window.history.back()"
             </div>
           </div>
 
-          <div class="govuk-date-input" id="dob-time">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dob-hour">Hours</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-hour" name="dob-hour"
-                  type="text" inputmode="numeric" value="12">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dob-minute">Minutes</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-minute"
-                  name="dob-minute" type="text" inputmode="numeric" value="05">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dob-second">Seconds</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-second"
-                  name="dob-second" type="text" inputmode="numeric" value="">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dob-period">am / pm</label>
-                <select class="govuk-select govuk-input--width-2 time-select" id="dob-period" name="dob-period">
-                  <option value="PM">pm</option>
-                  <option value="AM">am</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <p class="govuk-body govuk-!-margin-top-2">
-            <a href="#" class="govuk-link" id="toggle-seconds">Add seconds</a>
-          </p>
+        
+         
         </fieldset>
       </div>
 
 
       <div id="yes-name-block">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="child2-deceased-first-name">First name</label>
+          <label class="govuk-label govuk-label--s" for="child2-deceased-first-name">First name (if given)</label>
           <input class="govuk-input govuk-!-width-one-half" id="child2-deceased-first-name"
             name="child2-deceasedFirstName" type="text" value="{{data['child2-deceasedFirstName']}}">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="child2-deceased-middle-name">Middle names</label>
+          <label class="govuk-label govuk-label--s" for="child2-deceased-middle-name">Middle names (if given)</label>
           <input class="govuk-input govuk-!-width-one-half" id="child2-deceased-middle-name"
             name="child2-deceasedMiddleName" type="text" value="{{data['child2-deceasedMiddleName']}}">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--s" for="child2-deceased-last-name">Last name</label>
+          <label class="govuk-label govuk-label--s" for="child2-deceased-last-name">Last name (if given)</label>
           <input class="govuk-input govuk-!-width-one-half" id="child2-deceased-last-name"
-            name="child2-deceasedLastName" type="text" value="PEREZ MARTINEZ">
+            name="child2-deceasedLastName" type="text" value="HARWOOD-RIDLEY">
         </div>
 
         <div class="govuk-form-group">
@@ -192,7 +159,7 @@ href: "javascript:window.history.back()"
                   checked="checked" value="name-order-first-name" {{
                   checked("child2-name-order", "name-order-first-name" ) }} data-aria-controls="">
                 <label class="govuk-label govuk-radios__label" for="child2-name-order">
-                  Last name last
+                  Last name at the end
                 </label>
               </div>
               <div class="govuk-radios__item">
@@ -209,6 +176,14 @@ href: "javascript:window.history.back()"
                   data-aria-controls="">
                 <label class="govuk-label govuk-radios__label" for="child2-name-order-2">
                   Last name only
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="child2-name-order-3" name="child2-name-order" type="radio"
+                  value="name-order-only-last" {{ checked('child2-name-order', 'name-order-only-last' ) }}
+                  data-aria-controls="">
+                <label class="govuk-label govuk-radios__label" for="child2-name-order-3">
+                  No name given
                 </label>
               </div>
               <div class="govuk-radios__item">
@@ -236,7 +211,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-button-group">
         {{ govukButton({
         text: "Save and return",
-        type: "submit"
+        type: "Submit"
         }) }}
       </div>
 
