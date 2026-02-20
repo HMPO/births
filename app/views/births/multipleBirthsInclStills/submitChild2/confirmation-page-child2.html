@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Registration complete",
+        html: "Entry number 500248149"
+      }) }}
+
+      <br>
+
+      <!-- <h2 class="govuk-heading-m">
+        What to do next
+      </h2> 
+-->
+
+<!-- 
+  <p class="govuk-body">
+  <a href="/public/documents/d476d40d-dea3-48d6-8e8f-e985a53564c1.pdf" target="_blank" class="govuk-link">
+    Print
+  </a>
+</p>
+-->
+
+
+      <p class="govuk-body">
+        You can now print the certificates.
+      </p>
+        <br>
+
+        <h3 class="govuk-heading-s">
+          Lily Harwood-Ridley
+        </h3>
+        <p  class="govuk-body govuk-!-margin-bottom-9">
+          <a href="/public/documents/LilyRegisterPage.pdf" target="_blank" class="govuk-link">
+            Stillbirth certificate (opens in a new tab)
+          </a>
+          <br>
+          <br>
+          <a href="#">
+            Certificate of stillbirth registration (opens in a new tab)
+          </a>
+        </p> 
+
+        <h3 class="govuk-heading-s">
+          Amelia Rose Harwood-Ridley
+        </h3>
+        <p  class="govuk-body govuk-!-margin-bottom-9">
+          <a href="/public/documents/AmeliaRoseRegisterPage.pdf" target="_blank" class="govuk-link">
+            Standard birth certificate (opens in a new tab)
+          </a>
+          <br>
+          <br>
+          <a href="#">
+           Short birth certificate (opens in a new tab)
+          </a>
+          <br>
+          <br>
+          <a href="#">
+           Certificate of registration (opens in a new tab)
+          </a>
+        </p> 
+       
+
+        
+  
+
+        
+      <p  class="govuk-body">
+        <a href="../00-service-selector.html">
+          Return to homepage
+        </a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

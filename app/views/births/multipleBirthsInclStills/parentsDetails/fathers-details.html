@@ -1,0 +1,279 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Personal details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Parents' details</span>
+    <h1 class="govuk-heading-l">
+      Second female parent's details
+    </h1>
+
+    <form class="form" action="fathers-details-check" method="post">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="country-hint">
+        
+          <label class="govuk-label govuk-fieldset__legend--s" for="mothersOccupation">
+            Country of birth
+          </label>
+    
+    
+        <div class="govuk-radios" data-module="govuk-radios">
+    
+          <!-- England -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="england"
+                   name="countryOfBirth"
+                   type="radio"
+                   value="england"
+                   data-aria-controls="conditional-england">
+    
+            <label class="govuk-label govuk-radios__label" for="england">
+              England
+            </label>
+          </div>
+    
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+               id="conditional-england">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="england-place">
+                Place of birth
+              </label>
+              <input class="govuk-input govuk-!-width-one-half"
+                     id="england-place"
+                     name="englandPlace"
+                     type="text">
+            </div>
+          </div>
+    
+          <!-- Northern Ireland -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="northern-ireland"
+                   name="countryOfBirth"
+                   type="radio"
+                   value="northern-ireland"
+                   data-aria-controls="conditional-ni">
+    
+            <label class="govuk-label govuk-radios__label" for="northern-ireland">
+              Northern Ireland
+            </label>
+          </div>
+    
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+               id="conditional-ni">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="ni-place">
+                Place of birth
+              </label>
+              <input class="govuk-input govuk-!-width-one-half"
+                     id="ni-place"
+                     name="niPlace"
+                     type="text">
+            </div>
+          </div>
+    
+          <!-- Scotland -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="scotland"
+                   name="countryOfBirth"
+                   type="radio"
+                   value="scotland"
+                   data-aria-controls="conditional-scotland">
+    
+            <label class="govuk-label govuk-radios__label" for="scotland">
+              Scotland
+            </label>
+          </div>
+    
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+               id="conditional-scotland">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="scotland-place">
+                Place of birth
+              </label>
+              <input class="govuk-input govuk-!-width-one-half"
+                     id="scotland-place"
+                     name="scotlandPlace"
+                     type="text">
+            </div>
+          </div>
+    
+          <!-- Wales -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="wales"
+                   name="countryOfBirth"
+                   type="radio"
+                   value="wales"
+                   data-aria-controls="conditional-wales">
+    
+            <label class="govuk-label govuk-radios__label" for="wales">
+              Wales
+            </label>
+          </div>
+    
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+               id="conditional-wales">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="wales-place">
+                Place of birth
+              </label>
+              <input class="govuk-input govuk-!-width-one-half"
+                     id="wales-place"
+                     name="walesPlace"
+                     type="text">
+            </div>
+          </div>
+    
+          <!-- Outside the UK -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="outside-uk"
+                   name="countryOfBirth"
+                   type="radio"
+                   value="outside-uk"
+                   data-aria-controls="conditional-outside-uk">
+    
+            <label class="govuk-label govuk-radios__label" for="outside-uk">
+              Outside of the UK
+            </label>
+          </div>
+    
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+               id="conditional-outside-uk">
+    
+          </div>
+    
+          <!-- Not known -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="not-known"
+                   name="countryOfBirth"
+                   type="radio"
+                   value="not-known">
+    
+            <label class="govuk-label govuk-radios__label" for="not-known">
+              Not known
+            </label>
+          </div>
+    
+        </div>
+      </fieldset>
+    </div>
+
+
+      {{ govukRadios({
+      name: "SpanishNational",
+      fieldset: {
+      legend: {
+      text: "Spanish national",
+      classes: "govuk-fieldset__legend--s"
+      }
+      },
+      items: [
+      {
+      value: "true",
+      text: "Yes"
+      },
+      {
+      value: "false",
+      text: "No"
+      
+      },
+      {
+      value: "unknown",
+      text: "Unknown"
+  
+      }
+      ]
+      }) }}
+
+
+      <div class="govuk-form-group" id="occupation">
+        <label class="govuk-label govuk-fieldset__legend--s" for="fathersOccupation">
+          Occupation
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="fathersOccupation" name="fathersOccupation" type="text"
+          aria-describedby="fathersOccupation-hint" aria-required="false" value="{{ data.fathersOccupation }}">
+      </div>
+
+      
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return",
+        type: "submit"
+        })
+        }}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById('find-address-btn').addEventListener('click', function () {
+    var addressFields = document.getElementById('address-fields');
+    if (addressFields.style.display === 'none') {
+      addressFields.style.display = 'block';
+    } else {
+      addressFields.style.display = 'none';
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const findAddressBtn = document.getElementById('find-address-btn');
+    const addressFields = document.getElementById('address-fields');
+
+    if (findAddressBtn && addressFields) {
+      findAddressBtn.addEventListener('click', function () {
+        addressFields.style.display = 'block';
+      });
+    }
+
+    const countrySelect = document.getElementById('fathersSpecificCountry');
+    const otherCountryInput = document.getElementById('other-country-input');
+
+    if (countrySelect && otherCountryInput) {
+      countrySelect.addEventListener('change', function () {
+        if (this.value === 'other') {
+          otherCountryInput.style.display = 'block';
+        } else {
+          otherCountryInput.style.display = 'none';
+          const textInput = document.getElementById('fathersOtherCountry');
+          if (textInput) {
+            textInput.value = '';
+          }
+        }
+      });
+
+      if (countrySelect.value === 'other') {
+        otherCountryInput.style.display = 'block';
+      }
+    }
+  });
+</script>
+
+{% endblock %}

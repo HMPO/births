@@ -1,0 +1,276 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Personal details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Parents' details</span>
+    <h1 class="govuk-heading-l">
+      Second female parent's details
+    </h1>
+
+    <form class="form" action="fathers-details-check" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="country-hint">
+          
+            <label class="govuk-label govuk-fieldset__legend--s" for="mothersOccupation">
+              Country of birth
+            </label>
+      
+      
+          <div class="govuk-radios" data-module="govuk-radios">
+      
+            <!-- England -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="england"
+                     name="countryOfBirth"
+                     type="radio"
+                     value="england"
+                     checked="checked"
+                     data-aria-controls="conditional-england">
+      
+              <label class="govuk-label govuk-radios__label" for="england">
+                England
+              </label>
+            </div>
+      
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                 id="conditional-england">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="england-place">
+                  Place of birth
+                </label>
+                <input class="govuk-input govuk-!-width-one-half"
+                       id="england-place"
+                       name="englandPlace"
+                       value="Norwich, Norfolk"
+                       type="text">
+              </div>
+            </div>
+      
+            <!-- Northern Ireland -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="northern-ireland"
+                     name="countryOfBirth"
+                     type="radio"
+                     value="northern-ireland"
+                     data-aria-controls="conditional-ni">
+      
+              <label class="govuk-label govuk-radios__label" for="northern-ireland">
+                Northern Ireland
+              </label>
+            </div>
+      
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                 id="conditional-ni">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="ni-place">
+                  Place of birth
+                </label>
+                <input class="govuk-input govuk-!-width-one-half"
+                       id="ni-place"
+                       name="niPlace"
+                       type="text">
+              </div>
+            </div>
+      
+            <!-- Scotland -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="scotland"
+                     name="countryOfBirth"
+                     type="radio"
+                     value="scotland"
+                     data-aria-controls="conditional-scotland">
+      
+              <label class="govuk-label govuk-radios__label" for="scotland">
+                Scotland
+              </label>
+            </div>
+      
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                 id="conditional-scotland">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="scotland-place">
+                  Place of birth
+                </label>
+                <input class="govuk-input govuk-!-width-one-half"
+                       id="scotland-place"
+                       name="scotlandPlace"
+                       type="text">
+              </div>
+            </div>
+      
+            <!-- Wales -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="wales"
+                     name="countryOfBirth"
+                     type="radio"
+                     value="wales"
+                     data-aria-controls="conditional-wales">
+      
+              <label class="govuk-label govuk-radios__label" for="wales">
+                Wales
+              </label>
+            </div>
+      
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                 id="conditional-wales">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="wales-place">
+                  Place of birth
+                </label>
+                <input class="govuk-input govuk-!-width-one-half"
+                       id="wales-place"
+                       name="walesPlace"
+                       type="text">
+              </div>
+            </div>
+      
+            <!-- Outside the UK -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="outside-uk"
+                     name="countryOfBirth"
+                     type="radio"
+                     value="outside-uk"
+                     data-aria-controls="conditional-outside-uk">
+      
+              <label class="govuk-label govuk-radios__label" for="outside-uk">
+                Outside of the UK
+              </label>
+            </div>
+      
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                 id="conditional-outside-uk">
+      
+            </div>
+      
+            <!-- Not known -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="not-known"
+                     name="countryOfBirth"
+                     type="radio"
+                     value="not-known">
+      
+              <label class="govuk-label govuk-radios__label" for="not-known">
+                Not known
+              </label>
+            </div>
+      
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="SpanishNational-fieldset" aria-required="false">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Spanish national
+          </legend>
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="SpanishNational-true" name="SpanishNational" type="radio"
+                value="true" {{ checked("SpanishNational", "true" ) }}>
+              <label class="govuk-label govuk-radios__label" id="SpanishNational-true-label" for="SpanishNational-true">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="SpanishNational-false" name="SpanishNational" type="radio"
+                value="false" checked {{ checked("SpanishNational", "false" ) }}>
+              <label class="govuk-label govuk-radios__label" id="SpanishNational-false-label"
+                for="SpanishNational-false">
+                No
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="SpanishNational-unknown" name="SpanishNational" type="radio"
+                value="unknown" {{ checked("SpanishNational", "unknown" ) }}>
+              <label class="govuk-label govuk-radios__label" id="SpanishNational-unknown-label"
+                for="SpanishNational-unknown">
+                Unknown
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <br>
+
+      <div class="govuk-form-group" id="occupation">
+        <label class="govuk-label govuk-fieldset__legend--s" for="fathersOccupation">
+          Occupation
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="fathersOccupation" name="fathersOccupation" type="text"
+          aria-describedby="fathersOccupation-hint" aria-required="false" value="Architect">
+      </div>
+      <br>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Address
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                29 Willow Crescent, Eastleigh, SO50 6DR
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                18 Hawthorn Way, Eastleigh, SO59 6QN
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio"
+                value="scotland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                Other
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return",
+        type: "Submit"
+        })
+        }}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

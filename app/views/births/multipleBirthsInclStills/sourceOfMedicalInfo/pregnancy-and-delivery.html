@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Source of medical information</span>
+    <h1 class="govuk-heading-l">
+      Pregnancy and delivery
+    </h1>
+
+    <h2 class="govuk-heading-m">Medical certificate of stillbirth (form 34)</h2>
+    <br>
+
+    <form class="form" action="pregnancy-delivery-check" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="pregnancy-weeks">
+          Estimated length of pregnancy in weeks
+        </label>
+      
+        <div id="pregnancy-weeks-hint" class="govuk-hint">
+          Do not enter any days recorded, only the weeks
+        </div>
+      
+        <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5"
+                 id="pregnancy-weeks"
+                 name="pregnancyWeeks"
+                 type="text"
+                 spellcheck="false"
+                 value="{{data['pregnancyWeeks']}}"
+                 aria-describedby="pregnancy-weeks-hint">
+          <div class="govuk-input__suffix" aria-hidden="true">weeks</div>
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              When did the child die?
+            </legend>
+          
+      
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="childDeathTiming" name="childDeathTiming" type="radio" value="before-labour" {{
+                checked("childDeathTiming", "before-labour" ) }}>
+              <label class="govuk-label govuk-radios__label" for="childDeathTiming">
+                Before labour
+              </label>
+            </div>
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="childDeathTiming-2" name="childDeathTiming" type="radio" value="during-labour" {{
+                checked("childDeathTiming", "during-labour" ) }}>
+              <label class="govuk-label govuk-radios__label" for="childDeathTiming-2">
+                During labour
+              </label>
+            </div>
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="childDeathTiming-3" name="childDeathTiming" type="radio" value="not-known" {{
+                checked("childDeathTiming", "not-known" ) }}>
+              <label class="govuk-label govuk-radios__label" for="childDeathTiming-3">
+                Not known
+              </label>
+            </div>
+      
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="weight">
+          Weight of the child (if provided)
+        </label>
+        <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5"
+                 id="weight"
+                 name="weight"
+                 type="text"
+                 value="{{data['weight']}}"
+                 spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">g</div>
+        </div>
+      </div>
+
+        
+
+
+       
+
+             
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return",
+        type: "Submit"
+        }) }}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

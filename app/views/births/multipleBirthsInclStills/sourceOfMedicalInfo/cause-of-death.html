@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Source of medical information</span>
+    <h1 class="govuk-heading-l">
+      Cause of death
+    </h1>
+
+    <h2 class="govuk-heading-m">Medical certificate of stillbirth (form 34)</h2>
+    <br>
+
+    <form class="form" action="cause-of-death-check" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            What number is circled on the medical certificate?
+          </legend>
+      
+          <div class="govuk-radios" data-module="govuk-radios">
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="circledNumber" name="circledNumber" type="radio" value="1-confirmed-by-post-mortem" {{
+                checked("circledNumber", "1-confirmed-by-post-mortem" ) }}>
+              <label class="govuk-label govuk-radios__label" for="circledNumber">
+                1 – The certified cause of death has been confirmed by post-mortem
+              </label>
+            </div>
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="circledNumber-2" name="circledNumber" type="radio" value="2-may-be-available-later" {{
+                checked("circledNumber", "2-may-be-available-later" ) }}>
+              <label class="govuk-label govuk-radios__label" for="circledNumber-2">
+                2 – Post-mortem information may be available later
+              </label>
+            </div>
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="circledNumber-3" name="circledNumber" type="radio" value="3-not-being-held" {{
+                checked("circledNumber", "3-not-being-held" ) }}>
+              <label class="govuk-label govuk-radios__label" for="circledNumber-3">
+                3 – Post-mortem not being held
+              </label>
+            </div>
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="circledNumber-4" name="circledNumber" type="radio" value="none" {{
+                checked("circledNumber", "none" ) }}>
+              <label class="govuk-label govuk-radios__label" for="circledNumber-4">
+                None
+              </label>
+            </div>
+      
+          </div>
+        </fieldset>
+      </div>
+
+      <h2 class="govuk-heading-m">Cause of stillbirth</h2>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Is cause of death in the standard format?
+          </legend>
+      
+          <div id="standard-format-hint" class="govuk-hint">
+            For example, 1(a), 1(b), 1(c)
+          </div>
+      
+          <div class="govuk-radios" data-module="govuk-radios">
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="standardFormat" name="standardFormat" type="radio" value="yes" aria-describedby="standard-format-hint" {{
+                checked("standardFormat", "yes" ) }}>
+              <label class="govuk-label govuk-radios__label" for="standardFormat">
+                Yes
+              </label>
+            </div>
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="standardFormat-2" name="standardFormat" type="radio" value="no" aria-describedby="standard-format-hint" {{
+                checked("standardFormat", "no" ) }}>
+              <label class="govuk-label govuk-radios__label" for="standardFormat-2">
+                No
+              </label>
+            </div>
+      
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Enter cause of death – in child
+          </label>
+        </h1>
+      
+        <label class="govuk-label" for="cause-of-death">
+          (a) Main disease or conditions in the child
+        </label>
+      
+        <textarea class="govuk-textarea" id="cause-of-death" name="causeOfDeath" rows="5" value="{{data['causeOfDeath']}}"></textarea>
+
+        <p class="govuk-body">
+          <a href="" class="govuk-link">(b) Add another disease or condition in the child</a>
+        </p>
+
+      </div>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--s" for="maternal-condition">
+            Maternal diseases or conditions affecting the child
+          </label>
+        </h1>
+      
+        <label class="govuk-label" for="maternal-condition">
+          (c) Maternal disease or condition affecting the child (if provided)
+        </label>
+      
+        <textarea class="govuk-textarea" id="maternal-condition" name="maternalCondition" rows="5" value="{{data['maternalCondition']}}"></textarea>
+      
+        <p class="govuk-body">
+          <a href="" class="govuk-link">(d) Add other maternal diseases or conditions affecting the child</a>
+        </p>
+      
+        <p class="govuk-body">
+          <a href="" class="govuk-link">(e) Add other relevant causes</a>
+        </p>
+      
+      </div>
+
+      <h2 class="govuk-heading-m">Certifying midwife or practitioner</h2>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="full-name">
+          Full name
+        </label>
+        <input class="govuk-input govuk-!-width-three-quarters" id="full-name" name="fullName" type="text" value="{{data['fullName']}}">
+      </div>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="qualifications">
+          Qualifications
+        </label>
+        <input class="govuk-input govuk-!-width-three-quarters" id="qualifications" name="qualifications" type="text" value="{{data['qualifications']}}">
+      </div>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="consultant-name">
+          Full name of the mother's consultant (if provided)
+        </label>
+        <input class="govuk-input govuk-!-width-three-quarters" id="consultant-name" name="consultantName" type="text" value="{{data['consultantName']}}">
+      </div>
+      
+        
+
+        
+
+
+       
+
+             
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Save and return",
+        type: "Submit"
+        }) }}
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
