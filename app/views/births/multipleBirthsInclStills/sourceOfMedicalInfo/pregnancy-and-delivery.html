@@ -45,6 +45,7 @@ href: "javascript:window.history.back()"
                  name="pregnancyWeeks"
                  type="text"
                  spellcheck="false"
+                 value="{{data['pregnancyWeeks']}}"
                  aria-describedby="pregnancy-weeks-hint">
           <div class="govuk-input__suffix" aria-hidden="true">weeks</div>
         </div>
@@ -60,21 +61,24 @@ href: "javascript:window.history.back()"
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="childDeathTiming" name="childDeathTiming" type="radio" value="before-labour">
+              <input class="govuk-radios__input" id="childDeathTiming" name="childDeathTiming" type="radio" value="before-labour" {{
+                checked("childDeathTiming", "before-labour" ) }}>
               <label class="govuk-label govuk-radios__label" for="childDeathTiming">
                 Before labour
               </label>
             </div>
       
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="childDeathTiming-2" name="childDeathTiming" type="radio" value="during-labour">
+              <input class="govuk-radios__input" id="childDeathTiming-2" name="childDeathTiming" type="radio" value="during-labour" {{
+                checked("childDeathTiming", "during-labour" ) }}>
               <label class="govuk-label govuk-radios__label" for="childDeathTiming-2">
                 During labour
               </label>
             </div>
       
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="childDeathTiming-3" name="childDeathTiming" type="radio" value="not-known">
+              <input class="govuk-radios__input" id="childDeathTiming-3" name="childDeathTiming" type="radio" value="not-known" {{
+                checked("childDeathTiming", "not-known" ) }}>
               <label class="govuk-label govuk-radios__label" for="childDeathTiming-3">
                 Not known
               </label>
@@ -93,6 +97,7 @@ href: "javascript:window.history.back()"
                  id="weight"
                  name="weight"
                  type="text"
+                 value="{{data['weight']}}"
                  spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">g</div>
         </div>

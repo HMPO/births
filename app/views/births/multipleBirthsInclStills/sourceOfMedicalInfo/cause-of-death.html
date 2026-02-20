@@ -39,28 +39,32 @@ href: "javascript:window.history.back()"
           <div class="govuk-radios" data-module="govuk-radios">
       
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="circledNumber" name="circledNumber" type="radio" value="1-confirmed-by-post-mortem">
+              <input class="govuk-radios__input" id="circledNumber" name="circledNumber" type="radio" value="1-confirmed-by-post-mortem" {{
+                checked("circledNumber", "1-confirmed-by-post-mortem" ) }}>
               <label class="govuk-label govuk-radios__label" for="circledNumber">
                 1 – The certified cause of death has been confirmed by post-mortem
               </label>
             </div>
       
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="circledNumber-2" name="circledNumber" type="radio" value="2-may-be-available-later">
+              <input class="govuk-radios__input" id="circledNumber-2" name="circledNumber" type="radio" value="2-may-be-available-later" {{
+                checked("circledNumber", "2-may-be-available-later" ) }}>
               <label class="govuk-label govuk-radios__label" for="circledNumber-2">
                 2 – Post-mortem information may be available later
               </label>
             </div>
       
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="circledNumber-3" name="circledNumber" type="radio" value="3-not-being-held">
+              <input class="govuk-radios__input" id="circledNumber-3" name="circledNumber" type="radio" value="3-not-being-held" {{
+                checked("circledNumber", "3-not-being-held" ) }}>
               <label class="govuk-label govuk-radios__label" for="circledNumber-3">
                 3 – Post-mortem not being held
               </label>
             </div>
       
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="circledNumber-4" name="circledNumber" type="radio" value="none">
+              <input class="govuk-radios__input" id="circledNumber-4" name="circledNumber" type="radio" value="none" {{
+                checked("circledNumber", "none" ) }}>
               <label class="govuk-label govuk-radios__label" for="circledNumber-4">
                 None
               </label>
@@ -85,14 +89,16 @@ href: "javascript:window.history.back()"
           <div class="govuk-radios" data-module="govuk-radios">
       
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="standardFormat" name="standardFormat" type="radio" value="yes" aria-describedby="standard-format-hint">
+              <input class="govuk-radios__input" id="standardFormat" name="standardFormat" type="radio" value="yes" aria-describedby="standard-format-hint" {{
+                checked("standardFormat", "yes" ) }}>
               <label class="govuk-label govuk-radios__label" for="standardFormat">
                 Yes
               </label>
             </div>
       
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="standardFormat-2" name="standardFormat" type="radio" value="no" aria-describedby="standard-format-hint">
+              <input class="govuk-radios__input" id="standardFormat-2" name="standardFormat" type="radio" value="no" aria-describedby="standard-format-hint" {{
+                checked("standardFormat", "no" ) }}>
               <label class="govuk-label govuk-radios__label" for="standardFormat-2">
                 No
               </label>
@@ -113,7 +119,7 @@ href: "javascript:window.history.back()"
           (a) Main disease or conditions in the child
         </label>
       
-        <textarea class="govuk-textarea" id="cause-of-death" name="causeOfDeath" rows="5"></textarea>
+        <textarea class="govuk-textarea" id="cause-of-death" name="causeOfDeath" rows="5" value="{{data['causeOfDeath']}}"></textarea>
 
         <p class="govuk-body">
           <a href="" class="govuk-link">(b) Add another disease or condition in the child</a>
@@ -133,7 +139,7 @@ href: "javascript:window.history.back()"
           (c) Maternal disease or condition affecting the child (if provided)
         </label>
       
-        <textarea class="govuk-textarea" id="maternal-condition" name="maternalCondition" rows="5"></textarea>
+        <textarea class="govuk-textarea" id="maternal-condition" name="maternalCondition" rows="5" value="{{data['maternalCondition']}}"></textarea>
       
         <p class="govuk-body">
           <a href="" class="govuk-link">(d) Add other maternal diseases or conditions affecting the child</a>
@@ -150,21 +156,21 @@ href: "javascript:window.history.back()"
         <label class="govuk-label govuk-label--s" for="full-name">
           Full name
         </label>
-        <input class="govuk-input govuk-!-width-three-quarters" id="full-name" name="fullName" type="text">
+        <input class="govuk-input govuk-!-width-three-quarters" id="full-name" name="fullName" type="text" value="{{data['fullName']}}">
       </div>
       
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="qualifications">
           Qualifications
         </label>
-        <input class="govuk-input govuk-!-width-three-quarters" id="qualifications" name="qualifications" type="text">
+        <input class="govuk-input govuk-!-width-three-quarters" id="qualifications" name="qualifications" type="text" value="{{data['qualifications']}}">
       </div>
       
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="consultant-name">
           Full name of the mother's consultant (if provided)
         </label>
-        <input class="govuk-input govuk-!-width-three-quarters" id="consultant-name" name="consultantName" type="text">
+        <input class="govuk-input govuk-!-width-three-quarters" id="consultant-name" name="consultantName" type="text" value="{{data['consultantName']}}">
       </div>
       
         

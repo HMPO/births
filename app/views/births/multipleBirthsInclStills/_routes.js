@@ -463,22 +463,22 @@ module.exports = function (router) {
         res.redirect(referer.replace('/additionalInfo/comments', '/tasks/'));
     });
 
-    router.post('/births/multipleBirthsInclStills/sourceOfMedicalInfo/pregnancy-and-delivery', function(req, res) {
+    router.post('/births/multipleBirthsInclStills/sourceOfMedicalInfo/pregnancy-delivery-check', function(req, res) {
         req.session.data = req.session.data || {};
 
-        if (req.body['pregnancy-weeks']){
+        if (req.body['pregnancyWeeks']){
             req.session.data.pregnancyCompleted=true
         }
         else {req.session.data.pregnancyCompleted=false
         }
-        req.session.data['pregnancy-weeks'] = req.body['pregnancy-weeks'];
+        req.session.data['pregnancyWeeks'] = req.body['pregnancyWeeks'];
         req.session.data['childDeathTiming'] = req.body['childDeathTiming'];
         req.session.data['weight'] = req.body['weight'];
 
         res.redirect('/births/multipleBirthsInclStills/tasks/child2Index');
     })
 
-    router.post('/births/multipleBirthsInclStills/sourceOfMedicalInfo/cause-of-death', function(req, res) {
+    router.post('/births/multipleBirthsInclStills/sourceOfMedicalInfo/cause-of-death-check', function(req, res) {
         req.session.data = req.session.data || {};
 
         if (req.body['circledNumber']){
