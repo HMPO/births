@@ -475,7 +475,7 @@ module.exports = function (router) {
         req.session.data['childDeathTiming'] = req.body['childDeathTiming'];
         req.session.data['weight'] = req.body['weight'];
 
-        res.redirect('/births/multipleBirthsInclStills/tasks/child2Index');
+        res.redirect('/births/multipleBirthsInclStills/tasks/child2index');
     })
 
     router.post('/births/multipleBirthsInclStills/sourceOfMedicalInfo/cause-of-death-check', function(req, res) {
@@ -494,7 +494,7 @@ module.exports = function (router) {
         req.session.data['qualifications'] = req.body['qualifications'];
         req.session.data['consultantName'] = req.body['consultantName'];
 
-        res.redirect('/births/multipleBirthsInclStills/tasks/child2Index');
+        res.redirect('/births/multipleBirthsInclStills/tasks/child2index');
     })
 
 };
