@@ -1,4 +1,14 @@
 module.exports = function (router) {
+
+    router.post('/births/lateReg/initialQuestions/01-how-many-children', function (req, res) {
+        const numberOfChildren = req.body.numberOfChildren;
+        if (numberOfChildren === 'one') {
+            res.redirect('/births/lateReg/initialQuestions/02-type-of-reg');
+        } else {
+            res.redirect('/births/lateReg/initialQuestionsMulti/10-order-of-reg');
+        }
+    });
+
    
 
     router.post('/births/multipleBirthsInclStills/tasks', function (req, res) {

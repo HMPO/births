@@ -23,7 +23,8 @@
         How many children are you registering?
       </h1>
 
-       
+<form method="post" action="/births/lateReg/initialQuestions/01-how-many-children">
+
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <div class="govuk-radios" data-module="govuk-radios">
@@ -85,9 +86,10 @@
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Continue",
-        href: "/views/births/lateReg/initialQuestions/02-type-of-reg"
+        text: "Continue"
       }) }}
+
+</form>
 
     </div>
   </div>
