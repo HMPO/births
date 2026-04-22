@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <span class="govuk-caption-xl">Initial questions</span>        
+      <h1 class="govuk-heading-l">
+        What type of registration is it?
+      </h1>
+    
+    
+
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios" data-module="govuk-radios">
+    
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="birth-type-live"
+                   name="birthType"
+                   type="radio"
+                   value="live-birth">
+            <label class="govuk-label govuk-radios__label" for="birth-type-live">
+              Live birth
+            </label>
+          </div>
+    
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="birth-type-still"
+                   name="birthType"
+                   type="radio"
+                   value="stillbirth">
+            <label class="govuk-label govuk-radios__label" for="birth-type-still">
+              Stillbirth
+            </label>
+          </div>
+    
+        </div>
+      </fieldset>
+    <br><br>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/views/births/lateReg/initialQuestions/03-child-DOB"
+      }) }}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
