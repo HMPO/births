@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+ 
+
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-m">
+            Births
+        </h2>
+
+       <p class="govuk-body"><a href="" class="govuk-link">
+        Register a birth
+    </a></p>
+    <p class="govuk-body"><a href="" class="govuk-link">
+        Register multiple births
+    </a></p>
+    <p class="govuk-body"><a href="" class="govuk-link">
+        Register a stillbirth
+    </a></p>
+    <p class="govuk-body"><a href="/births/lateReg/initialQuestions/01-how-many-children.html" class="govuk-link">
+        Register a birth after 12 months
+    </a></p>
+   
+
+    </div>    
+<br>
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-m">
+            Deaths
+        </h2>
+
+       <p class="govuk-body"><a href="" class="govuk-link">
+        Register a death
+    </a></p>
+    <p class="govuk-body"><a href="" class="govuk-link">
+        View pending registrations
+    </a></p>
+
+    </div> 
+    </div>
+  </div>
+
+{% endblock %}

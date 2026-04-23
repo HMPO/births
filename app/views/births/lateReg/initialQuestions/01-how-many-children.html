@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-xl">Initial questions</span>        
+      <h1 class="govuk-heading-l">
+        How many children are you registering?
+      </h1>
+
+<form method="post" action="/births/lateReg/initialQuestions/01-how-many-children">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="children-one"
+               name="numberOfChildren"
+               type="radio"
+               value="one">
+        <label class="govuk-label govuk-radios__label" for="children-one">
+          One child
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="children-many"
+               name="numberOfChildren"
+               type="radio"
+               value="many"
+               data-aria-controls="conditional-children-many">
+        <label class="govuk-label govuk-radios__label" for="children-many">
+          Many children
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+           id="conditional-children-many">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="children-count">
+            How many children in this maternity?
+          </label>
+
+          <select class="govuk-select" id="children-count" name="childrenCount">
+            <option value="">Select how many</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+
+        
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

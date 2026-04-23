@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <span class="govuk-caption-xl">Initial questions</span>        
+      <h1 class="govuk-heading-l">
+        Has GRO given permission to register the birth?
+      </h1>
+   
+    
+    
+
+     
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="has-reference-yes"
+               name="hasReference"
+               type="radio"
+               value="yes"
+               data-aria-controls="conditional-has-reference">
+        <label class="govuk-label govuk-radios__label" for="has-reference-yes">
+          Yes
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+           id="conditional-has-reference">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="reference-number">
+            Reference number
+          </label>
+          <input class="govuk-input govuk-input govuk-!-width-full"
+                 id="reference-number"
+                 name="referenceNumber"
+                 type="text">
+        </div>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="has-reference-no"
+               name="hasReference"
+               type="radio"
+               value="no">
+        <label class="govuk-label govuk-radios__label" for="has-reference-no">
+          No
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/births/lateReg/triage/05-informant"
+      }) }}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

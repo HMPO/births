@@ -30,6 +30,7 @@ require('./views/births/multipleBirths/_routes')(router);
 require('./views/births/multipleBirths2/_routes')(router);
 require('./views/births/multipleBirths3/_routes')(router);
 require('./views/births/multipleBirthsInclStills/_routes')(router);
+require('./views/births/lateReg/_routes')(router);
 module.exports = router;
 
 

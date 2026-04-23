@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+<span class="govuk-caption-l">Add record details</span>
+    <h1 class="govuk-heading-l">
+      Which order do you want to register the children in?
+    </h1>
+     
+
+
+<div class="govuk-form-group" style="margin-bottom: 10px;">
+  <label class="govuk-label govuk-!-margin-right-2"
+         for="child-1-order"
+         style="display:inline-block; width: 80px;">
+    Child 1
+  </label>
+
+  <select class="govuk-select"
+          id="child-1-order"
+          name="child-1-order"
+          style="display:inline-block; width:auto;">
+    <option value="first" selected>First</option>
+    <option value="second">Second</option>
+  </select>
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-margin-right-2"
+         for="child-2-order"
+         style="display:inline-block; width: 80px;">
+    Child 2
+  </label>
+
+  <select class="govuk-select"
+          id="child-2-order"
+          name="child-2-order"
+          style="display:inline-block; width:auto;">
+    <option value="second" selected>Second</option>
+    <option value="first">First</option>
+  </select>
+</div>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/births/lateReg/initialQuestionsMulti/11-type-of-reg-multi"
+}) }}
+
+    
+  
+    
+
+   
+     
+      
+
+
+  </div>
+</div>
+
+
+{% endblock %}
