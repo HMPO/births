@@ -21,6 +21,50 @@ href: "javascript:window.history.back()"
     </h1>
      
 
+
+<div class="govuk-form-group" style="margin-bottom: 10px;">
+  <label class="govuk-label govuk-!-margin-right-2"
+         for="child-1-order"
+         style="display:inline-block; width: 80px;">
+    Child 1
+  </label>
+
+  <select class="govuk-select"
+          id="child-1-order"
+          name="child-1-order"
+          style="display:inline-block; width:auto;">
+    <option value="first" selected>First</option>
+    <option value="second">Second</option>
+  </select>
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-margin-right-2"
+         for="child-2-order"
+         style="display:inline-block; width: 80px;">
+    Child 2
+  </label>
+
+  <select class="govuk-select"
+          id="child-2-order"
+          name="child-2-order"
+          style="display:inline-block; width:auto;">
+    <option value="second" selected>Second</option>
+    <option value="first">First</option>
+  </select>
+</div>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/births/lateReg/initialQuestionsMulti/11-type-of-reg-multi"
+}) }}
+
+    
+  
+    
+
    
      
       

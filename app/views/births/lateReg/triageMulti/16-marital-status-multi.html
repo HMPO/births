@@ -25,7 +25,7 @@ href: "javascript:window.history.back()"
       name: "marriedOrCivilPartnership",
       fieldset: {
       legend: {
-      text: "Who else's details will be recorded?",
+      text: "Are the parents married or in a civil partnership with each other?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
       }
@@ -37,18 +37,22 @@ href: "javascript:window.history.back()"
       items: [
       {
       value: "married",
-      text: "Father"
+      text: "Married"
+      },
+      {
+      value: "civilPartnership",
+      text: "Civil partnership"
       },
       {
       value: "marriedNeither",
-      text: "Second female parent"
+      text: "No"
       }
       ]
       }) }}
 
       {{ govukButton({
       text: "Continue",
-      href: "/births/lateReg/triage/09-check-record-details"
+      href: "/births/lateReg/triageMulti/17-who-else-details-multi"
       }) }}
 
     </form>
