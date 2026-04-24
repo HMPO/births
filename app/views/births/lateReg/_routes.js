@@ -9,6 +9,24 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/births/lateReg/initialQuestions/04-GRO-approval', function (req, res) {
+        const hasReference = req.body.hasReference;
+        if (hasReference === 'yes') {
+            res.redirect('/births/lateReg/triage/05-informant');
+        } else {
+            res.redirect('/births/lateReg/initialQuestions/04a-cannot-register');
+        }
+    });
+
+    router.post('/births/lateReg/initialQuestionsMulti/13-GRO-approval-multi', function (req, res) {
+        const hasReference = req.body.hasReference;
+        if (hasReference === 'yes') {
+            res.redirect('/births/lateReg/triageMulti/14-informant-multi');
+        } else {
+            res.redirect('/births/lateReg/initialQuestionsMulti/13a-cannot-register');
+        }
+    });
+
    
 
     router.post('/births/multipleBirthsInclStills/tasks', function (req, res) {
