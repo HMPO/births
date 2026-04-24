@@ -24,7 +24,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
     
     
 
-     
+    <form method="POST">
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
 
@@ -70,13 +70,12 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
   </fieldset>
 </div>
 
-
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Continue",
-        href: "/births/lateReg/triage/05-informant"
+        text: "Continue"
       }) }}
+    </form>
 
     </div>
   </div>
