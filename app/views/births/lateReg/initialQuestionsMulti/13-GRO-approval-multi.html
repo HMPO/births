@@ -25,6 +25,8 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
     
 
    
+
+      
 <form method="POST">
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
@@ -51,8 +53,10 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
               Reference number
             </label>
 
-            <div class="govuk-input__wrapper">
-              <span class="govuk-body govuk-!-margin-right-2">C</span>
+            <div class="govuk-input__wrapper govuk-!-display-flex govuk-!-align-items-center">
+              <span class="govuk-body govuk-!-margin-right-2 govuk-!-padding-top-1">
+                C
+              </span>
 
               <input class="govuk-input govuk-input--width-4"
                      id="reference-number-part-1"
@@ -60,7 +64,9 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
                      type="text"
                      maxlength="4">
 
-              <span class="govuk-body govuk-!-margin-left-2 govuk-!-margin-right-2">-</span>
+              <span class="govuk-body govuk-!-margin-left-2 govuk-!-margin-right-2 govuk-!-padding-top-1">
+                -
+              </span>
 
               <input class="govuk-input govuk-input--width-4"
                      id="reference-number-part-2"
@@ -92,6 +98,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
     text: "Continue"
   }) }}
 </form>
+
 
 
     </div>
