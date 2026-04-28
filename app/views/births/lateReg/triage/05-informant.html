@@ -16,65 +16,80 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="02-evidence" method="post">
+    <span class="govuk-caption-l">Add record details</span>
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-
-      <span class="govuk-caption-l">Add record details</span>
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-      name: "whoIsInformant",
-      fieldset: {
-      legend: {
+{{ govukRadios({
+  name: "whoIsInformant",
+  fieldset: {
+    legend: {
       text: "Who is the informant?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
-      }
-      },
-      hint: {
-      text: " "
-      },
-
-      items: [
-      {
+    }
+  },
+  items: [
+    {
       value: "mother",
       text: "Mother",
-      checked: data['whoIsInformant'] == "Mother"
-      },
-      {
+      checked: data['whoIsInformant'] == "mother"
+    },
+    {
       value: "father",
       text: "Father",
-      checked: data['whoIsInformant'] == "Father"
-      },
-      {
+      checked: data['whoIsInformant'] == "father"
+    },
+    {
       value: "secondParent",
       text: "Second female parent",
-      checked: data['whoIsInformant'] == "Second parent"
-      },
-      {
+      checked: data['whoIsInformant'] == "secondParent"
+    },
+    {
       value: "motherAndFather",
       text: "Mother and father",
-      checked: data['whoIsInformant'] == "Mother and father"
-      },
-      {
+      checked: data['whoIsInformant'] == "motherAndFather"
+    },
+    {
       value: "motherAndParent",
       text: "Mother and second female parent",
-      checked: data['whoIsInformant'] == "Second parent"
-      },
-      {
-      value: "otherInformant",
+      checked: data['whoIsInformant'] == "motherAndParent"
+    },
+    {
+      value: "other",
       text: "Other",
-      checked: data['whoIsInformant'] == "Other"
-
+      checked: data['whoIsInformant'] == "other",
+      conditional: {
+        html: govukRadios({
+          name: "otherInformantType",
+          classes: "govuk-radios",
+          items: [
+            {
+              value: "inCharge",
+              text: "In charge of the child",
+              checked: data['otherInformantType'] == "inCharge"
+            },
+            {
+              value: "presentAtBirth",
+              text: "Present at the birth",
+              checked: data['otherInformantType'] == "presentAtBirth"
+            },
+            {
+              value: "occupier",
+              text: "Occupier",
+              checked: data['otherInformantType'] == "occupier"
+            }
+          ]
+        })
       }
-      ]
-      }) }}
-      {{ govukButton({
-      text: "Continue",
-      href: "/births/lateReg/triage/06-evidence"
-      }) }}
+    }
+  ]
+}) }}
 
-    </form>
+{{ govukButton({
+  text: "Continue",
+  href: "/births/lateReg/triage/06-evidence"
+}) }}
+
 
   </div>
 </div>
