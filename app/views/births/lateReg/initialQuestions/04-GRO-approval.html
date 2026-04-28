@@ -24,59 +24,73 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
     
     
 
-    <form method="POST">
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+    
 
-    <div class="govuk-radios" data-module="govuk-radios">
-      
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input"
-               id="has-reference-yes"
-               name="hasReference"
-               type="radio"
-               value="yes"
-               data-aria-controls="conditional-has-reference">
-        <label class="govuk-label govuk-radios__label" for="has-reference-yes">
-          Yes
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-           id="conditional-has-reference">
+      <form method="POST">
         <div class="govuk-form-group">
-          <label class="govuk-label" for="reference-number">
-            Reference number
-          </label>
-          <input class="govuk-input govuk-input govuk-!-width-full"
-                 id="reference-number"
-                 name="referenceNumber"
-                 type="text">
+          <fieldset class="govuk-fieldset">
+      
+            <div class="govuk-radios" data-module="govuk-radios">
+      
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                       id="has-reference-yes"
+                       name="hasReference"
+                       type="radio"
+                       value="yes"
+                       data-aria-controls="conditional-has-reference">
+                <label class="govuk-label govuk-radios__label" for="has-reference-yes">
+                  Yes
+                </label>
+              </div>
+      
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                   id="conditional-has-reference">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-!-margin-bottom-2" for="reference-number-part-1">
+                    Reference number
+                  </label>
+      
+                  <div class="govuk-input__wrapper">
+                    <span class="govuk-body govuk-!-margin-right-2">C</span>
+      
+                    <input class="govuk-input govuk-input--width-4"
+                           id="reference-number-part-1"
+                           name="referenceNumberPart1"
+                           type="text">
+      
+                    <span class="govuk-body govuk-!-margin-left-2 govuk-!-margin-right-2">-</span>
+      
+                    <input class="govuk-input govuk-input--width-4"
+                           id="reference-number-part-2"
+                           name="referenceNumberPart2"
+                           type="text">
+                  </div>
+                </div>
+              </div>
+      
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                       id="has-reference-no"
+                       name="hasReference"
+                       type="radio"
+                       value="no">
+                <label class="govuk-label govuk-radios__label" for="has-reference-no">
+                  No
+                </label>
+              </div>
+      
+            </div>
+          </fieldset>
         </div>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input"
-               id="has-reference-no"
-               name="hasReference"
-               type="radio"
-               value="no">
-        <label class="govuk-label govuk-radios__label" for="has-reference-no">
-          No
-        </label>
-      </div>
-
-    </div>
-  </fieldset>
-</div>
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-    </form>
-
+      
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+      
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+      
     </div>
   </div>
 
