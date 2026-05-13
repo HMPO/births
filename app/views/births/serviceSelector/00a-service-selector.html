@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+ 
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">Digital Registration Services</h1>
+        <div class="service-selector-cards">
+            <div class="service-card">
+                <div class="service-card__icon">
+                    <img src="/public/images/baby.svg" alt="Baby icon" width="48" height="48">
+                </div>
+                <div class="service-card__content">
+                    <h2 class="govuk-heading-m"><a href="#">Births</a></h2>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Register a birth &gt;</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card__icon">
+                    <img src="/public/images/stillbirth.svg" alt="Stillbirth icon" width="48" height="48">
+                </div>
+                <div class="service-card__content">
+                    <h2 class="govuk-heading-m"><a href="#">Stillbirths</a></h2>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Register a stillbirth &gt;</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card__icon">
+                    <img src="/public/images/death.svg" alt="Deaths icon" width="48" height="48">
+                </div>
+                <div class="service-card__content">
+                    <h2 class="govuk-heading-m"><a href="#">Deaths</a></h2>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Register a death &gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

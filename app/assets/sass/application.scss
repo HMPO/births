@@ -1,3 +1,43 @@
+// Service Selector Cards
+.service-selector-cards {
+  display: flex;
+  gap: 32px;
+  justify-content: flex-start;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #f3f2f1;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  padding: 32px 24px 24px 24px;
+  flex: 1 1 220px;
+  max-width: 220px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.service-card__icon {
+  margin-bottom: 16px;
+}
+
+.service-card__content h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.service-card__content a {
+  font-weight: bold;
+  font-size: 1.1em;
+}
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
