@@ -1,0 +1,216 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Re-register a death" %}
+
+{% block pageTitle %}
+  Question page template - Re-register a death - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Deceased's details</span>
+             Relationship details
+        </h2>
+
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+      Deceased's relationship status
+    </legend>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="relationshipStatus"
+               name="relationshipStatus"
+               type="radio"
+               value="married-civil-partnership">
+        <label class="govuk-label govuk-radios__label" for="relationshipStatus">
+          Married or in a civil partnership
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="relationshipStatus-2"
+               name="relationshipStatus"
+               type="radio"
+               value="widowed-surviving-civil-partner"
+               data-aria-controls="conditional-relationship-status">
+        <label class="govuk-label govuk-radios__label" for="relationshipStatus-2">
+          Widowed or surviving civil partner
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+           id="conditional-relationship-status">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Confirm relationship status
+            </legend>
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                       id="confirmStatus"
+                       name="confirmStatus"
+                       type="radio"
+                       value="widow">
+                <label class="govuk-label govuk-radios__label" for="confirmStatus">
+                  Widow
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                       id="confirmStatus-2"
+                       name="confirmStatus"
+                       type="radio"
+                       value="widower">
+                <label class="govuk-label govuk-radios__label" for="confirmStatus-2">
+                  Widower
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                       id="confirmStatus-3"
+                       name="confirmStatus"
+                       type="radio"
+                       value="surviving-civil-partner">
+                <label class="govuk-label govuk-radios__label" for="confirmStatus-3">
+                  Surviving civil partner
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-fieldset__legend--s" for="spouseName">
+            Full name of spouse or civil partner
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="spouseName" name="spouseName" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-fieldset__legend--s" for="spouseOccupation">
+            Occupation of spouse or civil partner (if available)
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="spouseOccupation" name="spouseOccupation" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Occupation status of spouse or civil partner
+            </legend>
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                       id="occupationStatus"
+                       name="occupationStatus"
+                       type="radio"
+                       value="retired">
+                <label class="govuk-label govuk-radios__label" for="occupationStatus">
+                  Retired
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                       id="occupationStatus-2"
+                       name="occupationStatus"
+                       type="radio"
+                       value="not-retired">
+                <label class="govuk-label govuk-radios__label" for="occupationStatus-2">
+                  Not retired
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="relationshipStatus-3"
+               name="relationshipStatus"
+               type="radio"
+               value="single-divorced-civil-partnership-dissolved">
+        <label class="govuk-label govuk-radios__label" for="relationshipStatus-3">
+          Single, divorced or civil partnership dissolved
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="relationshipStatus-4"
+               name="relationshipStatus"
+               type="radio"
+               value="not-known">
+        <label class="govuk-label govuk-radios__label" for="relationshipStatus-4">
+          Not known
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+
+
+  </fieldset>
+</div>
+
+       
+
+
+
+
+    {{ govukButton({
+        text: "Save and return",
+        href: "/births/reReg/tasklist.html"
+      }) }}
+
+  </div>
+</div>
+
+<br>
+<br>
+
+
+
+  
+
+
+
+    </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Re-register a death" %}
+
+{% block pageTitle %}
+  Question page template - Re-register a death - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Submit the registration</span>
+             Annotate the original record
+        </h2>
+
+
+     <p class="govuk-body">
+      Re-registered on coroner’s certificate at entry No. [system number] in register No. [register number]
+    </p>
+
+
+
+    </div>
+
+</div>
+
+  </div>
+
+
+
+    {{ govukButton({
+        text: "Confirm annotation",
+        href: "/births/reReg/submitTheReg/confirmation.html"
+      }) }}
+
+  </div>
+</div>
+
+<br>
+<br>
+
+
+
+  
+
+
+
+    </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

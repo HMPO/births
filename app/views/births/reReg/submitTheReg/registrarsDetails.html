@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Re-register a death" %}
+
+{% block pageTitle %}
+  Question page template - Re-register a death - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Submit the registration</span>
+             Registrar's details
+        </h2>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="district">
+    Registrar's full name
+  </label>
+  <input class="govuk-input govuk-!-width-one-half" id="district" name="district" type="text" value="Example name">
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-label govuk-label--s">
+      Designation
+    </legend>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="designation" name="designation" type="radio" value="assistant-coroner">
+        <label class="govuk-label govuk-radios__label" for="designation">
+          Registrar
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="designation-2" name="designation" type="radio" value="senior-coroner">
+        <label class="govuk-label govuk-radios__label" for="designation-2">
+          Interim registrar
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="designation-3" name="designation" type="radio" value="deputy-coroner">
+        <label class="govuk-label govuk-radios__label" for="designation-3">
+          Deputy registrar
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="designation-4" name="designation" type="radio" value="area-coroner">
+        <label class="govuk-label govuk-radios__label" for="designation-4">
+          Interim deputy registrar
+        </label>
+      </div>
+
+     
+
+    </div>
+  </fieldset>
+</div>
+
+  </div>
+
+
+
+    {{ govukButton({
+        text: "Save and return",
+        href: "/births/reReg/tasklist.html"
+      }) }}
+
+  </div>
+</div>
+
+<br>
+<br>
+
+
+
+  
+
+
+
+    </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}
