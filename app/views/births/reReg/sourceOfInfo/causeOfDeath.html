@@ -102,128 +102,46 @@ href: "javascript:window.history.back()"
   </div>
 </div>
 
+
+
 <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label" for="more-detail">
+    <label class="govuk-label govuk-label--s" for="more-detail">
       Enter cause of death
     </label>
   </h1>
-  <div id="more-detail-hint" class="govuk-hint">
-    1(a) Disease or condition directly leading to death
-  </div>
+  <label class="govuk-label" for="more-detail">
+       1(a) Disease or condition directly leading to death
+    </label>
   <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
 </div>
+
 
 <p class="govuk-body">
   <a href="#" class="govuk-link">1(b) Add other disease or condition leading to 1(a)</a>
 </p>
-<p class="govuk-body">
-  <a href="#" class="govuk-link">2 Add other significant contributory conditions</a>
-</p>
 
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend">
-      Ethnic group
-    </legend>
-
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ethnic-group-white" name="ethnicGroup" type="radio" value="white">
-        <label class="govuk-label govuk-radios__label" for="ethnic-group-white">
-          White
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ethnic-group-mixed" name="ethnicGroup" type="radio" value="mixed">
-        <label class="govuk-label govuk-radios__label" for="ethnic-group-mixed">
-          Mixed or multiple ethnic groups
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ethnic-group-asian" name="ethnicGroup" type="radio" value="asian">
-        <label class="govuk-label govuk-radios__label" for="ethnic-group-asian">
-          Asian or Asian British
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ethnic-group-black" name="ethnicGroup" type="radio" value="black">
-        <label class="govuk-label govuk-radios__label" for="ethnic-group-black">
-          Black, Black British, Caribbean or African
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ethnic-group-other" name="ethnicGroup" type="radio" value="other">
-        <label class="govuk-label govuk-radios__label" for="ethnic-group-other">
-          Other ethnic group
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ethnic-group-not-known" name="ethnicGroup" type="radio" value="not-known">
-        <label class="govuk-label govuk-radios__label" for="ethnic-group-not-known">
-          Not known
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
-
-
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-label">
-    Was the deceased pregnant within the year prior to their death?
-  </label>
-
-  <div class="govuk-radios" data-module="govuk-radios">
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="pregnancy-status-not-applicable" name="pregnancyStatus" type="radio" value="not-applicable">
-      <label class="govuk-label govuk-radios__label" for="pregnancy-status-not-applicable">
-        Not applicable
-      </label>
-    </div>
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="pregnancy-status-not-pregnant" name="pregnancyStatus" type="radio" value="not-pregnant">
-      <label class="govuk-label govuk-radios__label" for="pregnancy-status-not-pregnant">
-        Not pregnant
-      </label>
-    </div>
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="pregnancy-status-at-time" name="pregnancyStatus" type="radio" value="pregnant-at-time-of-death">
-      <label class="govuk-label govuk-radios__label" for="pregnancy-status-at-time">
-        Pregnant at the time of death
-      </label>
-    </div>
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="pregnancy-status-1-42-days" name="pregnancyStatus" type="radio" value="pregnant-1-42-days-before-death">
-      <label class="govuk-label govuk-radios__label" for="pregnancy-status-1-42-days">
-        Pregnant 1-42 days before death
-      </label>
-    </div>
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="pregnancy-status-43-days-to-year" name="pregnancyStatus" type="radio" value="pregnant-43-days-to-year-before-death">
-      <label class="govuk-label govuk-radios__label" for="pregnancy-status-43-days-to-year">
-        Pregnant 43 days to a year before death
-      </label>
-    </div>
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="pregnancy-status-not-known" name="pregnancyStatus" type="radio" value="not-known">
-      <label class="govuk-label govuk-radios__label" for="pregnancy-status-not-known">
-        Not known
-      </label>
-    </div>
+<div id="condition-textarea" class="govuk-!-display-none">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="other-condition">
+      1(b) Disease or condition directly leading to death
+    </label>
+    <textarea
+      class="govuk-textarea"
+      id="other-condition"
+      name="other-condition"
+      rows="5"></textarea>
   </div>
 </div>
+
+<p class="govuk-body">
+  <a href="#" class="govuk-link">2 Add other significant contributory conditions</a>
+</p> 
+
+
+
+
+
 
 <br>
 <br>
@@ -233,12 +151,15 @@ href: "javascript:window.history.back()"
   
 
 
-    {{ govukButton({
-        text: "Save and return",
-        href: "/births/reReg/tasklist.html"
-      }) }}
+   
+{{ govukButton({
+  text: "Save and return",
+  href: "/births/reReg/tasklist.html"
+}) }}
+
 
     </div>
+
 
 
     </div>
