@@ -1,0 +1,354 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Re-register a death" %}
+
+{% block pageTitle %}
+  Question page template - Re-register a death - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Deceased's details</span>
+             Personal details
+        </h2>
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <label class="govuk-label govuk-label--s" for="one-third">
+             Usual address
+          </label>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          Same as place of death
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+          Different to place of death
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group"
+<fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death-known-hint" id="date-of-death-known-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                  Is the deceased’s exact date of death known?
+                </h3>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="Yes, their full or partial date of death" aria-controls="conditional-date-of-death-known-1" aria-expanded="true">
+                  <label class="govuk-label govuk-radios__label" for="date-of-death-known-1">
+                    Yes, their exact date of death
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional" id="conditional-date-of-death-known-1">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" id="date-of-death-fieldset" aria-describedby="date-of-death1">
+                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                     Enter the date of death
+                     </legend>
+                     <div id="date-of-death1-hint" class="govuk-hint">
+                      For example, 23 11 2024
+                     </div>
+                     <div class="govuk-date-input" id="date-of-death1">
+                       <div class="govuk-date-input__item">
+                         <div class="govuk-form-group">
+                           <label class="govuk-label govuk-date-input__label" for="day-of-death">
+                           Day
+                           </label>
+                           <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="">
+                         </div>
+                       </div>
+                       <div class="govuk-date-input__item">
+                         <div class="govuk-form-group">
+                           <label class="govuk-label govuk-date-input__label" for="month-of-death">
+                           Month
+                           </label>
+                           <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="">
+                         </div>
+                       </div>
+                       <div class="govuk-date-input__item">
+                         <div class="govuk-form-group">
+                           <label class="govuk-label govuk-date-input__label" for="year-of-death">
+                         Year
+                           </label>
+                           <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="">
+                         </div>
+                       </div>
+                     </div>
+                    </fieldset>
+                   </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" id="yes-qualifier-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Date to be printed
+                        </legend>
+                      <div id="event-name-hint" class="govuk-hint">
+                        This must match the date exactly as it’s written on the form.
+                      </div>
+                      <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+                    </div>                   
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="date-of-death-known-2" name="date-of-death-known" type="radio" value="No, only the date when their body was found" aria-controls="conditional-date-of-death-known-2" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="date-of-death-known-2">
+                    No, only a partial date
+                  </label>
+                </div>
+                 <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="date-of-death-known-3" name="date-of-death-known" type="radio" value="No, only the date when their body was found" aria-controls="conditional-date-of-death-known-3" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="date-of-death-known-3">
+                    No, only the date when their body was found
+                  </label>
+                </div>
+              
+                    
+                 
+                </div>
+        
+            
+
+
+
+
+  
+
+      
+  
+
+
+    </div>
+          
+    <form class="form" action="mothers-details-check" method="post">
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="country-hint">
+    
+      <label class="govuk-label govuk-fieldset__legend--s" for="mothersOccupation">
+        Country of birth
+      </label>
+
+
+    <div class="govuk-radios" data-module="govuk-radios">
+
+      <!-- England -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="england"
+               name="countryOfBirth"
+               type="radio"
+               value="england"
+               data-aria-controls="conditional-england">
+
+        <label class="govuk-label govuk-radios__label" for="england">
+          England
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+           id="conditional-england">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="england-place">
+            Place of birth
+          </label>
+          <input class="govuk-input govuk-!-width-one-half"
+                 id="england-place"
+                 name="englandPlace"
+                 type="text">
+        </div>
+      </div>
+
+      <!-- Northern Ireland -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="northern-ireland"
+               name="countryOfBirth"
+               type="radio"
+               value="northern-ireland"
+               data-aria-controls="conditional-ni">
+
+        <label class="govuk-label govuk-radios__label" for="northern-ireland">
+          Northern Ireland
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+           id="conditional-ni">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ni-place">
+            Place of birth
+          </label>
+          <input class="govuk-input govuk-!-width-one-half"
+                 id="ni-place"
+                 name="niPlace"
+                 type="text">
+        </div>
+      </div>
+
+      <!-- Scotland -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="scotland"
+               name="countryOfBirth"
+               type="radio"
+               value="scotland"
+               data-aria-controls="conditional-scotland">
+
+        <label class="govuk-label govuk-radios__label" for="scotland">
+          Scotland
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+           id="conditional-scotland">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="scotland-place">
+            Place of birth
+          </label>
+          <input class="govuk-input govuk-!-width-one-half"
+                 id="scotland-place"
+                 name="scotlandPlace"
+                 type="text">
+        </div>
+      </div>
+
+      <!-- Wales -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="wales"
+               name="countryOfBirth"
+               type="radio"
+               value="wales"
+               data-aria-controls="conditional-wales">
+
+        <label class="govuk-label govuk-radios__label" for="wales">
+          Wales
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+           id="conditional-wales">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="wales-place">
+            Place of birth
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds"
+                 id="wales-place"
+                 name="walesPlace"
+                 type="text">
+        </div>
+      </div>
+
+      <!-- Outside the UK -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="outside-uk"
+               name="countryOfBirth"
+               type="radio"
+               value="outside-uk"
+               data-aria-controls="conditional-outside-uk">
+
+        <label class="govuk-label govuk-radios__label" for="outside-uk">
+          Outside of the UK
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+           id="conditional-outside-uk">
+
+      </div>
+
+      <!-- Not known -->
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="not-known"
+               name="countryOfBirth"
+               type="radio"
+               value="not-known">
+
+        <label class="govuk-label govuk-radios__label" for="not-known">
+          Not known
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+ <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="one-third">
+             Occupation (if available)
+          </label>
+         <input class="govuk-input govuk-!-width-one-third" id="one-third" name="oneThird" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <label class="govuk-label govuk-label--s" for="one-third">
+             Occupation status (if available)
+          </label>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england" checked>
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          Retired
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+          Not retired
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div> 
+
+
+
+
+    {{ govukButton({
+        text: "Save and return",
+        href: "/births/reReg/tasklist.html"
+      }) }}
+
+  </div>
+</div>
+</div>
+
+<br>
+<br>
+
+
+
+  
+
+
+
+    </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a death record" %}
+
+{% block pageTitle %}
+  Question page template - Search for a death record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+ 
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             Is this the correct record?
+        </h2>
+
+        <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      System number 
+    </dt>
+    <dd class="govuk-summary-list__value">
+      523 457 856
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+     21 June 2020
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Sex
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Male
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Deceased’s name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      John Philip JONE
+    </dd>
+  </div>
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Place of death
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Wythenshawe Hospital, Whythenshawe
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Annotations
+    </dt>
+    <dd class="govuk-summary-list__value">
+     None
+    </dd>
+  </div>
+</dl>
+
+
+<p class="govuk-body">
+  <a href="/births/reReg/Search/viewFullRecord.html" class="govuk-link" rel="noreferrer noopener" target="_blank">
+    View full record (opens in new tab)
+  </a>
+</p><br>
+
+
+
+{{ govukButton({
+        text: "Yes, continue",
+        href: "/births/reReg/preliminaryDetails/what-next"
+      }) }}
+
+    
+
+        <p class="govuk-body">
+  <a href="/births/reReg/Search/advanced-search.html" class="govuk-link">No, return to search</a>
+</p>
+
+       
+        
+
+        
+
+           
+  
+
+       
+    
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}

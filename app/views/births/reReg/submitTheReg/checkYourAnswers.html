@@ -1,0 +1,313 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Re-register a death" %}
+
+{% block pageTitle %}
+  Question page template - Re-register a death - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to record",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+             Check your answers before submitting the death re-registration
+        </h2>
+
+        
+<h2 class="govuk-heading-m">Cause of death</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Inquest dates</dt>
+    <dd class="govuk-summary-list__value">Tenth July 2026</dd>
+    <dd class="govuk-summary-list__actions">  
+    <a href="/births/reReg/sourceOfInfo/causeOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">1(a)</dt>
+    <dd class="govuk-summary-list__value">Pneumonia</dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/births/reReg/sourceOfInfo/causeOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">1(b)</dt>
+    <dd class="govuk-summary-list__value">Chronic Obstructive Pulmonary Disease</dd>
+    <dd class="govuk-summary-list__actions">
+    <a href="/births/reReg/sourceOfInfo/causeOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">1(c)</dt>
+    <dd class="govuk-summary-list__value">Bronchiectasis</dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/births/reReg/sourceOfInfo/causeOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+  
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">1(d)</dt>
+    <dd class="govuk-summary-list__value"></dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/births/reReg/sourceOfInfo/causeOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">2</dt>
+    <dd class="govuk-summary-list__value"></dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/births/reReg/sourceOfInfo/causeOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Deceased's details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Date of death</dt>
+    <dd class="govuk-summary-list__value">Twenty-Sixth February 2026</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/nameAndDateOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Name</dt>
+    <dd class="govuk-summary-list__value">Jan DOYLE</dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/births/reReg/deceasedsDetails/nameAndDateOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Sex</dt>
+    <dd class="govuk-summary-list__value">Female</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/nameAndDateOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Place of death</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Address</dt>
+    <dd class="govuk-summary-list__value">10 High Street Leicester</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/placeOfDeath.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Personal details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Date of birth</dt>
+    <dd class="govuk-summary-list__value">Twentieth May 1947</dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/births/reReg/deceasedsDetails/personalDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Place of birth</dt>
+    <dd class="govuk-summary-list__value">Leicester</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/personalDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Occupation</dt>
+    <dd class="govuk-summary-list__value">School Lunchtime Supervisor</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/personalDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Occupation status</dt>
+    <dd class="govuk-summary-list__value">Retired</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/personalDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Usual address</dt>
+    <dd class="govuk-summary-list__value">10 High Street Leicester</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/personalDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Relationship details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Relationship status</dt>
+    <dd class="govuk-summary-list__value">Wife</dd>
+    <dd class="govuk-summary-list__actions">
+        <a href="/births/reReg/deceasedsDetails/relationshipDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Spouse or civil partner's name</dt>
+    <dd class="govuk-summary-list__value">Paul Michael DOYLE</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/relationshipDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Spouse or civil partner's occupation</dt>
+    <dd class="govuk-summary-list__value">Mechanic</dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/births/reReg/deceasedsDetails/relationshipDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Spouse or civil partner's occupation status</dt>
+    <dd class="govuk-summary-list__value">Retired</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/deceasedsDetails/relationshipDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Coroner's details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Name</dt>
+    <dd class="govuk-summary-list__value">Miss F BUTLER</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/coronerDetails/coronersDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Designation</dt>
+    <dd class="govuk-summary-list__value">Assistant Coroner</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/coronerDetails/coronersDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">District</dt>
+    <dd class="govuk-summary-list__value">Barnet</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/coronerDetails/coronersDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Area</dt>
+    <dd class="govuk-summary-list__value">Area</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/coronerDetails/coronersDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Registrar's details</h2>
+
+<dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Name</dt>
+    <dd class="govuk-summary-list__value">Example name</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/submitTheReg/registrarsDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Designation</dt>
+    <dd class="govuk-summary-list__value">Deputy Registrar</dd>
+    <dd class="govuk-summary-list__actions">
+       <a href="/births/reReg/submitTheReg/registrarsDetails.html" class="govuk-link" rel="noreferrer noopener">Change</a>
+    </dd>
+  </div>
+
+</dl>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" rel="noreferrer noopener">
+         View and print draft register page (opens in new tab)
+      </a>
+    </p>
+
+
+     
+
+
+
+
+
+
+  </div>
+
+
+
+    {{ govukButton({
+        text: "Confirm register entry",
+        href: "/births/reReg/submitTheReg/registrarsDeclaration.html"
+      }) }}
+
+  </div>
+</div>
+
+<br>
+<br>
+
+
+
+  
+
+
+
+    </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

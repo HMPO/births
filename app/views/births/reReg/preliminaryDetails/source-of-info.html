@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Re-register a death" %}
+
+{% block pageTitle %}
+  Question page template - Re-register a death - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Preliminary details</span>
+             What is the source of information for the re-registration? 
+        </h2>
+
+        
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="certificateType" name="certificateType" type="radio" value="120A">
+        <label class="govuk-label govuk-radios__label" for="certificateType">
+          Coroner’s certificate after inquest adjourned (120A)
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="certificateType-2" name="certificateType" type="radio" value="99revA">
+        <label class="govuk-label govuk-radios__label" for="certificateType-2">
+          Coroner’s certificate after inquest (99revA)
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<br><br>
+
+        
+
+{{ govukButton({
+        text: "Continue",
+        href: "/births/reReg/tasklist.html"
+      }) }}
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}
