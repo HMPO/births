@@ -117,22 +117,85 @@ href: "javascript:window.history.back()"
 </div>
 
 
-<p class="govuk-body">
-  <a href="#" class="govuk-link">1(b) Add other disease or condition leading to 1(a)</a>
+
+<p class="govuk-body" id="add-1b-container">
+  <a href="javascript:void(0)" class="govuk-link" id="add-1b-link">
+    1(b) Add other disease or condition leading to 1(a)
+  </a>
 </p>
 
-<div id="condition-textarea" class="govuk-!-display-none">
+<div id="disease-1b" style="display:none;">
   <div class="govuk-form-group">
-    <label class="govuk-label" for="other-condition">
+    <label class="govuk-label" for="disease-1b-text">
       1(b) Disease or condition directly leading to death
+    </label>
+    <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
+
+  
+<p class="govuk-body" id="add-1c-container">
+  <a href="javascript:void(0)" class="govuk-link" id="add-1c-link">
+    1(c) Add other disease or condition leading to 1(b)
+  </a>
+</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var link = document.getElementById('add-1b-link');
+
+  if (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.getElementById('add-1b-container').style.display = 'none';
+      document.getElementById('disease-1b').style.display = 'block';
+    });
+  }
+});
+</script>
+
+
+
+
+<div id="disease-1c" style="display:none;">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="disease-1c-text">
+      1(c) Disease or condition directly leading to death
     </label>
     <textarea
       class="govuk-textarea"
-      id="other-condition"
-      name="other-condition"
-      rows="5"></textarea>
+      id="disease-1c-text"
+      name="disease1c"
+      rows="5">
+    </textarea>
   </div>
+
+  <p class="govuk-body" id="add-1d-container">
+    <a href="javascript:void(0)" class="" id="add-1d-link">
+      1(d) Add other disease or condition leading to 1(c)
+    </a>
+  </p>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var link = document.getElementById('add-1c-link');
+
+  if (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.getElementById('add-1c-container').style.display = 'none';
+      document.getElementById('disease-1c').style.display = 'block';
+    });
+  }
+});
+</script>
+
+
+
+
 
 <p class="govuk-body">
   <a href="#" class="govuk-link">2 Add other significant contributory conditions</a>
