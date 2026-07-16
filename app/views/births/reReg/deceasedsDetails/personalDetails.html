@@ -52,21 +52,21 @@ href: "javascript:window.history.back()"
 <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death-known-hint" id="date-of-death-known-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-                  Is the deceased’s exact date of death known?
+                 Date of birth
                 </h3>
               </legend>
-              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="Yes, their full or partial date of death" aria-controls="conditional-date-of-death-known-1" aria-expanded="true">
                   <label class="govuk-label govuk-radios__label" for="date-of-death-known-1">
-                    Yes, their exact date of death
+                    Full date of birth known
                   </label>
                 </div>
                 <div class="govuk-radios__conditional" id="conditional-date-of-death-known-1">
                   <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset" role="group" id="date-of-death-fieldset" aria-describedby="date-of-death1">
                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                     Enter the date of death
+                     Enter the date of birth
                      </legend>
                      <div id="date-of-death1-hint" class="govuk-hint">
                       For example, 23 11 2024
@@ -113,20 +113,20 @@ href: "javascript:window.history.back()"
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="date-of-death-known-2" name="date-of-death-known" type="radio" value="No, only the date when their body was found" aria-controls="conditional-date-of-death-known-2" aria-expanded="false">
                   <label class="govuk-label govuk-radios__label" for="date-of-death-known-2">
-                    No, only a partial date
+                    Partial date of birth known
                   </label>
                 </div>
                  <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="date-of-death-known-3" name="date-of-death-known" type="radio" value="No, only the date when their body was found" aria-controls="conditional-date-of-death-known-3" aria-expanded="false">
                   <label class="govuk-label govuk-radios__label" for="date-of-death-known-3">
-                    No, only the date when their body was found
+                    Approximate year of birth only
                   </label>
                 </div>
               
                     
                  
                 </div>
-        
+        </fieldset>
             
 
 
@@ -139,7 +139,7 @@ href: "javascript:window.history.back()"
 
 
     </div>
-          
+          <br><br>
     <form class="form" action="mothers-details-check" method="post">
       <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="country-hint">
@@ -299,7 +299,7 @@ href: "javascript:window.history.back()"
           <label class="govuk-label govuk-label--s" for="one-third">
              Occupation (if available)
           </label>
-         <input class="govuk-input govuk-!-width-one-third" id="one-third" name="oneThird" type="text">
+         <input class="govuk-input govuk-!-width-one-half" id="one-third" name="oneThird" type="text">
         </div>
 
         <div class="govuk-form-group">
@@ -309,7 +309,7 @@ href: "javascript:window.history.back()"
           </label>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england" checked>
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
         <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
           Retired
         </label>
@@ -323,7 +323,7 @@ href: "javascript:window.history.back()"
     </div>
   </fieldset>
 </div> 
-
+<br>
 
 
 
