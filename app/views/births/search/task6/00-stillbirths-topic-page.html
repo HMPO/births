@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+ 
+
+
+
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       
+<br>
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            Stillbirths
+        </h2>  
+
+
+
+
+
+<div style="background:#f3f2f1; padding:20px 40px; margin-bottom:10px;">
+  <a href="" class="govuk-link govuk-link--no-visited-state"
+     style="font-size:19px; font-weight:bold; text-decoration:none;">
+    Register a stillbirth >
+  </a>
+</div>
+
+<div style="background:#f3f2f1; padding:20px 40px; margin-bottom:10px;">
+  <a href="" class="govuk-link govuk-link--no-visited-state"
+     style="font-size:19px; font-weight:bold; text-decoration:none;">
+     Attest or register a stillbirth from declaration >
+  </a>
+</div>
+
+<div style="background:#f3f2f1; padding:20px 40px; margin-bottom:10px;">
+  <a href="" class="govuk-link govuk-link--no-visited-state"
+     style="font-size:19px; font-weight:bold; text-decoration:none;">
+    Register multiple births including stillbirths >
+  </a>
+</div>
+
+<div style="background:#f3f2f1; padding:20px 40px; margin-bottom:10px;">
+  <a href="" class="govuk-link govuk-link--no-visited-state"
+     style="font-size:19px; font-weight:bold; text-decoration:none;">
+    Register a stillbirth or multiple births over 12 months >
+  </a>
+</div>
+
+
+    </div> 
+<br>
+        <div class="govuk-form-group govuk-!-margin-bottom-4">
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+            Search and manage a stillbirth record
+        </h3>
+
+      <div class="govuk-hint">
+          Print, correct, re-register or cancel
+      </div>
+    
+           <br>
+            <label class="govuk-label govuk-label govuk-!-margin-bottom-1" for="account-number">
+                Entry number
+            </label>
+  
+        <div id="account-number-hint" class="govuk-hint">
+          It’s a 9-digit number, for example 987 654 321
+        </div>
+        <input class="govuk-input govuk-input--width-10" id="account-number" name="accountNumber" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+    
+    </div>
+
+       <p class="govuk-body">
+  <a href="/births/search/task6/stillbirths-advanced-search.html" class="govuk-link">I do not have the entry number</a>
+</p>
+
+     <button type="submit" class="govuk-button" data-module="govuk-button">
+            Search
+        </button>
+
+        
+
+    </div>
+  </div>
+
+
+{% endblock %}

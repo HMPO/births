@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a stillbirth record" %}
+
+{% block pageTitle %}
+  Question page template - Search for a stillbirth record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             What do you want to do next?
+        </h2>
+
+        
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+   
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          Print a stillbirth certificate
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+          Correct the stillbirth record
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+          Re-register the stillbirth
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+          Cancel the stillbirth record
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+<br><br>
+
+        
+
+{{ govukButton({
+        text: "Continue",
+        href: ""
+      }) }}
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}

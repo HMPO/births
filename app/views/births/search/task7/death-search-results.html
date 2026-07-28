@@ -1,0 +1,296 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a death record" %}
+
+{% block pageTitle %}
+  Question page template - Search for a death record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             Search results
+        </h2>
+
+    
+        
+
+           <p class="govuk-body">
+          Registration results for <b>George Smith, 2026, All</b> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="#" class="govuk-link">Change search</a>
+        </p>
+
+        <p class="govuk-body">
+          20 results found
+        </p>
+        
+
+        
+
+          <table class="govuk-table">
+ 
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Entry or system number</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Deceased’s name</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Deceased’s date of birth</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Deceased’s date of death</th>
+      <!-- <th scope="col" class="govuk-table__header app-custom-class">Deceased’s sex</th> -->
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+ 
+
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      354 647 8340
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">17 March 1935</td>
+    <td class="govuk-table__cell">1 January 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      746 530 8790
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">2 May 1930</td>
+    <td class="govuk-table__cell">18 January 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      826 546 3320
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">12 July 1993</td>
+    <td class="govuk-table__cell">2 February 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      901 827 7820
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">21 November 1962</td>
+    <td class="govuk-table__cell">22 February 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      178 409 3209
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">17 October 1966</td>
+    <td class="govuk-table__cell">4 March 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      728 736 4509
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">28 January 1997</td>
+    <td class="govuk-table__cell">17 March 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      109 287 2765
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">14 April 1966</td>
+    <td class="govuk-table__cell">2 April 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="/births/search/task7/correct-record.html" class="govuk-link" style="font-weight: normal;">
+      771 234 9108
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">12 November 1950</td>
+    <td class="govuk-table__cell">6 May 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      109 809 7345
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">30 September 1961</td>
+    <td class="govuk-table__cell">13 May 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      920 845 3460
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">16 December 1975</td>
+    <td class="govuk-table__cell">17 May 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      812 345 6710
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">31 October 1943</td>
+    <td class="govuk-table__cell">19 May 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      827 640 6389
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">27 July 1937</td>
+    <td class="govuk-table__cell">29 May 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      920 827 7643
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">16 August 1938</td>
+    <td class="govuk-table__cell">1 June 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="/births/search/task7/correct-record-2.html" class="govuk-link" style="font-weight: normal;">
+      938 839 1902
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">28 September 1965</td>
+    <td class="govuk-table__cell">4 June 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      287 801 2908
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">22 February 1950</td>
+    <td class="govuk-table__cell">6 June 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      290 835 4601
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">27 December 1962</td>
+    <td class="govuk-table__cell">10 June 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      290 850 7130
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">1 June 1933</td>
+    <td class="govuk-table__cell">13 June 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      390 657 8730
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">23 November 1959</td>
+    <td class="govuk-table__cell">2 July 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      309 781 3210
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">13 March 1939</td>
+    <td class="govuk-table__cell">18 July 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+   <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__cell"><a href="" class="govuk-link" style="font-weight: normal;">
+      290 379 1092
+      </a>
+    </th>
+    <td class="govuk-table__cell">SMITH, George</td>
+    <td class="govuk-table__cell">12 June 1933</td>
+    <td class="govuk-table__cell">20 July 2026</td>
+    <!-- <td class="govuk-table__cell">Female</td> -->
+  </tr>
+
+  </tbody>
+</table>
+
+
+           
+  
+
+       
+    
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}

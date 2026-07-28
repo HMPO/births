@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a birth record" %}
+
+{% block pageTitle %}
+  Question page template - Search for a birth record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             Search results
+        </h2>
+
+        <p class="govuk-body">
+          Registration results for <b>15 July 2021, Kowalski, Leicester</b> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="/births/search/task1/births-advanced-search.html" class="govuk-link">Change search</a>
+        </p>
+
+        <p class="govuk-body">
+          1 result found
+        </p>
+        
+
+        
+
+          <table class="govuk-table">
+ 
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Entry or system number</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Child’s date of birth</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Child’s name</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Mother’s name</th>
+      <!-- <th scope="col" class="govuk-table__header app-custom-class">Deceased’s sex</th> -->
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+ 
+
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__cell"><a href="/births/search/task1/correct-record.html" class="govuk-link" style="font-weight: normal;">
+    364 857 3490
+    </a>
+  </th>
+  <td class="govuk-table__cell">15 July 2021</td>
+  <td class="govuk-table__cell">KOWALSKI, Jakub</td>
+  <td class="govuk-table__cell">KOWALSKI, Maria</td>
+  <!-- <td class="govuk-table__cell">Female</td> -->
+</tr>
+
+
+    </tr>
+
+   
+
+  </tbody>
+</table>
+
+           
+  
+
+       
+    
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}

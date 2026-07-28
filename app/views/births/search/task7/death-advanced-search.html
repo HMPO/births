@@ -1,0 +1,334 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a death record" %}
+
+{% block pageTitle %}
+  Question page template - Search for a death record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       
+<br>
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             Search for a registration
+        </h2>
+        
+
+
+    </div> 
+<br>
+         <div class="govuk-form-group">
+
+          <div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="width-10">
+    Deceased's first name
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+
+<br>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="width-10">
+    Deceased's last name 
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+
+<br>
+
+           <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-label govuk-label--s">
+      Deceased’s date of birth 
+    </legend>
+    <div id="passport-issued-hint" class="govuk-hint">
+      Enter as much of the date as you know, for example 11 1998
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <br> <br>
+
+
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-label govuk-label--s">
+      Deceased’s date of death 
+    </legend>
+    <div id="passport-issued-hint" class="govuk-hint">
+      Enter as much of the date as you know, for example 11 1998
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<br>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="sort">
+    District death was registered in
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="All">All</option>
+    <option value="Barking and Dagenham">Barking and Dagenham</option>
+    <option value="Barnet">Barnet</option>
+    <option value="Barnsley">Barnsley</option>
+    <option value="Bath and North East Somerset">Bath and North East Somerset</option>
+    <option value="Bedford">Bedford</option>
+    <option value="Birmingham">Birmingham</option>
+    <option value="Blackburn with Darwin">Blackburn with Darwin</option>
+    <option value="Blackpool">Blackpool</option>
+    <option value="Blaenau Gwent">Blaenau Gwent</option>
+    <option value="Bolton">Bolton</option>
+    <option value="Bournemouth, Christchurch and Poole">Bournemouth, Christchurch and Poole</option>
+    <option value="Bracknell Forest">Bracknell Forest</option>
+    <option value="Bradford and Keighly">Bradford and Keighly</option>
+    <option value="Brent">Brent</option>
+    <option value="Bridgend">Bridgend</option>
+    <option value="Brighton and Hove">Brighton and Hove</option>
+    <option value="Bristol">Bristol</option>
+    <option value="Bromley">Bromley</option>
+    <option value="Scheme Change">Scheme Change</option>
+    <option value="Buckinghamshire">Buckinghamshire</option>
+    <option value="Bury">Bury</option>
+    <option value="Caerphilly">Caerphilly</option>
+    <option value="Calderdale">Calderdale</option>
+    <option value="Cambridgeshire;">Cambridgeshire;</option>
+    <option value="Camden">Camden</option>
+    <option value="Cardiff">Cardiff</option>
+    <option value="Carmarthenshire">Carmarthenshire</option>
+    <option value="Central Bedfordshire">Central Bedfordshire</option>
+    <option value="Ceredigion">Ceredigion</option>
+    <option value="Cheshire East">Cheshire East</option>
+    <option value="Cheshire West and Chester">Cheshire West and Chester</option>
+    <option value="Conwy">Conwy</option>
+    <option value="Cornwall">Cornwall</option>
+    <option value="County of Durham">County of Durham</option>
+    <option value="Coventry">Coventry</option>
+    <option value="Croydon">Croydon</option>
+    <option value="Cumberland">Cumberland</option>
+    <option value="Darlington">Darlington</option>
+    <option value="Denbighshire">Denbighshire</option>
+    <option value="Derby">Derby</option>
+    <option value="Derbyshire">Derbyshire</option>
+    <option value="Devon">Devon</option>
+    <option value="Doncaster">Doncaster</option>
+    <option value="Dorset">Dorset</option>
+    <option value="Dudley">Dudley</option>
+    <option value="Ealing">Ealing</option>
+    <option value="East riding of Yorkshire">East riding of Yorkshire</option>
+    <option value="East Sussex">East Sussex</option>
+    <option value="Enfield">Enfield</option>
+    <option value="Essex">Essex</option>
+    <option value="Flintshire">Flintshire</option>
+    <option value="Gateshead">Gateshead</option>
+    <option value="Gloucestershire">Gloucestershire</option>
+    <option value="Greenwich;">Greenwich;</option>
+    <option value="GRO">GRO</option>
+    <option value="Gwynedd">Gwynedd</option>
+    <option value="Hackney">Hackney</option>
+    <option value="Halton">Halton</option>
+    <option value="Hammersmith and Fulham">Hammersmith and Fulham</option>
+    <option value="Hampshire">Hampshire</option>
+    <option value="Harringey">Harringey</option>
+    <option value="Harrow">Harrow</option>
+    <option value="Hartlepool">Hartlepool</option>
+    <option value="Havering">Havering</option>
+    <option value="Herefordshire">Herefordshire</option>
+    <option value="Hertfordshire">Hertfordshire</option>
+    <option value="Hillingdon">Hillingdon</option>
+    <option value="Hounslow">Hounslow</option>
+    <option value="Hull">Hull</option>
+    <option value="Isle of Scilly">Isle of Scilly</option>
+    <option value="Isle of Wight">Isle of Wight</option>
+    <option value="Islington">Islington</option>
+    <option value="Kensington and Chelsea">Kensington and Chelsea</option>
+    <option value="Kent">Kent</option>
+    <option value="Kingston upon Thames">Kingston upon Thames</option>
+    <option value="Kirklees">Kirklees</option>
+    <option value="Knowsley">Knowsley</option>
+    <option value="Lambeth">Lambeth</option>
+    <option value="lancashire">lancashire</option>
+    <option value="Leeds">Leeds</option>
+    <option value="Leicester" selected>Leicester</option>
+    <option value="Leicestershire">Leicestershire</option>
+    <option value="Lewisham">Lewisham</option>
+    <option value="Linconshire">Linconshire</option>
+    <option value="Liverpool">Liverpool</option>
+    <option value="London City">London City</option>
+    <option value="Luton">Luton</option>
+    <option value="Manchester">Manchester</option>
+    <option value="Medway">Medway</option>
+    <option value="Merthyr Tydfil">Merthyr Tydfil</option>
+    <option value="Merton">Merton</option>
+    <option value="Middlesbrough">Middlesbrough</option>
+    <option value="Milton Keynes">Milton Keynes</option>
+    <option value="Monmouthshire">Monmouthshire</option>
+    <option value="Neath Port Talbot">Neath Port Talbot</option>
+    <option value="Newcastle upon Tyne">Newcastle upon Tyne</option>
+    <option value="Newham">Newham</option>
+    <option value="Newport">Newport</option>
+    <option value="Norfolk">Norfolk</option>
+    <option value="North East Lincolnshire">North East Lincolnshire</option>
+    <option value="North Lincolnshire">North Lincolnshire</option>
+    <option value="North Northamptonshire">North Northamptonshire</option>
+    <option value="North Somerset">North Somerset</option>
+    <option value="North Tyneside">North Tyneside</option>
+    <option value="North Yorkshire">North Yorkshire</option>
+    <option value="Northumberland">Northumberland</option>
+    <option value="Nottingham">Nottingham</option>
+    <option value="Nottinghamshire">Nottinghamshire</option>
+    <option value="Oldham">Oldham</option>
+    <option value="Oxfordshire">Oxfordshire</option>
+    <option value="Pembrokeshire">Pembrokeshire</option>
+    <option value="Peterborough">Peterborough</option>
+    <option value="Plymouth">Plymouth</option>
+    <option value="Portsmouth">Portsmouth</option>
+    <option value="Powys">Powys</option>
+    <option value="Reading">Reading</option>
+    <option value="Redbridge">Redbridge</option>
+    <option value="Redcar and Cleveland">Redcar and Cleveland</option>
+    <option value="Rhondda Cynon TaF">Rhondda Cynon TaF</option>
+    <option value="Richmond upon Thames">Richmond upon Thames</option>
+    <option value="Rochdale">Rochdale</option>
+    <option value="Rotherham">Rotherham</option>
+    <option value="Rutland">Rutland</option>
+    <option value="Salford">Salford</option>
+    <option value="Sandwell">Sandwell</option>
+    <option value="Sefton">Sefton</option>
+    <option value="Sheffield">Sheffield</option>
+    <option value="Shropshire">Shropshire</option>
+    <option value="Slough">Slough</option>
+    <option value="Solihull">Solihull</option>
+    <option value="Somerset">Somerset</option>
+    <option value="South Gloucestershire">South Gloucestershire</option>
+    <option value="South Tyneside">South Tyneside</option>
+    <option value="Southampton">Southampton</option>
+    <option value="Southend On Sea">Southend On Sea</option>
+    <option value="Southwark">Southwark</option>
+    <option value="St Helens">St Helens</option>
+    <option value="Staffordshire">Staffordshire</option>
+    <option value="Stockport">Stockport</option>
+    <option value="Stockton on Tees">Stockton on Tees</option>
+    <option value="Stoke on Trent">Stoke on Trent</option>
+    <option value="Suffolk">Suffolk</option>
+    <option value="Sunderland">Sunderland</option>
+    <option value="Surrey">Surrey</option>
+    <option value="Sutton">Sutton</option>
+    <option value="Swansea">Swansea</option>
+    <option value="Swindon">Swindon</option>
+    <option value="Tameside">Tameside</option>
+    <option value="Telford and Wrekin">Telford and Wrekin</option>
+    <option value="Thurrock">Thurrock</option>
+    <option value="Torbay">Torbay</option>
+    <option value="Torfaen">Torfaen</option>
+    <option value="Tower Hamlets">Tower Hamlets</option>
+    <option value="Trafford">Trafford</option>
+    <option value="Vale of Glamorgan">Vale of Glamorgan</option>
+    <option value="Wakefield">Wakefield</option>
+    <option value="Walsall">Walsall</option>
+    <option value="Waltham Forest">Waltham Forest</option>
+    <option value="Wandsworth">Wandsworth</option>
+    <option value="Warrington">Warrington</option>
+    <option value="Warwickshire">Warwickshire</option>
+    <option value="West Berkshire">West Berkshire</option>
+    <option value="West Northamptonshire">West Northamptonshire</option>
+    <option value="West Sussex">West Sussex</option>
+    <option value="Westminster">Westminster</option>
+    <option value="Westmorland and Furness ">Westmorland and Furness </option>
+    <option value="Wigan and Leigh">Wigan and Leigh</option>
+    <option value="Wiltshire">Wiltshire</option>
+    <option value="Windsor and Maidenhead">Windsor and Maidenhead</option>
+    <option value="Wirral">Wirral</option>
+    <option value="Wokingham">Wokingham</option>
+    <option value="Wolverhampton">Wolverhampton</option>
+    <option value="Worcestershire">Worcestershire</option>
+    <option value="Wrexham">Wrexham</option>
+    <option value="Ynys Mon">Ynys Mon</option>
+    <option value="York">York</option>
+
+  </select>
+</div>
+    
+<br><br>
+
+  
+
+    {{ govukButton({
+        text: "Search",
+        href: "/births/search/task7/death-search-results.html"
+      }) }}
+
+    
+
+        <p class="govuk-body">
+  <a href="/births/search/task7/00-death-topic-page.html" class="govuk-link">Search with entry number</a>
+</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

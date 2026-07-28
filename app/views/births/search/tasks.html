@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Tasks
+      </h1>
+
+
+      <h3 class="govuk-heading-s">Birth</h3>
+
+      <p class="govuk-body">
+         <a href="/births/search/task1/00-sign-in.html">Task 1</a> – Re-reg (admin)
+      </p>
+
+      <p class="govuk-body">
+         <a href="/births/search/task2/00-sign-in.html">Task 2</a> – Adoption (admin)
+      </p>
+
+      <p class="govuk-body">
+         <a href="">Task 3</a> – Requisition (registrar) - Complete via click test
+      </p>
+
+      <p class="govuk-body">
+         <a href="/births/search/task4/00-sign-in.html">Task 4</a> – Add father (registrar)
+      </p>
+
+      <p class="govuk-body">
+         <a href="/births/search/task5/00-sign-in.html">Task 5</a> – Space 17 (registrar)
+      </p>
+
+      <br><h3 class="govuk-heading-s">Stillbirth</h3>
+
+      <p class="govuk-body">
+         <a href="/births/search/task6/00-sign-in.html">Task 6</a> – Print (registrar)
+      </p>
+
+     <br> <h3 class="govuk-heading-s">Death</h3>
+
+      <p class="govuk-body">
+         <a href="/births/search/task7/00-sign-in.html">Task 7</a> – Prior reg check (registrar)
+      </p>
+
+      <p class="govuk-body">
+         <a href="/births/search/task8/00-sign-in.html">Task 8</a> – Housing authority (admin)
+      </p>
+
+      <p class="govuk-body">
+         <a href="/births/search/task9/00-sign-in.html">Task 9</a> – Correction (admin)
+      </p>
+
+      <p class="govuk-body">
+         <a href="/births/search/task10/00-sign-in.html">Task 10 & 11</a> – Green matching (admin) & Spouse (registrar)
+      </p>
+
+    
+
+         
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

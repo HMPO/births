@@ -1,0 +1,158 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a birth record" %}
+
+{% block pageTitle %}
+  Question page template - Search for a birth record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "/births/search/task4/correct-record.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+          <span class="govuk-caption-l">Record 901 234 567</span>
+             Jakub Kowalski
+        </h2>
+
+
+<h2 class="govuk-heading-m">Child's details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Date of birth</dt>
+    <dd class="govuk-summary-list__value">Fifteenth March 2025</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Place of birth</dt>
+    <dd class="govuk-summary-list__value">Leicester General Hospital Maternity Unit, Gwendolen Road, Leicester</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Name</dt>
+    <dd class="govuk-summary-list__value">Jakub KOWALSKI</dd>
+  </div>
+
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Sex</dt>
+    <dd class="govuk-summary-list__value">Male</dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Mother's details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Name</dt>
+    <dd class="govuk-summary-list__value">Maria KOWALSKI</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Place of birth</dt>
+    <dd class="govuk-summary-list__value">Łódź, Łódzkie, Poland</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Occupation</dt>
+    <dd class="govuk-summary-list__value">Sales Assistant - Supermarket</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Maiden name</dt>
+    <dd class="govuk-summary-list__value">Wiśniewska</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Last name (if different at marriage / civil partnership)</dt>
+    <dd class="govuk-summary-list__value"></dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Address (if different from child’s place of birth)</dt>
+    <dd class="govuk-summary-list__value">31 Manor Court, Leicester</dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Informant's details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Qualification</dt>
+    <dd class="govuk-summary-list__value">Mother</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Mother’s address (if different from when the child was born)</dt>
+    <dd class="govuk-summary-list__value">115 Charles Street, Leicester</dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Registrar's details</h2>
+
+<dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Name</dt>
+    <dd class="govuk-summary-list__value">Example name</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Designation</dt>
+    <dd class="govuk-summary-list__value">Deputy Registrar</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Registration date</dt>
+    <dd class="govuk-summary-list__value">5 March 2026</dd>
+  </div>
+
+</dl>
+<br>
+<dl class="govuk-summary-list govuk-!-margin-bottom-8">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Annotation</dt>
+    <dd class="govuk-summary-list__value">None</dd>
+  </div>
+</dl>
+
+
+  </div>
+
+  </div>
+</div>
+
+<br>
+<br>
+
+
+
+  
+
+
+
+    </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}
