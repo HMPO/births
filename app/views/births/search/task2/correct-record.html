@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a birth record" %}
+
+{% block pageTitle %}
+  Question page template - Search for a birth record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+ 
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             Is this the correct record?
+        </h2>
+
+        <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      System number 
+    </dt>
+    <dd class="govuk-summary-list__value">
+      657 383 1302
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+     1 March 2026
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Sex
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Female
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Child’s name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Ella ADAMS
+    </dd>
+  </div>
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mother’s name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     Sarah Emily ADAMS
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Father's name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     John ADAMS
+    </dd>
+  </div>
+ <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Place of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+     Glenfield Hospital
+    </dd>
+  </div>
+ <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Annotation
+    </dt>
+    <dd class="govuk-summary-list__value">
+     Adopted
+    </dd>
+  </div>
+</dl>
+
+
+<p class="govuk-body">
+  <a href="/births/search/task2/viewFullRecord.html" class="govuk-link" rel="noreferrer noopener" target="_blank">
+    View full record (opens in new tab)
+  </a>
+</p><br>
+
+
+
+{{ govukButton({
+        text: "Yes, continue",
+        href: "/births/search/task2/what-next.html"
+      }) }}
+
+    
+
+        <p class="govuk-body">
+  <a href="/births/search/task2/births-advanced-search.html" class="govuk-link">No, return to search</a>
+</p>
+
+       
+        
+
+        
+
+           
+  
+
+       
+    
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a death record" %}
+
+{% block pageTitle %}
+  Question page template - Search for a death record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+ 
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             Is this the correct record?
+        </h2>
+
+       <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      System number 
+    </dt>
+    <dd class="govuk-summary-list__value">
+      938 839 1902
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+     22 February 1950
+    </dd>
+  </div>
+   <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of death
+    </dt>
+    <dd class="govuk-summary-list__value">
+     4 June 2026
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Sex
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Male
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Deceased’s name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      George SMITH
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Place of death
+    </dt>
+    <dd class="govuk-summary-list__value">
+     Royal South Hants Hospital
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Usual address
+    </dt>
+    <dd class="govuk-summary-list__value">
+     48 Willow Close, Leicester
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Annotation
+    </dt>
+    <dd class="govuk-summary-list__value">
+     None
+    </dd>
+  </div>
+</dl>
+
+
+<p class="govuk-body">
+  <a href="/births/search/task8/viewFullRecord2.html" class="govuk-link" rel="noreferrer noopener" target="_blank">
+    View full record (opens in new tab)
+  </a>
+</p><br>
+
+
+
+{{ govukButton({
+        text: "Yes, continue",
+        href: "/births/search/task8/what-next.html"
+      }) }}
+
+    
+
+        <p class="govuk-body">
+  <a href="/births/search/task8/death-advanced-search.html" class="govuk-link">No, return to search</a>
+</p>
+
+       
+        
+
+        
+
+           
+  
+
+       
+    
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}
