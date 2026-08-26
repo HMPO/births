@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a birth record" %}
+
+{% block pageTitle %}
+  Search for a birth record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             Search results
+        </h2>
+
+        <p class="govuk-body">
+          Results for <b>21 June 2023, JONES</b> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="/births/space17/task2/births-advanced-search.html" class="govuk-link">Change search</a>
+        </p>
+
+        <br>
+
+        <p class="govuk-body govuk-!-font-weight-bold">
+          0 results found
+        </p>
+        
+        <br>
+        
+        <p class="govuk-body">
+          Check that you typed the details correctly.<br><br>              
+          If the birth was before 2009 you need to look for it in the local index.<br><br>    
+          If you still cannot find the record, contact the GRO case working team.
+        </p>
+    
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}

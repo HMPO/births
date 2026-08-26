@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Tasks
+      </h1>
+
+      <p class="govuk-body">
+         <a href="/births/space17/task1/00-sign-in.html">Task 1</a> – Re-reg after marriage
+      </p>
+
+      <p class="govuk-body">
+         <a href="/births/space17/task2/00-sign-in.html">Task 2</a> – No search results
+      </p>
+
+
+      <p class="govuk-body">
+         <a href="/births/space17/task3/00-sign-in.html">Task 3</a> – Change child's first name
+      </p>
+
+      
+
+    
+
+         
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
