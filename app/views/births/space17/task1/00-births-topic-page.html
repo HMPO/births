@@ -97,9 +97,10 @@
   <a href="/births/space17/task1/births-advanced-search.html" class="govuk-link">I do not have the entry number</a>
 </p>
 
-     <button type="submit" class="govuk-button" data-module="govuk-button">
-            Search
-        </button>
+     {{ govukButton({
+        text: "Search",
+        href: "/births/space17/task1/correct-record.html"
+      }) }}
 
         
 

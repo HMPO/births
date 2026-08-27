@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Search for a birth record" %}
+
+{% block pageTitle %}
+  Search for a birth record - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       
+<br>
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Record search</span>
+             Search for a record
+        </h2>
+        
+
+
+    </div> 
+<br>
+        <div class="govuk-form-group">
+
+       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-label govuk-label--s">
+      Child’s date of birth  
+    </legend>
+    <div id="passport-issued-hint" class="govuk-hint">
+      Enter as much of the date as you know, for example 10 2026
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+</div>
+<div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="width-10">
+    Child's first name 
+  </label>
+  <div id="passport-issued-hint" class="govuk-hint">
+      For partial match enter the first three letters and %, for example Joh%
+    </div>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="width-10">
+    Child's last name 
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="width-10">
+    Mother's first name 
+  </label>
+  <div id="passport-issued-hint" class="govuk-hint">
+      For partial match enter the first three letters and %, for example Joh%
+    </div>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="width-10">
+    Mother's last name 
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+
+
+    
+<br>
+
+  
+
+    {{ govukButton({
+        text: "Search",
+        href: "/births/space17/task2/birth-search-results.html"
+      }) }}
+
+    
+
+        <p class="govuk-body">
+  <a href="" class="govuk-link">Search with entry number</a>
+</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
