@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Update space 17 child’s name" %}
+
+{% block pageTitle %}
+ Update space 17 child’s name - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-form-group">
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Submit the update</span>
+             Check details
+        </h2>
+
+        <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      First name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Sarah 
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="/births/space17flow/task1/what-is-child-called.html">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Middle names
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Elle
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="/births/space17flow/task1/what-is-child-called.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+    </dd>
+  </div>
+</dl>
+
+       
+
+        
+
+         
+
+        
+<br>
+
+        
+
+{{ govukButton({
+        text: "Confirm update",
+        href: "/births/space17flow/task1/add-space-17-to-original.html"
+      }) }}
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}

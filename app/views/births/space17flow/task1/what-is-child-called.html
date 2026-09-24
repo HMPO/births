@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Update space 17 child’s name" %}
+
+{% block pageTitle %}
+ Update space 17 child’s name - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Space 17 details</span>
+             What is the child called after space 17 update?
+        </h2>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="one-third">
+            First name
+          </label>
+         <input class="govuk-input govuk-!-width-one-third" id="one-third" name="oneThird" type="text" value="Sarah">
+        </div>
+
+          <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="one-third">
+            Middle names
+          </label>
+         <input class="govuk-input govuk-!-width-one-third" id="one-third" name="oneThird" type="text" value="Ella">
+        </div>
+
+        
+<br><br><br>
+
+        
+
+{{ govukButton({
+        text: "Continue",
+        href: "/births/space17flow/task1/registrar-details.html"
+      }) }}
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}
