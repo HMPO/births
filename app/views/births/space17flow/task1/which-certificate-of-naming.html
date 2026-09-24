@@ -1,0 +1,148 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Update space 17 child’s name" %}
+
+{% block pageTitle %}
+ Update space 17 child’s name - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l">Space 17 details</span>
+             Which certificate of naming is used?
+        </h2>
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    
+    
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Certificate of name given in baptism - form 13
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Date of certificate
+          </label>
+         <div id="event-name-hint" class="govuk-hint">
+    For example, 23 11 2024
+  </div>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+        </div>
+      </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          Certificate of naming - form 14
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        <div class="govuk-form-group">
+           <label class="govuk-label" for="contact-by-email">
+            Date of certificate
+          </label>
+         <div id="event-name-hint" class="govuk-hint">
+    For example, 23 11 2024
+  </div>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+        </div>
+      </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+          None
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+<br><br>
+
+        
+
+{{ govukButton({
+        text: "Continue",
+        href: "/births/space17flow/task1/what-is-child-called.html"
+      }) }}
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}
