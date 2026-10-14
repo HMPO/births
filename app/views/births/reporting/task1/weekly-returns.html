@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName = "Reports" %}
+
+{% block pageTitle %}
+  Reports - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      
+    <div class="govuk-form-group">
+       
+        <h2 class="govuk-heading-l">
+             Weekly returns
+        </h2>
+
+        <p class="govuk-body">
+         Results from 12/10/2026 - 18/10/2026
+        </p>
+
+        
+
+          <table class="govuk-table">
+ 
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Content needed here!!</th>
+      <th scope="col" class="govuk-table__header app-custom-class govuk-table__cell--numeric">Download (content needed here!!)</th>
+      <!-- <th scope="col" class="govuk-table__header app-custom-class">Deceased’s sex</th> -->
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+ 
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">Council tax</td>
+  <th scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link" style="font-weight: normal;">
+    Download
+    </a>
+  </th>
+  <!-- <td class="govuk-table__cell">Female</td> -->
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">Health authority</td>
+  <th scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link" style="font-weight: normal;">
+    Download
+    </a>
+  </th>
+  <!-- <td class="govuk-table__cell">Female</td> -->
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">Local education authority</td>
+  <th scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link" style="font-weight: normal;">
+    Download
+    </a>
+  </th>
+  <!-- <td class="govuk-table__cell">Female</td> -->
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">Local safeguarding children boards</td>
+  <th scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link" style="font-weight: normal;">
+    Download
+    </a>
+  </th>
+  <!-- <td class="govuk-table__cell">Female</td> -->
+</tr>
+
+  </tbody>
+</table>
+
+           
+  
+
+       
+    
+
+
+    </div>
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}
