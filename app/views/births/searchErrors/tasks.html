@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Tasks
+      </h1>
+
+      <p class="govuk-body">
+         <a href="/births/searchErrors/task1/00-service-selector.html">Task 1</a> – With validation
+      </p>
+
+      <p class="govuk-body">
+         <a href="/births/searchErrors/task2/00-service-selector.html">Task 2</a> – Without validation
+      </p>
+
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}
